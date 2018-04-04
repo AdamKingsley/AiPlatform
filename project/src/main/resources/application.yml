@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: project
+  profiles:
+    active: dev
+  devtools:
+    restart:
+      enabled: false
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/testlink?userUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+    sql-script-encoding: UTF-8
+logging:
+  config: classpath:logback.xml
+#  redis:
+#    database: 6
+#    host: 192.168.103.202
+#    password:
+#    port: 6379
+#    pool:
+#      max-idle: 8
+#      min-idle: 0
+#      max-active: 8
+#      max-wait: -1
