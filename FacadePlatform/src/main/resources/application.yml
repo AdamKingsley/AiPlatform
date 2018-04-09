@@ -6,14 +6,86 @@ spring:
   devtools:
     restart:
       enabled: false
+      include:
+        mapper: cn/edu/nju/software/**/mapper-[\\w-\\.]+jar
+
+# common config
+# datasource with druid through mysql
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/testlink?userUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://localhost:3306/test?userUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: root
     sql-script-encoding: UTF-8
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 6000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+
+    #druid StatViewServlet监控配置
+    druid:
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: false
+        login-username: admin
+        login-password: admin
+        allow:
+        deny:
+        aop-patterns:
+        # aop-patterns: cn.edu.nju.software.**.service
+
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: '*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*'
+        session-stat-enable: true
+        session-stat-max-count: 10
+        principal-session-name:
+        principal-cookie-name:
+        profile-enable:
+
+# mybatis_config
+mybatis:
+    # entity_package
+    type-aliases-package: cn.edu.nju.software
+    # Mapper.xml
+    mapper-locations: classpath:mybatis/mapper/*Mapper.xml
+    #    configuration:
+    #        map-underscore-to-camel-case: true
+    #        default-fetch-size: 100
+    #        default-statement-timeout: 30
+    # mybatis-enhance-actable config
+    table:
+      auto: update
+    model:
+      pack: com.example.entity
+    database:
+      type: mysql
+mapper:
+  mappers:
+    - tk.mybatis.mapper.common.Mapper
+    - tk.mybatis.mapper.common.Mapper2
+  not-empty: true
+
+# logging config
 logging:
   config: classpath:logback.xml
+
+# session默认30min 设置为60min
+server:
+  session:
+    timeout: 60
 #  redis:
 #    database: 6
 #    host: 192.168.103.202

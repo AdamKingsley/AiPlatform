@@ -9,6 +9,7 @@ import lombok.Setter;
  */
 @Data
 public class TestEntity {
+    private Integer id;
     private String name;
     private String password;
 
