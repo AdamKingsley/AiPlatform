@@ -27,3 +27,5 @@ nbdist/
 .class
 
 .mvn/
+!src/main/resources/static/build/
+!src/main/resources/static/dist/
