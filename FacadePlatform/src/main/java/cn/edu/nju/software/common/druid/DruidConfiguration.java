@@ -3,6 +3,8 @@ package cn.edu.nju.software.common.druid;
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -13,12 +15,12 @@ import org.springframework.context.annotation.Configuration;
  */
 
 @Configuration
+@EnableConfigurationProperties({DruidStatViewServlet.class,DruidWebStatFilter.class})
 public class DruidConfiguration {
     @Autowired
-    @SuppressWarnings("SpringJavaAutowiringInspection")
+
     private DruidStatViewServlet druidStatViewServlet;
     @Autowired
-    @SuppressWarnings("SpringJavaAutowiringInspection")
     private DruidWebStatFilter druidWebStatFilter;
 
     @Bean

@@ -6,9 +6,10 @@ package cn.edu.nju.software.common.exception;
 public enum ExceptionEnum {
 
     //错误可以拓展
-    UNKNOW_ERROR(-1,"未知错误"),
-    USER_NOT_FIND(-101,"用户不存在"),
-    ;
+    UNKNOW_ERROR(-1, "未知错误"),
+    TOKEN_WRONG(-101, "token错误"),
+    USER_NOT_FIND(-102, "用户登录失败"),
+    USER_REGISTER_FAILED(-103, "用户注册失败");
 
     private Integer code;
 

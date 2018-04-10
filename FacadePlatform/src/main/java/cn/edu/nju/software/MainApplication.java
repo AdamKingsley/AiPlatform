@@ -9,15 +9,16 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import tk.mybatis.spring.annotation.MapperScan;
 
 
 import javax.sql.DataSource;
 
 @SpringBootApplication
+@EnableTransactionManagement
 @ComponentScan("cn.edu.nju.software")
 @MapperScan(("cn.edu.nju.software.**.mapper"))
-
 public class MainApplication {
 
     public static void main(String[] args) {

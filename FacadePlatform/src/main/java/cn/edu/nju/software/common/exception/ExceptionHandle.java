@@ -3,11 +3,15 @@ package cn.edu.nju.software.common.exception;
 import cn.edu.nju.software.common.result.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.executor.loader.ResultLoader;
+import org.apache.shiro.authz.UnauthenticatedException;
+import org.apache.shiro.authz.UnauthorizedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
+
+import java.io.Serializable;
 
 /**
  * Created by mengf on 2018/4/6 0006.
@@ -30,6 +34,12 @@ public class ExceptionHandle {
         if (e instanceof ServiceException) {
             ServiceException exception = (ServiceException) e;
             return Result.error().errorCode(exception.getCode().toString()).errorMessage(e.getMessage());
+        }
+        if (e instanceof UnauthenticatedException){
+            return Result.error().message(ExceptionEnum.TOKEN_WRONG.getMsg()).errorCode(ExceptionEnum.TOKEN_WRONG.getCode().toString());
+        }
+        if (e instanceof UnauthorizedException){
+            return Result.error().message("用户无权限");
         }
         //log.debug("非预期的异常(非系统自定义异常)_{}", e);
         return Result.error().errorCode("-1").message("非自定义异常(系统内部异常)").errorMessage(e.getMessage());

@@ -1,9 +1,7 @@
 package cn.edu.nju.software.service;
 
-import cn.edu.nju.software.dao.TestDao;
 import cn.edu.nju.software.entity.TestEntity;
 import cn.edu.nju.software.entity.UserFee;
-import cn.edu.nju.software.mapper.UserFeeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,8 +15,6 @@ import java.util.List;
 @Service
 public class TestService {
 
-    @Autowired
-    private UserFeeMapper userFeeMapper;
 
     public TestEntity get() {
         TestEntity entity = new TestEntity("hello", "world");
@@ -34,7 +30,4 @@ public class TestService {
         return entities;
     }
 
-    public UserFee getUserFee(Long id) {
-        return userFeeMapper.selectByPrimaryKey(id);
-    }
 }
