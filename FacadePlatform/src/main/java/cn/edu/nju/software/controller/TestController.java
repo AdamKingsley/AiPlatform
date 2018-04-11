@@ -4,11 +4,9 @@ import cn.edu.nju.software.common.exception.ExceptionEnum;
 import cn.edu.nju.software.common.exception.ServiceException;
 import cn.edu.nju.software.common.result.Result;
 import cn.edu.nju.software.entity.TestEntity;
-import cn.edu.nju.software.entity.UserFee;
 import cn.edu.nju.software.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
