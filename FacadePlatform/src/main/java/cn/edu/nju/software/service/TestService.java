@@ -1,8 +1,6 @@
 package cn.edu.nju.software.service;
 
 import cn.edu.nju.software.entity.TestEntity;
-import cn.edu.nju.software.entity.UserFee;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
