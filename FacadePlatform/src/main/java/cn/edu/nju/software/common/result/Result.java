@@ -1,5 +1,8 @@
 package cn.edu.nju.software.common.result;
 
+import cn.edu.nju.software.common.exception.ExceptionEnum;
+
+import java.security.PublicKey;
 import java.util.List;
 
 /**
@@ -30,6 +33,13 @@ public class Result {
 
     public Result withData(Object data) {
         this.data = data;
+        return this;
+    }
+
+    public Result exception(ExceptionEnum exceptionEnum) {
+        this.errorCode(exceptionEnum.getCode().toString());
+        this.success = false;
+        this.errorMessage = exceptionEnum.getMsg();
         return this;
     }
 

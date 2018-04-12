@@ -21,19 +21,19 @@ public class ShiroUser implements Serializable {
     //角色名称 考生/管理员etc
     private String roleName;
     //角色对应的编号
-    private Integer roleType;
+    private Integer roleId;
     //角色账号状态 冻结否之类的
     private Integer state;
 
     public ShiroUser() {
     }
 
-    public ShiroUser(Long id, String username, String mail, String roleName, Integer roleType, Integer state) {
+    public ShiroUser(Long id, String username, String mail, String roleName, Integer roleId, Integer state) {
         this.id = id;
         this.username = username;
         this.mail = mail;
         this.roleName = roleName;
-        this.roleType = roleType;
+        this.roleId = roleId;
         this.state = state;
     }
 
@@ -44,7 +44,7 @@ public class ShiroUser implements Serializable {
                 ", username='" + username + '\'' +
                 ", mail='" + mail + '\'' +
                 ", roleName='" + roleName + '\'' +
-                ", roleType=" + roleType +
+                ", roleType=" + roleId +
                 ", state=" + state +
                 '}';
     }

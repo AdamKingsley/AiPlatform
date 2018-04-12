@@ -13,6 +13,7 @@ import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
@@ -45,10 +46,7 @@ public class MyShiroRealm extends AuthorizingRealm {
         User userInfo = accountService.findByUsername(usernamePasswordToken.getUsername());
         if (userInfo != null) {
             ShiroUser shiroUser = new ShiroUser();
-            shiroUser.setUsername(userInfo.getUsername());
-            shiroUser.setId(userInfo.getId());
-            shiroUser.setRoleType(userInfo.getRoleId());
-            shiroUser.setState(userInfo.getState());
+            BeanUtils.copyProperties(userInfo,shiroUser);
             // shiroUser 的basicinfo和UserInfo的相关信息有待完善
             SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
                     shiroUser, //用户名
