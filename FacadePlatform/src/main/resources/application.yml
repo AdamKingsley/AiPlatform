@@ -8,7 +8,11 @@ spring:
       enabled: false
       include:
         mapper: cn/edu/nju/software/**/mapper-[\\w-\\.]+jar
-
+  # the max size of upload file
+  http:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
 # common config
 # datasource with druid through mysql
   datasource:
@@ -96,3 +100,7 @@ server:
 #      min-idle: 0
 #      max-active: 8
 #      max-wait: -1
+
+# 根据部署的系统选择所要上传的目录在哪
+upload:
+  folder: /home/upload/

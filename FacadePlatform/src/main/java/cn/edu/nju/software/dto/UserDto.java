@@ -10,11 +10,11 @@ import javax.persistence.Id;
  */
 @Getter
 @Setter
-public class UserDto extends IdDto{
+public class UserDto extends IdDto {
     private String username;
     private String mail;
-    private String roleId;
-    private String state;
+    private Integer roleId;
+    private Integer state;
 
     @Override
     public String toString() {
