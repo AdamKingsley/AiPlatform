@@ -30,6 +30,7 @@
         <guava.version>21.0</guava.version>
         <mybatis.mapper.version>2.0.1</mybatis.mapper.version>
         <shiro.version>1.4.0</shiro.version>
+        <tika.version>1.17</tika.version>
     </properties>
 
     <dependencies>
@@ -52,9 +53,9 @@
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>org.mybatis.spring.boot</groupId>-->
-            <!--<artifactId>mybatis-spring-boot-starter</artifactId>-->
-            <!--<version>${mybatis.spring.boot.version}</version>-->
+        <!--<groupId>org.mybatis.spring.boot</groupId>-->
+        <!--<artifactId>mybatis-spring-boot-starter</artifactId>-->
+        <!--<version>${mybatis.spring.boot.version}</version>-->
         <!--</dependency>-->
         <dependency>
             <groupId>org.apache.shiro</groupId>
@@ -98,6 +99,13 @@
             <artifactId>commons-lang3</artifactId>
             <version>${commons-lang3.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-core</artifactId>
+            <version>${tika.version}</version>
+        </dependency>
+
         <!--<dependency>-->
         <!--<groupId>com.gitee.sunchenbin.mybatis.actable</groupId>-->
         <!--<artifactId>mybatis-enhance-actable</artifactId>-->
@@ -133,38 +141,38 @@
 
             <!-- https://mvnrepository.com/artifact/org.mybatis.generator/mybatis-generator-maven-plugin -->
             <!--<plugin>-->
-                <!--<groupId>org.mybatis.generator</groupId>-->
-                <!--<artifactId>mybatis-generator-maven-plugin</artifactId>-->
-                <!--<version>${mybatis.generator.version}</version>-->
-                <!--<configuration>-->
-                    <!--<verbose>true</verbose>-->
-                    <!--<overwrite>true</overwrite>-->
-                <!--</configuration>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>Generate MyBatis Artifacts</id>-->
-                        <!--<goals>-->
-                            <!--<goal>generate</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-                <!--<dependencies>-->
-                    <!--<dependency>-->
-                        <!--<groupId>org.mybatis.generator</groupId>-->
-                        <!--<artifactId>mybatis-generator-core</artifactId>-->
-                        <!--<version>${mybatis.generator.version}</version>-->
-                    <!--</dependency>-->
-                <!--</dependencies>-->
+            <!--<groupId>org.mybatis.generator</groupId>-->
+            <!--<artifactId>mybatis-generator-maven-plugin</artifactId>-->
+            <!--<version>${mybatis.generator.version}</version>-->
+            <!--<configuration>-->
+            <!--<verbose>true</verbose>-->
+            <!--<overwrite>true</overwrite>-->
+            <!--</configuration>-->
+            <!--<executions>-->
+            <!--<execution>-->
+            <!--<id>Generate MyBatis Artifacts</id>-->
+            <!--<goals>-->
+            <!--<goal>generate</goal>-->
+            <!--</goals>-->
+            <!--</execution>-->
+            <!--</executions>-->
+            <!--<dependencies>-->
+            <!--<dependency>-->
+            <!--<groupId>org.mybatis.generator</groupId>-->
+            <!--<artifactId>mybatis-generator-core</artifactId>-->
+            <!--<version>${mybatis.generator.version}</version>-->
+            <!--</dependency>-->
+            <!--</dependencies>-->
             <!--</plugin>-->
 
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.6</version>
-                    <configuration>
-                        <skipTests>true</skipTests>
-                    </configuration>
-                </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
 
         </plugins>
     </build>
