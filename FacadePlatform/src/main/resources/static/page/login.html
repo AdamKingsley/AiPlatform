@@ -19,17 +19,21 @@
     <link rel="stylesheet" href="../plugins/iCheck/square/blue.css">
     <!-- Common Css -->
     <link rel="stylesheet" href="../css/common.css">
+
+
 </head>
 <body class="hold-transition login-page ">
 <div class="login-box">
-    <div class="login-logo">
-        <a href="../../index2.html" style="color: white"><b>AI</b>Platform</a>
+    <div class="login-logo" id="welcome">
+        <!--<a href="./index2.html" style="color: white">-->
+            <b>AI</b>Platform
+        <!--</a>-->
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
         <p class="login-box-msg" style="color: #0f74a8">用户登陆 </p>
 
-        <form action="../../index2.html" method="post">
+        <form id="loginform" method="post">
             <div class="form-group has-feedback">
                 <input type="email" class="form-control" placeholder="Email">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -75,6 +79,11 @@
 <script src="../../bootstrap/js/bootstrap.min.js"></script>
 <!-- iCheck -->
 <script src="../../plugins/iCheck/icheck.min.js"></script>
+
+<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+
+<script src="../js/login.js"></script>
+
 <script>
     $(function () {
         $('input').iCheck({
@@ -83,6 +92,13 @@
             increaseArea: '20%' // optional
         });
     });
+</script>
+
+<script>
+    new Vue({
+        el:'#welcome'
+    })
+
 </script>
 </body>
 </html>

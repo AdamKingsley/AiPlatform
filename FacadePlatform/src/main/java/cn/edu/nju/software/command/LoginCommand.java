@@ -22,4 +22,12 @@ public class LoginCommand {
                 ", rememberMe=" + rememberMe +
                 '}';
     }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 }
