@@ -25,9 +25,9 @@
 <body class="hold-transition login-page ">
 <div class="login-box">
     <div class="login-logo" id="welcome">
-        <!--<a href="./index2.html" style="color: white">-->
+        <a href="./index2.html" style="color: white">
             <b>AI</b>Platform
-        <!--</a>-->
+        </a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
@@ -52,7 +52,7 @@
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">登陆</button>
+                    <button id="submit" type="submit" class="btn btn-primary btn-block btn-flat">登陆</button>
                 </div>
                 <!-- /.col -->
             </div>
@@ -65,8 +65,8 @@
         </div>
         <!-- /.social-auth-links -->
 
-        <a href="#">忘记密码</a><br>
-        <a href="register.html" class="text-center">现在注册</a>
+        <a href="./forget.html">忘记密码</a><br>
+        <a href="./register.html" class="text-center">现在注册</a>
 
     </div>
     <!-- /.login-box-body -->
@@ -80,7 +80,6 @@
 <!-- iCheck -->
 <script src="../../plugins/iCheck/icheck.min.js"></script>
 
-<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
 
 <script src="../js/login.js"></script>
 
@@ -94,11 +93,6 @@
     });
 </script>
 
-<script>
-    new Vue({
-        el:'#welcome'
-    })
 
-</script>
 </body>
 </html>
