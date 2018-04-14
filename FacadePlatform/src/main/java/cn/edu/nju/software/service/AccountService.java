@@ -2,16 +2,12 @@ package cn.edu.nju.software.service;
 
 import cn.edu.nju.software.command.RegisterCommand;
 import cn.edu.nju.software.common.result.Result;
-import cn.edu.nju.software.common.shiro.ShiroUser;
-import cn.edu.nju.software.common.shiro.ShiroUtils;
 import cn.edu.nju.software.dto.UserDto;
 import cn.edu.nju.software.entity.User;
-import cn.edu.nju.software.entity.UserInfo;
 import cn.edu.nju.software.mapper.UserMapper;
 import cn.edu.nju.software.util.DigestsUtil;
 import cn.edu.nju.software.util.EncodeUtil;
 import cn.edu.nju.software.util.PasswordHelper;
-import cn.edu.nju.software.util.RandomUtil;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

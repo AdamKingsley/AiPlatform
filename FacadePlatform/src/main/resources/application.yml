@@ -73,7 +73,7 @@ mybatis:
     table:
       auto: update
     model:
-      pack: com.example.entity
+      pack: cn.edu.nju.software.entity
     database:
       type: mysql
 mapper:
