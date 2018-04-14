@@ -8,25 +8,19 @@ body.bg1 {
     background:url("../img/bg.jpg") no-repeat;
 }
 
-body.login-bg{
-    background: url("../img/login.jpeg") no-repeat;
-}
+
 
 @media (min-width: 768px){
     body.bg1 {
         background:url("../img/bg.jpg") no-repeat;
     }
-    body.login-bg{
-        background: url("../img/login.jpeg") no-repeat;
-    }
+
 }
 @media (min-width: 992px){
     body.bg1 {
         background:url("../img/bg.jpg") no-repeat;
     }
-    body.login-bg{
-        background: url("../img/login.jpeg") no-repeat;
-    }
+
 }
 @media (min-width: 1200px){
     body.bg1 {
@@ -35,10 +29,5 @@ body.login-bg{
         background:url("../img/bg.jpg") no-repeat;
         background-size: 100%;
     }
-    body.login-bg{
-        width:100%;
-        height:auto;
-        background: url("../img/login.jpeg") no-repeat;
-        background-size: 100%;
-    }
+
 }

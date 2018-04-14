@@ -52,12 +52,17 @@ spring:
       web-stat-filter:
         enabled: true
         url-pattern: /*
-        exclusions: '*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*'
+        exclusions: '*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*,*.html'
         session-stat-enable: true
         session-stat-max-count: 10
         principal-session-name:
         principal-cookie-name:
         profile-enable:
+  mvc:
+    static-path-pattern: /static/**
+
+  thymeleaf:
+    mode: HTML5
 
 # mybatis_config
 mybatis:

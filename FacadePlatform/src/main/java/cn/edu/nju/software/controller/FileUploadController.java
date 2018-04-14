@@ -20,12 +20,14 @@ import java.io.IOException;
 /**
  * Created by mengf on 2018/4/12 0012.
  */
+
 @RestController
 @RequestMapping("upload")
 @EnableConfigurationProperties({UploadConfig.class})
 @Slf4j
 public class FileUploadController {
     @Autowired
+
     private UploadConfig uploadConfig;
 
     @PostMapping("/video")
