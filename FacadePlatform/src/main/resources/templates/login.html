@@ -2,23 +2,23 @@
 <html lang="en">
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>AI测试平台</title>
     <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
     <!-- Bootstrap 3.3.6 -->
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css"/>
     <!-- Font Awesome -->
     <!--<link rel="stylesheet" href="../dist/css/font-awesome.min.css">-->
     <!--&lt;!&ndash; Ionicons &ndash;&gt;-->
     <!--<link rel="stylesheet" href="../dist/css/ionicons.min.css">-->
     <!-- Theme style -->
-    <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="/static/dist/css/AdminLTE.min.css"/>
     <!-- iCheck -->
-    <link rel="stylesheet" href="../plugins/iCheck/square/blue.css">
+    <link rel="stylesheet" href="/static/plugins/iCheck/square/blue.css"/>
     <!-- Common Css -->
-    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="/static/css/common.css"/>
 
 
 </head>
@@ -33,39 +33,39 @@
     <div class="login-box-body">
         <p class="login-box-msg" style="color: #0f74a8">用户登陆 </p>
 
-        <form id="loginform" method="post">
+        <div id="loginform">
             <div class="form-group has-feedback">
-                <input id="userid" type="email" class="form-control" placeholder="Email">
+                <input id="userid" type="email" class="form-control" placeholder="Email"/>
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input id="userpassword" type="password" class="form-control" placeholder="Password">
+                <input id="userpassword" type="password" class="form-control" placeholder="Password"/>
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">
                 <div class="col-xs-8">
                     <div class="checkbox icheck" style="margin-left: 20px">
                         <label>
-                            <input type="checkbox"> 记住我
+                            <input type="checkbox"/> 记住我
                         </label>
                     </div>
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-4">
-                    <button id="submit" type="submit" class="btn btn-primary btn-block btn-flat">登陆</button>
+                    <button id="submit" type="button" class="btn btn-primary btn-block btn-flat">登陆</button>
                 </div>
                 <!-- /.col -->
             </div>
-        </form>
+        </div>
 
         <div class="social-auth-links text-center">
             <p>- OR -</p>
-            <a href="#" > <img src="../img/mooclogo.png" height="30" width="36" style="padding-left: 0"/></a>
+            <a href="#" > <img src="/static/img/mooclogo.png" height="30" width="36" style="padding-left: 0"/></a>
 
         </div>
         <!-- /.social-auth-links -->
 
-        <a href="./forget.html">忘记密码</a><br>
+        <a href="./forget.html">忘记密码</a><br/>
         <a href="./register.html" class="text-center">现在注册</a>
 
     </div>
@@ -74,14 +74,14 @@
 <!-- /.login-box -->
 
 <!-- jQuery 2.2.3 -->
-<script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="/static/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
-<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
 <!-- iCheck -->
-<script src="../plugins/iCheck/icheck.min.js"></script>
+<script src="/static/plugins/iCheck/icheck.min.js"></script>
 
 
-<script src="../js/login.js"></script>
+<script src="/static/js/login.js"></script>
 
 <script>
     $(function () {

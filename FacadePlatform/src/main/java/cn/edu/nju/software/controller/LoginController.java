@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 public class LoginController {
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST,
+        consumes = "application/json")
     public Result login(@RequestBody LoginCommand command) {
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(command.getUsername(), command.getPassword());
