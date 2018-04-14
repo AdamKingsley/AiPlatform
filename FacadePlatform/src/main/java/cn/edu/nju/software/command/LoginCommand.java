@@ -1,6 +1,5 @@
 package cn.edu.nju.software.command;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import lombok.Getter;
 import lombok.Setter;
 

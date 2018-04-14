@@ -2,7 +2,7 @@
 <configuration scan="true" scanPeriod="60 seconds" debug="true">
     <contextName>project</contextName>
     <jmxConfigurator/>
-    <property name="LOG_HOME" value="/Users/linyufan/Documents/itellijidea/AiPlatform/log"/>
+    <property name="LOG_HOME" value="log"/>
 
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>

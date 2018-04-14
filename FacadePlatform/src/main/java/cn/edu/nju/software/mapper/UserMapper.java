@@ -4,11 +4,13 @@ import cn.edu.nju.software.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.BaseMapper;
 
 /**
  * Created by mengf on 2018/4/10 0010.
  */
+@Repository
 @Mapper
 public interface UserMapper extends BaseMapper<User> {
 

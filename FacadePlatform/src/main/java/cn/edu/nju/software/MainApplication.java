@@ -19,7 +19,7 @@ import javax.sql.DataSource;
 @SpringBootApplication
 @EnableTransactionManagement
 @ComponentScan("cn.edu.nju.software")
-@MapperScan(("cn.edu.nju.software.**.mapper"))
+@MapperScan("cn.edu.nju.software.mapper")
 public class MainApplication {
 
     public static void main(String[] args) {

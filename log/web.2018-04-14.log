@@ -1,0 +1,109 @@
+2018-04-14 19:31:37.040 [restartedMain] INFO  cn.edu.nju.software.MainApplication 48 - Starting MainApplication on HermitdeMacbook-Air.local with PID 5332 (/Users/Hermit/Desktop/GitProjects/AiPlatform/FacadePlatform/target/classes started by Hermit in /Users/Hermit/Desktop/GitProjects/AiPlatform)
+2018-04-14 19:31:37.049 [restartedMain] DEBUG cn.edu.nju.software.MainApplication 51 - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+2018-04-14 19:31:37.050 [restartedMain] INFO  cn.edu.nju.software.MainApplication 597 - The following profiles are active: dev
+2018-04-14 19:31:37.462 [background-preinit] INFO  org.hibernate.validator.internal.util.Version 30 - HV000001: Hibernate Validator 5.3.5.Final
+2018-04-14 19:31:37.866 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext 583 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@450a372b: startup date [Sat Apr 14 19:31:37 CST 2018]; root of context hierarchy
+2018-04-14 19:31:40.184 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate 165 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-04-14 19:31:40.534 [restartedMain] WARN  tk.mybatis.spring.mapper.ClassPathMapperScanner 225 - Skipping MapperFactoryBean with name 'userMapper' and 'cn.edu.nju.software.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2018-04-14 19:31:40.535 [restartedMain] WARN  tk.mybatis.spring.mapper.ClassPathMapperScanner 142 - No MyBatis mapper was found in '[cn.edu.nju.software]' package. Please check your configuration.
+2018-04-14 19:31:41.514 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$fe92ecde] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-14 19:31:41.947 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'shiroConfig' of type [cn.edu.nju.software.common.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$aa8b642d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-14 19:31:43.042 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'mybatis-tk.mybatis.mapper.autoconfigure.MybatisProperties' of type [tk.mybatis.mapper.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-14 19:31:43.056 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'tk.mybatis.mapper.autoconfigure.MapperAutoConfiguration' of type [tk.mybatis.mapper.autoconfigure.MapperAutoConfiguration$$EnhancerBySpringCGLIB$$b4839477] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-14 19:31:43.067 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'mainApplication' of type [cn.edu.nju.software.MainApplication$$EnhancerBySpringCGLIB$$91f2ba23] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-14 19:31:43.706 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'datasource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-14 19:31:43.782 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$e086903e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-14 19:31:43.818 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-14 19:31:43.837 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'dataSourceInitializer' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-14 19:31:44.132 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-14 19:31:44.150 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-14 19:31:44.868 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'userMapper' of type [tk.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-14 19:31:44.878 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'userMapper' of type [com.sun.proxy.$Proxy89] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-14 19:31:44.894 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'accountService' of type [cn.edu.nju.software.service.AccountService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-14 19:31:44.898 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'authRealm' of type [cn.edu.nju.software.common.shiro.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-14 19:31:44.938 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-14 19:31:46.248 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer 89 - Tomcat initialized with port(s): 8080 (http)
+2018-04-14 19:31:46.288 [restartedMain] INFO  org.apache.catalina.core.StandardService 179 - Starting service [Tomcat]
+2018-04-14 19:31:46.292 [restartedMain] INFO  org.apache.catalina.core.StandardEngine 179 - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-04-14 19:31:46.496 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] 179 - Initializing Spring embedded WebApplicationContext
+2018-04-14 19:31:46.497 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader 276 - Root WebApplicationContext: initialization completed in 8631 ms
+2018-04-14 19:31:46.881 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean 190 - Mapping servlet: 'statViewServlet' to [/druid/*]
+2018-04-14 19:31:46.887 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean 190 - Mapping servlet: 'dispatcherServlet' to [/]
+2018-04-14 19:31:46.890 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean 258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-04-14 19:31:46.891 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean 258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-04-14 19:31:46.891 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean 258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-04-14 19:31:46.892 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean 258 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-04-14 19:31:46.892 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean 271 - Mapping filter: 'webStatFilter' to urls: [/*]
+2018-04-14 19:31:46.892 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean 258 - Mapping filter: 'shiroFilter' to: [/*]
+2018-04-14 19:31:48.091 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter 534 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@450a372b: startup date [Sat Apr 14 19:31:37 CST 2018]; root of context hierarchy
+2018-04-14 19:31:48.260 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/currentUser],methods=[GET]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.AccountController.currentUser()
+2018-04-14 19:31:48.267 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/upload/video],methods=[POST]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.FileUploadController.uploadVideo(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2018-04-14 19:31:48.267 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/upload/image/content],methods=[POST]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.FileUploadController.uploadContentImage(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2018-04-14 19:31:48.268 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/upload/image/style],methods=[POST]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.FileUploadController.uploadStyleImage(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2018-04-14 19:31:48.269 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/login],methods=[POST],consumes=[application/json]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.LoginController.login(cn.edu.nju.software.command.LoginCommand)
+2018-04-14 19:31:48.270 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/logout],methods=[POST]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.LoginController.logout()
+2018-04-14 19:31:48.270 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/login],methods=[GET]}" onto public java.lang.String cn.edu.nju.software.controller.LoginPageController.toLogin()
+2018-04-14 19:31:48.271 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/register],methods=[POST]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.RegisterController.register(cn.edu.nju.software.command.RegisterCommand)
+2018-04-14 19:31:48.272 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/register],methods=[GET]}" onto public java.lang.String cn.edu.nju.software.controller.RegisterPageController.toRegister()
+2018-04-14 19:31:48.273 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/test/one],methods=[GET]}" onto public cn.edu.nju.software.entity.TestEntity cn.edu.nju.software.controller.TestController.get()
+2018-04-14 19:31:48.273 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/test/list],methods=[GET]}" onto public java.util.List<cn.edu.nju.software.entity.TestEntity> cn.edu.nju.software.controller.TestController.getList()
+2018-04-14 19:31:48.274 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/test/error],methods=[GET]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.TestController.getError()
+2018-04-14 19:31:48.277 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-04-14 19:31:48.277 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-14 19:31:48.341 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping 362 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-14 19:31:48.341 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping 362 - Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-14 19:31:48.374 [restartedMain] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver 273 - Detected @ExceptionHandler methods in exceptionHandle
+2018-04-14 19:31:48.422 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping 362 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-14 19:31:49.896 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer 58 - LiveReload server is running on port 35729
+2018-04-14 19:31:49.978 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter 431 - Registering beans for JMX exposure on startup
+2018-04-14 19:31:49.981 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter 916 - Bean with name 'datasource' has been autodetected for JMX exposure
+2018-04-14 19:31:49.988 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter 671 - Located MBean 'datasource': registering with JMX server as MBean [com.alibaba.druid.pool:name=datasource,type=DruidDataSource]
+2018-04-14 19:31:50.020 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol 179 - Initializing ProtocolHandler ["http-nio-8080"]
+2018-04-14 19:31:50.030 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol 179 - Starting ProtocolHandler ["http-nio-8080"]
+2018-04-14 19:31:50.065 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool 179 - Using a shared selector for servlet write/read
+2018-04-14 19:31:50.128 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer 201 - Tomcat started on port(s): 8080 (http)
+2018-04-14 19:31:50.141 [restartedMain] INFO  cn.edu.nju.software.MainApplication 57 - Started MainApplication in 14.092 seconds (JVM running for 16.543)
+2018-04-14 19:32:11.431 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] 179 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-04-14 19:32:11.435 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet 489 - FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-14 19:32:11.574 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet 508 - FrameworkServlet 'dispatcherServlet': initialization completed in 139 ms
+2018-04-14 19:32:11.771 [http-nio-8080-exec-1] WARN  org.springframework.web.servlet.PageNotFound 1176 - No mapping found for HTTP request with URI [/] in DispatcherServlet with name 'dispatcherServlet'
+2018-04-14 19:32:17.413 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/login
+2018-04-14 19:32:17.415 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-14 19:32:17.424 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=login
+2018-04-14 19:32:17.443 [http-nio-8080-exec-3] INFO  org.thymeleaf.TemplateEngine 825 - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-04-14 19:32:17.568 [http-nio-8080-exec-3] INFO  o.t.templateresolver.AbstractTemplateResolver 99 - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-04-14 19:32:17.569 [http-nio-8080-exec-3] INFO  o.t.templateresolver.AbstractTemplateResolver 110 - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-04-14 19:32:17.570 [http-nio-8080-exec-3] INFO  o.t.messageresolver.AbstractMessageResolver 72 - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-04-14 19:32:17.570 [http-nio-8080-exec-3] INFO  o.t.messageresolver.AbstractMessageResolver 78 - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-04-14 19:32:17.577 [http-nio-8080-exec-3] INFO  org.thymeleaf.TemplateEngine.CONFIG 123 - [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * XML
+[THYMELEAF]     * VALIDXML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-04-14 19:32:17.577 [http-nio-8080-exec-3] INFO  org.thymeleaf.TemplateEngine 838 - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-04-14 19:32:30.171 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/login
+2018-04-14 19:32:30.172 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-14 19:32:33.561 [http-nio-8080-exec-6] INFO  com.alibaba.druid.pool.DruidDataSource 928 - {dataSource-1} inited
+2018-04-14 19:32:33.570 [http-nio-8080-exec-6] DEBUG cn.edu.nju.software.mapper.UserMapper.selectOne 159 - ==>  Preparing: SELECT id,username,password,salt,mail,role_id,state FROM t_user WHERE username = ? 
+2018-04-14 19:32:33.621 [http-nio-8080-exec-6] DEBUG cn.edu.nju.software.mapper.UserMapper.selectOne 159 - ==> Parameters: user03(String)
+2018-04-14 19:32:33.858 [http-nio-8080-exec-6] DEBUG cn.edu.nju.software.mapper.UserMapper.selectOne 159 - <==      Total: 1
+2018-04-14 19:32:34.117 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=Result{success=true, data=ShiroUser{id=5, username='user03', mail='123456700089@mail.com', roleName='null', roleType=2, state=1}, errorCode='', message='登录成功', errorMessage='', errorMessageList=null}
+2018-04-14 19:44:15.620 [http-nio-8080-exec-8] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/login
+2018-04-14 19:44:15.631 [http-nio-8080-exec-8] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-14 19:44:15.993 [http-nio-8080-exec-8] DEBUG cn.edu.nju.software.mapper.UserMapper.selectOne 159 - ==>  Preparing: SELECT id,username,password,salt,mail,role_id,state FROM t_user WHERE username = ? 
+2018-04-14 19:44:15.996 [http-nio-8080-exec-8] DEBUG cn.edu.nju.software.mapper.UserMapper.selectOne 159 - ==> Parameters: user03(String)
+2018-04-14 19:44:16.203 [http-nio-8080-exec-8] DEBUG cn.edu.nju.software.mapper.UserMapper.selectOne 159 - <==      Total: 1
+2018-04-14 19:44:16.228 [http-nio-8080-exec-8] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=Result{success=false, data=null, errorCode='-103', message='', errorMessage='用户登录失败', errorMessageList=null}
