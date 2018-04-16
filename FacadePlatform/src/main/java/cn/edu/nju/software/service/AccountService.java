@@ -22,7 +22,6 @@ public class AccountService {
     @Autowired
     UserMapper userMapper;
 
-
     public Result register(RegisterCommand command) {
         //用户名不能冲突
         if (userMapper.countByUsername(command.getUsername()) > 0) {

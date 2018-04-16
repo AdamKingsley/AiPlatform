@@ -1,8 +1,6 @@
 package cn.edu.nju.software.common.shiro;
 
-import cn.edu.nju.software.common.result.PageResult;
 import cn.edu.nju.software.entity.User;
-import cn.edu.nju.software.entity.UserInfo;
 import cn.edu.nju.software.service.AccountService;
 import cn.edu.nju.software.util.EncodeUtil;
 import cn.edu.nju.software.util.PasswordHelper;

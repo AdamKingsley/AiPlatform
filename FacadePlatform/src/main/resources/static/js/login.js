@@ -1,32 +1,34 @@
+"use strict";
+
 (function() {
     init();
 
     function init() {
+        $("input").iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%' // optional
+        });
+
         $("#submit").click(function () {
-            console.log("mmp");
-            var data = {
-                username:$('#userid').val(),
-                password:$('#userpassword').val()
-            };
+            var data = $("#loginform").serializeJson();
+            if (!isValid(data["username"])) {
+                toastr.error("用户名不能为空！");
+                return;
+            }
             $.ajax({
                 url: "/login",
                 type:"POST",
                 data: JSON.stringify(data),
-                contentType: 'application/json;charset=UTF-8',
+                contentType: "application/json;charset=UTF-8",
                 dataType:"json",
-                success: function (data) {
-                    console.log(data);
-                    if (data.success=="true"){
-                        // window.location.href("./index2.html")
-
+                success: function (res) {
+                    if (res.success === true){
+                        window.location.href = baseurl + "/";
                     }else{
-
-                        console.log("log error")
-
+                        toastr.error(res.errorMessage);
                     }
                 }
-
-
             })
         })
     }

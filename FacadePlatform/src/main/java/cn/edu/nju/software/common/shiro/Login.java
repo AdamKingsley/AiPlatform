@@ -12,4 +12,5 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 public @interface Login {
 //     needed boolean default true
+    boolean value() default true;
 }

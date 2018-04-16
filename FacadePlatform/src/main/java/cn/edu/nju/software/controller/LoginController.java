@@ -28,7 +28,7 @@ public class LoginController {
         return Result.success().message("登录成功").withData(ShiroUtils.currentUser());
     }
 
-    @PostMapping("logout")
+    @PostMapping("/logout")
     public Result logout() {
         Subject subject = SecurityUtils.getSubject();
         subject.logout();

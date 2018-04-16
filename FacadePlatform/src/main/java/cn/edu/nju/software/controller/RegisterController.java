@@ -18,7 +18,6 @@ public class RegisterController {
 
     @PostMapping("/register")
     public Result register(@RequestBody RegisterCommand registerCommand) {
-        System.out.println(registerCommand);
         return accountService.register(registerCommand);
     }
 }

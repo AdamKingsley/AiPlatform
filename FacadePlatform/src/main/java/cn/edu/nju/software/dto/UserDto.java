@@ -11,6 +11,7 @@ import javax.persistence.Id;
 @Getter
 @Setter
 public class UserDto extends IdDto {
+
     private String username;
     private String mail;
     private Integer roleId;

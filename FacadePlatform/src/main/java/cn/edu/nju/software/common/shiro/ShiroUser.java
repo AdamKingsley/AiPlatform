@@ -18,7 +18,7 @@ public class ShiroUser implements Serializable {
     //private String password;
     private String mail;
     //private String tel;
-    //角色名称 考生/管理员etc
+    //角色名称
     private String roleName;
     //角色对应的编号
     private Integer roleId;
