@@ -20,10 +20,11 @@ import org.springframework.web.bind.annotation.*;
 public class LoginController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST,
-        consumes = "application/json")
+            consumes = "application/json")
     public Result login(@RequestBody LoginCommand command) {
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(command.getUsername(), command.getPassword());
+        token.setRememberMe(command.getRememberMe());
         subject.login(token);
         return Result.success().message("登录成功").withData(ShiroUtils.currentUser());
     }

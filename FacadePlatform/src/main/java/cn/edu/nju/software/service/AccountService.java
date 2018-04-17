@@ -25,11 +25,11 @@ public class AccountService {
     public Result register(RegisterCommand command) {
         //用户名不能冲突
         if (userMapper.countByUsername(command.getUsername()) > 0) {
-            return Result.error().message("用户名已被占用");
+            return Result.error().errorMessage("用户名已被占用");
         }
         //邮箱不能冲突
         if (userMapper.countByMail(command.getMail()) > 0) {
-            return Result.error().message("邮箱已经被注册");
+            return Result.error().errorMessage("邮箱已经被注册");
         }
 
         User user = new User();
