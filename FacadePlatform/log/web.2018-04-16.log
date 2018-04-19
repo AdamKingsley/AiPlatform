@@ -816,3 +816,1552 @@ Caused by: java.net.ConnectException: Operation timed out (Connection timed out)
 2018-04-16 14:09:29.916 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
 2018-04-16 14:09:29.917 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
 2018-04-16 14:09:29.927 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 14:50:50.142 [restartedMain] INFO  cn.edu.nju.software.MainApplication 48 - Starting MainApplication on HermitdeMacbook-Air.local with PID 1926 (/Users/Hermit/Desktop/GitProjects/AiPlatform/FacadePlatform/target/classes started by Hermit in /Users/Hermit/Desktop/GitProjects/AiPlatform/FacadePlatform)
+2018-04-16 14:50:50.156 [restartedMain] DEBUG cn.edu.nju.software.MainApplication 51 - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+2018-04-16 14:50:50.156 [restartedMain] INFO  cn.edu.nju.software.MainApplication 597 - The following profiles are active: dev
+2018-04-16 14:50:51.371 [background-preinit] INFO  org.hibernate.validator.internal.util.Version 30 - HV000001: Hibernate Validator 5.3.5.Final
+2018-04-16 14:50:51.636 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext 583 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@369e049b: startup date [Mon Apr 16 14:50:51 CST 2018]; root of context hierarchy
+2018-04-16 14:50:54.805 [restartedMain] WARN  tk.mybatis.spring.mapper.ClassPathMapperScanner 225 - Skipping MapperFactoryBean with name 'userMapper' and 'cn.edu.nju.software.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2018-04-16 14:50:54.806 [restartedMain] WARN  tk.mybatis.spring.mapper.ClassPathMapperScanner 142 - No MyBatis mapper was found in '[cn.edu.nju.software]' package. Please check your configuration.
+2018-04-16 14:50:55.620 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e4309dfd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:50:56.212 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'shiroConfig' of type [cn.edu.nju.software.common.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$9029154c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:50:58.229 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'mybatis-tk.mybatis.mapper.autoconfigure.MybatisProperties' of type [tk.mybatis.mapper.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:50:58.283 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'tk.mybatis.mapper.autoconfigure.MapperAutoConfiguration' of type [tk.mybatis.mapper.autoconfigure.MapperAutoConfiguration$$EnhancerBySpringCGLIB$$9a214596] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:50:58.362 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'mainApplication' of type [cn.edu.nju.software.MainApplication$$EnhancerBySpringCGLIB$$77906b42] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:50:59.404 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'datasource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:50:59.619 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$c624415d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:50:59.675 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:50:59.720 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'dataSourceInitializer' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:51:00.006 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:51:00.048 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:51:00.806 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'userMapper' of type [tk.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:51:00.819 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'userMapper' of type [com.sun.proxy.$Proxy86] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:51:00.875 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'accountService' of type [cn.edu.nju.software.service.AccountService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:51:00.881 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'authRealm' of type [cn.edu.nju.software.common.shiro.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:51:00.930 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:51:02.163 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer 89 - Tomcat initialized with port(s): 8080 (http)
+2018-04-16 14:51:02.209 [restartedMain] INFO  org.apache.catalina.core.StandardService 179 - Starting service [Tomcat]
+2018-04-16 14:51:02.213 [restartedMain] INFO  org.apache.catalina.core.StandardEngine 179 - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-04-16 14:51:02.463 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] 179 - Initializing Spring embedded WebApplicationContext
+2018-04-16 14:51:02.463 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader 276 - Root WebApplicationContext: initialization completed in 10828 ms
+2018-04-16 14:51:03.078 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean 190 - Mapping servlet: 'statViewServlet' to [/druid/*]
+2018-04-16 14:51:03.083 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean 190 - Mapping servlet: 'dispatcherServlet' to [/]
+2018-04-16 14:51:03.089 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean 258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-04-16 14:51:03.090 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean 258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-04-16 14:51:03.091 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean 258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-04-16 14:51:03.092 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean 258 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-04-16 14:51:03.093 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean 271 - Mapping filter: 'webStatFilter' to urls: [/*]
+2018-04-16 14:51:03.094 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean 258 - Mapping filter: 'shiroFilter' to: [/*]
+2018-04-16 14:51:04.186 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter 534 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@369e049b: startup date [Mon Apr 16 14:50:51 CST 2018]; root of context hierarchy
+2018-04-16 14:51:04.428 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/currentUser],methods=[GET]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.AccountController.currentUser()
+2018-04-16 14:51:04.434 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/upload/image/content],methods=[POST]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.FileUploadController.uploadContentImage(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2018-04-16 14:51:04.435 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/upload/video],methods=[POST]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.FileUploadController.uploadVideo(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2018-04-16 14:51:04.436 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/upload/image/style],methods=[POST]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.FileUploadController.uploadStyleImage(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2018-04-16 14:51:04.437 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/],methods=[GET]}" onto public java.lang.String cn.edu.nju.software.controller.HomePageController.toHome()
+2018-04-16 14:51:04.441 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/logout],methods=[POST]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.LoginController.logout()
+2018-04-16 14:51:04.442 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/login],methods=[POST],consumes=[application/json]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.LoginController.login(cn.edu.nju.software.command.LoginCommand)
+2018-04-16 14:51:04.445 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/login],methods=[GET]}" onto public java.lang.String cn.edu.nju.software.controller.LoginPageController.toLogin()
+2018-04-16 14:51:04.446 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/register],methods=[POST]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.RegisterController.register(cn.edu.nju.software.command.RegisterCommand)
+2018-04-16 14:51:04.448 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/register],methods=[GET]}" onto public java.lang.String cn.edu.nju.software.controller.RegisterPageController.toRegister()
+2018-04-16 14:51:04.451 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/test/one],methods=[GET]}" onto public cn.edu.nju.software.entity.TestEntity cn.edu.nju.software.controller.TestController.get()
+2018-04-16 14:51:04.453 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/test/error],methods=[GET]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.TestController.getError()
+2018-04-16 14:51:04.454 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/test/list],methods=[GET]}" onto public java.util.List<cn.edu.nju.software.entity.TestEntity> cn.edu.nju.software.controller.TestController.getList()
+2018-04-16 14:51:04.463 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-04-16 14:51:04.465 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-16 14:51:04.582 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping 362 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-16 14:51:04.583 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping 362 - Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-16 14:51:04.629 [restartedMain] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver 273 - Detected @ExceptionHandler methods in exceptionHandle
+2018-04-16 14:51:04.690 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping 362 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-16 14:51:06.170 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer 58 - LiveReload server is running on port 35729
+2018-04-16 14:51:06.514 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter 431 - Registering beans for JMX exposure on startup
+2018-04-16 14:51:06.516 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter 916 - Bean with name 'datasource' has been autodetected for JMX exposure
+2018-04-16 14:51:06.524 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter 671 - Located MBean 'datasource': registering with JMX server as MBean [com.alibaba.druid.pool:name=datasource,type=DruidDataSource]
+2018-04-16 14:51:06.568 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol 179 - Initializing ProtocolHandler ["http-nio-8080"]
+2018-04-16 14:51:06.633 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol 179 - Starting ProtocolHandler ["http-nio-8080"]
+2018-04-16 14:51:06.694 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool 179 - Using a shared selector for servlet write/read
+2018-04-16 14:51:06.769 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer 201 - Tomcat started on port(s): 8080 (http)
+2018-04-16 14:51:06.799 [restartedMain] INFO  cn.edu.nju.software.MainApplication 57 - Started MainApplication in 18.216 seconds (JVM running for 20.388)
+2018-04-16 14:51:15.310 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] 179 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-04-16 14:51:15.316 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet 489 - FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-16 14:51:15.469 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet 508 - FrameworkServlet 'dispatcherServlet': initialization completed in 153 ms
+2018-04-16 14:51:15.641 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/login.jsp
+2018-04-16 14:51:15.642 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 14:51:15.659 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=login
+2018-04-16 14:51:15.724 [http-nio-8080-exec-1] INFO  org.thymeleaf.TemplateEngine 825 - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-04-16 14:51:15.876 [http-nio-8080-exec-1] INFO  o.t.templateresolver.AbstractTemplateResolver 99 - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-04-16 14:51:15.876 [http-nio-8080-exec-1] INFO  o.t.templateresolver.AbstractTemplateResolver 110 - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-04-16 14:51:15.877 [http-nio-8080-exec-1] INFO  o.t.messageresolver.AbstractMessageResolver 72 - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-04-16 14:51:15.878 [http-nio-8080-exec-1] INFO  o.t.messageresolver.AbstractMessageResolver 78 - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-04-16 14:51:15.888 [http-nio-8080-exec-1] INFO  org.thymeleaf.TemplateEngine.CONFIG 123 - [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * VALIDXML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-04-16 14:51:15.889 [http-nio-8080-exec-1] INFO  org.thymeleaf.TemplateEngine 838 - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-04-16 14:51:21.833 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/login
+2018-04-16 14:51:21.833 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 14:52:08.948 [Thread-8] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext 984 - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@369e049b: startup date [Mon Apr 16 14:50:51 CST 2018]; root of context hierarchy
+2018-04-16 14:52:08.975 [Thread-8] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter 449 - Unregistering JMX-exposed beans on shutdown
+2018-04-16 14:52:08.976 [Thread-8] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter 241 - Unregistering JMX-exposed beans
+2018-04-16 14:52:32.380 [http-nio-8080-exec-7] INFO  com.alibaba.druid.pool.DruidDataSource 928 - {dataSource-1} inited
+2018-04-16 14:52:32.394 [Thread-8] INFO  com.alibaba.druid.pool.DruidDataSource 1823 - {dataSource-1} closed
+2018-04-16 14:52:34.727 [http-nio-8080-exec-7] WARN  org.apache.shiro.authc.AbstractAuthenticator 216 - Authentication failed for token submission [org.apache.shiro.authc.UsernamePasswordToken - user03, rememberMe=false].  Possible unexpected error? (Typical or expected login exceptions should extend from AuthenticationException).
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is java.sql.SQLException
+### The error may exist in cn/edu/nju/software/mapper/UserMapper.java (best guess)
+### The error may involve cn.edu.nju.software.mapper.UserMapper.selectOne
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is java.sql.SQLException
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy80.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:166)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:83)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy86.selectOne(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy88.selectOne(Unknown Source)
+	at cn.edu.nju.software.service.AccountService.findByUsername(AccountService.java:52)
+	at cn.edu.nju.software.common.shiro.MyShiroRealm.doGetAuthenticationInfo(MyShiroRealm.java:44)
+	at org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:571)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doSingleRealmAuthentication(ModularRealmAuthenticator.java:180)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:267)
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198)
+	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:274)
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:260)
+	at cn.edu.nju.software.controller.LoginController.login(LoginController.java:27)
+	at cn.edu.nju.software.controller.LoginController$$FastClassBySpringCGLIB$$56255daa.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:52)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85)
+	at cn.edu.nju.software.common.aspect.HttpAspect.doAround(HttpAspect.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:629)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:618)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:52)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at cn.edu.nju.software.controller.LoginController$$EnhancerBySpringCGLIB$$357660cc.login(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is java.sql.SQLException
+### The error may exist in cn/edu/nju/software/mapper/UserMapper.java (best guess)
+### The error may involve cn.edu.nju.software.mapper.UserMapper.selectOne
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is java.sql.SQLException
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:150)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 119 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is java.sql.SQLException
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:82)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:68)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:338)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	... 126 common frames omitted
+Caused by: java.sql.SQLException: null
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionInternal(DruidDataSource.java:1470)
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionDirect(DruidDataSource.java:1253)
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:4619)
+	at com.alibaba.druid.filter.stat.StatFilter.dataSource_getConnection(StatFilter.java:680)
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:4615)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1231)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1223)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:90)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:111)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:77)
+	... 136 common frames omitted
+Caused by: java.lang.InterruptedException: null
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at com.alibaba.druid.pool.DruidDataSource.pollLast(DruidDataSource.java:1944)
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionInternal(DruidDataSource.java:1456)
+	... 145 common frames omitted
+2018-04-16 14:52:34.738 [http-nio-8080-exec-7] WARN  org.apache.shiro.mgt.DefaultSecurityManager 238 - Delegate RememberMeManager instance of type [org.apache.shiro.web.mgt.CookieRememberMeManager] threw an exception during onFailedLogin for AuthenticationToken [org.apache.shiro.authc.UsernamePasswordToken - user03, rememberMe=false].
+java.lang.NullPointerException: null
+	at org.apache.catalina.connector.Request.getServletContext(Request.java:1653)
+	at org.apache.catalina.connector.Request.getContextPath(Request.java:2046)
+	at org.apache.catalina.connector.RequestFacade.getContextPath(RequestFacade.java:784)
+	at javax.servlet.http.HttpServletRequestWrapper.getContextPath(HttpServletRequestWrapper.java:150)
+	at org.apache.shiro.web.servlet.SimpleCookie.calculatePath(SimpleCookie.java:192)
+	at org.apache.shiro.web.servlet.SimpleCookie.removeFrom(SimpleCookie.java:367)
+	at org.apache.shiro.web.mgt.CookieRememberMeManager.forgetIdentity(CookieRememberMeManager.java:288)
+	at org.apache.shiro.web.mgt.CookieRememberMeManager.forgetIdentity(CookieRememberMeManager.java:260)
+	at org.apache.shiro.mgt.AbstractRememberMeManager.onFailedLogin(AbstractRememberMeManager.java:520)
+	at org.apache.shiro.mgt.DefaultSecurityManager.rememberMeFailedLogin(DefaultSecurityManager.java:232)
+	at org.apache.shiro.mgt.DefaultSecurityManager.onFailedLogin(DefaultSecurityManager.java:299)
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:277)
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:260)
+	at cn.edu.nju.software.controller.LoginController.login(LoginController.java:27)
+	at cn.edu.nju.software.controller.LoginController$$FastClassBySpringCGLIB$$56255daa.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:52)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85)
+	at cn.edu.nju.software.common.aspect.HttpAspect.doAround(HttpAspect.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:629)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:618)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:52)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at cn.edu.nju.software.controller.LoginController$$EnhancerBySpringCGLIB$$357660cc.login(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-04-16 14:52:34.754 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=Result{success=false, data=null, errorCode='-1', message='系统内部异常:class org.apache.shiro.authc.AuthenticationException', errorMessage='Authentication failed for token submission [org.apache.shiro.authc.UsernamePasswordToken - user03, rememberMe=false].  Possible unexpected error? (Typical or expected login exceptions should extend from AuthenticationException).', errorMessageList=null}
+2018-04-16 14:52:41.322 [restartedMain] INFO  cn.edu.nju.software.MainApplication 48 - Starting MainApplication on HermitdeMacbook-Air.local with PID 1969 (/Users/Hermit/Desktop/GitProjects/AiPlatform/FacadePlatform/target/classes started by Hermit in /Users/Hermit/Desktop/GitProjects/AiPlatform/FacadePlatform)
+2018-04-16 14:52:41.354 [restartedMain] DEBUG cn.edu.nju.software.MainApplication 51 - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+2018-04-16 14:52:41.355 [restartedMain] INFO  cn.edu.nju.software.MainApplication 597 - The following profiles are active: dev
+2018-04-16 14:52:41.764 [background-preinit] INFO  org.hibernate.validator.internal.util.Version 30 - HV000001: Hibernate Validator 5.3.5.Final
+2018-04-16 14:52:41.917 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext 583 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4d1f0aea: startup date [Mon Apr 16 14:52:41 CST 2018]; root of context hierarchy
+2018-04-16 14:52:43.185 [restartedMain] WARN  tk.mybatis.spring.mapper.ClassPathMapperScanner 225 - Skipping MapperFactoryBean with name 'userMapper' and 'cn.edu.nju.software.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2018-04-16 14:52:43.188 [restartedMain] WARN  tk.mybatis.spring.mapper.ClassPathMapperScanner 142 - No MyBatis mapper was found in '[cn.edu.nju.software]' package. Please check your configuration.
+2018-04-16 14:52:43.831 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3db460d0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:52:44.108 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'shiroConfig' of type [cn.edu.nju.software.common.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$e9acd81f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:52:44.817 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'mybatis-tk.mybatis.mapper.autoconfigure.MybatisProperties' of type [tk.mybatis.mapper.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:52:44.840 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'tk.mybatis.mapper.autoconfigure.MapperAutoConfiguration' of type [tk.mybatis.mapper.autoconfigure.MapperAutoConfiguration$$EnhancerBySpringCGLIB$$f3a50869] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:52:44.897 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'mainApplication' of type [cn.edu.nju.software.MainApplication$$EnhancerBySpringCGLIB$$d1142e15] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:52:45.695 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'datasource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:52:45.900 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$1fa80430] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:52:45.955 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:52:45.986 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'dataSourceInitializer' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:52:46.131 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:52:46.164 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:52:46.604 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'userMapper' of type [tk.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:52:46.618 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'userMapper' of type [com.sun.proxy.$Proxy86] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:52:46.678 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'accountService' of type [cn.edu.nju.software.service.AccountService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:52:46.683 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'authRealm' of type [cn.edu.nju.software.common.shiro.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:52:46.732 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 14:52:47.355 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer 89 - Tomcat initialized with port(s): 8080 (http)
+2018-04-16 14:52:47.381 [restartedMain] INFO  org.apache.catalina.core.StandardService 179 - Starting service [Tomcat]
+2018-04-16 14:52:47.384 [restartedMain] INFO  org.apache.catalina.core.StandardEngine 179 - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-04-16 14:52:47.536 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] 179 - Initializing Spring embedded WebApplicationContext
+2018-04-16 14:52:47.537 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader 276 - Root WebApplicationContext: initialization completed in 5619 ms
+2018-04-16 14:52:48.022 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean 190 - Mapping servlet: 'statViewServlet' to [/druid/*]
+2018-04-16 14:52:48.025 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean 190 - Mapping servlet: 'dispatcherServlet' to [/]
+2018-04-16 14:52:48.031 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean 258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-04-16 14:52:48.032 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean 258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-04-16 14:52:48.032 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean 258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-04-16 14:52:48.033 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean 258 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-04-16 14:52:48.033 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean 271 - Mapping filter: 'webStatFilter' to urls: [/*]
+2018-04-16 14:52:48.034 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean 258 - Mapping filter: 'shiroFilter' to: [/*]
+2018-04-16 14:52:48.905 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter 534 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4d1f0aea: startup date [Mon Apr 16 14:52:41 CST 2018]; root of context hierarchy
+2018-04-16 14:52:49.033 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/currentUser],methods=[GET]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.AccountController.currentUser()
+2018-04-16 14:52:49.043 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/upload/video],methods=[POST]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.FileUploadController.uploadVideo(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2018-04-16 14:52:49.044 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/upload/image/content],methods=[POST]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.FileUploadController.uploadContentImage(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2018-04-16 14:52:49.044 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/upload/image/style],methods=[POST]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.FileUploadController.uploadStyleImage(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2018-04-16 14:52:49.046 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/],methods=[GET]}" onto public java.lang.String cn.edu.nju.software.controller.HomePageController.toHome()
+2018-04-16 14:52:49.048 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/logout],methods=[POST]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.LoginController.logout()
+2018-04-16 14:52:49.055 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/login],methods=[POST],consumes=[application/json]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.LoginController.login(cn.edu.nju.software.command.LoginCommand)
+2018-04-16 14:52:49.056 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/login],methods=[GET]}" onto public java.lang.String cn.edu.nju.software.controller.LoginPageController.toLogin()
+2018-04-16 14:52:49.058 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/register],methods=[POST]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.RegisterController.register(cn.edu.nju.software.command.RegisterCommand)
+2018-04-16 14:52:49.059 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/register],methods=[GET]}" onto public java.lang.String cn.edu.nju.software.controller.RegisterPageController.toRegister()
+2018-04-16 14:52:49.062 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/test/one],methods=[GET]}" onto public cn.edu.nju.software.entity.TestEntity cn.edu.nju.software.controller.TestController.get()
+2018-04-16 14:52:49.064 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/test/error],methods=[GET]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.TestController.getError()
+2018-04-16 14:52:49.065 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/test/list],methods=[GET]}" onto public java.util.List<cn.edu.nju.software.entity.TestEntity> cn.edu.nju.software.controller.TestController.getList()
+2018-04-16 14:52:49.070 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-04-16 14:52:49.071 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-16 14:52:49.199 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping 362 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-16 14:52:49.201 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping 362 - Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-16 14:52:49.238 [restartedMain] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver 273 - Detected @ExceptionHandler methods in exceptionHandle
+2018-04-16 14:52:49.291 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping 362 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-16 14:52:50.230 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer 58 - LiveReload server is running on port 35729
+2018-04-16 14:52:50.389 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter 431 - Registering beans for JMX exposure on startup
+2018-04-16 14:52:50.424 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter 916 - Bean with name 'datasource' has been autodetected for JMX exposure
+2018-04-16 14:52:50.451 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter 671 - Located MBean 'datasource': registering with JMX server as MBean [com.alibaba.druid.pool:name=datasource,type=DruidDataSource]
+2018-04-16 14:52:50.539 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol 179 - Initializing ProtocolHandler ["http-nio-8080"]
+2018-04-16 14:52:50.572 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol 179 - Starting ProtocolHandler ["http-nio-8080"]
+2018-04-16 14:52:50.617 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool 179 - Using a shared selector for servlet write/read
+2018-04-16 14:52:50.677 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer 201 - Tomcat started on port(s): 8080 (http)
+2018-04-16 14:52:50.686 [restartedMain] INFO  cn.edu.nju.software.MainApplication 57 - Started MainApplication in 10.007 seconds (JVM running for 11.068)
+2018-04-16 15:04:41.082 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] 179 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-04-16 15:04:41.091 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet 489 - FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-16 15:04:41.255 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet 508 - FrameworkServlet 'dispatcherServlet': initialization completed in 163 ms
+2018-04-16 15:04:41.698 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/login
+2018-04-16 15:04:41.699 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:04:45.145 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource 928 - {dataSource-1} inited
+2018-04-16 15:04:45.174 [http-nio-8080-exec-1] DEBUG cn.edu.nju.software.mapper.UserMapper.selectOne 159 - ==>  Preparing: SELECT id,username,password,salt,mail,role_id,state FROM t_user WHERE username = ? 
+2018-04-16 15:04:45.235 [http-nio-8080-exec-1] DEBUG cn.edu.nju.software.mapper.UserMapper.selectOne 159 - ==> Parameters: user03(String)
+2018-04-16 15:04:45.589 [http-nio-8080-exec-1] DEBUG cn.edu.nju.software.mapper.UserMapper.selectOne 159 - <==      Total: 1
+2018-04-16 15:04:45.757 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=Result{success=true, data=ShiroUser{id=5, username='user03', mail='123456700089@mail.com', roleName='null', roleType=2, state=1}, errorCode='', message='登录成功', errorMessage='', errorMessageList=null}
+2018-04-16 15:04:45.865 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:04:45.866 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:04:45.880 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:04:45.967 [http-nio-8080-exec-2] INFO  org.thymeleaf.TemplateEngine 825 - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-04-16 15:04:46.145 [http-nio-8080-exec-2] INFO  o.t.templateresolver.AbstractTemplateResolver 99 - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-04-16 15:04:46.146 [http-nio-8080-exec-2] INFO  o.t.templateresolver.AbstractTemplateResolver 110 - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-04-16 15:04:46.147 [http-nio-8080-exec-2] INFO  o.t.messageresolver.AbstractMessageResolver 72 - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-04-16 15:04:46.148 [http-nio-8080-exec-2] INFO  o.t.messageresolver.AbstractMessageResolver 78 - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-04-16 15:04:46.160 [http-nio-8080-exec-2] INFO  org.thymeleaf.TemplateEngine.CONFIG 123 - [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * XML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * XHTML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-04-16 15:04:46.161 [http-nio-8080-exec-2] INFO  org.thymeleaf.TemplateEngine 838 - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-04-16 15:05:37.456 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:05:37.466 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:05:37.467 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:06:42.172 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:06:42.189 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:06:42.191 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:11:04.681 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:11:04.694 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:11:04.695 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:11:14.276 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:11:14.278 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:11:14.279 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:12:17.289 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:12:17.305 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:12:17.306 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:12:27.634 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:12:27.639 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:12:27.640 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:12:31.311 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:12:31.312 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:12:31.313 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:12:47.464 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:12:47.467 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:12:47.468 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:13:12.890 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:13:12.907 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:13:12.909 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:13:47.644 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:13:47.647 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:13:47.648 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:13:49.128 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:13:49.129 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:13:49.130 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:15:19.467 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:15:19.482 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:15:19.484 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:16:24.839 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:16:24.850 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:16:24.852 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:18:18.132 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:18:18.142 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:18:18.144 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:19:15.874 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:19:15.897 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:19:15.905 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:20:45.756 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:20:45.761 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:20:45.761 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:21:16.788 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:21:16.791 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:21:16.792 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:21:16.946 [http-nio-8080-exec-5] ERROR org.thymeleaf.templateparser.ErrorHandler 57 - [THYMELEAF][http-nio-8080-exec-5] Fatal error during parsing
+org.xml.sax.SAXParseException: 元素类型 "img" 必须由匹配的结束标记 "</img>" 终止。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1749)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2967)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.doParse(AbstractNonValidatingSAXTemplateParser.java:209)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplateUsingPool(AbstractNonValidatingSAXTemplateParser.java:134)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplate(AbstractNonValidatingSAXTemplateParser.java:116)
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:278)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-04-16 15:21:16.996 [http-nio-8080-exec-5] ERROR org.thymeleaf.TemplateEngine 1085 - [THYMELEAF][http-nio-8080-exec-5] Exception processing template "home": Exception parsing document: template="home", line 47 - column 27
+2018-04-16 15:21:17.006 [http-nio-8080-exec-5] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] 181 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Exception parsing document: template="home", line 47 - column 27] with root cause
+org.xml.sax.SAXParseException: 元素类型 "img" 必须由匹配的结束标记 "</img>" 终止。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1749)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2967)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.doParse(AbstractNonValidatingSAXTemplateParser.java:209)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplateUsingPool(AbstractNonValidatingSAXTemplateParser.java:134)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplate(AbstractNonValidatingSAXTemplateParser.java:116)
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:278)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-04-16 15:22:05.469 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:22:05.480 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:22:05.481 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:22:24.283 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:22:24.300 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:22:24.301 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:22:24.333 [http-nio-8080-exec-5] ERROR org.thymeleaf.templateparser.ErrorHandler 57 - [THYMELEAF][http-nio-8080-exec-5] Fatal error during parsing
+org.xml.sax.SAXParseException: 元素类型 "img" 必须由匹配的结束标记 "</img>" 终止。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1749)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2967)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.doParse(AbstractNonValidatingSAXTemplateParser.java:209)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplateUsingPool(AbstractNonValidatingSAXTemplateParser.java:134)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplate(AbstractNonValidatingSAXTemplateParser.java:116)
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:278)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-04-16 15:22:24.357 [http-nio-8080-exec-5] ERROR org.thymeleaf.TemplateEngine 1085 - [THYMELEAF][http-nio-8080-exec-5] Exception processing template "home": Exception parsing document: template="home", line 39 - column 23
+2018-04-16 15:22:24.359 [http-nio-8080-exec-5] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] 181 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Exception parsing document: template="home", line 39 - column 23] with root cause
+org.xml.sax.SAXParseException: 元素类型 "img" 必须由匹配的结束标记 "</img>" 终止。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1749)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2967)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.doParse(AbstractNonValidatingSAXTemplateParser.java:209)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplateUsingPool(AbstractNonValidatingSAXTemplateParser.java:134)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplate(AbstractNonValidatingSAXTemplateParser.java:116)
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:278)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-04-16 15:22:25.298 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:22:25.299 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:22:25.300 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:22:25.312 [http-nio-8080-exec-3] ERROR org.thymeleaf.templateparser.ErrorHandler 57 - [THYMELEAF][http-nio-8080-exec-3] Fatal error during parsing
+org.xml.sax.SAXParseException: 元素类型 "img" 必须由匹配的结束标记 "</img>" 终止。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1749)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2967)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.doParse(AbstractNonValidatingSAXTemplateParser.java:209)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplateUsingPool(AbstractNonValidatingSAXTemplateParser.java:134)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplate(AbstractNonValidatingSAXTemplateParser.java:116)
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:278)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-04-16 15:22:25.339 [http-nio-8080-exec-3] ERROR org.thymeleaf.TemplateEngine 1085 - [THYMELEAF][http-nio-8080-exec-3] Exception processing template "home": Exception parsing document: template="home", line 39 - column 23
+2018-04-16 15:22:25.360 [http-nio-8080-exec-3] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] 181 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Exception parsing document: template="home", line 39 - column 23] with root cause
+org.xml.sax.SAXParseException: 元素类型 "img" 必须由匹配的结束标记 "</img>" 终止。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1749)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2967)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.doParse(AbstractNonValidatingSAXTemplateParser.java:209)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplateUsingPool(AbstractNonValidatingSAXTemplateParser.java:134)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplate(AbstractNonValidatingSAXTemplateParser.java:116)
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:278)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-04-16 15:22:26.009 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:22:26.010 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:22:26.012 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:22:26.021 [http-nio-8080-exec-10] ERROR org.thymeleaf.templateparser.ErrorHandler 57 - [THYMELEAF][http-nio-8080-exec-10] Fatal error during parsing
+org.xml.sax.SAXParseException: 元素类型 "img" 必须由匹配的结束标记 "</img>" 终止。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1749)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2967)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.doParse(AbstractNonValidatingSAXTemplateParser.java:209)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplateUsingPool(AbstractNonValidatingSAXTemplateParser.java:134)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplate(AbstractNonValidatingSAXTemplateParser.java:116)
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:278)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-04-16 15:22:26.040 [http-nio-8080-exec-10] ERROR org.thymeleaf.TemplateEngine 1085 - [THYMELEAF][http-nio-8080-exec-10] Exception processing template "home": Exception parsing document: template="home", line 39 - column 23
+2018-04-16 15:22:26.041 [http-nio-8080-exec-10] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] 181 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Exception parsing document: template="home", line 39 - column 23] with root cause
+org.xml.sax.SAXParseException: 元素类型 "img" 必须由匹配的结束标记 "</img>" 终止。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1749)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2967)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.doParse(AbstractNonValidatingSAXTemplateParser.java:209)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplateUsingPool(AbstractNonValidatingSAXTemplateParser.java:134)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplate(AbstractNonValidatingSAXTemplateParser.java:116)
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:278)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-04-16 15:22:26.695 [http-nio-8080-exec-9] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:22:26.696 [http-nio-8080-exec-9] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:22:26.697 [http-nio-8080-exec-9] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:23:39.850 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:23:39.859 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:23:39.860 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:23:41.145 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:23:41.149 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:23:41.151 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:23:42.137 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:23:42.138 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:23:42.138 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:23:58.718 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:23:58.723 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:23:58.725 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:24:37.874 [http-nio-8080-exec-8] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:24:37.878 [http-nio-8080-exec-8] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:24:37.878 [http-nio-8080-exec-8] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:24:39.782 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:24:39.783 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:24:39.784 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:24:41.163 [http-nio-8080-exec-8] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:24:41.178 [http-nio-8080-exec-8] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:24:41.180 [http-nio-8080-exec-8] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:24:45.392 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:24:45.395 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:24:45.396 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:24:46.566 [http-nio-8080-exec-9] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:24:46.567 [http-nio-8080-exec-9] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:24:46.567 [http-nio-8080-exec-9] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:24:53.897 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:24:53.898 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:24:53.900 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:25:04.403 [http-nio-8080-exec-9] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:25:04.406 [http-nio-8080-exec-9] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:25:04.409 [http-nio-8080-exec-9] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:25:09.146 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/login
+2018-04-16 15:25:09.148 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:25:09.167 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=login
+2018-04-16 15:25:13.281 [http-nio-8080-exec-9] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:25:13.282 [http-nio-8080-exec-9] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:25:13.282 [http-nio-8080-exec-9] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:26:25.467 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:26:25.478 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:26:25.479 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:26:56.038 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:26:56.041 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:26:56.042 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:28:41.005 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:28:41.014 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:28:41.015 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:29:55.579 [http-nio-8080-exec-9] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:29:55.594 [http-nio-8080-exec-9] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:29:55.596 [http-nio-8080-exec-9] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:30:17.020 [http-nio-8080-exec-8] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:30:17.023 [http-nio-8080-exec-8] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:30:17.024 [http-nio-8080-exec-8] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:30:18.524 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:30:18.525 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:30:18.526 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:31:15.570 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:31:15.582 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:31:15.583 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:31:21.760 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:31:21.761 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:31:21.761 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:31:30.568 [http-nio-8080-exec-9] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:31:30.570 [http-nio-8080-exec-9] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:31:30.572 [http-nio-8080-exec-9] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:31:32.332 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:31:32.333 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:31:32.334 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:31:44.596 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:31:44.604 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:31:44.605 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:31:45.804 [http-nio-8080-exec-8] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:31:45.805 [http-nio-8080-exec-8] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:31:45.806 [http-nio-8080-exec-8] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:31:46.796 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:31:46.797 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:31:46.798 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:31:47.013 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:31:47.014 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:31:47.015 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:31:47.185 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:31:47.186 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:31:47.186 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:31:47.362 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:31:47.363 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:31:47.364 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:31:51.251 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/login
+2018-04-16 15:31:51.252 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:31:51.253 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=login
+2018-04-16 15:31:52.253 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:31:52.256 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:31:52.257 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:32:01.313 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:32:01.314 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:32:01.315 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:32:02.559 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:32:02.562 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:32:02.565 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:32:08.748 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:32:08.752 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:32:08.753 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:32:10.147 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:32:10.148 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:32:10.149 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:32:14.624 [http-nio-8080-exec-8] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:32:14.624 [http-nio-8080-exec-8] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:32:14.625 [http-nio-8080-exec-8] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:34:04.112 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:34:04.122 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:34:04.123 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:34:11.731 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:34:11.741 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:34:11.742 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:34:47.294 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:34:47.297 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:34:47.297 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:35:21.062 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:35:21.065 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:35:21.066 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:37:18.859 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:37:18.874 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:37:18.875 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:38:29.048 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:38:29.060 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:38:29.061 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 15:39:37.795 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 15:39:37.805 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 15:39:37.806 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 16:03:17.950 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 16:03:17.966 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:03:17.968 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 16:05:35.074 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 16:05:35.084 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:05:35.085 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 16:05:59.790 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 16:05:59.795 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:05:59.795 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 16:06:01.586 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 16:06:01.588 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:06:01.588 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 16:07:17.769 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 16:07:17.782 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:07:17.783 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 16:09:26.500 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 16:09:26.514 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:09:26.515 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 16:09:30.680 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/login
+2018-04-16 16:09:30.682 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:09:30.682 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=login
+2018-04-16 16:09:30.936 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/login
+2018-04-16 16:09:30.937 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:09:30.938 [http-nio-8080-exec-6] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=login
+2018-04-16 16:09:37.086 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/login
+2018-04-16 16:09:37.089 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:09:40.603 [http-nio-8080-exec-4] DEBUG cn.edu.nju.software.mapper.UserMapper.selectOne 159 - ==>  Preparing: SELECT id,username,password,salt,mail,role_id,state FROM t_user WHERE username = ? 
+2018-04-16 16:09:40.614 [http-nio-8080-exec-4] DEBUG cn.edu.nju.software.mapper.UserMapper.selectOne 159 - ==> Parameters: user03(String)
+2018-04-16 16:09:40.824 [http-nio-8080-exec-4] DEBUG cn.edu.nju.software.mapper.UserMapper.selectOne 159 - <==      Total: 1
+2018-04-16 16:09:40.853 [http-nio-8080-exec-4] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=Result{success=true, data=ShiroUser{id=5, username='user03', mail='123456700089@mail.com', roleName='null', roleType=2, state=1}, errorCode='', message='登录成功', errorMessage='', errorMessageList=null}
+2018-04-16 16:09:40.934 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 16:09:40.935 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:09:40.936 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 16:10:08.207 [http-nio-8080-exec-9] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 16:10:08.230 [http-nio-8080-exec-9] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:10:08.232 [http-nio-8080-exec-9] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 16:10:14.167 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 16:10:14.170 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:10:14.174 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 16:10:23.543 [Thread-8] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext 984 - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4d1f0aea: startup date [Mon Apr 16 14:52:41 CST 2018]; root of context hierarchy
+2018-04-16 16:10:23.619 [Thread-8] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter 449 - Unregistering JMX-exposed beans on shutdown
+2018-04-16 16:10:23.622 [Thread-8] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter 241 - Unregistering JMX-exposed beans
+2018-04-16 16:10:23.670 [Thread-8] INFO  com.alibaba.druid.pool.DruidDataSource 1823 - {dataSource-1} closed
+2018-04-16 16:11:02.770 [restartedMain] INFO  cn.edu.nju.software.MainApplication 48 - Starting MainApplication on HermitdeMacbook-Air.local with PID 2719 (/Users/Hermit/Desktop/GitProjects/AiPlatform/FacadePlatform/target/classes started by Hermit in /Users/Hermit/Desktop/GitProjects/AiPlatform/FacadePlatform)
+2018-04-16 16:11:02.780 [restartedMain] DEBUG cn.edu.nju.software.MainApplication 51 - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+2018-04-16 16:11:02.781 [restartedMain] INFO  cn.edu.nju.software.MainApplication 597 - The following profiles are active: dev
+2018-04-16 16:11:03.515 [background-preinit] INFO  org.hibernate.validator.internal.util.Version 30 - HV000001: Hibernate Validator 5.3.5.Final
+2018-04-16 16:11:03.742 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext 583 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3b507315: startup date [Mon Apr 16 16:11:03 CST 2018]; root of context hierarchy
+2018-04-16 16:11:05.754 [restartedMain] WARN  tk.mybatis.spring.mapper.ClassPathMapperScanner 225 - Skipping MapperFactoryBean with name 'userMapper' and 'cn.edu.nju.software.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2018-04-16 16:11:05.758 [restartedMain] WARN  tk.mybatis.spring.mapper.ClassPathMapperScanner 142 - No MyBatis mapper was found in '[cn.edu.nju.software]' package. Please check your configuration.
+2018-04-16 16:11:06.565 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5b3c782] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 16:11:07.089 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'shiroConfig' of type [cn.edu.nju.software.common.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$b1ac3ed1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 16:11:08.471 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'mybatis-tk.mybatis.mapper.autoconfigure.MybatisProperties' of type [tk.mybatis.mapper.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 16:11:08.494 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'tk.mybatis.mapper.autoconfigure.MapperAutoConfiguration' of type [tk.mybatis.mapper.autoconfigure.MapperAutoConfiguration$$EnhancerBySpringCGLIB$$bba46f1b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 16:11:08.522 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'mainApplication' of type [cn.edu.nju.software.MainApplication$$EnhancerBySpringCGLIB$$991394c7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 16:11:09.574 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'datasource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 16:11:09.750 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$e7a76ae2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 16:11:09.808 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 16:11:09.845 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'dataSourceInitializer' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 16:11:10.136 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 16:11:10.178 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 16:11:10.836 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'userMapper' of type [tk.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 16:11:10.849 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'userMapper' of type [com.sun.proxy.$Proxy86] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 16:11:10.901 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'accountService' of type [cn.edu.nju.software.service.AccountService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 16:11:10.907 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'authRealm' of type [cn.edu.nju.software.common.shiro.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 16:11:10.962 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 327 - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-16 16:11:12.074 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer 89 - Tomcat initialized with port(s): 8080 (http)
+2018-04-16 16:11:12.118 [restartedMain] INFO  org.apache.catalina.core.StandardService 179 - Starting service [Tomcat]
+2018-04-16 16:11:12.124 [restartedMain] INFO  org.apache.catalina.core.StandardEngine 179 - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-04-16 16:11:12.348 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] 179 - Initializing Spring embedded WebApplicationContext
+2018-04-16 16:11:12.348 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader 276 - Root WebApplicationContext: initialization completed in 8606 ms
+2018-04-16 16:11:12.833 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean 190 - Mapping servlet: 'statViewServlet' to [/druid/*]
+2018-04-16 16:11:12.837 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean 190 - Mapping servlet: 'dispatcherServlet' to [/]
+2018-04-16 16:11:12.845 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean 258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-04-16 16:11:12.846 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean 258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-04-16 16:11:12.847 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean 258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-04-16 16:11:12.847 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean 258 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-04-16 16:11:12.847 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean 271 - Mapping filter: 'webStatFilter' to urls: [/*]
+2018-04-16 16:11:12.848 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean 258 - Mapping filter: 'shiroFilter' to: [/*]
+2018-04-16 16:11:13.961 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter 534 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3b507315: startup date [Mon Apr 16 16:11:03 CST 2018]; root of context hierarchy
+2018-04-16 16:11:14.172 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/currentUser],methods=[GET]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.AccountController.currentUser()
+2018-04-16 16:11:14.174 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/autodrive]}" onto public java.lang.String cn.edu.nju.software.controller.AutodrivePageController.toAutodrive()
+2018-04-16 16:11:14.179 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/upload/video],methods=[POST]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.FileUploadController.uploadVideo(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2018-04-16 16:11:14.180 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/upload/image/content],methods=[POST]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.FileUploadController.uploadContentImage(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2018-04-16 16:11:14.181 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/upload/image/style],methods=[POST]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.FileUploadController.uploadStyleImage(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2018-04-16 16:11:14.182 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/],methods=[GET]}" onto public java.lang.String cn.edu.nju.software.controller.HomePageController.toHome(org.springframework.ui.Model)
+2018-04-16 16:11:14.184 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/logout],methods=[POST]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.LoginController.logout()
+2018-04-16 16:11:14.185 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/login],methods=[POST],consumes=[application/json]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.LoginController.login(cn.edu.nju.software.command.LoginCommand)
+2018-04-16 16:11:14.187 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/login],methods=[GET]}" onto public java.lang.String cn.edu.nju.software.controller.LoginPageController.toLogin()
+2018-04-16 16:11:14.188 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/register],methods=[POST]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.RegisterController.register(cn.edu.nju.software.command.RegisterCommand)
+2018-04-16 16:11:14.190 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/register],methods=[GET]}" onto public java.lang.String cn.edu.nju.software.controller.RegisterPageController.toRegister()
+2018-04-16 16:11:14.193 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/test/one],methods=[GET]}" onto public cn.edu.nju.software.entity.TestEntity cn.edu.nju.software.controller.TestController.get()
+2018-04-16 16:11:14.194 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/test/error],methods=[GET]}" onto public cn.edu.nju.software.common.result.Result cn.edu.nju.software.controller.TestController.getError()
+2018-04-16 16:11:14.194 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/test/list],methods=[GET]}" onto public java.util.List<cn.edu.nju.software.entity.TestEntity> cn.edu.nju.software.controller.TestController.getList()
+2018-04-16 16:11:14.204 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-04-16 16:11:14.205 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping 543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-16 16:11:14.298 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping 362 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-16 16:11:14.299 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping 362 - Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-16 16:11:14.333 [restartedMain] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver 273 - Detected @ExceptionHandler methods in exceptionHandle
+2018-04-16 16:11:14.387 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping 362 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-16 16:11:15.664 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer 58 - LiveReload server is running on port 35729
+2018-04-16 16:11:15.774 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter 431 - Registering beans for JMX exposure on startup
+2018-04-16 16:11:15.776 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter 916 - Bean with name 'datasource' has been autodetected for JMX exposure
+2018-04-16 16:11:15.783 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter 671 - Located MBean 'datasource': registering with JMX server as MBean [com.alibaba.druid.pool:name=datasource,type=DruidDataSource]
+2018-04-16 16:11:15.820 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol 179 - Initializing ProtocolHandler ["http-nio-8080"]
+2018-04-16 16:11:15.847 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol 179 - Starting ProtocolHandler ["http-nio-8080"]
+2018-04-16 16:11:15.921 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool 179 - Using a shared selector for servlet write/read
+2018-04-16 16:11:15.973 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer 201 - Tomcat started on port(s): 8080 (http)
+2018-04-16 16:11:15.981 [restartedMain] INFO  cn.edu.nju.software.MainApplication 57 - Started MainApplication in 14.857 seconds (JVM running for 17.288)
+2018-04-16 16:11:35.411 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] 179 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-04-16 16:11:35.415 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet 489 - FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-16 16:11:35.579 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet 508 - FrameworkServlet 'dispatcherServlet': initialization completed in 163 ms
+2018-04-16 16:11:35.715 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/login
+2018-04-16 16:11:35.718 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:11:35.741 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=login
+2018-04-16 16:11:35.796 [http-nio-8080-exec-1] INFO  org.thymeleaf.TemplateEngine 825 - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2018-04-16 16:11:35.900 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/login
+2018-04-16 16:11:35.901 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:11:35.902 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=login
+2018-04-16 16:11:35.949 [http-nio-8080-exec-1] INFO  o.t.templateresolver.AbstractTemplateResolver 99 - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2018-04-16 16:11:35.950 [http-nio-8080-exec-1] INFO  o.t.templateresolver.AbstractTemplateResolver 110 - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2018-04-16 16:11:35.950 [http-nio-8080-exec-1] INFO  o.t.messageresolver.AbstractMessageResolver 72 - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2018-04-16 16:11:35.951 [http-nio-8080-exec-1] INFO  o.t.messageresolver.AbstractMessageResolver 78 - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2018-04-16 16:11:35.960 [http-nio-8080-exec-1] INFO  org.thymeleaf.TemplateEngine.CONFIG 123 - [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * XML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2018-04-16 16:11:35.961 [http-nio-8080-exec-1] INFO  org.thymeleaf.TemplateEngine 838 - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2018-04-16 16:11:44.311 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/login
+2018-04-16 16:11:44.312 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:11:48.794 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource 928 - {dataSource-1} inited
+2018-04-16 16:11:48.811 [http-nio-8080-exec-1] DEBUG cn.edu.nju.software.mapper.UserMapper.selectOne 159 - ==>  Preparing: SELECT id,username,password,salt,mail,role_id,state FROM t_user WHERE username = ? 
+2018-04-16 16:11:48.863 [http-nio-8080-exec-1] DEBUG cn.edu.nju.software.mapper.UserMapper.selectOne 159 - ==> Parameters: user03(String)
+2018-04-16 16:11:49.269 [http-nio-8080-exec-1] DEBUG cn.edu.nju.software.mapper.UserMapper.selectOne 159 - <==      Total: 1
+2018-04-16 16:11:49.395 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=Result{success=true, data=ShiroUser{id=5, username='user03', mail='123456700089@mail.com', roleName='null', roleType=2, state=1}, errorCode='', message='登录成功', errorMessage='', errorMessageList=null}
+2018-04-16 16:11:49.471 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 16:11:49.472 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:11:49.500 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 16:14:08.428 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 16:14:08.443 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:14:08.449 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=Result{success=false, data=null, errorCode='-1', message='系统内部异常:class java.lang.NullPointerException', errorMessage='null', errorMessageList=null}
+2018-04-16 16:14:08.513 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver 189 - Resolved exception caused by Handler execution: java.lang.ClassCastException: cn.edu.nju.software.common.result.Result cannot be cast to java.lang.String
+2018-04-16 16:14:24.587 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 16:14:24.589 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:14:24.590 [http-nio-8080-exec-7] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=Result{success=false, data=null, errorCode='-1', message='系统内部异常:class java.lang.NullPointerException', errorMessage='null', errorMessageList=null}
+2018-04-16 16:14:24.593 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver 189 - Resolved exception caused by Handler execution: java.lang.ClassCastException: cn.edu.nju.software.common.result.Result cannot be cast to java.lang.String
+2018-04-16 16:14:43.406 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 16:14:43.409 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:14:43.410 [http-nio-8080-exec-5] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=Result{success=false, data=null, errorCode='-1', message='系统内部异常:class java.lang.NullPointerException', errorMessage='null', errorMessageList=null}
+2018-04-16 16:14:43.420 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver 189 - Resolved exception caused by Handler execution: java.lang.ClassCastException: cn.edu.nju.software.common.result.Result cannot be cast to java.lang.String
+2018-04-16 16:14:45.705 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/login
+2018-04-16 16:14:45.706 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:14:45.707 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=login
+2018-04-16 16:14:47.298 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/login
+2018-04-16 16:14:47.299 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:14:47.300 [http-nio-8080-exec-3] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=login
+2018-04-16 16:14:54.206 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/login
+2018-04-16 16:14:54.209 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:14:54.458 [http-nio-8080-exec-10] DEBUG cn.edu.nju.software.mapper.UserMapper.selectOne 159 - ==>  Preparing: SELECT id,username,password,salt,mail,role_id,state FROM t_user WHERE username = ? 
+2018-04-16 16:14:54.470 [http-nio-8080-exec-10] DEBUG cn.edu.nju.software.mapper.UserMapper.selectOne 159 - ==> Parameters: user03(String)
+2018-04-16 16:14:54.772 [http-nio-8080-exec-10] DEBUG cn.edu.nju.software.mapper.UserMapper.selectOne 159 - <==      Total: 1
+2018-04-16 16:14:54.782 [http-nio-8080-exec-10] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=Result{success=true, data=ShiroUser{id=5, username='user03', mail='123456700089@mail.com', roleName='null', roleType=2, state=1}, errorCode='', message='登录成功', errorMessage='', errorMessageList=null}
+2018-04-16 16:14:54.803 [http-nio-8080-exec-9] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 16:14:54.803 [http-nio-8080-exec-9] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:14:54.804 [http-nio-8080-exec-9] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 16:15:28.039 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/
+2018-04-16 16:15:28.042 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:15:28.043 [http-nio-8080-exec-2] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=home
+2018-04-16 16:15:31.260 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 36 - url=http://localhost:8080/autodrive
+2018-04-16 16:15:31.261 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 40 - ip=0:0:0:0:0:0:0:1
+2018-04-16 16:15:31.287 [http-nio-8080-exec-1] INFO  cn.edu.nju.software.common.aspect.HttpAspect 58 - response=autodrive
+2018-04-18 20:50:23.981 [Thread-8] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext 984 - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3b507315: startup date [Mon Apr 16 16:11:03 CST 2018]; root of context hierarchy
+2018-04-18 20:50:26.752 [Thread-8] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter 449 - Unregistering JMX-exposed beans on shutdown
+2018-04-18 20:50:26.832 [Thread-8] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter 241 - Unregistering JMX-exposed beans
+2018-04-18 20:50:27.604 [Thread-8] INFO  com.alibaba.druid.pool.DruidDataSource 1823 - {dataSource-1} closed

@@ -11,7 +11,7 @@ spring:
   # the max size of upload file
   http:
     multipart:
-      max-file-size: 500MB
+      max-file-size: 2000MB
       max-request-size: 500MB
 # common config
 # datasource with druid through mysql
@@ -64,6 +64,7 @@ spring:
   thymeleaf:
     mode: HTML5
 
+
 # mybatis_config
 mybatis:
     # entity_package
@@ -109,3 +110,6 @@ server:
 # 根据部署的系统选择所要上传的目录在哪
 upload:
   folder: /home/upload/
+
+python:
+
