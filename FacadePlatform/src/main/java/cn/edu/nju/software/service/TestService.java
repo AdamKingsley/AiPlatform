@@ -1,6 +1,12 @@
 package cn.edu.nju.software.service;
 
+import cn.edu.nju.software.common.result.PageInfo;
 import cn.edu.nju.software.entity.TestEntity;
+import cn.edu.nju.software.entity.User;
+import cn.edu.nju.software.mapper.UserMapper;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -13,6 +19,14 @@ import java.util.List;
 @Service
 public class TestService {
 
+    @Autowired
+    private UserMapper mapper;
+
+    public PageInfo selectUserPage() {
+        PageHelper.startPage(1, 10);
+        Page<User> page = mapper.selectPage();
+        return new PageInfo(page);
+    }
 
     public TestEntity get() {
         TestEntity entity = new TestEntity("hello", "world");

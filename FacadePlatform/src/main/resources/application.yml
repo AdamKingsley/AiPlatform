@@ -87,7 +87,11 @@ mapper:
     - tk.mybatis.mapper.common.Mapper
     - tk.mybatis.mapper.common.Mapper2
   not-empty: true
-
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
 # logging config
 logging:
   config: classpath:logback.xml
@@ -109,7 +113,7 @@ server:
 
 # 根据部署的系统选择所要上传的目录在哪
 upload:
-  folder: /home/upload/
+  folder: home/upload/
 
 python:
 

@@ -27,5 +27,6 @@ nbdist/
 .class
 .log
 .mvn/
+home/
 !src/main/resources/static/build/
 !src/main/resources/static/dist/

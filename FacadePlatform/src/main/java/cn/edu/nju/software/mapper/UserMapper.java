@@ -1,6 +1,8 @@
 package cn.edu.nju.software.mapper;
 
+import cn.edu.nju.software.common.result.PageInfo;
 import cn.edu.nju.software.entity.User;
+import com.github.pagehelper.Page;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -19,4 +21,7 @@ public interface UserMapper extends BaseMapper<User> {
 
     @Select("select count(1) from t_user where mail=#{mail} ")
     Integer countByMail(@Param("mail") String mail);
+
+    @Select("select * from t_user")
+    Page<User> selectPage();
 }
