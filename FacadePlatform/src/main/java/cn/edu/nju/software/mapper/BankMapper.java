@@ -1,5 +1,6 @@
 package cn.edu.nju.software.mapper;
 
+import cn.edu.nju.software.dto.BankDto;
 import cn.edu.nju.software.entity.Bank;
 import cn.edu.nju.software.entity.User;
 import com.github.pagehelper.Page;
@@ -21,6 +22,6 @@ public interface BankMapper extends BaseMapper<Bank> {
     Integer countByName(@Param("name") String name);
 
     @Select("select * from t_bank order by modify_time desc")
-    Page<Bank> selectPage();
+    Page<BankDto> selectPage();
 
 }

@@ -1,6 +1,7 @@
 package cn.edu.nju.software.mapper;
 
 import cn.edu.nju.software.common.result.PageInfo;
+import cn.edu.nju.software.dto.UserDto;
 import cn.edu.nju.software.entity.User;
 import com.github.pagehelper.Page;
 import org.apache.ibatis.annotations.Mapper;

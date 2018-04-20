@@ -2,7 +2,11 @@ package cn.edu.nju.software.dto;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.Value;
+import tk.mybatis.mapper.annotation.NameStyle;
+import tk.mybatis.mapper.code.Style;
 
+import javax.persistence.Column;
 import javax.persistence.Id;
 
 /**
@@ -10,6 +14,7 @@ import javax.persistence.Id;
  */
 @Getter
 @Setter
+@NameStyle(value = Style.camelhumpAndLowercase)
 public class UserDto extends IdDto {
 
     private String username;

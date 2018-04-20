@@ -9,7 +9,5 @@ import lombok.Setter;
 @Getter
 @Setter
 public class IdDto {
-
-    protected Long id;
-
+    private Long id;
 }

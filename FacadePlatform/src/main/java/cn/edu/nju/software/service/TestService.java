@@ -1,6 +1,7 @@
 package cn.edu.nju.software.service;
 
 import cn.edu.nju.software.common.result.PageInfo;
+import cn.edu.nju.software.dto.UserDto;
 import cn.edu.nju.software.entity.TestEntity;
 import cn.edu.nju.software.entity.User;
 import cn.edu.nju.software.mapper.UserMapper;

@@ -3,10 +3,8 @@ package cn.edu.nju.software.controller.mutation;
 import cn.edu.nju.software.command.mutation.BankCommand;
 import cn.edu.nju.software.common.result.PageResult;
 import cn.edu.nju.software.common.result.Result;
-import cn.edu.nju.software.entity.Bank;
 import cn.edu.nju.software.service.mutation.BankService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -14,7 +12,6 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
 import java.util.List;
 
 /**
@@ -31,7 +28,7 @@ public class BankController {
      * 添加题库
      * @return Result
      */
-    @PostMapping("add")
+    @PostMapping("create")
     public Result addBank(@RequestBody BankCommand command) {
         bankService.create(command);
         return Result.success().message("添加题库成功！");
@@ -44,8 +41,8 @@ public class BankController {
      * @param command
      * @return
      */
-    @PostMapping("update/{id}")
-    public Result addBank(@PathVariable Long id, @RequestBody BankCommand command) {
+    @PutMapping("update/{id}")
+    public Result updateBank(@PathVariable Long id, @RequestBody BankCommand command) {
         bankService.update(command);
         return Result.success().message("更新题库成功！");
     }

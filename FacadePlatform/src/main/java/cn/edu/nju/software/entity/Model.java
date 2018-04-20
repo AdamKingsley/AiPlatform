@@ -15,6 +15,8 @@ import javax.persistence.Table;
 @Getter
 @Setter
 public class Model extends IdEntity {
+    //name
+    private String name;
     //所属的题库ID
     private Long bank_id;
     //所在的位置

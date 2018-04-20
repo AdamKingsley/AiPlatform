@@ -1,30 +1,22 @@
-package cn.edu.nju.software.entity;
+package cn.edu.nju.software.dto;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Table;
 import java.util.Date;
 
 /**
- * Created by mengf on 2018/4/18 0018.
- * 考试测试实体类
+ * Created by mengf on 2018/4/19 0019.
  */
-@Table(name = "t_exam")
 @Getter
 @Setter
-public class Exam extends IdEntity {
+public class ExamDto extends IdDto{
     //考试的名称
     private String name;
     //开始时间
     private Date startTime;
     //结束时间
     private Date endTime;
-    //创建时间
-    private Date createTime;
-    //修改时间
-    private Date modifyTime;
     //考试限制，允许最多的迭代次数
     // 即最多允许多少次提交答案
     // 0不限制
@@ -38,7 +30,5 @@ public class Exam extends IdEntity {
     //只不过如果还没有开始的话提示还没到考试时间
     private Integer preMinute;
     //变异体的数量
-    private Integer modelNums;
-    //题库集合
-    private String bankIds;
+    private Integer mutationNums;
 }

@@ -6,6 +6,7 @@ import cn.edu.nju.software.common.result.PageInfo;
 import cn.edu.nju.software.common.result.PageResult;
 import cn.edu.nju.software.common.result.Result;
 import cn.edu.nju.software.common.upload.UploadConfig;
+import cn.edu.nju.software.dto.BankDto;
 import cn.edu.nju.software.entity.Bank;
 import cn.edu.nju.software.entity.Model;
 import cn.edu.nju.software.mapper.BankMapper;
@@ -64,8 +65,8 @@ public class BankService {
     //获取题库列表 分页
     public PageResult list(Integer pageNum, Integer pageSize) {
         PageHelper.startPage(pageNum, pageSize);
-        Page<Bank> page = bankMapper.selectPage();
-        PageInfo<Bank> pageInfo = new PageInfo(page);
+        Page<BankDto> page = bankMapper.selectPage();
+        PageInfo<BankDto> pageInfo = new PageInfo(page);
         return new PageResult(pageInfo);
     }
 
@@ -194,6 +195,7 @@ public class BankService {
                 file.transferTo(new File(ab_path));
                 //return Result.success().message("执行脚本上传成功！");
                 Model model = new Model();
+                model.setName("model_" + nums);
                 model.setBank_id(id);
                 model.setLocation(path);
                 //model.setType(1);

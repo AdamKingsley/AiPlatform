@@ -1,7 +1,10 @@
 package cn.edu.nju.software.mapper;
 
+import cn.edu.nju.software.dto.ExamDto;
 import cn.edu.nju.software.entity.Exam;
+import com.github.pagehelper.Page;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.BaseMapper;
 
@@ -10,5 +13,8 @@ import tk.mybatis.mapper.common.BaseMapper;
  */
 @Repository
 @Mapper
-public interface ExamMapper extends BaseMapper<Exam>{
+public interface ExamMapper extends BaseMapper<Exam> {
+
+    @Select("select * from t_exam order by create_time desc")
+    Page<ExamDto> selectPage();
 }
