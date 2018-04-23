@@ -142,11 +142,11 @@ public class MailService {
     }
 
     public void sendActiveMail(UserDto userDto) {
-        //TODO 将一些常用的右键HTML模版可以列一下
+        //TODO 将一些常用的邮件HTML模版可以列一下
         String mail = userDto.getMail();
         String[] mails = new String[]{mail};
         String encode = EncodeUtil.encodeBase64(userDto.getUsername().getBytes());
-        String url = location + ":" + port + "/active/" + encode;
+        String url = location + ":" + port + "/account/active/" + encode;
         StringBuffer content = new StringBuffer("亲爱的用户").append(userDto.getUsername())
                 .append(":<br/>").append("您好！<br/>").append("您激活账户的链接如下：<br/><hr/>")
                 //.append("<a href='").append(location).append(":").append(port).append("/active/")
