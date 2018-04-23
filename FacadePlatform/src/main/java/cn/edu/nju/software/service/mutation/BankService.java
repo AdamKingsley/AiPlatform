@@ -1,6 +1,7 @@
 package cn.edu.nju.software.service.mutation;
 
 import cn.edu.nju.software.command.mutation.BankCommand;
+import cn.edu.nju.software.command.mutation.BankPageCommand;
 import cn.edu.nju.software.common.exception.ServiceException;
 import cn.edu.nju.software.common.result.PageInfo;
 import cn.edu.nju.software.common.result.PageResult;
@@ -63,8 +64,8 @@ public class BankService {
     }
 
     //获取题库列表 分页
-    public PageResult list(Integer pageNum, Integer pageSize) {
-        PageHelper.startPage(pageNum, pageSize);
+    public PageResult list(BankPageCommand command) {
+        PageHelper.startPage(command.getPageNum(), command.getPageSize());
         Page<BankDto> page = bankMapper.selectPage();
         PageInfo<BankDto> pageInfo = new PageInfo(page);
         return new PageResult(pageInfo);
@@ -75,6 +76,7 @@ public class BankService {
         for (Long id : ids) {
             bankMapper.deleteByPrimaryKey(id);
             modelMapper.deleteByPrimaryKey(id);
+            //TODO 删除本地存储script/model/samples文件 防止浪费空间
         }
     }
 

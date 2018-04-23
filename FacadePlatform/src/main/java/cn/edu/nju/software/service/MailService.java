@@ -1,7 +1,10 @@
 package cn.edu.nju.software.service;
 
+import javax.mail.EncodingAware;
 import javax.mail.MessagingException;
 
+import cn.edu.nju.software.dto.UserDto;
+import cn.edu.nju.software.util.EncodeUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -25,6 +28,12 @@ public class MailService {
 
     @Value("${spring.mail.username}")
     private String from;
+
+    @Value("${server.port}")
+    private Integer port;
+
+    @Value("${server.location}")
+    private String location;
 
     /**
      * 发送纯文本的简单邮件
@@ -130,5 +139,18 @@ public class MailService {
         } catch (MessagingException e) {
             log.error("发送嵌入静态资源的邮件时发生异常！", e);
         }
+    }
+
+    public void sendActiveMail(UserDto userDto) {
+        //TODO 将一些常用的右键HTML模版可以列一下
+        String mail = userDto.getMail();
+        String[] mails = new String[]{mail};
+        String encode = EncodeUtil.encodeBase64(userDto.getUsername().getBytes());
+        StringBuffer content = new StringBuffer("亲爱的用户").append(userDto.getUsername())
+                .append(":<br/>").append("您好！<br/>").append("您激活账户的链接如下：<br/><hr/>")
+                .append("<a href='").append(location).append(":").append(port).append("/active/")
+                .append(encode).append("'>").append("AI测试平台激活专用链接......").append("</a>")
+                .append("<hr/>").append("祝生活愉快！<br>").append("ai测试平台");
+        sendHtmlMail(mails, "激活邮件", content.toString());
     }
 }

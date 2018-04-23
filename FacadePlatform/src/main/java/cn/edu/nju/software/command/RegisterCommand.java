@@ -4,6 +4,7 @@ import cn.edu.nju.software.common.exception.ServiceException;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.util.StringUtils;
 
 /**
  * Created by mengf on 2018/4/10 0010.
@@ -20,6 +21,9 @@ public class RegisterCommand {
     private Integer state;
 
     public void validate() {
+        if (StringUtils.isEmpty(username.trim())) {
+            throw new ServiceException("用户名不能为空");
+        }
         if(! this.password.equals(confirmPassword)) {
             throw new ServiceException("两次输入的密码不同！");
         }

@@ -1,6 +1,8 @@
 package cn.edu.nju.software.controller.mutation;
 
 import cn.edu.nju.software.command.mutation.BankCommand;
+import cn.edu.nju.software.command.mutation.BankPageCommand;
+import cn.edu.nju.software.command.mutation.PageCommand;
 import cn.edu.nju.software.common.result.PageResult;
 import cn.edu.nju.software.common.result.Result;
 import cn.edu.nju.software.service.mutation.BankService;
@@ -26,6 +28,7 @@ public class BankController {
 
     /**
      * 添加题库
+     *
      * @return Result
      */
     @PostMapping("create")
@@ -49,14 +52,12 @@ public class BankController {
 
     /**
      * 查看题库列表
-     *
-     * @param pageNum
-     * @param pageSize
+     * //TODO 加筛选条件
      * @return
      */
     @GetMapping("list")
-    public PageResult getBankList(@RequestParam("pageNum") Integer pageNum, @RequestParam("pageSize") Integer pageSize) {
-        return bankService.list(pageNum, pageSize);
+    public PageResult getBankList(@RequestBody BankPageCommand command) {
+        return bankService.list(command);
     }
 
 
@@ -86,7 +87,7 @@ public class BankController {
     @GetMapping("script/{id}")
     public void downloadScript(@PathVariable Long id, HttpServletRequest request, HttpServletResponse response) {
         //String fileName="upload.jpg";
-        bankService.downloadScript(id,response);
+        bankService.downloadScript(id, response);
 
     }
 
@@ -95,7 +96,7 @@ public class BankController {
      */
     @GetMapping("models/{id}")
     public void downloadModels(@PathVariable Long id, HttpServletRequest request, HttpServletResponse response) {
-        bankService.downloadModels(id,response);
+        bankService.downloadModels(id, response);
     }
 
     /**
