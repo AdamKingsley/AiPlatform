@@ -130,4 +130,9 @@ upload:
   folder: home/upload/
 
 python:
+  img:
+    path: /home/dl/Documents/FastPhotoStyle
 
+video-stream:
+  ip: localhost
+  port: 5080

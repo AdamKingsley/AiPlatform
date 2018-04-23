@@ -6,6 +6,7 @@
     function init() {
         $('#submit').on("click", function() {
             var data = $("#registerform").serializeJson();
+            console.log(data);
             if (!isValid(data["username"])) {
                 toastr.error("用户名不能为空！");
                 return;
@@ -14,7 +15,7 @@
                 toastr.error("密码不能为空！");
                 return;
             }
-            if (data['password'] !== data['retypepassword']) {
+            if (data['password'] !== data['confirmPassword']) {
                 toastr.error("两次输入的密码不同！");
                 return;
             }
@@ -26,6 +27,10 @@
                 dataType: "json",
                 success: function(res) {
                     if (res.success === true) {
+                        toastr.options.onHidden = function() {
+
+                        };
+                        toastr.success("注册成功！");
                         window.location.href = baseurl + "/login";
                     } else {
                         toastr.error(res.errorMessage);

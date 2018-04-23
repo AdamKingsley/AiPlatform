@@ -21,7 +21,7 @@ public class RegisterCommand {
 
     public void validate() {
         if(! this.password.equals(confirmPassword)) {
-            throw new ServiceException("密码不一致！");
+            throw new ServiceException("两次输入的密码不同！");
         }
     }
 
