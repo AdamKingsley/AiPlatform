@@ -25,7 +25,7 @@ public class TestService {
 
     public PageInfo selectUserPage() {
         PageHelper.startPage(1, 10);
-        Page<User> page = mapper.selectPage();
+        Page<UserDto> page = mapper.selectPage();
         return new PageInfo(page);
     }
 
