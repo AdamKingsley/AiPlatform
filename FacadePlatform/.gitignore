@@ -25,7 +25,8 @@ nbdist/
 .nb-gradle/
 
 .class
-.log
+*.log
+log/
 .mvn/
 home/
 !src/main/resources/static/build/

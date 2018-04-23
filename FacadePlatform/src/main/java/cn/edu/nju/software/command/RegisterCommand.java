@@ -24,8 +24,8 @@ public class RegisterCommand {
         if (StringUtils.isEmpty(username.trim())) {
             throw new ServiceException("用户名不能为空！");
         }
-        if (!this.password.equals(confirmPassword)) {
-            throw new ServiceException("密码不一致！");
+        if(! this.password.equals(confirmPassword)) {
+            throw new ServiceException("两次输入的密码不同！");
         }
         if (!Validate.checkMail(mail)) {
             throw new ServiceException("邮箱格式不正确！");

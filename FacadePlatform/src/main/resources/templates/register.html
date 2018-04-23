@@ -32,6 +32,10 @@
         <form id="registerform">
             <div class="form-group has-feedback">
                 <input id="userid" name="username" type="text" class="form-control" placeholder="Username"/>
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input id="mail" name="mail" type="email" class="form-control" placeholder="Mail"/>
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
@@ -39,7 +43,7 @@
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input id="retypepassword" name="retypepassword" type="password" class="form-control" placeholder="Retype Password"/>
+                <input id="confirmPassword" name="confirmPassword" type="password" class="form-control" placeholder="Retype Password"/>
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">
@@ -71,6 +75,8 @@
 
 <!-- jQuery 2.2.3 -->
 <script src="/static/plugins/jQuery/jquery-2.2.3.min.js"></script>
+ <!--input mask -->
+<!--<script src="/static/plugins/input-mask/dist/jquery.inputmask.bundle.js"></script>-->
 <!-- Bootstrap 3.3.6 -->
 <script src="/static/plugins/bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE-->
