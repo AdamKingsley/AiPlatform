@@ -14,9 +14,19 @@ public class PageResult {
     private int curPage = 1;//当前页
     private long totalRows = -1;
     private int pageSize = 20;//默认
+    private int pages;
 
     private String message;
     private String errorMessage;
+
+    public PageResult(PageInfo pageInfo){
+        success=true;
+        data = pageInfo.getList();
+        curPage = pageInfo.getPageNum();
+        totalRows = pageInfo.getTotal();
+        pageSize = pageInfo.getPageSize();
+        pages = pageInfo.getPages();
+    }
 
     private PageResult(boolean success) {
         this.success = success;
@@ -63,4 +73,5 @@ public class PageResult {
     public String getErrorMessage() {
         return errorMessage;
     }
+
 }

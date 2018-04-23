@@ -13,6 +13,19 @@ spring:
     multipart:
       max-file-size: 2000MB
       max-request-size: 500MB
+  mail:
+    host: smtp.163.com
+    username: iammengfengfei@163.com
+    password: WangDong0719
+    default-encoding: UTF-8
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
 # common config
 # datasource with druid through mysql
   datasource:
@@ -87,7 +100,11 @@ mapper:
     - tk.mybatis.mapper.common.Mapper
     - tk.mybatis.mapper.common.Mapper2
   not-empty: true
-
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
 # logging config
 logging:
   config: classpath:logback.xml
@@ -107,9 +124,10 @@ server:
 #      max-active: 8
 #      max-wait: -1
 
+
 # 根据部署的系统选择所要上传的目录在哪
 upload:
-  folder: /home/upload/
+  folder: home/upload/
 
 python:
 

@@ -1,5 +1,6 @@
 package cn.edu.nju.software.command;
 
+import cn.edu.nju.software.common.exception.ServiceException;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,6 +18,12 @@ public class RegisterCommand {
     private String mail;
     private Integer roleId;
     private Integer state;
+
+    public void validate() {
+        if(! this.password.equals(confirmPassword)) {
+            throw new ServiceException("密码不一致！");
+        }
+    }
 
 
     @Override
