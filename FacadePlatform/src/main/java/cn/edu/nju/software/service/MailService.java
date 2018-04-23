@@ -146,11 +146,13 @@ public class MailService {
         String mail = userDto.getMail();
         String[] mails = new String[]{mail};
         String encode = EncodeUtil.encodeBase64(userDto.getUsername().getBytes());
+        String url = location + ":" + port + "/active/" + encode;
         StringBuffer content = new StringBuffer("亲爱的用户").append(userDto.getUsername())
                 .append(":<br/>").append("您好！<br/>").append("您激活账户的链接如下：<br/><hr/>")
-                .append("<a href='").append(location).append(":").append(port).append("/active/")
-                .append(encode).append("'>").append("AI测试平台激活专用链接......").append("</a>")
-                .append("<hr/>").append("祝生活愉快！<br>").append("ai测试平台");
+                //.append("<a href='").append(location).append(":").append(port).append("/active/")
+                //.append(encode).append("'>").append("AI测试平台激活专用链接......").append("</a>")
+                .append(url).append("<hr/>").append("祝生活愉快！<br>").append("ai测试平台");
+        log.info("mail content {}", content);
         sendHtmlMail(mails, "激活邮件", content.toString());
     }
 }
