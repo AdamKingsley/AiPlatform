@@ -6,17 +6,16 @@ import cn.edu.nju.software.common.result.Result;
 import cn.edu.nju.software.common.shiro.ShiroUser;
 import cn.edu.nju.software.common.shiro.ShiroUtils;
 import cn.edu.nju.software.service.AccountService;
+import cn.edu.nju.software.util.EncodeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by mengf on 2018/4/10 0010.
  */
 
 @RestController
+@RequestMapping("account")
 public class AccountController {
     @Autowired
     private AccountService accountService;
@@ -41,5 +40,10 @@ public class AccountController {
     public Result changePassword(@RequestBody ResetPasswordCommand command) {
         accountService.resetPassword(command);
         return Result.success().message("重置密码成功！");
+    }
+
+    @GetMapping("/active/{code}")
+    public Result activeAccount(@PathVariable String code) {
+        return accountService.active(code);
     }
 }

@@ -3,6 +3,7 @@ package cn.edu.nju.software.service;
 import cn.edu.nju.software.command.ChangePasswordCommand;
 import cn.edu.nju.software.command.RegisterCommand;
 import cn.edu.nju.software.command.ResetPasswordCommand;
+import cn.edu.nju.software.common.exception.ExceptionEnum;
 import cn.edu.nju.software.common.result.Result;
 import cn.edu.nju.software.common.shiro.ShiroUser;
 import cn.edu.nju.software.common.shiro.ShiroUtils;
@@ -24,7 +25,9 @@ import org.springframework.stereotype.Service;
 public class AccountService {
 
     @Autowired
-    UserMapper userMapper;
+    private UserMapper userMapper;
+    @Autowired
+    private MailService mailService;
 
     public Result register(RegisterCommand command) {
         command.validate();
@@ -36,7 +39,6 @@ public class AccountService {
         if (userMapper.countByMail(command.getMail()) > 0) {
             return Result.error().errorMessage("邮箱已经被注册");
         }
-
         User user = new User();
         UserDto userDto = new UserDto();
         BeanUtils.copyProperties(command, user);
@@ -47,9 +49,20 @@ public class AccountService {
         String password = encryptPassword(user, command.getPassword());
         user.setPassword(password);
         //插入并返回主键
+        //如果是管理员
+        if (user.getRoleId() == 1) {
+            user.setState(1);
+        }
+        //如果是普通用户考生
+        if (user.getRoleId() == 2) {
+            user.setState(0);
+        }
         userMapper.insert(user);
         BeanUtils.copyProperties(user, userDto);
-        return Result.success().withData(userDto).message("注册成功");
+        if (userDto.getState() == 0) {
+            mailService.sendActiveMail(userDto);
+        }
+        return Result.success().withData(userDto).message("注册成功，请查收激活邮件！");
     }
 
     public User findByUsername(String username) {
@@ -59,10 +72,8 @@ public class AccountService {
         return user;
     }
 
-    public User findByMailAddress(String mail) {
-        User user = new User();
-        user.setMail(mail);
-        user = userMapper.selectOne(user);
+    public UserDto findByMailAddress(String mail) {
+        UserDto user = userMapper.selectByMail(mail);
         return user;
     }
 
@@ -88,6 +99,22 @@ public class AccountService {
         String encrypt_password = new SimpleHash(PasswordHelper.HASH_ALGORITHM, password,
                 EncodeUtil.decodeHex(user.getSalt()), PasswordHelper.ITERATION_TIMES).toHex();
         return encrypt_password;
+    }
+
+    public Result active(String code) {
+        String username = new String(EncodeUtil.decodeBase64(code));
+        User user = userMapper.selectByUsername(username);
+        if (user == null) {
+            return Result.error().exception(ExceptionEnum.UNKNOWN_USER);
+        }
+        int state = user.getState();
+        if (state == 0) {
+            user.setState(1);
+            userMapper.updateByPrimaryKey(user);
+            return Result.success().message("激活用户成功，请登录！");
+        } else {
+            return Result.error().exception(ExceptionEnum.ACTIVE_DUPLICATED);
+        }
     }
 }
 

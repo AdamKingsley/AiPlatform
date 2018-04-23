@@ -89,6 +89,8 @@ mybatis:
     #        default-fetch-size: 100
     #        default-statement-timeout: 30
     # mybatis-enhance-actable config
+    configuration:
+      map-underscore-to-camel-case: true
     table:
       auto: update
     model:

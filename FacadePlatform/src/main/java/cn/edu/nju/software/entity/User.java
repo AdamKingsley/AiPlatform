@@ -21,6 +21,7 @@ import javax.persistence.Table;
 @Table(name = "t_user")
 @Getter
 @Setter
+@NameStyle(Style.camelhumpAndLowercase)
 public class User extends IdEntity {
     //用户名
     private String username;

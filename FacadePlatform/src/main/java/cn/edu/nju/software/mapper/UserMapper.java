@@ -24,5 +24,11 @@ public interface UserMapper extends BaseMapper<User> {
     Integer countByMail(@Param("mail") String mail);
 
     @Select("select * from t_user")
-    Page<User> selectPage();
+    Page<UserDto> selectPage();
+
+    @Select("select * from t_user where mail=#{mail}")
+    UserDto selectByMail(@Param("mail") String mail);
+
+    @Select("select * from t_user where username=#{username}")
+    User selectByUsername(@Param("username") String username);
 }

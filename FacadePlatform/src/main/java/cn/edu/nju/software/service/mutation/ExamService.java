@@ -1,6 +1,7 @@
 package cn.edu.nju.software.service.mutation;
 
 import cn.edu.nju.software.command.mutation.ExamCommand;
+import cn.edu.nju.software.command.mutation.ExamPageCommand;
 import cn.edu.nju.software.common.exception.ServiceException;
 import cn.edu.nju.software.common.result.PageInfo;
 import cn.edu.nju.software.common.result.PageResult;
@@ -49,16 +50,17 @@ public class ExamService {
     public void delete(List<Long> ids) {
         for (Long id : ids) {
             examMapper.deleteByPrimaryKey(id);
-            //TODO
-            //删除考试相关的所有数据
+            //TODO 删除考试相关的所有数据
         }
     }
 
-    public PageResult list(Integer pageNum, Integer pageSize) {
+    public PageResult list(ExamPageCommand command) {
         //查询分页数据
-        PageHelper.startPage(pageNum, pageSize);
+        PageHelper.startPage(command.getPageNum(), command.getPageSize());
         Page<ExamDto> page = examMapper.selectPage();
         PageInfo<ExamDto> pageInfo = new PageInfo<>(page);
-        return new PageResult(new PageInfo());
+        return new PageResult(pageInfo);
     }
+
+
 }
