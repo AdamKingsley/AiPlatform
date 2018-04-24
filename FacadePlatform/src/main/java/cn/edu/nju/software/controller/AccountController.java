@@ -2,12 +2,17 @@ package cn.edu.nju.software.controller;
 
 import cn.edu.nju.software.command.ChangePasswordCommand;
 import cn.edu.nju.software.command.ResetPasswordCommand;
+import cn.edu.nju.software.command.UserPageCommand;
+import cn.edu.nju.software.common.result.PageResult;
 import cn.edu.nju.software.common.result.Result;
 import cn.edu.nju.software.common.shiro.ShiroUser;
 import cn.edu.nju.software.common.shiro.ShiroUtils;
 import cn.edu.nju.software.service.AccountService;
+import com.github.pagehelper.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * Created by mengf on 2018/4/10 0010.
@@ -45,5 +50,37 @@ public class AccountController {
     @GetMapping("/active/{code}")
     public Result activeAccount(@PathVariable String code) {
         return accountService.active(code);
+    }
+
+    @GetMapping("/users")
+    public PageResult list(@RequestBody UserPageCommand command){
+       return  accountService.list(command);
+    }
+
+    /**
+     * 删除用户
+     *
+     * @param ids
+     * @return
+     */
+    @DeleteMapping("/delete")
+    public Result deleteAccounts(@RequestParam("id") List<Long> ids) {
+        return accountService.delete(ids);
+    }
+
+    /**
+     * 冻结用户
+     * @param ids
+     * @return
+     */
+    @DeleteMapping("/blocked")
+    public Result blockAccounts(@RequestParam("id") List<Long> ids) {
+        return accountService.block(ids);
+    }
+
+
+    @PostMapping("/reactive")
+    public Result reactive(@RequestParam("id") List<Long> ids){
+        return accountService.reactive(ids);
     }
 }

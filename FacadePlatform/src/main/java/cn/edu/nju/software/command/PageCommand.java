@@ -1,4 +1,4 @@
-package cn.edu.nju.software.command.mutation;
+package cn.edu.nju.software.command;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,5 +1,6 @@
 package cn.edu.nju.software.common.shiro;
 
+import cn.edu.nju.software.dto.UserDto;
 import cn.edu.nju.software.entity.User;
 import cn.edu.nju.software.service.AccountService;
 import cn.edu.nju.software.util.EncodeUtil;
@@ -44,7 +45,8 @@ public class MyShiroRealm extends AuthorizingRealm {
         User userInfo = accountService.findByUsername(usernamePasswordToken.getUsername());
         if (userInfo != null) {
             ShiroUser shiroUser = new ShiroUser();
-            BeanUtils.copyProperties(userInfo,shiroUser);
+            BeanUtils.copyProperties(userInfo, shiroUser);
+            shiroUser.setRoleName(RoleEnum.valueOf(userInfo.getRoleId()).toString().toLowerCase());
             // shiroUser 的basicinfo和UserInfo的相关信息有待完善
             SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
                     shiroUser, //用户名
@@ -68,6 +70,7 @@ public class MyShiroRealm extends AuthorizingRealm {
         matcher.setHashIterations(PasswordHelper.ITERATION_TIMES);
         setCredentialsMatcher(matcher);
     }
+
     public void setAccountService(AccountService accountService) {
         this.accountService = accountService;
     }

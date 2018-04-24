@@ -13,6 +13,7 @@ import com.github.pagehelper.PageHelper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import tk.mybatis.mapper.entity.Example;
 
 import java.util.Date;
 import java.util.List;
@@ -57,6 +58,8 @@ public class ExamService {
     public PageResult list(ExamPageCommand command) {
         //查询分页数据
         PageHelper.startPage(command.getPageNum(), command.getPageSize());
+        //Example example = new Example(ExamDto.class);
+        //example.createCriteria();
         Page<ExamDto> page = examMapper.selectPage();
         PageInfo<ExamDto> pageInfo = new PageInfo<>(page);
         return new PageResult(pageInfo);
