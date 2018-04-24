@@ -17,6 +17,8 @@ public class ExamPageController {
         ShiroUser user = ShiroUtils.currentUser();
 
         model.addAttribute("user", user);
-        return "mutation/" + user.getRoleName() + "/exam";
+        return "mutation/"
+                + (user.getRoleName() == null ? "student" : user.getRoleName())
+                + "/exam";
     }
 }
