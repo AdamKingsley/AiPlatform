@@ -16,6 +16,7 @@
                 toastr.error("用户名不能为空！");
                 return;
             }
+            data["rememberMe"] = $("#rememberMe").is(":checked");
             $.ajax({
                 url: "/login",
                 type:"POST",
@@ -23,6 +24,7 @@
                 contentType: "application/json;charset=UTF-8",
                 dataType:"json",
                 success: function (res) {
+                    console.log(res);
                     if (res.success === true){
                         window.location.href = baseurl + "/";
                     }else{

@@ -11,6 +11,10 @@
                 toastr.error("用户名不能为空！");
                 return;
             }
+            if (!isValid(data["mail"])) {
+                toastr.error("邮箱不能为空！");
+                return;
+            }
             if (!isValid(data["password"])) {
                 toastr.error("密码不能为空！");
                 return;
@@ -19,6 +23,7 @@
                 toastr.error("两次输入的密码不同！");
                 return;
             }
+            data["roleId"] = 1;
             $.ajax({
                 url: baseurl + "/register",
                 type: "POST",

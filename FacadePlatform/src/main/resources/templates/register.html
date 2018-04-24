@@ -1,22 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta th:include="header::header"/>
     <title>AI测试平台</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
-    <!-- Bootstrap 3.3.6 -->
-    <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css"/>
-    <!-- adminLTE -->
-    <link rel="stylesheet" href="/static/plugins/adminlte/dist/css/AdminLTE.min.css"/>
-    <!-- iCheck -->
-    <link rel="stylesheet" href="/static/plugins/iCheck/square/blue.css"/>
-    <!-- toastr -->
-    <link rel="stylesheet" href="/static/plugins/toastr/toastr.min.css"/>
-    <!-- Common Css -->
-    <link rel="stylesheet" href="/static/css/common.css"/>
 </head>
 <body class="hold-transition login-page ">
 <div class="login-box">
@@ -73,24 +59,12 @@
 </div>
 <!-- /.login-box -->
 
-<!-- jQuery 2.2.3 -->
-<script src="/static/plugins/jQuery/jquery-2.2.3.min.js"></script>
- <!--input mask -->
-<!--<script src="/static/plugins/input-mask/dist/jquery.inputmask.bundle.js"></script>-->
-<!-- Bootstrap 3.3.6 -->
-<script src="/static/plugins/bootstrap/js/bootstrap.min.js"></script>
-<!-- AdminLTE-->
-<script src="/static/plugins/adminlte/dist/js/adminlte.min.js"></script>
-<!-- iCheck -->
-<script src="/static/plugins/iCheck/icheck.min.js"></script>
-<!-- toastr -->
-<script src="/static/plugins/toastr/toastr.min.js"></script>
-<!-- basic config -->
-<script src="/static/js/config.js"></script>
+<div th:include="footer::script">
+
+</div>
 
 <!-- register -->
 <script src="/static/js/register.js"></script>
-
 
 </body>
 </html>
