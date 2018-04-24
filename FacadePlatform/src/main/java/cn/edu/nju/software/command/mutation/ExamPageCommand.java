@@ -14,7 +14,7 @@ import java.util.Date;
 public class ExamPageCommand extends PageCommand {
     //0还未开始；1正在进行；2已经结束 3全部的
     private Integer type;
-    //指全部的还是只是我参加过的上述三种类型
+    //指全部的还是只是我参加过
     private Boolean isMine;
     //考试开始时间介于某个区间内
     private Date startTime;

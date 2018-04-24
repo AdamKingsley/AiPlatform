@@ -1,6 +1,7 @@
 package cn.edu.nju.software.command;
 
 import cn.edu.nju.software.common.exception.ServiceException;
+import cn.edu.nju.software.util.Validate;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,14 +19,16 @@ public class RegisterCommand {
     private String confirmPassword;
     private String mail;
     private Integer roleId;
-    private Integer state;
 
     public void validate() {
         if (StringUtils.isEmpty(username.trim())) {
-            throw new ServiceException("用户名不能为空");
+            throw new ServiceException("用户名不能为空！");
         }
         if(! this.password.equals(confirmPassword)) {
             throw new ServiceException("两次输入的密码不同！");
+        }
+        if (!Validate.checkMail(mail)) {
+            throw new ServiceException("邮箱格式不正确！");
         }
     }
 
