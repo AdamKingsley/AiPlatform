@@ -21,6 +21,7 @@ public class UserDto extends IdDto {
     private String username;
     private String mail;
     private Integer roleId;
+    private String roleName;
     private Integer state;
     private Date createTime;
     private Date modifyTime;

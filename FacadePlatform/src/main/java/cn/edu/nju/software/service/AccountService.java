@@ -117,10 +117,12 @@ public class AccountService {
 
     public Result active(String code) {
         String username = new String(EncodeUtil.decodeBase64(code));
-        User user = userMapper.selectByUsername(username);
-        if (user == null) {
+        UserDto userDto = userMapper.selectByUsername(username);
+        if (userDto == null) {
             return Result.error().exception(ExceptionEnum.UNKNOWN_USER);
         }
+        User user = new User();
+        BeanUtils.copyProperties(userDto,user);
         int state = user.getState();
         if (state == StateEnum.NOT_ACTIVE.getState()) {
             user.setState(StateEnum.ACTIVED.getState());
