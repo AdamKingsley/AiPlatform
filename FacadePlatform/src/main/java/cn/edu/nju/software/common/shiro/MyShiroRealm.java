@@ -46,7 +46,7 @@ public class MyShiroRealm extends AuthorizingRealm {
         if (userInfo != null) {
             ShiroUser shiroUser = new ShiroUser();
             BeanUtils.copyProperties(userInfo, shiroUser);
-            shiroUser.setRoleName(RoleEnum.valueOf(userInfo.getRoleId()).toString());
+            shiroUser.setRoleName(RoleEnum.valueOf(userInfo.getRoleId()).toString().toLowerCase());
             // shiroUser 的basicinfo和UserInfo的相关信息有待完善
             SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
                     shiroUser, //用户名
