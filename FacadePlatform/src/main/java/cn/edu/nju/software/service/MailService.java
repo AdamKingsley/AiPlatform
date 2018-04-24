@@ -141,13 +141,12 @@ public class MailService {
         }
     }
 
-    public void sendActiveMail(UserDto userDto) {
+    public void sendActiveMail(String username, String mail) {
         //TODO 将一些常用的邮件HTML模版可以列一下
-        String mail = userDto.getMail();
         String[] mails = new String[]{mail};
-        String encode = EncodeUtil.encodeBase64(userDto.getUsername().getBytes());
+        String encode = EncodeUtil.encodeBase64(username.getBytes());
         String url = location + ":" + port + "/account/active/" + encode;
-        StringBuffer content = new StringBuffer("亲爱的用户").append(userDto.getUsername())
+        StringBuffer content = new StringBuffer("亲爱的用户").append(username)
                 .append(":<br/>").append("您好！<br/>").append("您激活账户的链接如下：<br/><hr/>")
                 //.append("<a href='").append(location).append(":").append(port).append("/active/")
                 //.append(encode).append("'>").append("AI测试平台激活专用链接......").append("</a>")

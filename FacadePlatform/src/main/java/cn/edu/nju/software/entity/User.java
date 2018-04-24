@@ -12,6 +12,7 @@ import tk.mybatis.mapper.code.Style;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Date;
 
 /**
  * Created by mengf on 2018/4/10 0010.
@@ -32,9 +33,12 @@ public class User extends IdEntity {
     //邮箱
     private String mail;
     //用户类型
-    @Column(name = "role_id")
     private Integer roleId;
     //用户状态 未激活0 可用1 冻结2
     // (目前未有激活状态，所以该字段待定)
     private Integer state;
+
+    private Date createTime;
+
+    private Date modifyTime;
 }
