@@ -30,7 +30,7 @@ public class AccountController {
         }
     }
 
-    @PostMapping("/change-password")
+    @PostMapping(value = "/change-password")
     public Result changePassword(@RequestBody ChangePasswordCommand command) {
         accountService.changePassword(command);
         return Result.success().message("修改密码成功！");

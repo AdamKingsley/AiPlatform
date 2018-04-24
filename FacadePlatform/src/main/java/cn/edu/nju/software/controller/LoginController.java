@@ -27,8 +27,7 @@ public class LoginController {
     @Autowired
     private AccountService accountService;
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST,
-            consumes = "application/json")
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public Result login(@RequestBody LoginCommand command) {
         if (Validate.checkMail(command.getUsername())) {
             //如果是邮箱登录需要去数据库里面拿到对应的用户名

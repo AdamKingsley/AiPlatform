@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta th:include="header::header"/>
-    <title>AI测试平台</title>
+    <title>深度学习测试平台</title>
 </head>
 <body class="hold-transition login-page ">
 <div class="login-box">
@@ -31,6 +31,13 @@
             <div class="form-group has-feedback">
                 <input id="confirmPassword" name="confirmPassword" type="password" class="form-control" placeholder="Retype Password"/>
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input id="roleStudent" type="radio" name="roleId" value="3" th:checked="${true}" />
+                <label for="roleStudent">&nbsp;学生用户</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input id="roleTeacher" type="radio" name="roleId" value="2"/>
+                <label for="roleTeacher">&nbsp;教师用户</label>
             </div>
             <div class="row">
                 <div class="col-xs-8">
