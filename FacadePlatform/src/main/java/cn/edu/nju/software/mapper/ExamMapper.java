@@ -19,5 +19,6 @@ public interface ExamMapper extends Mapper<Exam> {
     @Select("select * from t_exam order by create_time desc")
     Page<ExamDto> selectPage();
 
-    Page<ExamDto> selectByExample(@Param("example") Example example);
+    @Select("select * from t_exam where id = #{id}")
+    ExamDto selectById(@Param("id") Long id);
 }

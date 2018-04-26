@@ -1,5 +1,6 @@
 package cn.edu.nju.software.mapper;
 
+import cn.edu.nju.software.command.UserPageCommand;
 import cn.edu.nju.software.dto.UserDto;
 import cn.edu.nju.software.entity.User;
 import com.github.pagehelper.Page;
@@ -29,4 +30,24 @@ public interface UserMapper extends Mapper<User> {
 
     @Select("select * from t_user u,t_role r where username=#{username} where u.role_id=r.id")
     UserDto selectByUsername(@Param("username") String username);
+
+    @Select({"<script>",
+            "select * from t_user where 1=1",
+            "<if test='command.startCreateTime!=null'>",
+            "<![CDATA[ and create_time >= #{command.startCreateTime}]]>",
+            "</if>",
+            "<if test='command.endCreateTime!=null'>",
+            "<![CDATA[ and create_time <= #{command.endCreateTime}]]>",
+            "</if>",
+            "<if test='command.startModifyTime!=null'>",
+            "<![CDATA[ and modify_time >= #{command.startModifyTime}]]>",
+            "</if>",
+            "<if test='command.endModifyTime!=null'>",
+            "<![CDATA[ and modify_time <= #{command.endModifyTime} ]]>",
+            "</if>",
+            "<if test='command.state!=null and command.state>=0'>",
+            "<![CDATA[ and state= #{command.state} ]]>",
+            "</if>",
+            "</script>"})
+    Page<UserDto> selectUserPage(@Param("command") UserPageCommand command);
 }

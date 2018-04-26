@@ -31,5 +31,5 @@ public class Exercise extends IdEntity {
     //用户杀死的模型的ID 总数量同killNums
     private String killModelIds;
     //考试状态 0还未开始 1正在进行 2已结束
-    private Integer state;
+    //private Integer state;
 }

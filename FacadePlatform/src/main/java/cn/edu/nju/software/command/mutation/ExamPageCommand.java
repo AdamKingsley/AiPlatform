@@ -19,4 +19,11 @@ public class ExamPageCommand extends PageCommand {
     //考试开始时间介于某个区间内
     private Date startTime;
     private Date endTime;
+
+    public ExamPageCommand() {
+    }
+
+    public ExamPageCommand(Integer pageNum, Integer pageSize) {
+        super(pageNum, pageSize);
+    }
 }

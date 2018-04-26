@@ -10,4 +10,10 @@ import lombok.Setter;
 @Getter
 @Setter
 public class BankPageCommand extends PageCommand {
+    public BankPageCommand() {
+    }
+
+    public BankPageCommand(Integer pageNum, Integer pageSize) {
+        super(pageNum, pageSize);
+    }
 }

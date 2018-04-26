@@ -5,11 +5,10 @@ import cn.edu.nju.software.command.mutation.ExamPageCommand;
 import cn.edu.nju.software.common.result.PageResult;
 import cn.edu.nju.software.common.result.Result;
 import cn.edu.nju.software.service.mutation.ExamService;
-import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.annotation.RequestScope;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -24,6 +23,7 @@ public class ExamController {
 
     /**
      * 创建考试
+     *
      * @param command
      * @return
      */
@@ -35,6 +35,7 @@ public class ExamController {
 
     /**
      * 更新考试信息(仅当考试未结束的时候)
+     *
      * @param command
      * @return
      */
@@ -46,6 +47,7 @@ public class ExamController {
 
     /**
      * 删除考试(管理员)
+     *
      * @param ids
      * @return
      */
@@ -55,14 +57,34 @@ public class ExamController {
         return Result.success().message("删除考试信息成功！");
     }
 
+    @GetMapping("detail")
+    public Result getExam(@RequestParam("id")Long id){
+        return examService.getExam(id);
+    }
+
     /**
      * 获取考试列表
-     * //TODO 筛选条件
-     * @param command
-     * @return
+     * //TODO 筛选条件 同理如AccountController
+     * //0还未开始；1正在进行；2已经结束 3全部的
+     * private Integer type;
+     * //指全部的还是只是我参加过
+     * private Boolean isMine;
+     * //考试开始时间介于某个区间内
+     * private Date startTime;
+     * private Date endTime;
      */
     @GetMapping("list")
-    public PageResult list(@RequestBody ExamPageCommand command) {
+    public PageResult list(@RequestParam(value = "pageNum", required = false) Integer pageNum,
+                           @RequestParam(value = "pageSize", required = false) Integer pageSize,
+                           @RequestParam(value = "type", required = false) Integer type,
+                           @RequestParam(value = "isMine", required = false) Boolean isMine,
+                           @RequestParam(value = "startTime", required = false) Date startTime,
+                           @RequestParam(value = "endTime", required = false) Date endTime) {
+        ExamPageCommand command = new ExamPageCommand(pageNum, pageSize);
+        command.setType(type);
+        command.setIsMine(isMine);
+        command.setStartTime(startTime);
+        command.setEndTime(endTime);
         return examService.list(command);
     }
 

@@ -1,9 +1,10 @@
 package cn.edu.nju.software.service;
 
 import cn.edu.nju.software.common.result.PageInfo;
+import cn.edu.nju.software.common.result.Result;
 import cn.edu.nju.software.dto.UserDto;
 import cn.edu.nju.software.entity.TestEntity;
-import cn.edu.nju.software.entity.User;
+import cn.edu.nju.software.mapper.ModelMapper;
 import cn.edu.nju.software.mapper.UserMapper;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
@@ -22,6 +23,8 @@ public class TestService {
 
     @Autowired
     private UserMapper mapper;
+    @Autowired
+    private ModelMapper modelMapper;
 
     public PageInfo selectUserPage() {
         PageHelper.startPage(1, 10);
@@ -43,4 +46,7 @@ public class TestService {
         return entities;
     }
 
+    public Result selectModels(List<Long> ids) {
+        return Result.success().withData(modelMapper.selectByModelIds(ids));
+    }
 }

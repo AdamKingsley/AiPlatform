@@ -16,4 +16,11 @@ public class UserPageCommand extends PageCommand {
     private Date startModifyTime;
     private Date endModifyTime;
     private Integer state; //0,1,2 //-1 all
+
+    public UserPageCommand() {
+    }
+
+    public UserPageCommand(Integer pageNum, Integer pageSize) {
+        super(pageNum, pageSize);
+    }
 }

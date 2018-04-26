@@ -5,6 +5,7 @@ import cn.edu.nju.software.command.mutation.ExamPageCommand;
 import cn.edu.nju.software.common.exception.ServiceException;
 import cn.edu.nju.software.common.result.PageInfo;
 import cn.edu.nju.software.common.result.PageResult;
+import cn.edu.nju.software.common.result.Result;
 import cn.edu.nju.software.dto.ExamDto;
 import cn.edu.nju.software.entity.Exam;
 import cn.edu.nju.software.mapper.ExamMapper;
@@ -66,4 +67,8 @@ public class ExamService {
     }
 
 
+    public Result getExam(Long id) {
+        ExamDto dto = examMapper.selectById(id);
+        return Result.success().message("查询考试对象成功！").withData(dto);
+    }
 }
