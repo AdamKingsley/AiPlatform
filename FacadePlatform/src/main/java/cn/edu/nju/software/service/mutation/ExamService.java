@@ -6,6 +6,7 @@ import cn.edu.nju.software.common.exception.ServiceException;
 import cn.edu.nju.software.common.result.PageInfo;
 import cn.edu.nju.software.common.result.PageResult;
 import cn.edu.nju.software.common.result.Result;
+import cn.edu.nju.software.common.shiro.ShiroUtils;
 import cn.edu.nju.software.dto.ExamDto;
 import cn.edu.nju.software.entity.Exam;
 import cn.edu.nju.software.mapper.ExamMapper;
@@ -61,9 +62,16 @@ public class ExamService {
         PageHelper.startPage(command.getPageNum(), command.getPageSize());
         //Example example = new Example(ExamDto.class);
         //example.createCriteria();
-        Page<ExamDto> page = examMapper.selectPage();
-        PageInfo<ExamDto> pageInfo = new PageInfo<>(page);
-        return new PageResult(pageInfo);
+        if (command.getType() == 2 && command.getIsMine() == true) {
+            //学生已经结束的
+            Page<ExamDto> page = examMapper.selectStudentFinishedExamPage(command, ShiroUtils.currentUser().getId());
+            PageInfo<ExamDto> pageInfo = new PageInfo<>(page);
+            return new PageResult(pageInfo);
+        } else {
+            Page<ExamDto> page = examMapper.selectExamPage(command);
+            PageInfo<ExamDto> pageInfo = new PageInfo<>(page);
+            return new PageResult(pageInfo);
+        }
     }
 
 

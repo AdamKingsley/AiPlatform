@@ -3,6 +3,8 @@ package cn.edu.nju.software.dto;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Date;
+
 /**
  * Created by mengf on 2018/4/19 0019.
  */
@@ -13,4 +15,6 @@ public class ModelDto extends IdDto {
     private Integer type;
     private String name;
     private Boolean isKilled;
+    private Date createTime;
+    private Date modifyTime;
 }

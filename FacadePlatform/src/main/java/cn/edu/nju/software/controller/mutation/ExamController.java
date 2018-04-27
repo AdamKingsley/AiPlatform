@@ -58,14 +58,14 @@ public class ExamController {
     }
 
     @GetMapping("detail")
-    public Result getExam(@RequestParam("id")Long id){
+    public Result getExam(@RequestParam("id") Long id) {
         return examService.getExam(id);
     }
 
     /**
      * 获取考试列表
      * //TODO 筛选条件 同理如AccountController
-     * //0还未开始；1正在进行；2已经结束 3全部的
+     * //0还未开始；1正在进行；2已经结束
      * private Integer type;
      * //指全部的还是只是我参加过
      * private Boolean isMine;
@@ -85,6 +85,7 @@ public class ExamController {
         command.setIsMine(isMine);
         command.setStartTime(startTime);
         command.setEndTime(endTime);
+        command.setCurrentTime(new Date());
         return examService.list(command);
     }
 

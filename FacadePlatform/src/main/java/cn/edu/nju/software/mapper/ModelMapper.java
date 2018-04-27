@@ -1,7 +1,9 @@
 package cn.edu.nju.software.mapper;
 
+import cn.edu.nju.software.command.mutation.ModelPageCommand;
 import cn.edu.nju.software.dto.ModelDto;
 import cn.edu.nju.software.entity.Model;
+import com.github.pagehelper.Page;
 import org.apache.ibatis.annotations.Delete;
 
 import org.apache.ibatis.annotations.Param;
@@ -36,4 +38,25 @@ public interface ModelMapper extends Mapper<Model> {
             "</foreach>",
             "</script>"})
     List<ModelDto> selectByBankIds(List<Long> ids);
+
+    @Select("select count(1) from t_model where name=#{name} and bank_id=#{bankId}")
+    Integer countByName(@Param("name") String name, @Param("bankId") Long bankId);
+
+
+    @Select({"<script>",
+            "select * from t_model where 1=1",
+            "<if test='command.startTime!=null'>",
+            "<![CDATA[ and create_time >= #{command.startTime}]]>",
+            "</if>",
+            "<if test='command.endTime!=null'>",
+            "<![CDATA[ and create_time <= #{command.endTime}]]>",
+            "</if>",
+            "<if test='command.bankId!=null'>",
+            "<![CDATA[ and bank_id = #{command.bankId}]]>",
+            "</if>",
+            "<if test='command.type!=null'>",
+            "<![CDATA[ and type = #{command.type}]]>",
+            "</if>",
+            "</script>"})
+    Page<ModelDto> selectModelPage(ModelPageCommand command);
 }
