@@ -12,6 +12,7 @@ import cn.edu.nju.software.entity.Bank;
 import cn.edu.nju.software.entity.Model;
 import cn.edu.nju.software.mapper.BankMapper;
 import cn.edu.nju.software.mapper.ModelMapper;
+import cn.edu.nju.software.util.FileUtil;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.google.common.collect.Lists;
@@ -49,6 +50,14 @@ public class BankService {
 
     public void update(BankCommand command) {
         Bank bank = bankMapper.selectByPrimaryKey(command.getId());
+        //如果修改了题库的名称
+        if (!bank.getName().equals(command.getName())) {
+            int num = bankMapper.countByName(command.getName());
+            if (num > 0) {
+                throw new ServiceException("题库名称已经存在！");
+            }
+        }
+        //正常更新 刷新更新时间
         bank.setModifyTime(new Date());
         BeanUtils.copyProperties(command, bank);
         bankMapper.updateByPrimaryKey(bank);
@@ -157,13 +166,13 @@ public class BankService {
     }
 
     public Result uploadScript(Long id, MultipartFile file) {
-        Result result = checkFile(file);
+        Result result = FileUtil.checkFile(file);
         if (!result.isSuccess()) {
             return result;
         }
-        File dir = makeDirs("bank_" + id + "/");
+        File dir = FileUtil.makeDirs(uploadConfig.getFolder(), "bank_" + id + "/");
         //String originalFilename = file.getOriginalFilename();
-        String extension = getExtension(file.getOriginalFilename(), file.getContentType());
+        String extension = FileUtil.getExtension(file.getOriginalFilename(), file.getContentType());
         String ab_path = dir.getAbsolutePath() + File.separator + "script" + extension;
         String path = dir.getPath() + File.separator + "script" + extension;
         try {
@@ -187,9 +196,9 @@ public class BankService {
             return Result.error().errorMessage("上传模型数量为0！");
         }
         for (MultipartFile file : models) {
-            File dir = makeDirs("bank_" + id + "/models/");
+            File dir = FileUtil.makeDirs(uploadConfig.getFolder(), "bank_" + id + "/models/");
             //String originalFilename = file.getOriginalFilename();
-            String extension = getExtension(file.getOriginalFilename(), file.getContentType());
+            String extension = FileUtil.getExtension(file.getOriginalFilename(), file.getContentType());
             nums += 1;
             String ab_path = dir.getAbsolutePath() + File.separator + "model_" + nums + extension;
             String path = dir.getPath() + File.separator + "model_" + nums + extension;
@@ -198,6 +207,8 @@ public class BankService {
                 //return Result.success().message("执行脚本上传成功！");
                 Model model = new Model();
                 model.setName("model_" + nums);
+                model.setCreateTime(new Date());
+                model.setModifyTime(model.getCreateTime());
                 model.setBank_id(id);
                 model.setLocation(path);
                 //model.setType(1);
@@ -214,55 +225,10 @@ public class BankService {
     }
 
 
-    /**
-     * 若保存文件的目录不存在就默认建立对应的文件夹
-     *
-     * @param folerName
-     * @return
-     */
-    private File makeDirs(String folerName) {
-        File targetFile = new File(uploadConfig.getFolder() + folerName);
-        if (!targetFile.exists()) {
-            targetFile.mkdirs();
-        }
-        log.info("the path is : {}", targetFile.getPath());
-        log.info("the absolute path is : {}", targetFile.getAbsolutePath());
-        return targetFile;
+    public void downloadSamples(Long id, HttpServletResponse response) {
     }
 
-    /**
-     * 检查文件是否为空
-     *
-     * @param file
-     * @return
-     */
-    private Result checkFile(MultipartFile file) {
-        if (file.isEmpty()) {
-            if (file.isEmpty()) {
-                return Result.error().message("文件为空，文件上传失败！");
-            }
-        }
-        return Result.success().message("文件不为空,可继续进行存储操作！");
+    public Result uploadSamples(Long id, List<MultipartFile> files) {
+        return null;
     }
-
-    /**
-     * 获取文件的拓展名 tika库
-     *
-     * @param contenType
-     * @return
-     */
-    private String getExtension(String filename, String contenType) {
-        //如果有后缀名直接用后缀名
-        if (filename.lastIndexOf('.') >= 0) {
-            return filename.substring(filename.lastIndexOf('.'), filename.length());
-        }
-        try {
-            return MimeTypes.getDefaultMimeTypes().
-                    forName(contenType).getExtension();
-        } catch (MimeTypeException e) {
-            e.printStackTrace();
-            return "";
-        }
-    }
-
 }

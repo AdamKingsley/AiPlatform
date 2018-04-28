@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Date;
 
 /**
  * Created by mengf on 2018/4/19 0019.
@@ -23,4 +24,6 @@ public class Model extends IdEntity {
     private String location;
     //变异的类型（0改参数 1改神经元数量 2改变激励函数）
     private Integer type;
+    private Date createTime;
+    private Date modifyTime;
 }

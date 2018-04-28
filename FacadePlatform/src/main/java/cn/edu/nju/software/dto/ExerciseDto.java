@@ -4,13 +4,14 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by mengf on 2018/4/19 0019.
  */
 @Setter
 @Getter
-public class ExerciseDto extends IdDto{
+public class ExerciseDto extends IdDto {
     //考试分配给该用户的模型id集合
     private String modelIds;
     //用户正式进入考试的时间
@@ -28,5 +29,7 @@ public class ExerciseDto extends IdDto{
     //用户杀死的模型的ID 总数量同killNums
     private String killModelIds;
     //考试状态 0还未开始 1正在进行 2已结束
-    private Integer state;
+    //private Integer state;
+
+    private List<ModelDto> modelDtos;
 }

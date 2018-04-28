@@ -11,6 +11,8 @@ import cn.edu.nju.software.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -51,9 +53,23 @@ public class AccountController {
         return accountService.active(code);
     }
 
+
+    //todo 传参很多很蠢 GET不支持requestbody 寻求解决方案
     @GetMapping("/users")
-    public PageResult list(@RequestBody UserPaginationCommand command){
-       return  accountService.list(command);
+    public PageResult list(@RequestParam(value = "pageNum", required = false) Integer pageNumber,
+                           @RequestParam(value = "pageSize", required = false) Integer pageSize,
+                           @RequestParam(value = "startCreateTime", required = false) Date startCreateTime,
+                           @RequestParam(value = "endCreateTime", required = false) Date endCreateTime,
+                           @RequestParam(value = "startModifyTime", required = false) Date startModifyTime,
+                           @RequestParam(value = "endModifyTime", required = false) Date endModifyTime,
+                           @RequestParam(value = "state", required = false) Integer state, HttpServletRequest request) {
+        UserPaginationCommand command = new UserPaginationCommand(pageNumber, pageSize);
+        command.setState(state);
+        command.setStartCreateTime(startCreateTime);
+        command.setEndCreateTime(endCreateTime);
+        command.setStartModifyTime(startModifyTime);
+        command.setEndModifyTime(endModifyTime);
+        return accountService.list(command);
     }
 
     /**
@@ -69,6 +85,7 @@ public class AccountController {
 
     /**
      * 冻结用户
+     *
      * @param ids
      * @return
      */
@@ -79,7 +96,7 @@ public class AccountController {
 
 
     @PostMapping("/reactive")
-    public Result reactive(@RequestParam("id") List<Long> ids){
+    public Result reactive(@RequestParam("id") List<Long> ids) {
         return accountService.reactive(ids);
     }
 }

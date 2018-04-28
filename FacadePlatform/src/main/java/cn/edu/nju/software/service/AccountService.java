@@ -8,10 +8,13 @@ import cn.edu.nju.software.common.shiro.RoleEnum;
 import cn.edu.nju.software.common.shiro.StateEnum;
 import cn.edu.nju.software.common.exception.ExceptionEnum;
 import cn.edu.nju.software.common.exception.ServiceException;
+import cn.edu.nju.software.common.result.PageInfo;
 import cn.edu.nju.software.common.result.PageResult;
 import cn.edu.nju.software.common.result.Result;
+import cn.edu.nju.software.common.shiro.RoleEnum;
 import cn.edu.nju.software.common.shiro.ShiroUser;
 import cn.edu.nju.software.common.shiro.ShiroUtils;
+import cn.edu.nju.software.common.shiro.StateEnum;
 import cn.edu.nju.software.dto.UserDto;
 import cn.edu.nju.software.entity.User;
 import cn.edu.nju.software.mapper.UserMapper;
@@ -39,6 +42,7 @@ public class AccountService {
     private UserMapper userMapper;
     @Autowired
     private MailService mailService;
+
 
     public Result register(RegisterCommand command) {
         command.validate();
@@ -122,7 +126,7 @@ public class AccountService {
             return Result.error().exception(ExceptionEnum.UNKNOWN_USER);
         }
         User user = new User();
-        BeanUtils.copyProperties(userDto,user);
+        BeanUtils.copyProperties(userDto, user);
         int state = user.getState();
         if (state == StateEnum.NOT_ACTIVE.getState()) {
             user.setState(StateEnum.ACTIVED.getState());
@@ -191,7 +195,25 @@ public class AccountService {
         Page<User> page = (Page<User>) (userMapper.selectByExample(example));
         //TODO User to UserDto
 
-        return null;
+//        Example example = new Example(UserDto.class);
+//        Example.Criteria criteria = example.createCriteria();
+//        if (command.getState() != null && command.getState() != -1) {
+//            criteria = criteria.andEqualTo("state", command.getState());
+//        }
+//        if (command.getStartCreateTime() != null) {
+//            criteria = criteria.andGreaterThanOrEqualTo("create_time", command.getStartCreateTime());
+//        }
+//        if (command.getEndCreateTime() != null) {
+//            criteria = criteria.andLessThanOrEqualTo("create_time", command.getEndCreateTime());
+//        }
+//        if (command.getStartModifyTime() != null) {
+//            criteria = criteria.andGreaterThanOrEqualTo("modify_time", command.getStartModifyTime());
+//        }
+//        if (command.getEndModifyTime() != null) {
+//            criteria = criteria.andLessThanOrEqualTo("modify_time", command.getEndModifyTime());
+//        }
+        PageResult pageResult = new PageResult(new PageInfo(page));
+        return pageResult;
     }
 }
 

@@ -10,4 +10,12 @@ import lombok.Setter;
 @Getter
 @Setter
 public class BankPaginationCommand extends PaginationCommand {
+
+    public BankPaginationCommand() {
+    }
+
+    public BankPaginationCommand(Integer pageNum, Integer pageSize) {
+        super(pageNum, pageSize);
+    }
+
 }

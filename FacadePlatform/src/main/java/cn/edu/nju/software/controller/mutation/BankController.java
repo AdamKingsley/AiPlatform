@@ -51,11 +51,14 @@ public class BankController {
 
     /**
      * 查看题库列表
-     * //TODO 加筛选条件
+     * //TODO 加筛选条件 同理如AccountController
+     *
      * @return
      */
     @GetMapping("list")
-    public PageResult getBankList(@RequestBody BankPaginationCommand command) {
+    public PageResult getBankList(@RequestParam(value = "pageSize", required = false) Integer pageSize,
+                                  @RequestParam(value = "pageNum", required = false) Integer pageNum) {
+        BankPaginationCommand command = new BankPaginationCommand(pageNum, pageSize);
         return bankService.list(command);
     }
 
@@ -109,6 +112,28 @@ public class BankController {
     public Result uploadModels(@PathVariable Long id, HttpServletRequest request) {
         List<MultipartFile> files = ((MultipartHttpServletRequest) request).getFiles("models");
         return bankService.uploadMutationModel(id, files);
+    }
+
+
+    /**
+     * 从题库中下载测试样本集
+     */
+    @GetMapping("samples/{id}")
+    public void downloadSamples(@PathVariable Long id, HttpServletRequest request, HttpServletResponse response) {
+        bankService.downloadSamples(id, response);
+    }
+
+    /**
+     * 向题库中上传模型
+     *
+     * @param id
+     * @param request
+     * @return
+     */
+    @PostMapping("samples/{id}")
+    public Result uploadSamples(@PathVariable Long id, HttpServletRequest request) {
+        List<MultipartFile> files = ((MultipartHttpServletRequest) request).getFiles("models");
+        return bankService.uploadSamples(id, files);
     }
 
 }

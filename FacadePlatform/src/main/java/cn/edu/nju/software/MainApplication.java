@@ -1,5 +1,6 @@
 package cn.edu.nju.software;
 
+import cn.edu.nju.software.common.initial.BindingInitializer;
 import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
@@ -11,6 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.bind.support.WebBindingInitializer;
 import tk.mybatis.spring.annotation.MapperScan;
 
 
@@ -39,5 +41,10 @@ public class MainApplication {
         DataSourceTransactionManager dsm = new DataSourceTransactionManager();
         dsm.setDataSource(datasource);
         return dsm;
+    }
+
+    @Bean(name = "webBindingInitializer")
+    public WebBindingInitializer getWebBindingInitializer(){
+        return new BindingInitializer();
     }
 }

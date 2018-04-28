@@ -14,7 +14,9 @@ public enum ExceptionEnum {
     LOGIN_FAILED(-103, "用户登录失败!"),
     REGISTER_FAILED(-104, "用户注册失败!"),
     ACTIVE_DUPLICATED(-105, "用户已经激活过了，请登录！"),
-    UNKNOWN_USER(106, "用户不存在！");
+    UNKNOWN_USER(106, "用户不存在！"),
+    ITEMS_OUT_LIMIT(301, "上传样本数量超过考试限制！"),
+    ITERS_OUT_LIMIT(302, "上传样本次数超过考试限制！");
 
     private Integer code;
 

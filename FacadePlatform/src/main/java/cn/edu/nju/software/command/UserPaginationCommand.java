@@ -16,4 +16,11 @@ public class UserPaginationCommand extends PaginationCommand {
     private Date startModifyTime;
     private Date endModifyTime;
     private Integer state; //0,1,2 //-1 all
+
+    public UserPaginationCommand() {
+    }
+
+    public UserPaginationCommand(Integer pageNum, Integer pageSize) {
+        super(pageNum, pageSize);
+    }
 }

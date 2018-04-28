@@ -14,9 +14,18 @@ import java.util.Date;
 public class ExamPaginationCommand extends PaginationCommand {
     //0还未开始；1正在进行；2已经结束 3全部的
     private Integer type;
-    //指全部的还是只是我参加过
+    //指全部的还是只是我参加过isMine=true 学生查询 isMine=false老师查询
+    // 这个只针对type=2时候的查询是不相同的
     private Boolean isMine;
     //考试开始时间介于某个区间内
     private Date startTime;
     private Date endTime;
+    private Date currentTime;
+
+    public ExamPaginationCommand() {
+    }
+
+    public ExamPaginationCommand(Integer pageNum, Integer pageSize) {
+        super(pageNum, pageSize);
+    }
 }

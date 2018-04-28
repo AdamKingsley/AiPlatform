@@ -3,14 +3,13 @@ package cn.edu.nju.software.controller;
 import cn.edu.nju.software.common.exception.ExceptionEnum;
 import cn.edu.nju.software.common.exception.ServiceException;
 import cn.edu.nju.software.common.result.PageInfo;
-import cn.edu.nju.software.common.result.PageResult;
 import cn.edu.nju.software.common.result.Result;
 import cn.edu.nju.software.entity.TestEntity;
 import cn.edu.nju.software.service.TestService;
-import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -44,4 +43,9 @@ public class TestController {
         return service.selectUserPage();
     }
 
+
+    @GetMapping("/modelIds")
+    public Result getModelIds(@RequestParam("id")List<Long> ids){
+        return service.selectModels(ids);
+    }
 }

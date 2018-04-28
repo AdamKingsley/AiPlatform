@@ -36,7 +36,7 @@ public class LoginController {
         }
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(command.getUsername(), command.getPassword());
-        token.setRememberMe(command.getRememberMe());
+        token.setRememberMe(command.getRememberMe() == null ? false : command.getRememberMe());
         subject.login(token);
         return Result.success().message("登录成功").withData(ShiroUtils.currentUser());
     }

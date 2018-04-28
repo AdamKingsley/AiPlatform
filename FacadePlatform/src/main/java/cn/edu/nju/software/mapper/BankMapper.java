@@ -5,6 +5,7 @@ import cn.edu.nju.software.entity.Bank;
 import com.github.pagehelper.Page;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.entity.Example;
@@ -20,6 +21,6 @@ public interface BankMapper extends Mapper<Bank> {
     @Select("select * from t_bank order by modify_time desc")
     Page<BankDto> selectPage();
 
-    Page<BankDto> selectByExample(@Param("example")Example example);
-
+    @Update("update t_bank set nums = nums - #{num}")
+    void subModelNums(@Param("num") int num);
 }

@@ -1,8 +1,6 @@
 package cn.edu.nju.software.common.shiro;
 
 
-import cn.edu.nju.software.entity.Role;
-
 /**
  * Created by mengf on 2018/4/24 0024.
  */
