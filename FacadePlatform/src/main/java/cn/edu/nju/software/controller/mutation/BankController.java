@@ -75,6 +75,10 @@ public class BankController {
         return Result.success().message("删除题库成功！");
     }
 
+    @GetMapping("detail/{id}")
+    public Result getBank(@PathVariable("id") Long id){
+        return bankService.getBankDetail(id);
+    }
     /**
      * 向题库中上传执行脚本
      */
@@ -132,7 +136,7 @@ public class BankController {
      */
     @PostMapping("samples/{id}")
     public Result uploadSamples(@PathVariable Long id, HttpServletRequest request) {
-        List<MultipartFile> files = ((MultipartHttpServletRequest) request).getFiles("models");
+        List<MultipartFile> files = ((MultipartHttpServletRequest) request).getFiles("samples");
         return bankService.uploadSamples(id, files);
     }
 

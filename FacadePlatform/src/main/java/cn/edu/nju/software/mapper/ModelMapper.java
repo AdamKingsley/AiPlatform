@@ -37,7 +37,7 @@ public interface ModelMapper extends Mapper<Model> {
             "#{item}",
             "</foreach>",
             "</script>"})
-    List<ModelDto> selectByBankIds(List<Long> ids);
+    List<ModelDto> selectByBankIds(@Param("ids") List<Long> ids);
 
     @Select("select count(1) from t_model where name=#{name} and bank_id=#{bankId}")
     Integer countByName(@Param("name") String name, @Param("bankId") Long bankId);

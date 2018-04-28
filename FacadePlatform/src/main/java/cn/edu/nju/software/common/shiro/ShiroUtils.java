@@ -13,7 +13,7 @@ public class ShiroUtils {
     public static ShiroUser currentUser() {
         try {
             Subject subject = SecurityUtils.getSubject();
-            if(subject != null) {
+            if (subject != null) {
                 return (ShiroUser) subject.getPrincipal();
             }
         } catch (Exception e) {
@@ -21,12 +21,19 @@ public class ShiroUtils {
         return null;
     }
 
+    public static void invalidUser() {
+        Subject subject = SecurityUtils.getSubject();
+        if (subject != null) {
+            subject.logout();
+        }
+    }
+
     /**
      * 取出Shiro中的当前用户LoginName.
      */
     public static String currentUserName() {
         ShiroUser user = currentUser();
-        if(user == null) {
+        if (user == null) {
             return null;
         }
         return user.getUsername();

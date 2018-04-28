@@ -57,8 +57,8 @@ public class ExamController {
         return Result.success().message("删除考试信息成功！");
     }
 
-    @GetMapping("detail")
-    public Result getExam(@RequestParam("id") Long id) {
+    @GetMapping("detail/{id}")
+    public Result getExam(@PathVariable("id") Long id) {
         return examService.getExam(id);
     }
 

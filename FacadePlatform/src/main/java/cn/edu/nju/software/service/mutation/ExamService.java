@@ -62,7 +62,8 @@ public class ExamService {
         PageHelper.startPage(command.getPageNum(), command.getPageSize());
         //Example example = new Example(ExamDto.class);
         //example.createCriteria();
-        if (command.getType() == 2 && command.getIsMine() == true) {
+        if (command.getType() != null && command.getIsMine() != null
+                && command.getType() == 2 && command.getIsMine() == true) {
             //学生已经结束的
             Page<ExamDto> page = examMapper.selectStudentFinishedExamPage(command, ShiroUtils.currentUser().getId());
             PageInfo<ExamDto> pageInfo = new PageInfo<>(page);

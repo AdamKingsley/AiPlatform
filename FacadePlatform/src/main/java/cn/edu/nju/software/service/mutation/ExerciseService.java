@@ -57,6 +57,7 @@ public class ExerciseService {
         Exercise exercise = new Exercise();
         exercise.setUserId(userId);
         exercise.setExamId(examId);
+        BeanUtils.copyProperties(exercise, dto);
         //获取考试信息
         Exam exam = examMapper.selectByPrimaryKey(examId);
         //如果已经结束考试
@@ -96,6 +97,7 @@ public class ExerciseService {
             dto.setStartTime(new Date());
             dto.setKillNums(0);
             dto.setTotalIters(0);
+            dto.setUserId(userId);
             //设置题库ID们
             dto.setModelIds(getIdsStr(exercise_models));
             BeanUtils.copyProperties(dto, exercise);
@@ -150,6 +152,10 @@ public class ExerciseService {
                 }
             }
         }
+
+        //将exercise的迭代次数上升1
+        exercise.setTotalIters(exercise.getTotalIters() + 1);
+        exerciseMapper.updateByPrimaryKey(exercise);
         // TODO 然后异步调用执行脚本接口
         // TODO 参数->
         // TODO userId✔，examId✔，path(存储本次在线运行样本的所有文件的文件夹目录)✔，

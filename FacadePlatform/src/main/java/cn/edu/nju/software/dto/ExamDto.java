@@ -25,7 +25,7 @@ public class ExamDto extends IdDto {
     // 0不限制
     private Integer maxItems;
     //变异体的数量
-    private Integer mutationNums;
+    private Integer modelNums;
     //description
     private String description;
 }

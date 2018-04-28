@@ -77,6 +77,8 @@ public class AccountService {
         if (userDto.getState() == StateEnum.NOT_ACTIVE.getState()) {
             mailService.sendActiveMail(userDto.getUsername(), userDto.getMail());
         }
+        //设置roleName
+        userDto.setRoleName(RoleEnum.valueOf(userDto.getRoleId()).toString().toLowerCase());
         return Result.success().withData(userDto).message("注册成功，请查收激活邮件！");
     }
 

@@ -231,4 +231,8 @@ public class BankService {
     public Result uploadSamples(Long id, List<MultipartFile> files) {
         return null;
     }
+
+    public Result getBankDetail(Long id) {
+        return null;
+    }
 }

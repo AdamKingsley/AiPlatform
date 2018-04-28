@@ -41,7 +41,7 @@ public interface ExamMapper extends Mapper<Exam> {
             "<![CDATA[ and e.start_time >= #{command.startTime}]]>",
             "</if>",
             "<if test='command.endTime!=null'>",
-            "<![CDATA[ and e.end_time <= #{command.endTime}]]>",
+            "<![CDATA[ and e.start_time <= #{command.endTime}]]>",
             "</if>",
             "</script>"})
     Page<ExamDto> selectExamPage(@Param("command") ExamPageCommand command);
@@ -54,9 +54,9 @@ public interface ExamMapper extends Mapper<Exam> {
             "<![CDATA[ and e.start_time >= #{command.startTime}]]>",
             "</if>",
             "<if test='command.endTime!=null'>",
-            "<![CDATA[ and e.end_time <= #{command.endTime}]]>",
+            "<![CDATA[ and e.start_time <= #{command.endTime}]]>",
             "</if>",
             "</script>"
     })
-    Page<ExamDto> selectStudentFinishedExamPage(@Param("command") ExamPageCommand command,@Param("userId")Long userId);
+    Page<ExamDto> selectStudentFinishedExamPage(@Param("command") ExamPageCommand command, @Param("userId") Long userId);
 }
