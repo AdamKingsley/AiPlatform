@@ -10,7 +10,7 @@ import java.util.Date;
  */
 @Getter
 @Setter
-public class UserPageCommand extends PageCommand {
+public class UserPaginationCommand extends PaginationCommand {
     private Date startCreateTime;
     private Date endCreateTime;
     private Date startModifyTime;

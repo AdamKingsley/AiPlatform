@@ -1,6 +1,6 @@
 package cn.edu.nju.software.command.mutation;
 
-import cn.edu.nju.software.command.PageCommand;
+import cn.edu.nju.software.command.PaginationCommand;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +11,7 @@ import java.util.Date;
  */
 @Getter
 @Setter
-public class ExamPageCommand extends PageCommand {
+public class ExamPaginationCommand extends PaginationCommand {
     //0还未开始；1正在进行；2已经结束 3全部的
     private Integer type;
     //指全部的还是只是我参加过

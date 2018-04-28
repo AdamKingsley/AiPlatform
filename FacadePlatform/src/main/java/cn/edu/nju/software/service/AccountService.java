@@ -3,7 +3,7 @@ package cn.edu.nju.software.service;
 import cn.edu.nju.software.command.ChangePasswordCommand;
 import cn.edu.nju.software.command.RegisterCommand;
 import cn.edu.nju.software.command.ResetPasswordCommand;
-import cn.edu.nju.software.command.UserPageCommand;
+import cn.edu.nju.software.command.UserPaginationCommand;
 import cn.edu.nju.software.common.shiro.RoleEnum;
 import cn.edu.nju.software.common.shiro.StateEnum;
 import cn.edu.nju.software.common.exception.ExceptionEnum;
@@ -168,7 +168,7 @@ public class AccountService {
         return Result.success().message("对所选用户重新发送激活邮件成功");
     }
 
-    public PageResult list(UserPageCommand command) {
+    public PageResult list(UserPaginationCommand command) {
         //TODO 返回用户列表
         PageHelper.startPage(command.getPageNum(), command.getPageSize());
         Example example = new Example(User.class);

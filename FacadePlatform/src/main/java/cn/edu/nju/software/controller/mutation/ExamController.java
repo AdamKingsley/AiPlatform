@@ -1,14 +1,12 @@
 package cn.edu.nju.software.controller.mutation;
 
 import cn.edu.nju.software.command.mutation.ExamCommand;
-import cn.edu.nju.software.command.mutation.ExamPageCommand;
+import cn.edu.nju.software.command.mutation.ExamPaginationCommand;
 import cn.edu.nju.software.common.result.PageResult;
 import cn.edu.nju.software.common.result.Result;
 import cn.edu.nju.software.service.mutation.ExamService;
-import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.annotation.RequestScope;
 
 import java.util.List;
 
@@ -62,7 +60,7 @@ public class ExamController {
      * @return
      */
     @GetMapping("list")
-    public PageResult list(@RequestBody ExamPageCommand command) {
+    public PageResult list(@RequestBody ExamPaginationCommand command) {
         return examService.list(command);
     }
 

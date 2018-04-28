@@ -8,14 +8,14 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class PageCommand {
+public class PaginationCommand {
     private Integer pageSize=10;
     private Integer pageNum=1;
 
-    public PageCommand() {
+    public PaginationCommand() {
     }
 
-    public PageCommand(Integer pageSize, Integer pageNum) {
+    public PaginationCommand(Integer pageSize, Integer pageNum) {
         this.pageSize = pageSize;
         this.pageNum = pageNum;
     }

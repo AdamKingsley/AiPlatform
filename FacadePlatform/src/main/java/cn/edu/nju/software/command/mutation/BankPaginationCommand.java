@@ -1,6 +1,6 @@
 package cn.edu.nju.software.command.mutation;
 
-import cn.edu.nju.software.command.PageCommand;
+import cn.edu.nju.software.command.PaginationCommand;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,5 +9,5 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class BankPageCommand extends PageCommand {
+public class BankPaginationCommand extends PaginationCommand {
 }

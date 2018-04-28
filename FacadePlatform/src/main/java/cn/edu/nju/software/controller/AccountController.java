@@ -2,13 +2,12 @@ package cn.edu.nju.software.controller;
 
 import cn.edu.nju.software.command.ChangePasswordCommand;
 import cn.edu.nju.software.command.ResetPasswordCommand;
-import cn.edu.nju.software.command.UserPageCommand;
+import cn.edu.nju.software.command.UserPaginationCommand;
 import cn.edu.nju.software.common.result.PageResult;
 import cn.edu.nju.software.common.result.Result;
 import cn.edu.nju.software.common.shiro.ShiroUser;
 import cn.edu.nju.software.common.shiro.ShiroUtils;
 import cn.edu.nju.software.service.AccountService;
-import com.github.pagehelper.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -53,7 +52,7 @@ public class AccountController {
     }
 
     @GetMapping("/users")
-    public PageResult list(@RequestBody UserPageCommand command){
+    public PageResult list(@RequestBody UserPaginationCommand command){
        return  accountService.list(command);
     }
 
