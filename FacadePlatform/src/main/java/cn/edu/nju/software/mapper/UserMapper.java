@@ -1,6 +1,6 @@
 package cn.edu.nju.software.mapper;
 
-import cn.edu.nju.software.command.UserPageCommand;
+import cn.edu.nju.software.command.UserPaginationCommand;
 import cn.edu.nju.software.dto.UserDto;
 import cn.edu.nju.software.entity.User;
 import com.github.pagehelper.Page;
@@ -49,5 +49,5 @@ public interface UserMapper extends Mapper<User> {
             "<![CDATA[ and state= #{command.state} ]]>",
             "</if>",
             "</script>"})
-    Page<UserDto> selectUserPage(@Param("command") UserPageCommand command);
+    Page<UserDto> selectUserPage(@Param("command") UserPaginationCommand command);
 }

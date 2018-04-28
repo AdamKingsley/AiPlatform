@@ -1,7 +1,7 @@
 package cn.edu.nju.software.controller.mutation;
 
 import cn.edu.nju.software.command.mutation.ModelCommand;
-import cn.edu.nju.software.command.mutation.ModelPageCommand;
+import cn.edu.nju.software.command.mutation.ModelPaginationCommand;
 import cn.edu.nju.software.common.result.PageResult;
 import cn.edu.nju.software.common.result.Result;
 import cn.edu.nju.software.service.mutation.ModelService;
@@ -30,7 +30,7 @@ public class ModelController {
                            @RequestParam(value = "type",required = false)Integer type,
                            @RequestParam(value = "startTime",required = false)Date startTime,
                            @RequestParam(value = "endTime",required = false)Date endTime) {
-        ModelPageCommand command = new ModelPageCommand(pageNum,pageSize);
+        ModelPaginationCommand command = new ModelPaginationCommand(pageNum,pageSize);
         command.setType(type);
         command.setStartTime(startTime);
         command.setEndTime(endTime);

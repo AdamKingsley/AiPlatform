@@ -1,7 +1,7 @@
 package cn.edu.nju.software.controller.mutation;
 
 import cn.edu.nju.software.command.mutation.BankCommand;
-import cn.edu.nju.software.command.mutation.BankPageCommand;
+import cn.edu.nju.software.command.mutation.BankPaginationCommand;
 import cn.edu.nju.software.common.result.PageResult;
 import cn.edu.nju.software.common.result.Result;
 import cn.edu.nju.software.service.mutation.BankService;
@@ -58,7 +58,7 @@ public class BankController {
     @GetMapping("list")
     public PageResult getBankList(@RequestParam(value = "pageSize", required = false) Integer pageSize,
                                   @RequestParam(value = "pageNum", required = false) Integer pageNum) {
-        BankPageCommand command = new BankPageCommand(pageNum, pageSize);
+        BankPaginationCommand command = new BankPaginationCommand(pageNum, pageSize);
         return bankService.list(command);
     }
 

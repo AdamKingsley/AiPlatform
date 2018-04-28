@@ -1,6 +1,6 @@
 package cn.edu.nju.software.mapper;
 
-import cn.edu.nju.software.command.mutation.ExamPageCommand;
+import cn.edu.nju.software.command.mutation.ExamPaginationCommand;
 import cn.edu.nju.software.dto.ExamDto;
 import cn.edu.nju.software.entity.Exam;
 import com.github.pagehelper.Page;
@@ -8,7 +8,6 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.Mapper;
-import tk.mybatis.mapper.entity.Example;
 
 ;
 
@@ -44,7 +43,7 @@ public interface ExamMapper extends Mapper<Exam> {
             "<![CDATA[ and e.start_time <= #{command.endTime}]]>",
             "</if>",
             "</script>"})
-    Page<ExamDto> selectExamPage(@Param("command") ExamPageCommand command);
+    Page<ExamDto> selectExamPage(@Param("command") ExamPaginationCommand command);
 
     @Select({
             "<script>",
@@ -58,5 +57,5 @@ public interface ExamMapper extends Mapper<Exam> {
             "</if>",
             "</script>"
     })
-    Page<ExamDto> selectStudentFinishedExamPage(@Param("command") ExamPageCommand command, @Param("userId") Long userId);
+    Page<ExamDto> selectStudentFinishedExamPage(@Param("command") ExamPaginationCommand command,@Param("userId")Long userId);
 }

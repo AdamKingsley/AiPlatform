@@ -1,6 +1,6 @@
 package cn.edu.nju.software.mapper;
 
-import cn.edu.nju.software.command.mutation.ModelPageCommand;
+import cn.edu.nju.software.command.mutation.ModelPaginationCommand;
 import cn.edu.nju.software.dto.ModelDto;
 import cn.edu.nju.software.entity.Model;
 import com.github.pagehelper.Page;
@@ -58,5 +58,5 @@ public interface ModelMapper extends Mapper<Model> {
             "<![CDATA[ and type = #{command.type}]]>",
             "</if>",
             "</script>"})
-    Page<ModelDto> selectModelPage(ModelPageCommand command);
+    Page<ModelDto> selectModelPage(ModelPaginationCommand command);
 }

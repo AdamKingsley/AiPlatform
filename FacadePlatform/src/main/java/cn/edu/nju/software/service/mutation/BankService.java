@@ -1,7 +1,7 @@
 package cn.edu.nju.software.service.mutation;
 
 import cn.edu.nju.software.command.mutation.BankCommand;
-import cn.edu.nju.software.command.mutation.BankPageCommand;
+import cn.edu.nju.software.command.mutation.BankPaginationCommand;
 import cn.edu.nju.software.common.exception.ServiceException;
 import cn.edu.nju.software.common.result.PageInfo;
 import cn.edu.nju.software.common.result.PageResult;
@@ -73,7 +73,7 @@ public class BankService {
     }
 
     //获取题库列表 分页
-    public PageResult list(BankPageCommand command) {
+    public PageResult list(BankPaginationCommand command) {
         PageHelper.startPage(command.getPageNum(), command.getPageSize());
         Page<BankDto> page = bankMapper.selectPage();
         PageInfo<BankDto> pageInfo = new PageInfo(page);

@@ -3,7 +3,9 @@ package cn.edu.nju.software.service;
 import cn.edu.nju.software.command.ChangePasswordCommand;
 import cn.edu.nju.software.command.RegisterCommand;
 import cn.edu.nju.software.command.ResetPasswordCommand;
-import cn.edu.nju.software.command.UserPageCommand;
+import cn.edu.nju.software.command.UserPaginationCommand;
+import cn.edu.nju.software.common.shiro.RoleEnum;
+import cn.edu.nju.software.common.shiro.StateEnum;
 import cn.edu.nju.software.common.exception.ExceptionEnum;
 import cn.edu.nju.software.common.exception.ServiceException;
 import cn.edu.nju.software.common.result.PageInfo;
@@ -172,7 +174,28 @@ public class AccountService {
         return Result.success().message("对所选用户重新发送激活邮件成功");
     }
 
-    public PageResult list(UserPageCommand command) {
+    public PageResult list(UserPaginationCommand command) {
+        //TODO 返回用户列表
+        PageHelper.startPage(command.getPageNum(), command.getPageSize());
+        Example example = new Example(User.class);
+        Example.Criteria criteria = example.createCriteria();
+        if (command.getState() != null && command.getState() != -1) {
+            criteria = criteria.andEqualTo("state", command.getState());
+        }
+        if (command.getStartCreateTime() != null) {
+            criteria = criteria.andGreaterThanOrEqualTo("create_time", command.getStartCreateTime());
+        }
+        if (command.getEndCreateTime() != null) {
+            criteria = criteria.andLessThanOrEqualTo("create_time", command.getEndCreateTime());
+        }
+        if (command.getStartModifyTime() != null) {
+            criteria = criteria.andGreaterThanOrEqualTo("modify_time", command.getStartModifyTime());
+        }
+        if (command.getEndModifyTime() != null) {
+            criteria = criteria.andLessThanOrEqualTo("modify_time", command.getEndModifyTime());
+        }
+        Page<User> page = (Page<User>) (userMapper.selectByExample(example));
+        //TODO User to UserDto
 
 //        Example example = new Example(UserDto.class);
 //        Example.Criteria criteria = example.createCriteria();
@@ -191,8 +214,6 @@ public class AccountService {
 //        if (command.getEndModifyTime() != null) {
 //            criteria = criteria.andLessThanOrEqualTo("modify_time", command.getEndModifyTime());
 //        }
-        PageHelper.startPage(command.getPageNum(), command.getPageSize());
-        Page<UserDto> page = userMapper.selectUserPage(command);
         PageResult pageResult = new PageResult(new PageInfo(page));
         return pageResult;
     }

@@ -1,7 +1,7 @@
 package cn.edu.nju.software.service.mutation;
 
 import cn.edu.nju.software.command.mutation.ModelCommand;
-import cn.edu.nju.software.command.mutation.ModelPageCommand;
+import cn.edu.nju.software.command.mutation.ModelPaginationCommand;
 import cn.edu.nju.software.common.exception.ServiceException;
 import cn.edu.nju.software.common.result.PageInfo;
 import cn.edu.nju.software.common.result.PageResult;
@@ -75,7 +75,7 @@ public class ModelService {
         modelMapper.updateByPrimaryKey(model);
     }
 
-    public PageResult list(ModelPageCommand command) {
+    public PageResult list(ModelPaginationCommand command) {
 
         Page<ModelDto> page =  modelMapper.selectModelPage(command);
         return new PageResult(new PageInfo(page));

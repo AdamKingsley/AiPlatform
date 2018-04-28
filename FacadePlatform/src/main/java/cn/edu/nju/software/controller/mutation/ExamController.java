@@ -1,7 +1,7 @@
 package cn.edu.nju.software.controller.mutation;
 
 import cn.edu.nju.software.command.mutation.ExamCommand;
-import cn.edu.nju.software.command.mutation.ExamPageCommand;
+import cn.edu.nju.software.command.mutation.ExamPaginationCommand;
 import cn.edu.nju.software.common.result.PageResult;
 import cn.edu.nju.software.common.result.Result;
 import cn.edu.nju.software.service.mutation.ExamService;
@@ -80,7 +80,7 @@ public class ExamController {
                            @RequestParam(value = "isMine", required = false) Boolean isMine,
                            @RequestParam(value = "startTime", required = false) Date startTime,
                            @RequestParam(value = "endTime", required = false) Date endTime) {
-        ExamPageCommand command = new ExamPageCommand(pageNum, pageSize);
+        ExamPaginationCommand command = new ExamPaginationCommand(pageNum, pageSize);
         command.setType(type);
         command.setIsMine(isMine);
         command.setStartTime(startTime);

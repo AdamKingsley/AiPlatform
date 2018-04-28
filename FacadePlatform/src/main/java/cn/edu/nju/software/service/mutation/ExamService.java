@@ -1,7 +1,7 @@
 package cn.edu.nju.software.service.mutation;
 
 import cn.edu.nju.software.command.mutation.ExamCommand;
-import cn.edu.nju.software.command.mutation.ExamPageCommand;
+import cn.edu.nju.software.command.mutation.ExamPaginationCommand;
 import cn.edu.nju.software.common.exception.ServiceException;
 import cn.edu.nju.software.common.result.PageInfo;
 import cn.edu.nju.software.common.result.PageResult;
@@ -15,7 +15,6 @@ import com.github.pagehelper.PageHelper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tk.mybatis.mapper.entity.Example;
 
 import java.util.Date;
 import java.util.List;
@@ -57,7 +56,7 @@ public class ExamService {
         }
     }
 
-    public PageResult list(ExamPageCommand command) {
+    public PageResult list(ExamPaginationCommand command) {
         //查询分页数据
         PageHelper.startPage(command.getPageNum(), command.getPageSize());
         //Example example = new Example(ExamDto.class);

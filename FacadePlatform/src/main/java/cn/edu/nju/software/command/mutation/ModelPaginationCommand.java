@@ -1,6 +1,6 @@
 package cn.edu.nju.software.command.mutation;
 
-import cn.edu.nju.software.command.PageCommand;
+import cn.edu.nju.software.command.PaginationCommand;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,17 +11,17 @@ import java.util.Date;
  */
 @Getter
 @Setter
-public class ModelPageCommand extends PageCommand {
+public class ModelPaginationCommand extends PaginationCommand {
 
     private Date startTime;
     private Date endTime;
     private Integer type;
     private Long bankId;
 
-    public ModelPageCommand() {
+    public ModelPaginationCommand() {
     }
 
-    public ModelPageCommand(Integer pageNum, Integer pageSize) {
+    public ModelPaginationCommand(Integer pageNum, Integer pageSize) {
         super(pageNum, pageSize);
     }
 }

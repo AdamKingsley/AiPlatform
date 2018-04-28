@@ -10,17 +10,17 @@ import java.util.Date;
  */
 @Getter
 @Setter
-public class UserPageCommand extends PageCommand {
+public class UserPaginationCommand extends PaginationCommand {
     private Date startCreateTime;
     private Date endCreateTime;
     private Date startModifyTime;
     private Date endModifyTime;
     private Integer state; //0,1,2 //-1 all
 
-    public UserPageCommand() {
+    public UserPaginationCommand() {
     }
 
-    public UserPageCommand(Integer pageNum, Integer pageSize) {
+    public UserPaginationCommand(Integer pageNum, Integer pageSize) {
         super(pageNum, pageSize);
     }
 }

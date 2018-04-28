@@ -2,7 +2,7 @@ package cn.edu.nju.software.controller;
 
 import cn.edu.nju.software.command.ChangePasswordCommand;
 import cn.edu.nju.software.command.ResetPasswordCommand;
-import cn.edu.nju.software.command.UserPageCommand;
+import cn.edu.nju.software.command.UserPaginationCommand;
 import cn.edu.nju.software.common.result.PageResult;
 import cn.edu.nju.software.common.result.Result;
 import cn.edu.nju.software.common.shiro.ShiroUser;
@@ -63,7 +63,7 @@ public class AccountController {
                            @RequestParam(value = "startModifyTime", required = false) Date startModifyTime,
                            @RequestParam(value = "endModifyTime", required = false) Date endModifyTime,
                            @RequestParam(value = "state", required = false) Integer state, HttpServletRequest request) {
-        UserPageCommand command = new UserPageCommand(pageNumber, pageSize);
+        UserPaginationCommand command = new UserPaginationCommand(pageNumber, pageSize);
         command.setState(state);
         command.setStartCreateTime(startCreateTime);
         command.setEndCreateTime(endCreateTime);
