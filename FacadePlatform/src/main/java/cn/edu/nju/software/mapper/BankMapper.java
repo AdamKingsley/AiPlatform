@@ -23,4 +23,7 @@ public interface BankMapper extends Mapper<Bank> {
 
     @Update("update t_bank set nums = nums - #{num}")
     void subModelNums(@Param("num") int num);
+
+    @Select("select * from t_bank where id=#{id}")
+    BankDto selectById(@Param("id") Long id);
 }

@@ -6,11 +6,13 @@ import cn.edu.nju.software.common.result.Result;
 import cn.edu.nju.software.common.upload.UploadConfig;
 import cn.edu.nju.software.dto.ExerciseDto;
 import cn.edu.nju.software.dto.ModelDto;
+import cn.edu.nju.software.dto.SampleDto;
 import cn.edu.nju.software.entity.Exam;
 import cn.edu.nju.software.entity.Exercise;
 import cn.edu.nju.software.mapper.ExamMapper;
 import cn.edu.nju.software.mapper.ExerciseMapper;
 import cn.edu.nju.software.mapper.ModelMapper;
+import cn.edu.nju.software.mapper.SampleMapper;
 import cn.edu.nju.software.util.FileUtil;
 import cn.edu.nju.software.util.RandomUtil;
 import com.google.common.collect.Lists;
@@ -21,6 +23,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -48,6 +51,8 @@ public class ExerciseService {
     private ModelMapper modelMapper;
     @Autowired
     private UploadConfig uploadConfig;
+    @Autowired
+    private SampleMapper sampleMapper;
 
     //学生参加过的考试
     //未参加的考试
@@ -156,6 +161,8 @@ public class ExerciseService {
         //将exercise的迭代次数上升1
         exercise.setTotalIters(exercise.getTotalIters() + 1);
         exerciseMapper.updateByPrimaryKey(exercise);
+
+        // 万一一场考试选择多个题库的数据呢？
         // TODO 然后异步调用执行脚本接口
         // TODO 参数->
         // TODO userId✔，examId✔，path(存储本次在线运行样本的所有文件的文件夹目录)✔，
@@ -236,19 +243,6 @@ public class ExerciseService {
         }
     }
 
-    private String getIdsStr(Iterable<String> ids) {
-        String result = "";
-        for (String id : ids) {
-            result += id;
-            result += SEPERATOR;
-        }
-        if (result.lastIndexOf(SEPERATOR) == result.length() - 1) {
-            result = result.substring(0, result.length() - 1);
-        }
-        return result;
-    }
-
-
     private String getIdsStr(List<ModelDto> models) {
         String result = "";
         for (ModelDto dto : models) {
@@ -271,4 +265,18 @@ public class ExerciseService {
     }
 
 
+    public void downloadReferenceSamples(Long examId, HttpServletResponse response) {
+        Exam exam = examMapper.selectByPrimaryKey(examId);
+        List<Long> bankIds = getIds(exam.getBankIds());
+        List<SampleDto> samples = sampleMapper.selectByBankIds(bankIds);
+        List<File> files = Lists.newArrayList();
+        for (SampleDto dto : samples){
+            files.add(new File(dto.getLocation()));
+        }
+        if (files.size() == 1) {
+            FileUtil.downloadFile(files.get(0), files.get(0).getName(), response);
+        } else {
+            FileUtil.downloadZip(files, "samples.zip", response);
+        }
+    }
 }

@@ -10,11 +10,13 @@ import cn.edu.nju.software.common.shiro.ShiroUtils;
 import cn.edu.nju.software.dto.ExamDto;
 import cn.edu.nju.software.entity.Exam;
 import cn.edu.nju.software.mapper.ExamMapper;
+import cn.edu.nju.software.mapper.SampleMapper;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import tk.mybatis.mapper.common.ExampleMapper;
 
 import java.util.Date;
 import java.util.List;
@@ -27,6 +29,9 @@ public class ExamService {
 
     @Autowired
     private ExamMapper examMapper;
+
+    @Autowired
+    private SampleMapper sampleMapper;
 
     public void create(ExamCommand command) {
         command.validate();
@@ -79,4 +84,5 @@ public class ExamService {
         ExamDto dto = examMapper.selectById(id);
         return Result.success().message("查询考试对象成功！").withData(dto);
     }
+
 }

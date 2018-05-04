@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -39,6 +40,17 @@ public class ExerciseController {
     public Result uploadSample(@RequestParam("userId") Long userId, @RequestParam("examId") Long examId, HttpServletRequest request) {
         List<MultipartFile> files = ((MultipartHttpServletRequest) request).getFiles("sample");
         return exerciseService.uploadSample(userId, examId, files);
+    }
+
+
+    /**
+     * 下载考试参考样本samples即下载本场考试相关的
+     *
+     * @param examId
+     */
+    @GetMapping("download/reference-samples")
+    public void downloadReferenceSamples(@RequestParam("examId") Long examId, HttpServletResponse response) {
+        exerciseService.downloadReferenceSamples(examId, response);
     }
 
 }

@@ -22,6 +22,8 @@ public class BankDto extends IdDto {
     //private String samplesLocation;
     //题库创建时间
     private Date createTime;
+    //题库修改时间
+    private Date modifyTime;
     //备注
     private String description;
 }

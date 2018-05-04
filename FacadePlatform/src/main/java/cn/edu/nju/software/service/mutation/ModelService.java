@@ -55,10 +55,10 @@ public class ModelService {
     private  Map<Long,List<Long>> devidedByBankId(Iterable<Model> models){
         Map<Long,List<Long>> map = Maps.newHashMap();
         for(Model model : models){
-            if (map.get(model.getBank_id().longValue())==null){
-                map.put(model.getBank_id(), Lists.newArrayList());
+            if (map.get(model.getBankId().longValue())==null){
+                map.put(model.getBankId(), Lists.newArrayList());
             }
-            map.get(model.getBank_id().longValue()).add(model.getId());
+            map.get(model.getBankId().longValue()).add(model.getId());
         }
         return map;
     }
@@ -66,7 +66,7 @@ public class ModelService {
     public void update(ModelCommand command) {
         Model model = modelMapper.selectByPrimaryKey(command.getId());
         if (command.getName().equals(model.getName())){
-            int num = modelMapper.countByName(model.getName(),model.getBank_id());
+            int num = modelMapper.countByName(model.getName(),model.getBankId());
             if (num>0){
                 throw new ServiceException("该名称已存在！");
             }

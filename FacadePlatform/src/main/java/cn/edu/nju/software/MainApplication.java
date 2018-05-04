@@ -43,8 +43,8 @@ public class MainApplication {
         return dsm;
     }
 
-    @Bean(name = "webBindingInitializer")
-    public WebBindingInitializer getWebBindingInitializer(){
-        return new BindingInitializer();
-    }
+    //@Bean(name = "webBindingInitializer")
+    //public WebBindingInitializer getWebBindingInitializer(){
+    //    return new BindingInitializer();
+    //}
 }

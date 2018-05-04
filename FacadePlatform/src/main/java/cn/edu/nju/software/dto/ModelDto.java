@@ -11,10 +11,13 @@ import java.util.Date;
 @Getter
 @Setter
 public class ModelDto extends IdDto {
+    private Long bankId;
     private String location;
     private Integer type;
     private String name;
     private Boolean isKilled;
     private Date createTime;
     private Date modifyTime;
+    //对应执行脚本所在的location
+    private String scriptLocation;
 }

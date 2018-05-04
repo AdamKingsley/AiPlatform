@@ -23,7 +23,8 @@ public interface ModelMapper extends Mapper<Model> {
     @Delete("delete from t_model where bank_id=#{bank_id}")
     void deleteByBankId(@Param("bank_id") Long bankId);
 
-    @Select({"<script>", "select * from t_model where id in ",
+    @Select({"<script>", "select m.*,b.script_location from t_model m , t_bank b ",
+            "where b.id = m.bank_id and m.id in ",
             "<foreach item='item' index='index' collection='ids'",
             "open='(' separator=',' close=')'>",
             "#{item}",
