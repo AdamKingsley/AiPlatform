@@ -4,6 +4,7 @@ import cn.edu.nju.software.command.mutation.ExamCommand;
 import cn.edu.nju.software.command.mutation.ExamPaginationCommand;
 import cn.edu.nju.software.common.result.PageResult;
 import cn.edu.nju.software.common.result.Result;
+import cn.edu.nju.software.dto.ExamDto;
 import cn.edu.nju.software.service.mutation.ExamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -39,7 +40,7 @@ public class ExamController {
      * @param command
      * @return
      */
-    @PutMapping("update")
+    @PostMapping("update")
     public Result update(@RequestBody ExamCommand command) {
         examService.update(command);
         return Result.success().message("更新考试信息成功!");
@@ -59,7 +60,8 @@ public class ExamController {
 
     @GetMapping("detail/{id}")
     public Result getExam(@PathVariable("id") Long id) {
-        return examService.getExam(id);
+        ExamDto dto = examService.getExam(id);
+        return Result.success().message("查询考试对象成功！").withData(dto);
     }
 
     /**
@@ -73,19 +75,13 @@ public class ExamController {
      * private Date startTime;
      * private Date endTime;
      */
-    @GetMapping("list")
-    public PageResult list(@RequestParam(value = "pageNum", required = false) Integer pageNum,
-                           @RequestParam(value = "pageSize", required = false) Integer pageSize,
-                           @RequestParam(value = "draw", required = false) Integer draw,
-                           @RequestParam(value = "type", required = false) Integer type,
-                           @RequestParam(value = "isMine", required = false) Boolean isMine,
-                           @RequestParam(value = "startTime", required = false) Date startTime,
-                           @RequestParam(value = "endTime", required = false) Date endTime) {
-        ExamPaginationCommand command = new ExamPaginationCommand(pageNum, pageSize,draw);
-        command.setType(type);
-        command.setIsMine(isMine);
-        command.setStartTime(startTime);
-        command.setEndTime(endTime);
+    @PostMapping("list")
+    public PageResult list(@RequestBody ExamPaginationCommand command) {
+        //ExamPaginationCommand command = new ExamPaginationCommand(pageNum, pageSize,draw);
+        //command.setType(type);
+        //command.setIsMine(isMine);
+        //command.setStartTime(startTime);
+        //command.setEndTime(endTime);
         command.setCurrentTime(new Date());
         return examService.list(command);
     }

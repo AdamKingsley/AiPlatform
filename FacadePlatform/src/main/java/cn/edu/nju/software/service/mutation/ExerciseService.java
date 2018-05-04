@@ -57,7 +57,7 @@ public class ExerciseService {
     //学生参加过的考试
     //未参加的考试
     //结束的考试
-    public Result takeExam(Long userId, Long examId) {
+    public ExerciseDto takeExam(Long userId, Long examId) {
         ExerciseDto dto = new ExerciseDto();
         Exercise exercise = new Exercise();
         exercise.setUserId(userId);
@@ -108,7 +108,7 @@ public class ExerciseService {
             BeanUtils.copyProperties(dto, exercise);
             exerciseMapper.insert(exercise);
         }
-        return Result.success().message("获取学生本场考试信息成功！").withData(dto);
+        return dto;
     }
 
     public Result uploadSample(Long userId, Long examId, List<MultipartFile> files) {
@@ -270,7 +270,7 @@ public class ExerciseService {
         List<Long> bankIds = getIds(exam.getBankIds());
         List<SampleDto> samples = sampleMapper.selectByBankIds(bankIds);
         List<File> files = Lists.newArrayList();
-        for (SampleDto dto : samples){
+        for (SampleDto dto : samples) {
             files.add(new File(dto.getLocation()));
         }
         if (files.size() == 1) {

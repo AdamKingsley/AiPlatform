@@ -80,9 +80,9 @@ public class ExamService {
     }
 
 
-    public Result getExam(Long id) {
+    public ExamDto getExam(Long id) {
         ExamDto dto = examMapper.selectById(id);
-        return Result.success().message("查询考试对象成功！").withData(dto);
+        return dto;
     }
 
 }

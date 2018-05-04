@@ -23,19 +23,13 @@ public class ModelController {
     @Autowired
     private ModelService modelService;
 
-    @GetMapping("list/{bankId}")
-    public PageResult list(@PathVariable Long bankId,
-                           @RequestParam(value = "pageNum",required = false)Integer pageNum,
-                           @RequestParam(value = "pageSize",required = false)Integer pageSize,
-                           @RequestParam(value = "draw",required = false)Integer draw,
-                           @RequestParam(value = "type",required = false)Integer type,
-                           @RequestParam(value = "startTime",required = false)Date startTime,
-                           @RequestParam(value = "endTime",required = false)Date endTime) {
-        ModelPaginationCommand command = new ModelPaginationCommand(pageNum,pageSize,draw);
-        command.setType(type);
-        command.setStartTime(startTime);
-        command.setEndTime(endTime);
-        command.setBankId(bankId);
+    @PostMapping("list/{bankId}")
+    public PageResult list(@PathVariable Long bankId,@RequestBody ModelPaginationCommand command) {
+        //ModelPaginationCommand command = new ModelPaginationCommand(pageNum,pageSize,draw);
+        //command.setType(type);
+        //command.setStartTime(startTime);
+        //command.setEndTime(endTime);
+        //command.setBankId(bankId);
         return modelService.list(command);
     }
 
@@ -45,7 +39,7 @@ public class ModelController {
      * @param command
      * @return
      */
-    @PutMapping("update")
+    @PostMapping("update")
     public Result update(@RequestBody ModelCommand command) {
         modelService.update(command);
         return Result.success().message("更新考试信息成功!");
