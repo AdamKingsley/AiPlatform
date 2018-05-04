@@ -4,6 +4,7 @@ import cn.edu.nju.software.common.exception.ExceptionEnum;
 import cn.edu.nju.software.common.result.Result;
 import cn.edu.nju.software.common.shiro.ShiroUser;
 import cn.edu.nju.software.common.shiro.ShiroUtils;
+import cn.edu.nju.software.dto.ExerciseDto;
 import cn.edu.nju.software.service.mutation.ExerciseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -33,7 +34,8 @@ public class ExerciseController {
                 userId = ShiroUtils.currentUser().getId();
             }
         }
-        return exerciseService.takeExam(userId, examId);
+        ExerciseDto dto = exerciseService.takeExam(userId, examId);
+        return Result.success().message("获取学生本场考试信息成功！").withData(dto);
     }
 
     @PostMapping("upload/sample")

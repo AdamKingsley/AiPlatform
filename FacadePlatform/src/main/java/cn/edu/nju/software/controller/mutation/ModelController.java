@@ -45,7 +45,7 @@ public class ModelController {
      * @param command
      * @return
      */
-    @PutMapping("update")
+    @PostMapping("update")
     public Result update(@RequestBody ModelCommand command) {
         modelService.update(command);
         return Result.success().message("更新考试信息成功!");

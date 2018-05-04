@@ -4,6 +4,7 @@ import cn.edu.nju.software.command.mutation.BankCommand;
 import cn.edu.nju.software.command.mutation.BankPaginationCommand;
 import cn.edu.nju.software.common.result.PageResult;
 import cn.edu.nju.software.common.result.Result;
+import cn.edu.nju.software.dto.BankDto;
 import cn.edu.nju.software.service.mutation.BankService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +44,7 @@ public class BankController {
      * @param command
      * @return
      */
-    @PutMapping("update/{id}")
+    @PostMapping("update/{id}")
     public Result updateBank(@PathVariable Long id, @RequestBody BankCommand command) {
         bankService.update(command);
         return Result.success().message("更新题库成功！");
@@ -59,8 +60,15 @@ public class BankController {
     public PageResult getBankList(@RequestParam(value = "pageSize", required = false) Integer pageSize,
                                   @RequestParam(value = "pageNum", required = false) Integer pageNum,
                                   @RequestParam(value = "pageNum", required = false) Integer draw) {
-        BankPaginationCommand command = new BankPaginationCommand(pageNum, pageSize,draw);
+        BankPaginationCommand command = new BankPaginationCommand(pageNum, pageSize, draw);
         return bankService.list(command);
+    }
+
+
+    @GetMapping("list/all")
+    public Result getBankList() {
+        List<BankDto> dtos = bankService.listAll();
+        return Result.success().message("获取全部题库列表成功").withData(dtos);
     }
 
 
@@ -77,9 +85,11 @@ public class BankController {
     }
 
     @GetMapping("detail/{id}")
-    public Result getBank(@PathVariable("id") Long id){
-        return bankService.getBankDetail(id);
+    public Result getBank(@PathVariable("id") Long id) {
+        BankDto dto = bankService.getBankDetail(id);
+        return Result.success().message("获取题库详情成功").withData(dto);
     }
+
     /**
      * 向题库中上传执行脚本
      */
@@ -95,7 +105,6 @@ public class BankController {
     public void downloadScript(@PathVariable Long id, HttpServletRequest request, HttpServletResponse response) {
         //String fileName="upload.jpg";
         bankService.downloadScript(id, response);
-
     }
 
     /**

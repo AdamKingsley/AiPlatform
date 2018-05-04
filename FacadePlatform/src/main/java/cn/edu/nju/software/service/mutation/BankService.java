@@ -78,7 +78,7 @@ public class BankService {
         PageHelper.startPage(command.getPageNum(), command.getPageSize());
         Page<BankDto> page = bankMapper.selectPage();
         PageInfo<BankDto> pageInfo = new PageInfo(page);
-        return new PageResult(pageInfo,command.getDraw());
+        return new PageResult(pageInfo, command.getDraw());
     }
 
     public void delete(List<Long> ids) {
@@ -91,9 +91,9 @@ public class BankService {
     }
 
 
-    public Result getBankDetail(Long id) {
+    public BankDto getBankDetail(Long id) {
         BankDto dto = bankMapper.selectById(id);
-        return Result.success().message("获取题库详情成功").withData(dto);
+        return dto;
     }
 
     public void downloadScript(Long id, HttpServletResponse response) {
@@ -230,4 +230,7 @@ public class BankService {
         return Result.success().message("样本集上传到系统成功！");
     }
 
+    public List<BankDto> listAll() {
+        return bankMapper.selectAllBanks();
+    }
 }
