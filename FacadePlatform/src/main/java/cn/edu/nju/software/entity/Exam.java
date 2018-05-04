@@ -36,4 +36,8 @@ public class Exam extends IdEntity {
     private Integer modelNums;
     //题库集合
     private String bankIds;
+    //创建人id
+    private Long createUserId;
+    //修改人id
+    private Long modifyUserId;
 }

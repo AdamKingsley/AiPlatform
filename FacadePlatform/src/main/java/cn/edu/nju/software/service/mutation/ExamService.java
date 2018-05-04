@@ -2,11 +2,15 @@ package cn.edu.nju.software.service.mutation;
 
 import cn.edu.nju.software.command.mutation.ExamCommand;
 import cn.edu.nju.software.command.mutation.ExamPaginationCommand;
+import cn.edu.nju.software.common.exception.ExceptionEnum;
 import cn.edu.nju.software.common.exception.ServiceException;
 import cn.edu.nju.software.common.result.PageInfo;
 import cn.edu.nju.software.common.result.PageResult;
 import cn.edu.nju.software.common.result.Result;
+import cn.edu.nju.software.common.shiro.RoleEnum;
+import cn.edu.nju.software.common.shiro.ShiroUser;
 import cn.edu.nju.software.common.shiro.ShiroUtils;
+import cn.edu.nju.software.common.shiro.StateEnum;
 import cn.edu.nju.software.dto.ExamDto;
 import cn.edu.nju.software.entity.Exam;
 import cn.edu.nju.software.mapper.ExamMapper;
@@ -39,7 +43,19 @@ public class ExamService {
         BeanUtils.copyProperties(command, exam);
         exam.setCreateTime(new Date());
         exam.setModifyTime(exam.getCreateTime());
-        examMapper.insert(exam);
+        ShiroUser user = ShiroUtils.currentUser();
+        //如果没登陆
+        if (user == null) {
+            throw new ServiceException(ExceptionEnum.LOGIN_INVALID);
+        }
+        //如果是老师
+        if (user.getRoleId().longValue() == RoleEnum.TEACHER.getRoleId()) {
+            exam.setCreateUserId(user.getId());
+            exam.setModifyUserId(user.getId());
+            examMapper.insert(exam);
+        } else {
+            throw new ServiceException(ExceptionEnum.PERMISSION_DENIED);
+        }
     }
 
     public void update(ExamCommand command) {
@@ -51,7 +67,18 @@ public class ExamService {
         }
         BeanUtils.copyProperties(command, exam);
         exam.setModifyTime(new Date());
-        examMapper.updateByPrimaryKey(exam);
+        ShiroUser user = ShiroUtils.currentUser();
+        //如果没登陆
+        if (user == null) {
+            throw new ServiceException(ExceptionEnum.LOGIN_INVALID);
+        }
+        //如果是老师
+        if (user.getRoleId().longValue() == RoleEnum.TEACHER.getRoleId()) {
+            exam.setModifyUserId(user.getId());
+            examMapper.updateByPrimaryKey(exam);
+        } else {
+            throw new ServiceException(ExceptionEnum.PERMISSION_DENIED);
+        }
     }
 
     public void delete(List<Long> ids) {
@@ -71,11 +98,11 @@ public class ExamService {
             //学生已经结束的
             Page<ExamDto> page = examMapper.selectStudentFinishedExamPage(command, ShiroUtils.currentUser().getId());
             PageInfo<ExamDto> pageInfo = new PageInfo<>(page);
-            return new PageResult(pageInfo,command.getDraw());
+            return new PageResult(pageInfo, command.getDraw());
         } else {
             Page<ExamDto> page = examMapper.selectExamPage(command);
             PageInfo<ExamDto> pageInfo = new PageInfo<>(page);
-            return new PageResult(pageInfo,command.getDraw());
+            return new PageResult(pageInfo, command.getDraw());
         }
     }
 
