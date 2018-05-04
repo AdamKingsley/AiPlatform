@@ -76,11 +76,12 @@ public class ExamController {
     @GetMapping("list")
     public PageResult list(@RequestParam(value = "pageNum", required = false) Integer pageNum,
                            @RequestParam(value = "pageSize", required = false) Integer pageSize,
+                           @RequestParam(value = "draw", required = false) Integer draw,
                            @RequestParam(value = "type", required = false) Integer type,
                            @RequestParam(value = "isMine", required = false) Boolean isMine,
                            @RequestParam(value = "startTime", required = false) Date startTime,
                            @RequestParam(value = "endTime", required = false) Date endTime) {
-        ExamPaginationCommand command = new ExamPaginationCommand(pageNum, pageSize);
+        ExamPaginationCommand command = new ExamPaginationCommand(pageNum, pageSize,draw);
         command.setType(type);
         command.setIsMine(isMine);
         command.setStartTime(startTime);

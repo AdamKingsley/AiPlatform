@@ -25,7 +25,7 @@ public class ExamPaginationCommand extends PaginationCommand {
     public ExamPaginationCommand() {
     }
 
-    public ExamPaginationCommand(Integer pageNum, Integer pageSize) {
-        super(pageNum, pageSize);
+    public ExamPaginationCommand(Integer pageNum, Integer pageSize, Integer draw) {
+        super(pageNum, pageSize, draw);
     }
 }

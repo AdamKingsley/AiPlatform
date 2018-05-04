@@ -71,11 +71,11 @@ public class ExamService {
             //学生已经结束的
             Page<ExamDto> page = examMapper.selectStudentFinishedExamPage(command, ShiroUtils.currentUser().getId());
             PageInfo<ExamDto> pageInfo = new PageInfo<>(page);
-            return new PageResult(pageInfo);
+            return new PageResult(pageInfo,command.getDraw());
         } else {
             Page<ExamDto> page = examMapper.selectExamPage(command);
             PageInfo<ExamDto> pageInfo = new PageInfo<>(page);
-            return new PageResult(pageInfo);
+            return new PageResult(pageInfo,command.getDraw());
         }
     }
 

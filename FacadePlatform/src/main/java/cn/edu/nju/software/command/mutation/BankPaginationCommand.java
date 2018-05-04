@@ -14,8 +14,8 @@ public class BankPaginationCommand extends PaginationCommand {
     public BankPaginationCommand() {
     }
 
-    public BankPaginationCommand(Integer pageNum, Integer pageSize) {
-        super(pageNum, pageSize);
+    public BankPaginationCommand(Integer pageNum, Integer pageSize, Integer draw) {
+        super(pageNum, pageSize, draw);
     }
 
 }

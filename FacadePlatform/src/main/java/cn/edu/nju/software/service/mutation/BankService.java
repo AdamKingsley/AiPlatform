@@ -78,7 +78,7 @@ public class BankService {
         PageHelper.startPage(command.getPageNum(), command.getPageSize());
         Page<BankDto> page = bankMapper.selectPage();
         PageInfo<BankDto> pageInfo = new PageInfo(page);
-        return new PageResult(pageInfo);
+        return new PageResult(pageInfo,command.getDraw());
     }
 
     public void delete(List<Long> ids) {

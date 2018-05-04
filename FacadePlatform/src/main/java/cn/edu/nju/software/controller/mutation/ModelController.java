@@ -27,10 +27,11 @@ public class ModelController {
     public PageResult list(@PathVariable Long bankId,
                            @RequestParam(value = "pageNum",required = false)Integer pageNum,
                            @RequestParam(value = "pageSize",required = false)Integer pageSize,
+                           @RequestParam(value = "draw",required = false)Integer draw,
                            @RequestParam(value = "type",required = false)Integer type,
                            @RequestParam(value = "startTime",required = false)Date startTime,
                            @RequestParam(value = "endTime",required = false)Date endTime) {
-        ModelPaginationCommand command = new ModelPaginationCommand(pageNum,pageSize);
+        ModelPaginationCommand command = new ModelPaginationCommand(pageNum,pageSize,draw);
         command.setType(type);
         command.setStartTime(startTime);
         command.setEndTime(endTime);

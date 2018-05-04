@@ -214,7 +214,7 @@ public class AccountService {
 //        if (command.getEndModifyTime() != null) {
 //            criteria = criteria.andLessThanOrEqualTo("modify_time", command.getEndModifyTime());
 //        }
-        PageResult pageResult = new PageResult(new PageInfo(page));
+        PageResult pageResult = new PageResult(new PageInfo(page),command.getDraw());
         return pageResult;
     }
 }

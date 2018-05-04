@@ -58,12 +58,13 @@ public class AccountController {
     @GetMapping("/users")
     public PageResult list(@RequestParam(value = "pageNum", required = false) Integer pageNumber,
                            @RequestParam(value = "pageSize", required = false) Integer pageSize,
+                           @RequestParam(value = "draw", required = false) Integer draw,
                            @RequestParam(value = "startCreateTime", required = false) Date startCreateTime,
                            @RequestParam(value = "endCreateTime", required = false) Date endCreateTime,
                            @RequestParam(value = "startModifyTime", required = false) Date startModifyTime,
                            @RequestParam(value = "endModifyTime", required = false) Date endModifyTime,
                            @RequestParam(value = "state", required = false) Integer state, HttpServletRequest request) {
-        UserPaginationCommand command = new UserPaginationCommand(pageNumber, pageSize);
+        UserPaginationCommand command = new UserPaginationCommand(pageNumber, pageSize,draw);
         command.setState(state);
         command.setStartCreateTime(startCreateTime);
         command.setEndCreateTime(endCreateTime);

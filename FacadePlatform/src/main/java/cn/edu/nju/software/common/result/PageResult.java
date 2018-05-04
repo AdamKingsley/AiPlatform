@@ -11,7 +11,8 @@ import java.util.List;
 public class PageResult {
     private boolean success = true;
     private List data;
-    private int curPage = 1;//当前页
+    private Integer draw;
+    private int currentPage = 1;//当前页
     private long totalRows = -1;
     private int pageSize = 20;//默认
     private int pages;
@@ -22,29 +23,26 @@ public class PageResult {
     public PageResult(PageInfo pageInfo){
         success=true;
         data = pageInfo.getList();
-        curPage = pageInfo.getPageNum();
+        currentPage = pageInfo.getPageNum();
         totalRows = pageInfo.getTotal();
         pageSize = pageInfo.getPageSize();
         pages = pageInfo.getPages();
+    }
+
+    public PageResult(PageInfo pageInfo,Integer draw){
+        success=true;
+        data = pageInfo.getList();
+        currentPage = pageInfo.getPageNum();
+        totalRows = pageInfo.getTotal();
+        pageSize = pageInfo.getPageSize();
+        pages = pageInfo.getPages();
+        this.draw = draw;
     }
 
     private PageResult(boolean success) {
         this.success = success;
     }
 
-//    private PageResult(List data, Pagination page) {
-//        this(true);
-//
-//        this.data = data;
-//
-//        this.curPage = page.getCurPage();
-//        this.pageSize = page.getPageSize();
-//        this.totalRows = page.getTotalRows();
-//    }
-//
-//    public static PageResult success(List data, Pagination page) {
-//        return new PageResult(data, page);
-//    }
 
     public static PageResult error(String errorMessage) {
         PageResult result = new PageResult(false);
@@ -58,8 +56,8 @@ public class PageResult {
     public List getData() {
         return data;
     }
-    public int getCurPage() {
-        return curPage;
+    public int getCurrentPage() {
+        return currentPage;
     }
     public long getTotalRows() {
         return totalRows;

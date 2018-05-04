@@ -21,7 +21,7 @@ public class ModelPaginationCommand extends PaginationCommand {
     public ModelPaginationCommand() {
     }
 
-    public ModelPaginationCommand(Integer pageNum, Integer pageSize) {
-        super(pageNum, pageSize);
+    public ModelPaginationCommand(Integer pageNum, Integer pageSize,Integer draw) {
+        super(pageNum, pageSize,draw);
     }
 }

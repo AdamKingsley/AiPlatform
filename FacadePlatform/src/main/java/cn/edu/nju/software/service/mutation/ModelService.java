@@ -41,21 +41,21 @@ public class ModelService {
     public void delete(List<Long> ids) {
         //删除模型的同时减少对应题库中的数量
         Example example = new Example(Model.class);
-        example.createCriteria().andIn("id",ids);
+        example.createCriteria().andIn("id", ids);
         List<Model> models = modelMapper.selectByExample(example);
-        Map<Long,List<Long>> modelsList = devidedByBankId(models);
-        modelsList.forEach((bankId,modelIds)->{
-            example.createCriteria().andIn("id",modelIds);
+        Map<Long, List<Long>> modelsList = devidedByBankId(models);
+        modelsList.forEach((bankId, modelIds) -> {
+            example.createCriteria().andIn("id", modelIds);
             modelMapper.deleteByExample(example);
             bankMapper.subModelNums(modelIds.size());
         });
     }
 
     //将model们按照bankid分开
-    private  Map<Long,List<Long>> devidedByBankId(Iterable<Model> models){
-        Map<Long,List<Long>> map = Maps.newHashMap();
-        for(Model model : models){
-            if (map.get(model.getBankId().longValue())==null){
+    private Map<Long, List<Long>> devidedByBankId(Iterable<Model> models) {
+        Map<Long, List<Long>> map = Maps.newHashMap();
+        for (Model model : models) {
+            if (map.get(model.getBankId().longValue()) == null) {
                 map.put(model.getBankId(), Lists.newArrayList());
             }
             map.get(model.getBankId().longValue()).add(model.getId());
@@ -65,20 +65,20 @@ public class ModelService {
 
     public void update(ModelCommand command) {
         Model model = modelMapper.selectByPrimaryKey(command.getId());
-        if (command.getName().equals(model.getName())){
-            int num = modelMapper.countByName(model.getName(),model.getBankId());
-            if (num>0){
+        if (command.getName().equals(model.getName())) {
+            int num = modelMapper.countByName(model.getName(), model.getBankId());
+            if (num > 0) {
                 throw new ServiceException("该名称已存在！");
             }
         }
-        BeanUtils.copyProperties(command,model);
+        BeanUtils.copyProperties(command, model);
         modelMapper.updateByPrimaryKey(model);
     }
 
     public PageResult list(ModelPaginationCommand command) {
 
-        Page<ModelDto> page =  modelMapper.selectModelPage(command);
-        return new PageResult(new PageInfo(page));
+        Page<ModelDto> page = modelMapper.selectModelPage(command);
+        return new PageResult(new PageInfo(page), command.getDraw());
     }
 
     public void download(Long id, HttpServletResponse response) {

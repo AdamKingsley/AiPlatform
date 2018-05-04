@@ -20,7 +20,7 @@ public class UserPaginationCommand extends PaginationCommand {
     public UserPaginationCommand() {
     }
 
-    public UserPaginationCommand(Integer pageNum, Integer pageSize) {
-        super(pageNum, pageSize);
+    public UserPaginationCommand(Integer pageNum, Integer pageSize, Integer draw) {
+        super(pageNum, pageSize, draw);
     }
 }

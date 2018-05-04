@@ -57,8 +57,9 @@ public class BankController {
      */
     @GetMapping("list")
     public PageResult getBankList(@RequestParam(value = "pageSize", required = false) Integer pageSize,
-                                  @RequestParam(value = "pageNum", required = false) Integer pageNum) {
-        BankPaginationCommand command = new BankPaginationCommand(pageNum, pageSize);
+                                  @RequestParam(value = "pageNum", required = false) Integer pageNum,
+                                  @RequestParam(value = "pageNum", required = false) Integer draw) {
+        BankPaginationCommand command = new BankPaginationCommand(pageNum, pageSize,draw);
         return bankService.list(command);
     }
 
