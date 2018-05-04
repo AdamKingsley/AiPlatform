@@ -13,12 +13,11 @@ public class ExamPageController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String toExam(Model model) {
-
         ShiroUser user = ShiroUtils.currentUser();
 
         model.addAttribute("user", user);
         return "mutation/"
-                + (user == null || user.getRoleName() == null ? "student" : user.getRoleName())
+                + (user == null || user.getRoleName() == null ? "teacher" : user.getRoleName())
                 + "/exam";
     }
 }
