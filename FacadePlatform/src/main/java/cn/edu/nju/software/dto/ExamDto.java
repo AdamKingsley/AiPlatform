@@ -28,4 +28,8 @@ public class ExamDto extends IdDto {
     private Integer modelNums;
     //description
     private String description;
+    private Long createUserId;
+    private String createUserName;
+    private Long modifyUserId;
+    private String modifyUserName;
 }
