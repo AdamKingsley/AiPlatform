@@ -75,7 +75,7 @@ public class BankService {
 
     //获取题库列表 分页
     public PageResult list(BankPaginationCommand command) {
-        PageHelper.startPage(command.getPageNum(), command.getPageSize());
+        PageHelper.startPage(command.getStart(), command.getPageSize());
         Page<BankDto> page = bankMapper.selectPage();
         PageInfo<BankDto> pageInfo = new PageInfo(page);
         return new PageResult(pageInfo, command.getDraw());

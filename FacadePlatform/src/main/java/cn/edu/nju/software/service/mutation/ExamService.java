@@ -90,7 +90,7 @@ public class ExamService {
 
     public PageResult list(ExamPaginationCommand command) {
         //查询分页数据
-        PageHelper.startPage(command.getPageNum(), command.getPageSize());
+        PageHelper.startPage(command.getStart(), command.getPageSize());
         //Example example = new Example(ExamDto.class);
         //example.createCriteria();
         if (command.getType() != null && command.getIsMine() != null
