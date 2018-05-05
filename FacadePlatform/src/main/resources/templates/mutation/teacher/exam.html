@@ -10,7 +10,7 @@
 </header>
 <div class="content-wrapper" style="min-height: 976px">
     <aside class="main-sidebar"
-           th:include="aside::aside ('mutation', '', ${user})">
+           th:include="aside::aside ('home', '', ${user})">
 
     </aside>
     <section class="content-header">
@@ -23,9 +23,9 @@
             <div class="col-sm-12">
                 <div class="box">
                     <div class="box-header">
-                        <div class="row">
+                        <form class="row">
                             <div class="col-sm-8">
-                                <form id="search_form" class="form-horizontal">
+                                <div class="form-horizontal">
                                     <div class="form-group">
                                         <label for="exam_status" class="control-label col-sm-2">考试状态</label>
                                         <div class="col-sm-6">
@@ -49,12 +49,12 @@
                                         <div class="col-sm-6">
                                             <button id="search_button" class="btn btn-info btn-sm" type="button">搜索</button>
                                             <button class="btn btn-default btn-sm" type="reset" style="margin-left: 5px">重置</button>
-                                            <a id="create_button" href="/mutation/bank/new" class="btn btn-success btn-sm" style="margin-left: 5px">新增题库</a>
+                                            <a id="create_button" href="/mutation/exam/new" class="btn btn-success btn-sm" style="margin-left: 5px">新增题库</a>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                     <div class="box-body">
                         <table id="exam_table" class="table table-bordered table-hover dataTable"
