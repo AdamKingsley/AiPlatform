@@ -20,11 +20,14 @@
 
         $("#exam_submit").on("click", function() {
             var data = $("#exam_form").serializeJson();
+            var isCreate;
             var url = baseurl;
             if (!isValid(data["id"])) {
                 url += "/exam/create";
+                isCreate = true;
             } else {
                 url += "/exam/update";
+                isCreate = false;
             }
             var timeRange = data["timeRange"];
             data["startTime"] = timeRange.substr(0, 19);
@@ -37,7 +40,13 @@
                 data: JSON.stringify(data),
                 dataType: "json",
                 success: function(res) {
-
+                    if (res.success === true) {
+                        if (isCreate) {
+                            window.location.href = baseurl + "/mutation/exam";
+                        } else {
+                            window.location.reload();
+                        }
+                    }
                 },
                 error: function() {
                     toastr.error("网络错误！");

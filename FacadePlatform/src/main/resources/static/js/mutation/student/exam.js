@@ -30,45 +30,35 @@
             //表格映射
             // columns: [
             //     // { data: "id" },
-            //     { data: "userid" },
             //     { data: "name" },
-            //     { data: "position" },
-            //     { data: "departmentName" },
-            //     { data: "mobile" },
-            //     // { data: "email" },
-            //     { data: "gender" },
-            //     // { data: "telephone" },
-            //     { data: "attendanceRule" },
+            //     { data: "startTime" },
+            //     { data: "endTime" },
+            //     // { data: "attendanceRule" },
             //     { data: "opt" }
             // ],
-            //ajax
             // ajax: {
-            //     url: '/api/admin/enterprise/employee/list',
-            //     type: 'POST',
+            //     url: baseurl + "/exam/list",
+            //     type: "POST",
             //     data: function(d) {
             //         return $.extend({}, d, {
-            //             userid: $('#userid').val(),
-            //             name: $('#name').val(),
-            //             departmentId: $('#departmentId').val(),
-            //             positionId: $('#positionId').val()
+            //             type: $("#exam_status").val(),
+            //             isMine: $("#join_in").attr("checked") === "checked"
             //         })
             //     },
             //     dataSrc: function(json) {
             //         var data = json.data;
             //         //给新数据添加操作
-            //         for (var i = 0; i < data.length; i++) {
-            //             data[i]['gender'] = genderStr(data[i]['gender']);
-            //             data[i]['opt'] = '';
-            //             data[i]['opt'] = '<a href="/admin/enterprise/employee/' + data[i]['id'] + '">' +
-            //                 '   <i class="fa fa-edit"></i>' +
-            //                 '</a>';
-            //         }
+            //         console.log(data);
             //         return data;
             //     },
             //     error: function() {
             //         console.log('Network error');
             //     }
             // }
+        });
+
+        $("#search_button").on('click', function() {
+            console.log($("#join_in").is(":checked"));
         });
     }
 })();
