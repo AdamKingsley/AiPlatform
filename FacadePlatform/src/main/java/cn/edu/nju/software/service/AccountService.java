@@ -176,7 +176,7 @@ public class AccountService {
 
     public PageResult list(UserPaginationCommand command) {
         //TODO 返回用户列表
-        PageHelper.startPage(command.getPageNum(), command.getPageSize());
+        PageHelper.startPage(command.getStart(), command.getPageSize());
         Example example = new Example(User.class);
         Example.Criteria criteria = example.createCriteria();
         if (command.getState() != null && command.getState() != -1) {
