@@ -33,6 +33,7 @@ import java.nio.charset.Charset;
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.Map;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -158,7 +159,6 @@ public class ExerciseService {
                 }
             }
         }
-
         //将exercise的迭代次数上升1
         exercise.setTotalIters(exercise.getTotalIters() + 1);
         exerciseMapper.updateByPrimaryKey(exercise);
@@ -167,9 +167,15 @@ public class ExerciseService {
         // TODO 然后异步调用执行脚本接口
         // TODO 参数->
         // TODO userId✔，examId✔，path(存储本次在线运行样本的所有文件的文件夹目录)✔，
+
         // TODO 所有modelId以及对应的模型的位置 需要到数据库查询 ！！！！
+        List<Long> modelIds = StringUtil.getIds(exercise.getModelIds());
+        List<ModelDto> modelDtos = modelMapper.selectByModelIds(modelIds);
+        //modelDtos
+
         return Result.success().message("上传测试样本成功，正在执行测试脚本！");
     }
+
 
     private void unzip(MultipartFile file, File storeDir, int maxItems) throws IOException {
         Long times = System.currentTimeMillis();
@@ -248,7 +254,6 @@ public class ExerciseService {
         List<Long> list = Lists.newArrayList();
         models.forEach(model -> list.add(model.getId()));
         String result = StringUtil.getIdsStr(list);
-
         return result;
     }
 

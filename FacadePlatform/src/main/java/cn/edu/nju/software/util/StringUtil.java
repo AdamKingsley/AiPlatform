@@ -31,4 +31,8 @@ public class StringUtil {
         }
         return result;
     }
+
+    public static Long getLongValue(String str){
+        return Long.parseLong(str);
+    }
 }
