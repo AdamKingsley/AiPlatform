@@ -20,16 +20,17 @@
                 <!--<li class="active"><a href="/"><i class="fa fa-circle-o"></i> 控制台</a></li>-->
             <!--</ul>-->
         </li>
-        <li th:classappend="${level1 == 'mutation' ? 'active' : ''}">
-            <a href="/mutation/t/exam">
+        <li class="treeview" th:classappend="${level1 == 'mutation' ? 'active' : ''}">
+            <a href="#">
                 <i class="fa fa-bug"></i> <span>变异测试</span>
-                <!--<span class="pull-right-container">-->
-                    <!--<i class="fa fa-angle-left pull-right"></i>-->
-                <!--</span>-->
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
             </a>
-            <!--<ul class="treeview-menu" style="">-->
-                <!--<li th:classappend="${level2 == '' ? 'active' : ''}"><a href="/"><i class="fa fa-circle-o"></i> 变异测试</a></li>-->
-            <!--</ul>-->
+            <ul class="treeview-menu">
+                <li th:classappend="${level2 == 'exam' ? 'active' : ''}"><a href="/mutation/t/exam"><i class="fa fa-circle-o"></i> 考试</a></li>
+                <li th:classappend="${level2 == 'bank' ? 'active' : ''}"><a href="/mutation/bank"><i class="fa fa-circle-o"></i> 题库</a></li>
+            </ul>
         </li>
         <li th:classappend="${level1 == 'mr'? 'active' : ''}">
             <a href="/mr">

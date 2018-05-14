@@ -20,7 +20,7 @@
             //展示完全的页码
             pagingType: "full_numbers",
             //第一列默认升序排列
-            // order: [[0, 'asc']],
+            // order: [[3, 'asc']],
             //关闭本地搜索
             searching: false,
             //自定义中文显示
@@ -49,6 +49,7 @@
                         extra["type"] = parseInt(type);
                     }
                     var data = $.extend({}, d, extra);
+                    console.log(data);
                     return JSON.stringify(data);
                 },
                 dataSrc: function(json) {

@@ -11,7 +11,7 @@
 </header>
 <div class="content-wrapper" style="min-height: 976px">
     <aside class="main-sidebar"
-           th:include="aside::aside ('mutation', '', ${user})">
+           th:include="aside::aside ('mutation', 'exam', ${user})">
 
     </aside>
     <section class="content-header">
@@ -91,9 +91,12 @@
                                 <label class="control-label col-sm-2">题库集合</label>
                                 <div class="col-sm-9">
                                     <select id="bankIds" class="form-control select2-basic" multiple="multiple">
-                                        <option th:each="bank: ${banks}"
+                                        <option th:each="bank: ${exam == null ? banks : exam.notSelectBankDto}"
                                                 th:value="${bank.id}"
                                                 th:text="${bank.name}"></option>
+                                        <option th:each="bank: ${exam == null ? null : exam.selectBankDto}"
+                                                th:value="${bank.id}"
+                                                th:text="${bank.name}" th:selected="selected"></option>
                                     </select>
                                 </div>
                             </div>

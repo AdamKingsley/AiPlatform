@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta th:include="header::header"/>
+    <title>深度学习测试平台</title>
+</head>
+<body class="hold-transition skin-black sidebar-mini">
+<header class="main-header" th:include="header::main-header (${user})">
+
+</header>
+<div class="content-wrapper" style="min-height: 976px">
+    <aside class="main-sidebar"
+           th:include="aside::aside ('mutation', 'bank', ${user})">
+
+    </aside>
+    <section class="content-header">
+        <h1>
+            修改题库
+        </h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">修改</h3>
+                        <div class="box-tools">
+                            <div class="btn-group pull-right">
+                                <a href="/mutation/bank" class="btn btn-sm btn-default">
+                                    <i class="fa fa-arrow-left"></i>
+                                    &nbsp;返回
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <form id="bank_form" class="form-horizontal">
+                            <input type="hidden" id="id" name="id" th:value="${bank == null ? '' : bank.id}"/>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">名称</label>
+                                <div class="col-sm-9">
+                                    <div class="form-control" th:text="${bank == null ? '' : bank.name}"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">变异体数量</label>
+                                <div class="col-sm-9">
+                                    <div class="form-control" th:text="${bank == null ? '' : bank.nums}"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">修改时间</label>
+                                <div class="col-sm-9">
+                                    <div class="form-control" th:text="${bank == null ? '' : bank.modifyTime}"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="description" class="control-label col-sm-2">备注</label>
+                                <div class="col-sm-9">
+                                    <input id="description" name="description" type="text" class="form-control" th:value="${bank == null ? '' : bank.description}"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2"></label>
+                                <div class="col-sm-9">
+                                    <button id="bank_submit" class="btn btn-info btn-sm" type="button">提交</button>
+                                    <button class="btn btn-default btn-sm" type="reset" style="margin-left: 5px">重置</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div th:include="footer::script">
+
+</div>
+<script src="/static/js/mutation/teacher/bank-edit.js"></script>
+</body>
+</html>

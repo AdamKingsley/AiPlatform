@@ -16,7 +16,7 @@
             //是否显示"处理中"
             processing: true,
             //是否使用服务器端数据
-            // serverSide: true,
+            serverSide: true,
             //展示完全的页码
             pagingType: "full_numbers",
             //第一列默认升序排列
@@ -54,7 +54,6 @@
                 dataSrc: function(json) {
                     var data = json.data;
                     //给新数据添加操作
-                    console.log(json);
 
                     var now = new Date().getTime();
                     for (var i = 0; i < data.length; i++) {

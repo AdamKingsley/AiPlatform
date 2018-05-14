@@ -4,6 +4,7 @@ import cn.edu.nju.software.common.shiro.ShiroUser;
 import cn.edu.nju.software.common.shiro.ShiroUtils;
 import cn.edu.nju.software.dto.BankDto;
 import cn.edu.nju.software.dto.ExamDto;
+import cn.edu.nju.software.service.mutation.BankService;
 import cn.edu.nju.software.service.mutation.ExamService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -21,6 +21,8 @@ public class ExamPageController {
 
     @Resource
     private ExamService examService;
+    @Resource
+    private BankService bankService;
 
     @RequestMapping(value = "/t/exam", method = RequestMethod.GET)
     public String toExam(Model model) {
@@ -44,7 +46,7 @@ public class ExamPageController {
 
         model.addAttribute("user", user);
 
-        List<BankDto> banks = new ArrayList<>();
+        List<BankDto> banks = bankService.listAll();
 
         model.addAttribute("banks", banks);
         return "mutation/teacher/exam-edit";
