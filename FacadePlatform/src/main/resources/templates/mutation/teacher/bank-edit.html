@@ -35,23 +35,23 @@
                     </div>
                     <div class="box-body">
                         <form id="bank_form" class="form-horizontal">
-                            <input type="hidden" id="id" name="id" th:value="${bank == null ? '' : bank.id}"/>
+                            <input type="hidden" name="id" th:value="${bank == null ? '' : bank.id}"/>
                             <div class="form-group">
                                 <label class="control-label col-sm-2">名称</label>
                                 <div class="col-sm-9">
-                                    <div class="form-control" th:text="${bank == null ? '' : bank.name}"></div>
+                                    <label class="form-control" th:text="${bank == null ? '' : bank.name}"></label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-2">变异体数量</label>
                                 <div class="col-sm-9">
-                                    <div class="form-control" th:text="${bank == null ? '' : bank.nums}"></div>
+                                    <label class="form-control" th:text="${bank == null ? '' : bank.nums}"></label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-2">修改时间</label>
                                 <div class="col-sm-9">
-                                    <div class="form-control" th:text="${bank == null ? '' : bank.modifyTime}"></div>
+                                    <label class="form-control" th:text="${bank == null ? '' : bank.modifyTime}"></label>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -68,6 +68,45 @@
                                 </div>
                             </div>
                         </form>
+                        <hr/>
+                        <div class="form-horizontal">
+                            <form class="form-group" id="script_form">
+                                <label class="control-label col-sm-2">运行脚本</label>
+                                <div class="col-sm-7">
+                                    <div id="script_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
+                                    <input id="script" name="script" type="file" style="display: none"/>
+                                </div>
+                                <div class="col-sm-1">
+                                    <button id="script_submit" class="btn btn-info btn-sm" type="button">脚本重新上传</button>
+                                </div>
+                            </form>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">模型</label>
+                                <div class="col-sm-7">
+                                    <div id="models_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
+                                    <input id="models" name="models" type="file" style="display: none" multiple="multiple"/>
+                                </div>
+                                <div class="col-sm-1">
+                                    <button id="models_submit" class="btn btn-info btn-sm" type="button">模型重新上传</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">样本</label>
+                                <div class="col-sm-7">
+                                    <div id="samples_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
+                                    <input id="samples" name="samples" type="file" style="display: none" multiple="multiple"/>
+                                </div>
+                                <div class="col-sm-1">
+                                    <button id="samples_submit" class="btn btn-info btn-sm" type="button">样本重新上传</button>
+                                </div>
+                            </div>
+                            <!--<div class="form-group">-->
+                                <!--<label class="control-label col-sm-2"></label>-->
+                                <!--<div class="col-sm-9">-->
+                                    <!--<button id="file_submit" class="btn btn-info btn-sm" type="button">题库文件重新上传</button>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        </div>
                     </div>
                 </div>
             </div>
