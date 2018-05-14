@@ -1,8 +1,6 @@
 package cn.edu.nju.software.common.result;
 
 
-import javafx.scene.control.Pagination;
-
 import java.util.List;
 
 /**

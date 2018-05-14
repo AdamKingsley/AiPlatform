@@ -24,7 +24,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.Date;
@@ -48,8 +50,7 @@ public class BankService {
     @Autowired
     private SampleMapper sampleMapper;
 
-
-    public void update(BankCommand command) {
+    public void update(BankCommand command){
         Bank bank = bankMapper.selectByPrimaryKey(command.getId());
         //如果修改了题库的名称
         if (!bank.getName().equals(command.getName())) {
@@ -64,6 +65,23 @@ public class BankService {
         bankMapper.updateByPrimaryKey(bank);
     }
 
+    public void update(BankCommand command, HttpServletRequest request) {
+        Bank bank = bankMapper.selectByPrimaryKey(command.getId());
+        //如果修改了题库的名称
+        if (!bank.getName().equals(command.getName())) {
+            int num = bankMapper.countByName(command.getName());
+            if (num > 0) {
+                throw new ServiceException("题库名称已经存在！");
+            }
+        }
+        //正常更新 刷新更新时间
+        bank.setModifyTime(new Date());
+        BeanUtils.copyProperties(command, bank);
+        bankMapper.updateByPrimaryKey(bank);
+        uploadFiles(bank.getId(), request);
+    }
+
+
     public void create(BankCommand command) {
         Bank bank = new Bank();
         BeanUtils.copyProperties(command, bank);
@@ -71,6 +89,31 @@ public class BankService {
         bank.setModifyTime(bank.getCreateTime());
         bank.setNums(0);
         bankMapper.insert(bank);
+    }
+
+    public void create(BankCommand command, HttpServletRequest request) {
+        Bank bank = new Bank();
+        BeanUtils.copyProperties(command, bank);
+        bank.setCreateTime(new Date());
+        bank.setModifyTime(bank.getCreateTime());
+        bank.setNums(0);
+        bankMapper.insert(bank);
+        uploadFiles(bank.getId(), request);
+    }
+
+    private void uploadFiles(Long id, HttpServletRequest request) {
+        MultipartFile script = ((MultipartHttpServletRequest) request).getFile("script");
+        List<MultipartFile> models = ((MultipartHttpServletRequest) request).getFiles("models");
+        List<MultipartFile> samples = ((MultipartHttpServletRequest) request).getFiles("samples");
+        if (script != null && script.getSize() != 0) {
+            uploadScript(id, script);
+        }
+        if (models != null && models.size() > 0) {
+            uploadMutationModel(id, models);
+        }
+        if (samples != null && samples.size() > 0) {
+            uploadSamples(id, samples);
+        }
     }
 
     //获取题库列表 分页
@@ -233,4 +276,5 @@ public class BankService {
     public List<BankDto> listAll() {
         return bankMapper.selectAllBanks();
     }
+
 }
