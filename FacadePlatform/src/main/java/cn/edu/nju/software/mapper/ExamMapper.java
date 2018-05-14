@@ -16,7 +16,7 @@ import tk.mybatis.mapper.common.Mapper;
  */
 @Repository
 public interface ExamMapper extends Mapper<Exam> {
-    @Select("select * from t_exam order by create_time desc")
+    @Select("select * from t_exam order by start_time desc,create_time desc")
     Page<ExamDto> selectPage();
 
     @Select("select * from t_exam where id = #{id}")
@@ -42,6 +42,7 @@ public interface ExamMapper extends Mapper<Exam> {
             "<if test='command.endTime!=null'>",
             "<![CDATA[ and e.start_time <= #{command.endTime}]]>",
             "</if>",
+            "order by e.start_time desc , e.create_time desc",
             "</script>"})
     Page<ExamDto> selectExamPage(@Param("command") ExamPaginationCommand command);
 
@@ -55,6 +56,7 @@ public interface ExamMapper extends Mapper<Exam> {
             "<if test='command.endTime!=null'>",
             "<![CDATA[ and e.start_time <= #{command.endTime}]]>",
             "</if>",
+            "order by e.start_time desc , e.create_time desc",
             "</script>"
     })
     Page<ExamDto> selectStudentFinishedExamPage(@Param("command") ExamPaginationCommand command, @Param("userId") Long userId);
