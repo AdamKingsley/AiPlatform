@@ -1,6 +1,7 @@
 package cn.edu.nju.software.mapper;
 
 import cn.edu.nju.software.dto.BankDto;
+import cn.edu.nju.software.dto.ModelDto;
 import cn.edu.nju.software.entity.Bank;
 import com.github.pagehelper.Page;
 import org.apache.ibatis.annotations.Param;
@@ -31,4 +32,24 @@ public interface BankMapper extends Mapper<Bank> {
 
     @Select("select * from t_bank where deleted = 0 ")
     List<BankDto> selectAllBanks();
+
+
+    @Select({"<script>", "select b.* from t_bank b ",
+            "where deleted=0 and b.id in ",
+            "<foreach item='item' index='index' collection='ids'",
+            "open='(' separator=',' close=')'>",
+            "#{item}",
+            "</foreach>",
+            "</script>"})
+    List<BankDto> selectInBankIds(@Param("ids") List<Long> ids);
+
+
+    @Select({"<script>", "select b.* from t_bank b ",
+            "where deleted=0 and b.id not in ",
+            "<foreach item='item' index='index' collection='ids'",
+            "open='(' separator=',' close=')'>",
+            "#{item}",
+            "</foreach>",
+            "</script>"})
+    List<BankDto> selectNotInBankIds(@Param("ids") List<Long> ids);
 }
