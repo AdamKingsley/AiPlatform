@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta th:include="header::header"/>
+    <title>深度学习测试平台</title>
+</head>
+<body class="hold-transition skin-black sidebar-mini">
+<header class="main-header" th:include="header::main-header (${user})">
+
+</header>
+<div class="content-wrapper" style="min-height: 976px">
+    <aside class="main-sidebar" th:include="aside::aside ('', '', ${user})">
+
+    </aside>
+    <section class="content-header">
+        <h1>
+            修改信息
+        </h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">修改密码</h3>
+                    </div>
+                    <form id="changePassword" class="box-body form-horizontal">
+                        <div class="form-group">
+                            <label for="password" class="control-label col-sm-2">新密码</label>
+                            <div class="col-sm-5">
+                                <input id="password" name="password" type="password" class="form-control" placeholder="Password"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="control-label col-sm-2">确认密码</label>
+                            <div class="col-sm-5">
+                                <input id="confirmPassword" name="confirmPassword" type="password" class="form-control" placeholder="Confirm Password"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2"></label>
+                            <div class="col-sm-5">
+                                <button type="button" id="changePasswordSubmit" class="btn btn-info">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div th:include="footer::script">
+
+</div>
+
+<script src="/static/js/change-info.js"></script>
+</body>
+</html>

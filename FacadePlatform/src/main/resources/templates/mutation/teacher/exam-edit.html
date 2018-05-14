@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/static/plugins/daterangepicker/daterangepicker.css"/>
+    <meta th:include="header::header"/>
+    <title>深度学习测试平台</title>
+</head>
+<body class="hold-transition skin-black sidebar-mini">
+<header class="main-header" th:include="header::main-header (${user})">
+
+</header>
+<div class="content-wrapper" style="min-height: 976px">
+    <aside class="main-sidebar"
+           th:include="aside::aside ('mutation', '', ${user})">
+
+    </aside>
+    <section class="content-header">
+        <h1 th:text="${exam == null ? '新增考试' : '修改考试'}">
+
+        </h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title" th:text="${exam == null ? '创建' : '修改'}"></h3>
+                        <div class="box-tools">
+                            <div class="btn-group pull-right">
+                                <a href="/mutation/exam" class="btn btn-sm btn-default">
+                                    <i class="fa fa-arrow-left"></i>
+                                    &nbsp;返回
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <form id="exam_form" class="form-horizontal">
+                            <input type="hidden" id="id" name="id" th:value="${exam == null ? '' : exam.id}"/>
+                            <div class="form-group">
+                                <label for="name" class="control-label col-sm-2">名称</label>
+                                <div class="col-sm-9">
+                                    <input id="name" name="name" type="text" class="form-control"
+                                           placeholder="名称" th:value="${exam == null ? '' : exam.name}"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">时间范围</label>
+                                <div class="col-sm-9">
+                                    <input id="timeRange" name="timeRange" type="text" class="form-control"
+                                           placeholder="时间范围"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">迭代次数</label>
+                                <div class="col-sm-9">
+                                    <input id="maxIters" class="form-control"
+                                           placeholder="迭代次数"
+                                           th:value="${exam == null ? '' : exam.maxIters}"/>
+                                    <span class="help-block">
+                                        <i class="fa fa-info-circle">
+                                             0表示不限制。
+                                        </i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">样本的数量限制</label>
+                                <div class="col-sm-9">
+                                    <input id="maxItems" class="form-control"
+                                           placeholder="样本的数量限制"
+                                           th:value="${exam == null ? '' : exam.maxItems}"/>
+                                    <span class="help-block">
+                                        <i class="fa fa-info-circle">
+                                             0表示不限制。
+                                        </i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">变异体数量</label>
+                                <div class="col-sm-9">
+                                    <input id="modelNums" class="form-control"
+                                           placeholder="变异体数量"
+                                           th:value="${exam == null ? '' : exam.modelNums}"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">题库集合</label>
+                                <div class="col-sm-9">
+                                    <select id="bankIds" class="form-control select2-basic" multiple="multiple">
+                                        <option th:each="bank: ${banks}"
+                                                th:value="${bank.id}"
+                                                th:text="${bank.name}"></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2"></label>
+                                <div class="col-sm-9">
+                                    <button id="exam_submit" class="btn btn-info btn-sm" type="button">提交</button>
+                                    <button class="btn btn-default btn-sm" type="reset" style="margin-left: 5px">重置</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div th:include="footer::script">
+
+</div>
+<script src="/static/plugins/daterangepicker/moment.min.js"></script>
+<script src="/static/plugins/daterangepicker/daterangepicker.js"></script>
+<script src="/static/js/mutation/teacher/exam-edit.js"></script>
+</body>
+</html>

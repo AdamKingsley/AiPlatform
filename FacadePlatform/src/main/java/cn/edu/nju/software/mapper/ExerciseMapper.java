@@ -1,6 +1,8 @@
 package cn.edu.nju.software.mapper;
 
 import cn.edu.nju.software.entity.Exercise;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.Mapper;
 
@@ -10,4 +12,8 @@ import tk.mybatis.mapper.common.Mapper;
 @Repository
 
 public interface ExerciseMapper extends Mapper<Exercise> {
+
+    @Select("select * from t_exercise where user_id=#{userId} and exam_id=#{examId}")
+    Exercise selectByUserAndExam(@Param("userId") Long userId, @Param("examId") Long examId);
+
 }

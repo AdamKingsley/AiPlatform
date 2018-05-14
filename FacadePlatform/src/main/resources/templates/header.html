@@ -1,0 +1,70 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div th:fragment="header">
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+        <!-- Bootstrap 3.3.6 -->
+        <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css"/>
+        <!-- fontawesome -->
+        <link rel="stylesheet" href="/static/plugins/fontawesome/css/font-awesome.min.css"/>
+        <!-- iCheck -->
+        <link rel="stylesheet" href="/static/plugins/iCheck/square/blue.css"/>
+        <!-- toastr -->
+        <link rel="stylesheet" href="/static/plugins/toastr/toastr.min.css"/>
+        <!-- select2 -->
+        <link rel="stylesheet" href="/static/plugins/select2/select2.min.css"/>
+        <!-- inputmask -->
+        <link rel="stylesheet" href="/static/plugins/input-mask/inputmask.css"/>
+        <!-- datatables -->
+        <!--<link rel="stylesheet" href="/static/plugins/datatables.net/css/jquery.dataTables.min.css"/>-->
+        <link rel="stylesheet" href="/static/plugins/datatables.net/css/dataTables.bootstrap.min.css"/>
+        <!-- ionicons -->
+        <link rel="stylesheet" href="/static/plugins/Ionicons/css/ionicons.min.css"/>
+        <!-- adminLTE -->
+        <link rel="stylesheet" href="/static/plugins/adminlte/dist/css/AdminLTE.min.css"/>
+        <link rel="stylesheet" href="/static/plugins/adminlte/dist/css/skins/skin-black.min.css"/>
+        <!-- Common Css -->
+        <link rel="stylesheet" href="/static/css/common.css"/>
+    </div>
+    <div th:fragment="main-header (user)" >
+        <a href="/" class="logo">
+            <!-- 缩小侧边栏后图标 -->
+            <span class="logo-mini">Ai</span>
+            <!-- 正常宽度标题、图标 -->
+            <span class="logo-lg"><b></b>AiPlatform</span>
+        </a>
+        <nav class="navbar navbar-static-top">
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <span class="sr-only">Toggle Navigation</span>
+            </a>
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <img src="/static/plugins/adminlte/dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
+                            <span class="hidden-xs" th:text="${user !=null ? user.username : 'Administrator'}"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="user-header">
+                                <img src="/static/plugins/adminlte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
+                                <p th:text="${user != null ? user.username : 'Administrator'}">
+                                    Administrator
+                                </p>
+                            </li>
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a href="/account/change-info" class="btn btn-default btn-flat">修改信息</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="/logout" class="btn btn-default btn-flat">用户登出</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+</div>

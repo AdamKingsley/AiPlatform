@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta th:include="header::header"/>
+    <title>深度学习测试平台</title>
+</head>
+<body class="hold-transition skin-black sidebar-mini">
+<header class="main-header" th:include="header::main-header (${user})">
+
+</header>
+<div class="content-wrapper" style="min-height: 976px">
+    <aside class="main-sidebar"
+           th:include="aside::aside ('mutation', '', ${user})">
+
+    </aside>
+    <section class="content-header">
+        <h1>
+            变异测试
+        </h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="box">
+                    <div class="box-header">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <form id="search_form" class="form-horizontal">
+                                    <div class="form-group">
+                                        <label for="exam_status" class="control-label col-sm-2">考试状态</label>
+                                        <div class="col-sm-6">
+                                            <select id="exam_status" class="form-control select2-basic">
+                                                <option value="0">全部</option>
+                                                <option value="1">未开始</option>
+                                                <option value="2">进行中</option>
+                                                <option value="3">阅卷中</option>
+                                                <option value="4">已结束</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="search_input" class="control-label col-sm-2">搜索</label>
+                                        <div class="col-sm-6">
+                                            <input id="search_input" type="text" class="form-control" placeholder="搜索名称"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="join_in" class="control-label col-sm-2">我参加的</label>
+                                        <div class="col-sm-6" style="padding-top: 5px">
+                                            <input id="join_in" type="checkbox" class="form-control"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="contol-label col-sm-2"></label>
+                                        <div class="col-sm-6">
+                                            <button id="search_button" class="btn btn-info btn-sm" type="button">搜索</button>
+                                            <button class="btn btn-default btn-sm" type="reset" style="margin-left: 5px">重置</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <table id="exam_table" class="table table-bordered table-hover dataTable"
+                               cellspacing="0" width="100%">
+                            <thead>
+                            <tr>
+                                <td>名称</td>
+                                <td>发起者</td>
+                                <td>开始时间</td>
+                                <td>结束时间</td>
+                                <td>状态</td>
+                                <td>操作</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>深度学习测试1</td>
+                                <td>teacher01</td>
+                                <td>2018-05-01 00:00:00</td>
+                                <td>2018-05-04 00:00:00</td>
+                                <td><span class="label label-info">未开始</span></td>
+                                <td>
+                                    <a href="#">参加</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>深度学习测试2</td>
+                                <td>teacher01</td>
+                                <td>2018-05-01 00:00:00</td>
+                                <td>2018-05-04 00:00:00</td>
+                                <td><span class="label label-success">进行中</span></td>
+                                <td>
+                                    <a href="#">参加</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>深度学习测试3</td>
+                                <td>teacher01</td>
+                                <td>2018-05-01 00:00:00</td>
+                                <td>2018-05-04 00:00:00</td>
+                                <td><span class="label label-success">进行中</span></td>
+                                <td>
+                                    <a href="#">参加</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>深度学习测试4</td>
+                                <td>teacher01</td>
+                                <td>2018-05-01 00:00:00</td>
+                                <td>2018-05-04 00:00:00</td>
+                                <td><span class="label label-danger">已结束</span></td>
+                                <td>
+                                    <a href="#">参加</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div th:include="footer::script">
+
+</div>
+<script src="/static/js/mutation/student/exam.js"></script>
+</body>
+</html>

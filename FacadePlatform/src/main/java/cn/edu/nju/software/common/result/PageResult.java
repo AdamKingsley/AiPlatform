@@ -1,8 +1,6 @@
 package cn.edu.nju.software.common.result;
 
 
-import javafx.scene.control.Pagination;
-
 import java.util.List;
 
 /**
@@ -11,40 +9,37 @@ import java.util.List;
 public class PageResult {
     private boolean success = true;
     private List data;
-    private int curPage = 1;//当前页
+    private Integer draw;
+    private int currentPage = 1;//当前页
     private long totalRows = -1;
+    private long recordsTotal = -1;
+    private long recordsFiltered = -1;
     private int pageSize = 20;//默认
-    private int pages;
+    private int pages=0;
 
     private String message;
     private String errorMessage;
 
-    public PageResult(PageInfo pageInfo){
-        success=true;
+    public PageResult(PageInfo pageInfo) {
+        success = true;
         data = pageInfo.getList();
-        curPage = pageInfo.getPageNum();
+        currentPage = pageInfo.getPageNum();
         totalRows = pageInfo.getTotal();
         pageSize = pageInfo.getPageSize();
+        recordsTotal = pageInfo.getTotal();
+        recordsFiltered = pageInfo.getTotal();
         pages = pageInfo.getPages();
+    }
+
+    public PageResult(PageInfo pageInfo, Integer draw) {
+        this(pageInfo);
+        this.draw = draw;
     }
 
     private PageResult(boolean success) {
         this.success = success;
     }
 
-//    private PageResult(List data, Pagination page) {
-//        this(true);
-//
-//        this.data = data;
-//
-//        this.curPage = page.getCurPage();
-//        this.pageSize = page.getPageSize();
-//        this.totalRows = page.getTotalRows();
-//    }
-//
-//    public static PageResult success(List data, Pagination page) {
-//        return new PageResult(data, page);
-//    }
 
     public static PageResult error(String errorMessage) {
         PageResult result = new PageResult(false);
@@ -55,23 +50,45 @@ public class PageResult {
     public boolean isSuccess() {
         return success;
     }
+
     public List getData() {
         return data;
     }
-    public int getCurPage() {
-        return curPage;
+
+    public int getCurrentPage() {
+        return currentPage;
     }
+
     public long getTotalRows() {
         return totalRows;
     }
+
     public int getPageSize() {
         return pageSize;
     }
+
     public String getMessage() {
         return message;
     }
+
     public String getErrorMessage() {
         return errorMessage;
+    }
+
+    public int getPages() {
+        return pages;
+    }
+
+    public Integer getDraw() {
+        return draw;
+    }
+
+    public long getRecordsTotal() {
+        return recordsTotal;
+    }
+
+    public long getRecordsFiltered() {
+        return recordsFiltered;
     }
 
 }

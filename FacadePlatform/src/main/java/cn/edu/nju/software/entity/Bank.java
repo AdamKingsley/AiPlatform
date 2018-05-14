@@ -26,4 +26,5 @@ public class Bank extends IdEntity {
     private Date modifyTime;
     //备注
     private String description;
+    private Boolean deleted;
 }

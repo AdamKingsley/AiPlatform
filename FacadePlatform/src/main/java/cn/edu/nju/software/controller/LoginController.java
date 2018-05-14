@@ -1,8 +1,12 @@
 package cn.edu.nju.software.controller;
 
 import cn.edu.nju.software.command.LoginCommand;
+import cn.edu.nju.software.common.exception.ExceptionEnum;
+import cn.edu.nju.software.common.exception.ServiceException;
 import cn.edu.nju.software.common.result.Result;
+import cn.edu.nju.software.common.shiro.ShiroUser;
 import cn.edu.nju.software.common.shiro.ShiroUtils;
+import cn.edu.nju.software.common.shiro.StateEnum;
 import cn.edu.nju.software.dto.UserDto;
 import cn.edu.nju.software.entity.User;
 import cn.edu.nju.software.service.AccountService;
@@ -27,8 +31,7 @@ public class LoginController {
     @Autowired
     private AccountService accountService;
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST,
-            consumes = "application/json")
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public Result login(@RequestBody LoginCommand command) {
         if (Validate.checkMail(command.getUsername())) {
             //如果是邮箱登录需要去数据库里面拿到对应的用户名
@@ -37,8 +40,18 @@ public class LoginController {
         }
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(command.getUsername(), command.getPassword());
-        token.setRememberMe(command.getRememberMe());
+        token.setRememberMe(command.getRememberMe() == null ? false : command.getRememberMe());
         subject.login(token);
+        //判断是否为未激活 或 被冻结的情况
+        ShiroUser shiroUser = ShiroUtils.currentUser();
+        if (shiroUser.getState() == StateEnum.NOT_ACTIVE.getState()) {
+            ShiroUtils.invalidUser();
+            throw new ServiceException(ExceptionEnum.USER_NOT_ACTIVE);
+        }
+        if (shiroUser.getState() == StateEnum.BLOCKED.getState()) {
+            ShiroUtils.invalidUser();
+            throw new ServiceException(ExceptionEnum.USER_NOT_ACTIVE);
+        }
         return Result.success().message("登录成功").withData(ShiroUtils.currentUser());
     }
 

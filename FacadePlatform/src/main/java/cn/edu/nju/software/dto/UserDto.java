@@ -8,6 +8,7 @@ import tk.mybatis.mapper.code.Style;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
+import java.util.Date;
 
 /**
  * Created by mengf on 2018/4/10 0010.
@@ -20,7 +21,10 @@ public class UserDto extends IdDto {
     private String username;
     private String mail;
     private Integer roleId;
+    private String roleName;
     private Integer state;
+    private Date createTime;
+    private Date modifyTime;
 
     @Override
     public String toString() {

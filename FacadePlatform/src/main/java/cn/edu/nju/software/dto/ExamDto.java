@@ -4,13 +4,14 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by mengf on 2018/4/19 0019.
  */
 @Getter
 @Setter
-public class ExamDto extends IdDto{
+public class ExamDto extends IdDto {
     //考试的名称
     private String name;
     //开始时间
@@ -24,11 +25,15 @@ public class ExamDto extends IdDto{
     //考试限制，允许每次提交样本的数量限制
     // 0不限制
     private Integer maxItems;
-    //允许提前多少分钟进入考试
-    // (start_time-pre_minutes ~ start_time
-    // 都是可以进入考试的)
-    //只不过如果还没有开始的话提示还没到考试时间
-    private Integer preMinute;
     //变异体的数量
-    private Integer mutationNums;
+    private Integer modelNums;
+    private String bankIds;
+    //description
+    private String description;
+    private Long createUserId;
+    private String createUserName;
+    private Long modifyUserId;
+    private String modifyUserName;
+    private List<BankDto> selectBankDto;
+    private List<BankDto> notSelectBankDto;
 }

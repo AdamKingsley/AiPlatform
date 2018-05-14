@@ -33,6 +33,7 @@ public class ExceptionHandle {
     @ResponseStatus(HttpStatus.ACCEPTED)
     @ResponseBody
     public Result exceptionGet(Exception e) {
+        e.printStackTrace();
 
         //自定义异常 ServiceException
         if (e instanceof ServiceException) {
@@ -49,6 +50,7 @@ public class ExceptionHandle {
         if (e instanceof UnknownAccountException || e instanceof IncorrectCredentialsException) {
             return Result.error().exception(ExceptionEnum.LOGIN_FAILED);
         }
+
         //other异常
         return Result.error().errorCode("-1").message("系统内部异常:" + e.getClass()).errorMessage(e.getMessage());
     }

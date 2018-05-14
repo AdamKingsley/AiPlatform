@@ -1,10 +1,10 @@
 package cn.edu.nju.software.controller.mutation;
 
 import cn.edu.nju.software.command.mutation.BankCommand;
-import cn.edu.nju.software.command.mutation.BankPageCommand;
-import cn.edu.nju.software.command.mutation.PageCommand;
+import cn.edu.nju.software.command.mutation.BankPaginationCommand;
 import cn.edu.nju.software.common.result.PageResult;
 import cn.edu.nju.software.common.result.Result;
+import cn.edu.nju.software.dto.BankDto;
 import cn.edu.nju.software.service.mutation.BankService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +44,7 @@ public class BankController {
      * @param command
      * @return
      */
-    @PutMapping("update/{id}")
+    @PostMapping("update/{id}")
     public Result updateBank(@PathVariable Long id, @RequestBody BankCommand command) {
         bankService.update(command);
         return Result.success().message("更新题库成功！");
@@ -52,12 +52,21 @@ public class BankController {
 
     /**
      * 查看题库列表
-     * //TODO 加筛选条件
+     * //TODO 加筛选条件 同理如AccountController
+     *
      * @return
      */
-    @GetMapping("list")
-    public PageResult getBankList(@RequestBody BankPageCommand command) {
+    @PostMapping("list")
+    public PageResult getBankList(@RequestBody BankPaginationCommand command) {
+        //BankPaginationCommand command = new BankPaginationCommand(pageNum, pageSize, draw);
         return bankService.list(command);
+    }
+
+
+    @GetMapping("list/all")
+    public Result getBankList() {
+        List<BankDto> dtos = bankService.listAll();
+        return Result.success().message("获取全部题库列表成功").withData(dtos);
     }
 
 
@@ -71,6 +80,12 @@ public class BankController {
     public Result deleteBank(@RequestParam("id") List<Long> ids) {
         bankService.delete(ids);
         return Result.success().message("删除题库成功！");
+    }
+
+    @GetMapping("detail/{id}")
+    public Result getBank(@PathVariable("id") Long id) {
+        BankDto dto = bankService.getBankDetail(id);
+        return Result.success().message("获取题库详情成功").withData(dto);
     }
 
     /**
@@ -88,7 +103,6 @@ public class BankController {
     public void downloadScript(@PathVariable Long id, HttpServletRequest request, HttpServletResponse response) {
         //String fileName="upload.jpg";
         bankService.downloadScript(id, response);
-
     }
 
     /**
@@ -110,6 +124,28 @@ public class BankController {
     public Result uploadModels(@PathVariable Long id, HttpServletRequest request) {
         List<MultipartFile> files = ((MultipartHttpServletRequest) request).getFiles("models");
         return bankService.uploadMutationModel(id, files);
+    }
+
+
+    /**
+     * 从题库中下载测试样本集
+     */
+    @GetMapping("samples/{id}")
+    public void downloadSamples(@PathVariable Long id, HttpServletRequest request, HttpServletResponse response) {
+        bankService.downloadSamples(id, response);
+    }
+
+    /**
+     * 向题库中上传模型
+     *
+     * @param id
+     * @param request
+     * @return
+     */
+    @PostMapping("samples/{id}")
+    public Result uploadSamples(@PathVariable Long id, HttpServletRequest request) {
+        List<MultipartFile> files = ((MultipartHttpServletRequest) request).getFiles("samples");
+        return bankService.uploadSamples(id, files);
     }
 
 }

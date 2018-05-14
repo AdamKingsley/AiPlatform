@@ -1,21 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>AI测试平台</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
-    <!-- Bootstrap 3.3.6 -->
-    <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css"/>
-    <!-- adminLTE -->
-    <link rel="stylesheet" href="/static/plugins/adminlte/dist/css/AdminLTE.min.css"/>
-    <!-- iCheck -->
-    <link rel="stylesheet" href="/static/plugins/iCheck/square/blue.css"/>
-    <!-- toastr -->
-    <link rel="stylesheet" href="/static/plugins/toastr/toastr.min.css"/>
-    <!-- Common Css -->
-    <link rel="stylesheet" href="/static/css/common.css"/>
+    <meta th:include="header::header"/>
+    <title>深度学习测试平台</title>
 </head>
 <body class="hold-transition login-page ">
 <div class="login-box">
@@ -39,15 +26,13 @@
             </div>
             <div class="row">
                 <div class="col-xs-8">
-                    <!--<div class="checkbox icheck" style="margin-left: 20px">-->
-                        <!--<label>-->
-                            <!--<input type="checkbox"/> 记住我-->
-                        <!--</label>-->
-                    <!--</div>-->
+                    <label style="padding-left: 0">
+                        <input id="rememberMe" type="checkbox"/>&nbsp;&nbsp;&nbsp;&nbsp;记住我
+                    </label>
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-4">
-                    <button id="submit" type="button" class="btn btn-primary btn-block btn-flat">登陆</button>
+                    <button id="submit" type="button" class="btn btn-primary btn-block btn-flat">登录</button>
                 </div>
                 <!-- /.col -->
             </div>
@@ -68,21 +53,10 @@
 </div>
 <!-- /.login-box -->
 
-<!-- jQuery 2.2.3 -->
-<script src="/static/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="/static/plugins/bootstrap/js/bootstrap.min.js"></script>
-<!-- AdminLTE-->
-<script src="/static/plugins/adminlte/dist/js/adminlte.min.js"></script>
-<!-- iCheck -->
-<script src="/static/plugins/iCheck/icheck.min.js"></script>
-<!-- toastr -->
-<script src="/static/plugins/toastr/toastr.min.js"></script>
-<!-- basic config -->
-<script src="/static/js/config.js"></script>
+<div th:include="footer::script">
 
+</div>
 <!-- login -->
 <script src="/static/js/login.js"></script>
-
 </body>
 </html>
