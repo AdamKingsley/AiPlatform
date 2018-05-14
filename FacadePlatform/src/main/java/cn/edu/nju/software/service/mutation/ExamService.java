@@ -1,5 +1,6 @@
 package cn.edu.nju.software.service.mutation;
 
+import cn.edu.nju.software.command.PaginationCommand;
 import cn.edu.nju.software.command.mutation.ExamCommand;
 import cn.edu.nju.software.command.mutation.ExamPaginationCommand;
 import cn.edu.nju.software.common.exception.ExceptionEnum;
@@ -12,6 +13,7 @@ import cn.edu.nju.software.common.shiro.ShiroUser;
 import cn.edu.nju.software.common.shiro.ShiroUtils;
 import cn.edu.nju.software.common.shiro.StateEnum;
 import cn.edu.nju.software.dto.ExamDto;
+import cn.edu.nju.software.dto.ExamResultDto;
 import cn.edu.nju.software.entity.Exam;
 import cn.edu.nju.software.mapper.ExamMapper;
 import cn.edu.nju.software.mapper.SampleMapper;
@@ -110,6 +112,33 @@ public class ExamService {
     public ExamDto getExam(Long id) {
         ExamDto dto = examMapper.selectById(id);
         return dto;
+    }
+
+    //TODO
+    public ExamResultDto getExamResult(Long id, PaginationCommand command){
+//        ShiroUser user = ShiroUtils.currentUser();
+//        //如果没登陆
+//        if (user == null) {
+//            throw new ServiceException(ExceptionEnum.LOGIN_INVALID);
+//        }
+//        //如果是老师
+//        if (user.getRoleId().longValue() == RoleEnum.TEACHER.getRoleId()) {
+//            Exam exam = examMapper.selectByPrimaryKey(id);
+//            if (new Date().getTime() <= exam.getStartTime().getTime()) {
+//                throw new ServiceException("考试尚未开始没有相关统计信息！");
+//            }
+//            ExamResultDto dto = new ExamResultDto();
+//            //获取参与考试的人员数
+//            dto.setStudentNums(examMapper.getStudentNums(id));
+//            //获取模型通过率列表
+//            dto.setModelList(getModelRateList(id));
+//            //获取学生排名分页列表
+//            List<UserScore> scoreList = getRankList(command.getStart(),command.getPageSize());
+//            return dto;
+//        } else {
+//            throw new ServiceException(ExceptionEnum.PERMISSION_DENIED);
+//        }
+        return null;
     }
 
 }
