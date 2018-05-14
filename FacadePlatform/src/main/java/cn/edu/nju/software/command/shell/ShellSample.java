@@ -1,4 +1,4 @@
-package cn.edu.nju.software.command.shell.bean;
+package cn.edu.nju.software.command.shell;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Sample {
+public class ShellSample {
     //图片路径
     private String path;
     //图片结果
