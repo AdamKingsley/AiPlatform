@@ -50,6 +50,20 @@ public class BankService {
     @Autowired
     private SampleMapper sampleMapper;
 
+    public void update(BankCommand command){
+        Bank bank = bankMapper.selectByPrimaryKey(command.getId());
+        //如果修改了题库的名称
+        if (!bank.getName().equals(command.getName())) {
+            int num = bankMapper.countByName(command.getName());
+            if (num > 0) {
+                throw new ServiceException("题库名称已经存在！");
+            }
+        }
+        //正常更新 刷新更新时间
+        bank.setModifyTime(new Date());
+        BeanUtils.copyProperties(command, bank);
+        bankMapper.updateByPrimaryKey(bank);
+    }
 
     public void update(BankCommand command, HttpServletRequest request) {
         Bank bank = bankMapper.selectByPrimaryKey(command.getId());
@@ -65,6 +79,16 @@ public class BankService {
         BeanUtils.copyProperties(command, bank);
         bankMapper.updateByPrimaryKey(bank);
         uploadFiles(bank.getId(), request);
+    }
+
+
+    public void create(BankCommand command) {
+        Bank bank = new Bank();
+        BeanUtils.copyProperties(command, bank);
+        bank.setCreateTime(new Date());
+        bank.setModifyTime(bank.getCreateTime());
+        bank.setNums(0);
+        bankMapper.insert(bank);
     }
 
     public void create(BankCommand command, HttpServletRequest request) {
@@ -252,4 +276,5 @@ public class BankService {
     public List<BankDto> listAll() {
         return bankMapper.selectAllBanks();
     }
+
 }
