@@ -8,11 +8,14 @@
 
         $("#maxItems, #maxIters, #modelNums").inputmask({ regex: "[0-9]*" });
 
+        var startTime = $("#startTime").val();
+        var endTime = $("#endTime").val();
+
         $("#timeRange").daterangepicker({
             timePicker: true,
             timePicker24Hour: true,
-            startDate: moment().startOf('hour'),
-            endDate: moment().startOf('hour').add(32, 'hour'),
+            startDate: isValid(startTime) ? new Date(startTime) : moment().startOf('hour'),
+            endDate: isValid(endTime) ? new Date(endTime) : moment().startOf('hour').add(32, 'hour'),
             locale: {
                 format: "YYYY-MM-DD HH:mm:ss"
             }

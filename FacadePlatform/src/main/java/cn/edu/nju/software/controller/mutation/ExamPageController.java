@@ -3,7 +3,7 @@ package cn.edu.nju.software.controller.mutation;
 import cn.edu.nju.software.common.shiro.ShiroUser;
 import cn.edu.nju.software.common.shiro.ShiroUtils;
 import cn.edu.nju.software.dto.BankDto;
-import cn.edu.nju.software.entity.Bank;
+import cn.edu.nju.software.dto.ExamDto;
 import cn.edu.nju.software.service.mutation.ExamService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,27 +13,32 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = "/mutation/exam")
+@RequestMapping(value = "/mutation")
 public class ExamPageController {
 
     @Resource
     private ExamService examService;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/t/exam", method = RequestMethod.GET)
     public String toExam(Model model) {
         ShiroUser user = ShiroUtils.currentUser();
 
         model.addAttribute("user", user);
-        return "mutation/"
-                + (user == null || user.getRoleName() == null ? "teacher" : user.getRoleName())
-                + "/exam";
+        return "mutation/teacher/exam";
     }
 
-    @RequestMapping(value = "/new", method = RequestMethod.GET)
+    @RequestMapping(value = "/s/exam", method = RequestMethod.GET)
+    public String toExamStudent(Model model) {
+        ShiroUser user = ShiroUtils.currentUser();
+
+        model.addAttribute("user", user);
+        return "mutation/student/exam";
+    }
+
+    @RequestMapping(value = "/exam/new", method = RequestMethod.GET)
     public String toExamNew(Model model) {
         ShiroUser user = ShiroUtils.currentUser();
 
@@ -45,13 +50,26 @@ public class ExamPageController {
         return "mutation/teacher/exam-edit";
     }
 
-    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/exam/edit/{id}", method = RequestMethod.GET)
     public String toExamEdit(@PathVariable("id") Long id,
                              Model model) {
         ShiroUser user = ShiroUtils.currentUser();
 
-
+        ExamDto exam = examService.getExam(id);
         model.addAttribute("user", user);
+        model.addAttribute("exam", exam);
         return "mutation/teacher/exam-edit";
+    }
+
+    @RequestMapping(value = "/exam/join/{id}", method = RequestMethod.GET)
+    public String toExamJoin(@PathVariable("id") Long id,
+                             Model model) {
+        ShiroUser user = ShiroUtils.currentUser();
+
+        ExamDto exam = examService.getExam(id);
+
+        model.addAttribute("exam", exam);
+        model.addAttribute("user", user);
+        return "mutation/student/join";
     }
 }

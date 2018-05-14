@@ -77,11 +77,6 @@ public class ExamController {
      */
     @PostMapping("list")
     public PageResult list(@RequestBody ExamPaginationCommand command) {
-        //ExamPaginationCommand command = new ExamPaginationCommand(pageNum, pageSize,draw);
-        //command.setType(type);
-        //command.setIsMine(isMine);
-        //command.setStartTime(startTime);
-        //command.setEndTime(endTime);
         command.setCurrentTime(new Date());
         return examService.list(command);
     }

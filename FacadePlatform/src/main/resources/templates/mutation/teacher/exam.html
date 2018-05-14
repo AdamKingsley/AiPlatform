@@ -10,7 +10,7 @@
 </header>
 <div class="content-wrapper" style="min-height: 976px">
     <aside class="main-sidebar"
-           th:include="aside::aside ('home', '', ${user})">
+           th:include="aside::aside ('mutation', '', ${user})">
 
     </aside>
     <section class="content-header">
@@ -30,11 +30,11 @@
                                         <label for="exam_status" class="control-label col-sm-2">考试状态</label>
                                         <div class="col-sm-6">
                                             <select id="exam_status" class="form-control select2-basic">
-                                                <option value="0">全部</option>
-                                                <option value="1">未开始</option>
-                                                <option value="2">进行中</option>
-                                                <option value="3">阅卷中</option>
-                                                <option value="4">已结束</option>
+                                                <option value="3">全部</option>
+                                                <option value="0">未开始</option>
+                                                <option value="1">进行中</option>
+                                                <!--<option value="3">阅卷中</option>-->
+                                                <option value="2">已结束</option>
                                             </select>
                                         </div>
                                     </div>
@@ -64,52 +64,10 @@
                                 <td>名称</td>
                                 <td>开始时间</td>
                                 <td>结束时间</td>
-                                <!--<td>状态</td>-->
+                                <td>状态</td>
                                 <td>操作</td>
                             </tr>
                             </thead>
-                            <!--<tbody>-->
-                            <!--<tr>-->
-                                <!--<td>深度学习测试1</td>-->
-                                <!--<td>2018-05-01 00:00:00</td>-->
-                                <!--<td>2018-05-04 00:00:00</td>-->
-                                <!--<td><span class="label label-info">未开始</span></td>-->
-                                <!--<td>-->
-                                    <!--<a href="#">编辑</a>-->
-                                    <!--<a href="#">删除</a>-->
-                                <!--</td>-->
-                            <!--</tr>-->
-                            <!--<tr>-->
-                                <!--<td>深度学习测试2</td>-->
-                                <!--<td>2018-05-01 00:00:00</td>-->
-                                <!--<td>2018-05-04 00:00:00</td>-->
-                                <!--<td><span class="label label-success">进行中</span></td>-->
-                                <!--<td>-->
-                                    <!--<a href="#">编辑</a>-->
-                                    <!--<a href="#">删除</a>-->
-                                <!--</td>-->
-                            <!--</tr>-->
-                            <!--<tr>-->
-                                <!--<td>深度学习测试3</td>-->
-                                <!--<td>2018-05-01 00:00:00</td>-->
-                                <!--<td>2018-05-04 00:00:00</td>-->
-                                <!--<td><span class="label label-success">进行中</span></td>-->
-                                <!--<td>-->
-                                    <!--<a href="#">编辑</a>-->
-                                    <!--<a href="#">删除</a>-->
-                                <!--</td>-->
-                            <!--</tr>-->
-                            <!--<tr>-->
-                                <!--<td>深度学习测试4</td>-->
-                                <!--<td>2018-05-01 00:00:00</td>-->
-                                <!--<td>2018-05-04 00:00:00</td>-->
-                                <!--<td><span class="label label-danger">已结束</span></td>-->
-                                <!--<td>-->
-                                    <!--<a href="#">编辑</a>-->
-                                    <!--<a href="#">删除</a>-->
-                                <!--</td>-->
-                            <!--</tr>-->
-                            <!--</tbody>-->
                         </table>
                     </div>
                 </div>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta th:include="header::header"/>
+    <!--<link href="http://vjs.zencdn.net/5.0.2/video-js.css" rel="stylesheet"/>-->
+    <!--<link href="/static/plugins/video-js-5/video-js.css" rel="stylesheet"/>-->
+    <title>深度学习测试平台</title>
+</head>
+<body class="hold-transition skin-black sidebar-mini">
+<header class="main-header" th:include="header::main-header (${user})">
+
+</header>
+<div class="content-wrapper" style="min-height: 976px">
+    <aside class="main-sidebar"
+           th:include="aside::aside ('mr', '', ${user})">
+
+    </aside>
+    <section class="content-header">
+        <h1>
+            自动驾驶蜕变测试
+        </h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">蜕变视频</h3>
+                    </div>
+                    <div class="box-body">
+                        <!--<video id="example_video_1" class="video-js vjs-default-skin col-sm-12" controls="controls" preload="none" data-setup="{}">-->
+                            <!--<source src="rtmp://localhost/oflaDemo/BladeRunner2049.flv" type="rtmp/flv"/>-->
+                        <!--</video>-->
+                        <div style="display: inline-block">
+                            <div id="player1">
+
+                            </div>
+                        </div>
+                        <div style="display: inline-block">
+                            <div id="player2">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div th:include="footer::script">
+
+</div>
+<!--<script src="/static/plugins/video-js-5/video.js"></script>-->
+<!--<script src="/static/plugins/video-js-5/ie8/videojs-ie8.js"></script>-->
+<script src="/static/js/jwplayer.js" type="text/javascript"></script>
+<script src="/static/js/mr/video.js"></script>
+</body>
+</html>

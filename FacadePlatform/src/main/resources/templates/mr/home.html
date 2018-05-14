@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta th:include="header::header"/>
+    <title>深度学习测试平台</title>
+</head>
+<body class="hold-transition skin-black sidebar-mini">
+<header class="main-header" th:include="header::main-header (${user})">
+
+</header>
+<div class="content-wrapper" style="min-height: 976px">
+    <aside class="main-sidebar"
+           th:include="aside::aside ('mr', '', ${user})">
+
+    </aside>
+    <section class="content-header">
+        <h1>
+            自动驾驶蜕变测试
+        </h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="box">
+                    <div class="box-header">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <form id="video_form" class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2">选择文件</label>
+                                        <div class="col-sm-6">
+                                            <input id="video_file" type="file" style="display: none"/>
+                                            <div id="video_path" class="form-control">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2"></label>
+                                        <div class="col-sm-6">
+                                            <button id="video_submit" class="btn btn-info btn-sm" type="button">提交</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <table id="mr_table" class="table table-bordered table-hover dataTable">
+                            <thead>
+                            <tr>
+                                <td>蜕变ID</td>
+                                <td>上传时间</td>
+                                <td>状态</td>
+                                <td>操作</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>DI329I30J3DKSLJF3232</td>
+                                <td>2018-05-10 00:00:00</td>
+                                <td>
+                                    <span class='label label-info'>处理中</span>
+                                </td>
+                                <td>
+                                    <!--<a href="#"></a>-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>DI329I30J3DKSLJF3232</td>
+                                <td>2018-05-10 00:00:00</td>
+                                <td>
+                                    <span class='label label-success'>已完成</span>
+                                </td>
+                                <td>
+                                    <a href="#">查看</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div th:include="footer::script">
+
+</div>
+<script src="/static/js/mr/home.js"></script>
+</body>
+</html>
