@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by mengf on 2018/4/19 0019.
@@ -26,10 +27,13 @@ public class ExamDto extends IdDto {
     private Integer maxItems;
     //变异体的数量
     private Integer modelNums;
+    private String bankIds;
     //description
     private String description;
     private Long createUserId;
     private String createUserName;
     private Long modifyUserId;
     private String modifyUserName;
+    private List<BankDto> selectBankDto;
+    private List<BankDto> notSelectBankDto;
 }

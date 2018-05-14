@@ -15,6 +15,7 @@ import cn.edu.nju.software.mapper.ModelMapper;
 import cn.edu.nju.software.mapper.SampleMapper;
 import cn.edu.nju.software.util.FileUtil;
 import cn.edu.nju.software.util.RandomUtil;
+import cn.edu.nju.software.util.StringUtil;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -42,7 +43,7 @@ import java.util.zip.ZipFile;
 @Slf4j
 public class ExerciseService {
 
-    private static final String SEPERATOR = ",";
+
     @Autowired
     private ExerciseMapper exerciseMapper;
     @Autowired
@@ -74,13 +75,13 @@ public class ExerciseService {
             //之前参加了的考试还没结束
             exercise = exercises.get(0);
             BeanUtils.copyProperties(exercise, dto);
-            List<Long> modelIds = getIds(dto.getModelIds());
+            List<Long> modelIds = StringUtil.getIds(dto.getModelIds());
             List<ModelDto> modelDtos = modelMapper.selectByModelIds(modelIds);
             //设置获取到的modelDto的isKilled属性
             if (StringUtils.isEmpty(exercise.getKillModelIds())) {
                 modelDtos.forEach(model -> model.setIsKilled(false));
             } else {
-                List<Long> killedModelIds = getIds(exercise.getModelIds());
+                List<Long> killedModelIds = StringUtil.getIds(exercise.getModelIds());
                 for (ModelDto modelDto : modelDtos) {
                     if (killedModelIds.contains(modelDto.getId().longValue())) {
                         modelDto.setIsKilled(true);
@@ -91,7 +92,7 @@ public class ExerciseService {
         } else {
             //第一次参加该考试要新建exercise对象
             //首先要从题库中选择模型出来
-            List<Long> bankIds = getIds(exam.getBankIds());
+            List<Long> bankIds = StringUtil.getIds(exam.getBankIds());
             List<ModelDto> total_modelDtos = modelMapper.selectByBankIds(bankIds);
             List<ModelDto> exercise_models = getRandomModels(total_modelDtos, exam.getModelNums());
             //未被杀死 init
@@ -244,30 +245,18 @@ public class ExerciseService {
     }
 
     private String getIdsStr(List<ModelDto> models) {
-        String result = "";
-        for (ModelDto dto : models) {
-            result += dto.getId();
-            result += SEPERATOR;
-        }
-        if (result.lastIndexOf(SEPERATOR) == result.length() - 1) {
-            result = result.substring(0, result.length() - 1);
-        }
+        List<Long> list = Lists.newArrayList();
+        models.forEach(model -> list.add(model.getId()));
+        String result = StringUtil.getIdsStr(list);
+
         return result;
     }
 
-    private List<Long> getIds(String ids) {
-        String[] idArray = ids.split(SEPERATOR);
-        List<Long> idList = Lists.newArrayList();
-        for (String id : idArray) {
-            idList.add(Long.parseLong(id));
-        }
-        return idList;
-    }
 
 
     public void downloadReferenceSamples(Long examId, HttpServletResponse response) {
         Exam exam = examMapper.selectByPrimaryKey(examId);
-        List<Long> bankIds = getIds(exam.getBankIds());
+        List<Long> bankIds = StringUtil.getIds(exam.getBankIds());
         List<SampleDto> samples = sampleMapper.selectByBankIds(bankIds);
         List<File> files = Lists.newArrayList();
         for (SampleDto dto : samples) {

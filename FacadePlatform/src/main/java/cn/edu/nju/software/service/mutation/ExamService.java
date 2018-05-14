@@ -12,11 +12,15 @@ import cn.edu.nju.software.common.shiro.RoleEnum;
 import cn.edu.nju.software.common.shiro.ShiroUser;
 import cn.edu.nju.software.common.shiro.ShiroUtils;
 import cn.edu.nju.software.common.shiro.StateEnum;
+import cn.edu.nju.software.dto.BankDto;
 import cn.edu.nju.software.dto.ExamDto;
 import cn.edu.nju.software.dto.ExamResultDto;
+import cn.edu.nju.software.entity.Bank;
 import cn.edu.nju.software.entity.Exam;
+import cn.edu.nju.software.mapper.BankMapper;
 import cn.edu.nju.software.mapper.ExamMapper;
 import cn.edu.nju.software.mapper.SampleMapper;
+import cn.edu.nju.software.util.StringUtil;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.BeanUtils;
@@ -35,6 +39,9 @@ public class ExamService {
 
     @Autowired
     private ExamMapper examMapper;
+
+    @Autowired
+    private BankMapper bankMapper;
 
     @Autowired
     private SampleMapper sampleMapper;
@@ -111,11 +118,16 @@ public class ExamService {
 
     public ExamDto getExam(Long id) {
         ExamDto dto = examMapper.selectById(id);
+        List<Long> ids = StringUtil.getIds(dto.getBankIds());
+        List<BankDto> selectedBankDtos = bankMapper.selectInBankIds(ids);
+        List<BankDto> notSelectedBankDtos = bankMapper.selectNotInBankIds(ids);
+        dto.setSelectBankDto(selectedBankDtos);
+        dto.setNotSelectBankDto(notSelectedBankDtos);
         return dto;
     }
 
     //TODO
-    public ExamResultDto getExamResult(Long id, PaginationCommand command){
+    public ExamResultDto getExamResult(Long id, PaginationCommand command) {
 //        ShiroUser user = ShiroUtils.currentUser();
 //        //如果没登陆
 //        if (user == null) {
