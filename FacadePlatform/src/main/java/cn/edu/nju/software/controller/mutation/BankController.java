@@ -6,6 +6,7 @@ import cn.edu.nju.software.common.result.PageResult;
 import cn.edu.nju.software.common.result.Result;
 import cn.edu.nju.software.dto.BankDto;
 import cn.edu.nju.software.service.mutation.BankService;
+import cn.edu.nju.software.util.StringUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -49,21 +50,20 @@ public class BankController {
     /**
      * 更新题库基本信息
      *
-     * @param id
      * @return
      */
-    @PostMapping("update/{id}")
-    public Result updateBank(@PathVariable Long id, HttpServletRequest request) {
+    @PostMapping("update")
+    public Result updateBank(HttpServletRequest request) {
         BankCommand command = new BankCommand();
-        command.setId(id);
+        command.setId(StringUtil.getLongValue(request.getParameter("id")));
         command.setName(request.getParameter("name"));
         command.setDescription(request.getParameter("description"));
         bankService.update(command, request);
         return Result.success().message("更新题库成功！");
     }
 
-    @PostMapping("update/{id}/simple")
-    public Result updateBank(@PathVariable Long id, @RequestBody BankCommand command) {
+    @PostMapping("update/simple")
+    public Result updateBank(@RequestBody BankCommand command) {
         bankService.update(command);
         return Result.success().message("更新题库成功！");
     }
@@ -109,8 +109,9 @@ public class BankController {
     /**
      * 向题库中上传执行脚本
      */
-    @PostMapping("script/{id}")
-    public Result uploadScript(@PathVariable Long id, @RequestParam("script") MultipartFile file) {
+    @PostMapping("script")
+    public Result uploadScript(@RequestParam("script") MultipartFile file, HttpServletRequest request) {
+        Long id = StringUtil.getLongValue(request.getParameter("id"));
         return bankService.uploadScript(id, file);
     }
 
@@ -133,13 +134,12 @@ public class BankController {
 
     /**
      * 向题库中上传模型
-     *
-     * @param id
      * @param request
      * @return
      */
-    @PostMapping("models/{id}")
-    public Result uploadModels(@PathVariable Long id, HttpServletRequest request) {
+    @PostMapping("models")
+    public Result uploadModels(HttpServletRequest request) {
+        Long id = StringUtil.getLongValue(request.getParameter("id"));
         List<MultipartFile> files = ((MultipartHttpServletRequest) request).getFiles("models");
         return bankService.uploadMutationModel(id, files);
     }
@@ -155,13 +155,12 @@ public class BankController {
 
     /**
      * 向题库中上传模型
-     *
-     * @param id
      * @param request
      * @return
      */
-    @PostMapping("samples/{id}")
-    public Result uploadSamples(@PathVariable Long id, HttpServletRequest request) {
+    @PostMapping("samples")
+    public Result uploadSamples(HttpServletRequest request) {
+        Long id = StringUtil.getLongValue(request.getParameter("id"));
         List<MultipartFile> files = ((MultipartHttpServletRequest) request).getFiles("samples");
         return bankService.uploadSamples(id, files);
     }
