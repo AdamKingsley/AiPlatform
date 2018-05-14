@@ -32,8 +32,8 @@ public class BankController {
      * @return Result
      */
     @PostMapping("create")
-    public Result addBank(@RequestBody BankCommand command) {
-        bankService.create(command);
+    public Result addBank(@RequestBody BankCommand command,HttpServletRequest request) {
+        bankService.create(command,request);
         return Result.success().message("添加题库成功！");
     }
 
@@ -45,8 +45,8 @@ public class BankController {
      * @return
      */
     @PostMapping("update/{id}")
-    public Result updateBank(@PathVariable Long id, @RequestBody BankCommand command) {
-        bankService.update(command);
+    public Result updateBank(@PathVariable Long id, @RequestBody BankCommand command,HttpServletRequest request) {
+        bankService.update(command,request);
         return Result.success().message("更新题库成功！");
     }
 
