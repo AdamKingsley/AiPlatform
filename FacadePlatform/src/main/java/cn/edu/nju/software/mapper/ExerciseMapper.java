@@ -15,4 +15,5 @@ public interface ExerciseMapper extends Mapper<Exercise> {
 
     @Select("select * from t_exercise where user_id=#{userId} and exam_id=#{examId}")
     Exercise selectByUserAndExam(@Param("userId") Long userId, @Param("examId") Long examId);
+
 }

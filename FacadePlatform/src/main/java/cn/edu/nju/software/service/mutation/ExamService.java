@@ -19,6 +19,7 @@ import cn.edu.nju.software.entity.Bank;
 import cn.edu.nju.software.entity.Exam;
 import cn.edu.nju.software.mapper.BankMapper;
 import cn.edu.nju.software.mapper.ExamMapper;
+import cn.edu.nju.software.mapper.ExerciseMapper;
 import cn.edu.nju.software.mapper.SampleMapper;
 import cn.edu.nju.software.util.StringUtil;
 import com.github.pagehelper.Page;
@@ -44,7 +45,7 @@ public class ExamService {
     private BankMapper bankMapper;
 
     @Autowired
-    private SampleMapper sampleMapper;
+    private ExerciseMapper exerciseMapper;
 
     public void create(ExamCommand command) {
         command.validate();
@@ -128,29 +129,28 @@ public class ExamService {
 
     //TODO
     public ExamResultDto getExamResult(Long id, PaginationCommand command) {
-//        ShiroUser user = ShiroUtils.currentUser();
-//        //如果没登陆
-//        if (user == null) {
-//            throw new ServiceException(ExceptionEnum.LOGIN_INVALID);
-//        }
-//        //如果是老师
-//        if (user.getRoleId().longValue() == RoleEnum.TEACHER.getRoleId()) {
-//            Exam exam = examMapper.selectByPrimaryKey(id);
-//            if (new Date().getTime() <= exam.getStartTime().getTime()) {
-//                throw new ServiceException("考试尚未开始没有相关统计信息！");
-//            }
-//            ExamResultDto dto = new ExamResultDto();
-//            //获取参与考试的人员数
-//            dto.setStudentNums(examMapper.getStudentNums(id));
+        ShiroUser user = ShiroUtils.currentUser();
+        //如果没登陆
+        if (user == null) {
+            throw new ServiceException(ExceptionEnum.LOGIN_INVALID);
+        }
+        //如果是老师
+        if (user.getRoleId().longValue() == RoleEnum.TEACHER.getRoleId()) {
+            Exam exam = examMapper.selectByPrimaryKey(id);
+            if (new Date().getTime() <= exam.getStartTime().getTime()) {
+                throw new ServiceException("考试尚未开始没有相关统计信息！");
+            }
+            ExamResultDto dto = new ExamResultDto();
+            //获取参与考试的人员数
+//            dto.setStudentNums(examMapper.countStudents(id));
 //            //获取模型通过率列表
 //            dto.setModelList(getModelRateList(id));
 //            //获取学生排名分页列表
 //            List<UserScore> scoreList = getRankList(command.getStart(),command.getPageSize());
-//            return dto;
-//        } else {
-//            throw new ServiceException(ExceptionEnum.PERMISSION_DENIED);
-//        }
-        return null;
+            return dto;
+        } else {
+            throw new ServiceException(ExceptionEnum.PERMISSION_DENIED);
+        }
     }
 
 }

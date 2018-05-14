@@ -57,5 +57,8 @@ public interface ExamMapper extends Mapper<Exam> {
             "</if>",
             "</script>"
     })
-    Page<ExamDto> selectStudentFinishedExamPage(@Param("command") ExamPaginationCommand command,@Param("userId")Long userId);
+    Page<ExamDto> selectStudentFinishedExamPage(@Param("command") ExamPaginationCommand command, @Param("userId") Long userId);
+
+    @Select("select count(1) from t_exercise where exam_id = #{id}")
+    Integer countStudents(@Param("id") Long id);
 }
