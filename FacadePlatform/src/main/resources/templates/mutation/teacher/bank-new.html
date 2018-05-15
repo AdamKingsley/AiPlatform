@@ -35,7 +35,39 @@
                     </div>
                     <div class="box-body">
                         <form id="bank_form" class="form-horizontal">
-
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">名称</label>
+                                <div class="col-sm-9">
+                                    <input name="name" type="text" class="form-control"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">描述</label>
+                                <div class="col-sm-9">
+                                    <input name="description" type="text" class="form-control"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">运行脚本</label>
+                                <div class="col-sm-9">
+                                    <div id="script_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
+                                    <input id="script" name="script" type="file" style="display: none"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">模型</label>
+                                <div class="col-sm-9">
+                                    <div id="models_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
+                                    <input id="models" name="models" type="file" style="display: none" multiple="multiple"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">样本</label>
+                                <div class="col-sm-9">
+                                    <div id="samples_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
+                                    <input id="samples" name="samples" type="file" style="display: none" multiple="multiple"/>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-2"></label>
                                 <div class="col-sm-9">

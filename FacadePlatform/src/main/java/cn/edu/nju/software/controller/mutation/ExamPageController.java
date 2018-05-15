@@ -74,4 +74,12 @@ public class ExamPageController {
         model.addAttribute("user", user);
         return "mutation/student/join";
     }
+
+    @RequestMapping(value = "/exam/result", method = RequestMethod.GET)
+    public String toExamResult(Model model) {
+        ShiroUser user = ShiroUtils.currentUser();
+
+        model.addAttribute("user", user);
+        return "mutation/student/result";
+    }
 }

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta th:include="header::header"/>
+    <title>深度学习测试平台</title>
+
+    <style>
+        #chart {
+            height: 500px;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body class="hold-transition skin-black sidebar-mini">
+<header class="main-header" th:include="header::main-header (${user})">
+
+</header>
+<div class="content-wrapper" style="min-height: 976px">
+    <aside class="main-sidebar"
+           th:include="aside::aside ('mutation', 'exam', ${user})">
+
+    </aside>
+    <section class="content-header">
+        <h1>
+            结果
+        </h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">结果</h3>
+                        <div class="box-tools">
+                            <div class="btn-group pull-right">
+                                <a href="/mutation/s/exam" class="btn btn-sm btn-default">
+                                    <i class="fa fa-arrow-left"></i>
+                                    &nbsp;返回
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top: 30px">
+                            <div class="col-sm-12 form-horizontal">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">选择图片</label>
+                                    <div class="col-sm-7">
+                                        <select id="img_select" class="form-control select2-basic">
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">实际值</label>
+                                    <div class="col-sm-7">
+                                        <div id="result" class="form-control"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">预测值</label>
+                                    <div class="col-sm-7">
+                                        <div id="predict_result" class="form-control"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="control-label col-sm-2">缩略图</label>
+                                    <div class="col-sm-7">
+                                        <img id="img_small" style="display: block; height: 200px"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <div id="chart" class="col-sm-12" style="height: 500px">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div th:include="footer::script">
+
+</div>
+
+<script src="/static/plugins/echarts/echarts.min-2.js"></script>
+<script src="/static/js/mutation/student/result.js"></script>
+</body>
+</html>
