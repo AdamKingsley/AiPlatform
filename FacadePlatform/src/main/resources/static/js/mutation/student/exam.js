@@ -49,7 +49,6 @@
                         extra["type"] = parseInt(type);
                     }
                     var data = $.extend({}, d, extra);
-                    console.log(data);
                     return JSON.stringify(data);
                 },
                 dataSrc: function(json) {
