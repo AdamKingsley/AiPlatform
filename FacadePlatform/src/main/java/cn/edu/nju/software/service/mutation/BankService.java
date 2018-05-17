@@ -50,7 +50,7 @@ public class BankService {
     @Autowired
     private SampleMapper sampleMapper;
 
-    public void update(BankCommand command){
+    public void update(BankCommand command) {
         Bank bank = bankMapper.selectByPrimaryKey(command.getId());
         //如果修改了题库的名称
         if (!bank.getName().equals(command.getName())) {
@@ -103,10 +103,14 @@ public class BankService {
 
     private void uploadFiles(Long id, HttpServletRequest request) {
         MultipartFile script = ((MultipartHttpServletRequest) request).getFile("script");
+        MultipartFile standardModel = ((MultipartHttpServletRequest) request).getFile("standardModel");
         List<MultipartFile> models = ((MultipartHttpServletRequest) request).getFiles("models");
         List<MultipartFile> samples = ((MultipartHttpServletRequest) request).getFiles("samples");
         if (script != null && script.getSize() != 0) {
             uploadScript(id, script);
+        }
+        if (standardModel != null && standardModel.getSize() != 0) {
+            uploadStandardModel(id, standardModel);
         }
         if (models != null && models.size() > 0) {
             uploadMutationModel(id, models);
@@ -118,7 +122,7 @@ public class BankService {
 
     //获取题库列表 分页
     public PageResult list(BankPaginationCommand command) {
-        PageHelper.startPage(command.getStart(), command.getPageSize());
+        PageHelper.startPage(command.getPageNum(), command.getPageSize());
         Page<BankDto> page = bankMapper.selectPage();
         PageInfo<BankDto> pageInfo = new PageInfo(page);
         return new PageResult(pageInfo, command.getDraw());
@@ -277,4 +281,36 @@ public class BankService {
         return bankMapper.selectAllBanks();
     }
 
+    public void downloadStandardModel(Long id, HttpServletResponse response) {
+        Bank bank = bankMapper.selectByPrimaryKey(id);
+        String standardModelPath = bank.getStandardModelLocation();
+        if (StringUtils.isEmpty(standardModelPath)) {
+            throw new ServiceException("不存在对应的模型文件！");
+        }
+        File file = new File(standardModelPath);
+        FileUtil.downloadFile(file, file.getName(), response);
+    }
+
+    public Result uploadStandardModel(Long id, MultipartFile file) {
+        Result result = FileUtil.checkFile(file);
+        if (!result.isSuccess()) {
+            return result;
+        }
+        File dir = FileUtil.makeDirs(uploadConfig.getFolder(), "bank_" + id + "/standard_model/");
+        //String originalFilename = file.getOriginalFilename();
+        String extension = FileUtil.getExtension(file.getOriginalFilename(), file.getContentType());
+        String ab_path = dir.getAbsolutePath() + File.separator + "model" + extension;
+        String path = dir.getPath() + File.separator + "model" + extension;
+        try {
+            file.transferTo(new File(ab_path));
+            //return Result.success().message("执行脚本上传成功！");
+        } catch (IOException e) {
+            e.printStackTrace();
+            return Result.error().message("标准模型上传发生异常！");
+        }
+        Bank bank = bankMapper.selectByPrimaryKey(id);
+        bank.setStandardModelLocation(path);
+        bankMapper.updateByPrimaryKey(bank);
+        return Result.success().message("上传成标准模型功！");
+    }
 }

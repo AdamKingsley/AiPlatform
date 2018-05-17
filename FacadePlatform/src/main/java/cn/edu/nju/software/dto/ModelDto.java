@@ -13,6 +13,8 @@ import java.util.Date;
 public class ModelDto extends IdDto {
     private Long bankId;
     private String location;
+    //对比的标准的模型
+    private String standardModelLocation;
     private Integer type;
     private String name;
     private Boolean isKilled;

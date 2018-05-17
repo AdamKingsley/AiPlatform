@@ -165,4 +165,24 @@ public class BankController {
         return bankService.uploadSamples(id, files);
     }
 
+    /**
+     * 从题库中下载测试样本集
+     */
+    @GetMapping("standard/model/{id}")
+    public void downloadStandardModel(@PathVariable Long id, HttpServletRequest request, HttpServletResponse response) {
+        bankService.downloadStandardModel(id, response);
+    }
+
+    /**
+     * 向题库中上传模型
+     * @param request
+     * @return
+     */
+    @PostMapping("standard/model")
+    public Result uploadStandardModel(HttpServletRequest request) {
+        Long id = StringUtil.getLongValue(request.getParameter("id"));
+        MultipartFile file = ((MultipartHttpServletRequest) request).getFile("standardModel");
+        return bankService.uploadStandardModel(id, file);
+    }
+
 }
