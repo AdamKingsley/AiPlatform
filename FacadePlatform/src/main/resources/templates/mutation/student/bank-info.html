@@ -15,7 +15,7 @@
     </aside>
     <section class="content-header">
         <h1>
-            新增题库
+            题库信息
         </h1>
     </section>
     <section class="content">
@@ -23,48 +23,56 @@
             <div class="col-sm-12">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">创建</h3>
+                        <h3 class="box-title">信息</h3>
                     </div>
                     <div class="box-body">
                         <form id="bank_form" class="form-horizontal">
                             <div class="form-group">
                                 <label class="control-label col-sm-2">名称</label>
                                 <div class="col-sm-9">
-                                    <input name="name" type="text" class="form-control"/>
+                                    <div class="form-control" th:text="${bank == null ? '' : bank.name}">
+
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-2">描述</label>
                                 <div class="col-sm-9">
-                                    <input name="description" type="text" class="form-control"/>
+                                    <div class="form-control" th:text="${bank == null ? '' : bank.description}">
+
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-2">运行脚本</label>
                                 <div class="col-sm-9">
-                                    <div id="script_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
-                                    <input id="script" name="script" type="file" style="display: none"/>
+                                    <div class="form-control">
+                                        <a th:href="${'/bank/script/' + bank.id}" >下载脚本</a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-2">标准模型</label>
                                 <div class="col-sm-9">
-                                    <div id="standard_model_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
-                                    <input id="standard_model" name="standard_model" type="file" style="display: none"/>
+                                    <div class="form-control">
+                                        <a th:href="${'/bank/standard/model/' + bank.id}" >下载标准模型</a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-2">变异模型</label>
                                 <div class="col-sm-9">
-                                    <div id="models_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
-                                    <input id="models" name="models" type="file" style="display: none" multiple="multiple"/>
+                                    <div class="form-control">
+                                        <a th:href="${'/bank/models/' + bank.id}" >下载变异模型</a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-2">样本</label>
                                 <div class="col-sm-9">
-                                    <div id="samples_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
-                                    <input id="samples" name="samples" type="file" style="display: none" multiple="multiple"/>
+                                    <div class="form-control">
+                                        <a th:href="${'/bank/samples/' + bank.id}" >下载样本</a>
+                                    </div>
                                 </div>
                             </div>
                         </form>
