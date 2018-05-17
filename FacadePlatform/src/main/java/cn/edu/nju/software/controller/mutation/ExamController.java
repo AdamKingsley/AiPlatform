@@ -5,6 +5,7 @@ import cn.edu.nju.software.command.mutation.ExamPaginationCommand;
 import cn.edu.nju.software.common.result.PageResult;
 import cn.edu.nju.software.common.result.Result;
 import cn.edu.nju.software.dto.ExamDto;
+import cn.edu.nju.software.dto.ExamResultDto;
 import cn.edu.nju.software.service.mutation.ExamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -79,6 +80,12 @@ public class ExamController {
     public PageResult list(@RequestBody ExamPaginationCommand command) {
         command.setCurrentTime(new Date());
         return examService.list(command);
+    }
+
+    @GetMapping("/result/{id}")
+    public Result getResult(@PathVariable("id") Long id) {
+        ExamResultDto dto = examService.getExamResult(id);
+        return Result.success().message("获取考试统计信息结果成功！");
     }
 
 }

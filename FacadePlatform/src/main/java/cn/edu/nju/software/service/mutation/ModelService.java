@@ -10,6 +10,7 @@ import cn.edu.nju.software.entity.Model;
 import cn.edu.nju.software.mapper.BankMapper;
 import cn.edu.nju.software.mapper.ModelMapper;
 import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
@@ -76,7 +77,7 @@ public class ModelService {
     }
 
     public PageResult list(ModelPaginationCommand command) {
-
+        PageHelper.startPage(command.getPageNum(), command.getPageSize());
         Page<ModelDto> page = modelMapper.selectModelPage(command);
         return new PageResult(new PageInfo(page), command.getDraw());
     }

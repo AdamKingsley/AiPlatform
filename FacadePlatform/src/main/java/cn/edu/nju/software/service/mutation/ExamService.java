@@ -100,7 +100,7 @@ public class ExamService {
 
     public PageResult list(ExamPaginationCommand command) {
         //查询分页数据
-        PageHelper.startPage(command.getStart(), command.getPageSize());
+        PageHelper.startPage(command.getPageNum(), command.getPageSize());
         //Example example = new Example(ExamDto.class);
         //example.createCriteria();
         if (command.getType() != null && command.getIsMine() != null
@@ -128,7 +128,7 @@ public class ExamService {
     }
 
     //TODO
-    public ExamResultDto getExamResult(Long id, PaginationCommand command) {
+    public ExamResultDto getExamResult(Long id) {
         ShiroUser user = ShiroUtils.currentUser();
         //如果没登陆
         if (user == null) {
@@ -142,7 +142,7 @@ public class ExamService {
             }
             ExamResultDto dto = new ExamResultDto();
             //获取参与考试的人员数
-//            dto.setStudentNums(examMapper.countStudents(id));
+            dto.setCounts(examMapper.countStudents(id));
 //            //获取模型通过率列表
 //            dto.setModelList(getModelRateList(id));
 //            //获取学生排名分页列表
