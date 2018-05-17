@@ -14,7 +14,6 @@ args = parser.parse_args()
 script_module = args.script_file
 script_class = 'ModelClass'
 
-print(script_module)
 # 导入指定模块，导入时会执行全局方法。
 ip_module = __import__(script_module)
 # 使用getattr()获取imp_module的类

@@ -75,6 +75,7 @@ public class ProcessModelService {
                     "--script_file=" + scriptName,
                     "--sample_list=" + JSONUtils.toJSONString(sampleList)
             };
+
             Result result = ShellUtil.exec(args);
             if(result.isSuccess()){
                 count++;
