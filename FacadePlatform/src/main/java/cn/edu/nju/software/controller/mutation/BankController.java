@@ -76,6 +76,7 @@ public class BankController {
      */
     @PostMapping("list")
     public PageResult getBankList(@RequestBody BankPaginationCommand command) {
+        command.setPageNum(command.getStart()/command.getPageSize() + 1);
         //BankPaginationCommand command = new BankPaginationCommand(pageNum, pageSize, draw);
         return bankService.list(command);
     }
@@ -163,6 +164,26 @@ public class BankController {
         Long id = StringUtil.getLongValue(request.getParameter("id"));
         List<MultipartFile> files = ((MultipartHttpServletRequest) request).getFiles("samples");
         return bankService.uploadSamples(id, files);
+    }
+
+    /**
+     * 从题库中下载测试样本集
+     */
+    @GetMapping("standard/model/{id}")
+    public void downloadStandardModel(@PathVariable Long id, HttpServletRequest request, HttpServletResponse response) {
+        bankService.downloadStandardModel(id, response);
+    }
+
+    /**
+     * 向题库中上传模型
+     * @param request
+     * @return
+     */
+    @PostMapping("standard/model")
+    public Result uploadStandardModel(HttpServletRequest request) {
+        Long id = StringUtil.getLongValue(request.getParameter("id"));
+        MultipartFile file = ((MultipartHttpServletRequest) request).getFile("standardModel");
+        return bankService.uploadStandardModel(id, file);
     }
 
 }

@@ -18,6 +18,8 @@ public class Bank extends IdEntity {
     private String name;
     //题库的变异体数量
     private Integer nums;
+    //标准模型的位置
+    private String standardModelLocation;
     //题库对应变异体运行脚本的位置
     private String scriptLocation;
     //题库创建时间

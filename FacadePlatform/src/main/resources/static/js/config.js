@@ -2,6 +2,7 @@
 
 var baseurl = "";
 var datatables_i18n_zhCN = "/static/resource/i18n/dataTables-zh-cn.json";
+var imgurl = "/static/resource/";
 
 (function ($){
     /**

@@ -56,8 +56,30 @@
                 }
             });
         });
+        var option = {
+            success: function(res) {
+                if (res.success == true) {
+                    toastr.success(res.message);
+                } else {
+                    toastr.error(res.errorMessage);
+                }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                var json = JSON.parse(XMLHttpRequest.responseText);
+                toastr.error(json.errorMessage);
+            }
+        };
         $("#script_submit").on("click", function() {
-
+            $("#script_form").ajaxSubmit(option);
+        });
+        $("#standard_model_submit").on("click", function() {
+            $("#standard_model_form").ajaxSubmit(option);
+        });
+        $("#models_submit").on("click", function() {
+            $("#models_form").ajaxSubmit(option);
+        });
+        $("#samples_submit").on("click", function() {
+            $("#samples_form").ajaxSubmit(option);
         });
     }
 })();

@@ -70,7 +70,8 @@
                         </form>
                         <hr/>
                         <div class="form-horizontal">
-                            <form class="form-group" id="script_form">
+                            <form class="form-group" id="script_form" action="/bank/script">
+                                <input type="hidden" name="id" th:value="${bank == null ? '' : bank.id}"/>
                                 <label class="control-label col-sm-2">运行脚本</label>
                                 <div class="col-sm-7">
                                     <div id="script_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
@@ -80,17 +81,30 @@
                                     <button id="script_submit" class="btn btn-info btn-sm" type="button">脚本重新上传</button>
                                 </div>
                             </form>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2">模型</label>
+                            <form class="form-group" id="standard_model_form" action="/bank/models">
+                                <input type="hidden" name="id" th:value="${bank == null ? '' : bank.id}"/>
+                                <label class="control-label col-sm-2">标准模型</label>
+                                <div class="col-sm-7">
+                                    <div id="standard_model_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
+                                    <input id="standard_model" name="standardModel" type="file" style="display: none" />
+                                </div>
+                                <div class="col-sm-1">
+                                    <button id="standard_model_submit" class="btn btn-info btn-sm" type="button">标准模型重新上传</button>
+                                </div>
+                            </form>
+                            <form class="form-group" id="models_form" action="/bank/models">
+                                <input type="hidden" name="id" th:value="${bank == null ? '' : bank.id}"/>
+                                <label class="control-label col-sm-2">变异模型</label>
                                 <div class="col-sm-7">
                                     <div id="models_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
                                     <input id="models" name="models" type="file" style="display: none" multiple="multiple"/>
                                 </div>
                                 <div class="col-sm-1">
-                                    <button id="models_submit" class="btn btn-info btn-sm" type="button">模型重新上传</button>
+                                    <button id="models_submit" class="btn btn-info btn-sm" type="button">变异模型重新上传</button>
                                 </div>
-                            </div>
-                            <div class="form-group">
+                            </form>
+                            <form class="form-group" id="samples_form" action="/bank/samples">
+                                <input type="hidden" name="id" th:value="${bank == null ? '' : bank.id}"/>
                                 <label class="control-label col-sm-2">样本</label>
                                 <div class="col-sm-7">
                                     <div id="samples_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
@@ -99,7 +113,7 @@
                                 <div class="col-sm-1">
                                     <button id="samples_submit" class="btn btn-info btn-sm" type="button">样本重新上传</button>
                                 </div>
-                            </div>
+                            </form>
                             <!--<div class="form-group">-->
                                 <!--<label class="control-label col-sm-2"></label>-->
                                 <!--<div class="col-sm-9">-->
