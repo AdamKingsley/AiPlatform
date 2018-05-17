@@ -35,4 +35,29 @@ public class StringUtil {
     public static Long getLongValue(String str){
         return Long.parseLong(str);
     }
+
+    /**
+     * 获取父文件夹路径
+     * @param str 路径
+     * @param times 次数
+     * @return
+     */
+    public static String getParentPath(String str, int times){
+        if(times < 1){
+            return str;
+        }
+        String result = str;
+
+        for(int i=0;i<times;i++){
+            int index = result.lastIndexOf('/');
+            if(index < 0){
+                result = "";
+            }else if(index == 0){
+                result = "/";
+            }else{
+                result = result.substring(0,index);
+            }
+        }
+        return result;
+    }
 }
