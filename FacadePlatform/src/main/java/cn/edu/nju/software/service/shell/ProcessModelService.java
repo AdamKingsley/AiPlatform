@@ -3,6 +3,7 @@ package cn.edu.nju.software.service.shell;
 import cn.edu.nju.software.command.shell.ProcessModelCommand;
 import cn.edu.nju.software.common.result.Result;
 import cn.edu.nju.software.dto.ModelDto;
+import cn.edu.nju.software.util.FileUtil;
 import cn.edu.nju.software.util.ShellUtil;
 import cn.edu.nju.software.util.StringUtil;
 import com.alibaba.druid.support.json.JSONUtils;
@@ -26,7 +27,6 @@ public class ProcessModelService {
 
     public Result processModel(ProcessModelCommand command){
 
-
         int count = 0;
 
         //获取全局路径
@@ -48,26 +48,39 @@ public class ProcessModelService {
             }
             sampleList.add(file.getAbsolutePath());
         }
-        System.out.println(path + "python/argparse.py");
-
         //对于每个模型单独跑一遍正常模型和该变异模型
         List<ModelDto> modelList = command.getModels();
 
+
+
         for(ModelDto model : modelList){
+            //脚本文件处理
+            String scriptFile = model.getScriptLocation();
+            String file = StringUtil.getFileFromPath(scriptFile);
+            if(file.equals("argsparse.py") || file.equals("pysql.py")){
+                continue;
+            }
+            String newFile =  path + "python/" + file;
+            FileUtil.copyFile(projectPath + scriptFile,newFile);
+            String scriptName = StringUtil.getFileName(file);
+
             //依次运行模型或变异模型
             String[] args = {
                     "python",
-                    path + "python/argparse.py",
+                    path + "python/argsparse.py",
                     "--user_id=" + command.getUserId(),
                     "--exam_id=" + command.getExamId(),
-                    "--module_location=" + model.getLocation(),
-                    "--script_file=" + model.getScriptLocation(),
+                    "--module_location=" + projectPath + model.getLocation(),
+                    "--standard_module_location=" + projectPath + model.getStandardModelLocation(),
+                    "--script_file=" + scriptName,
                     "--sample_list=" + JSONUtils.toJSONString(sampleList)
             };
             Result result = ShellUtil.exec(args);
             if(result.isSuccess()){
                 count++;
             }
+            //删除复制的文件
+            FileUtil.delete(newFile);
         }
         return Result.success().withData(count);
     }

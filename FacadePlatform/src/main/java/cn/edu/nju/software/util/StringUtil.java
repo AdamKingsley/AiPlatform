@@ -60,4 +60,29 @@ public class StringUtil {
         }
         return result;
     }
+
+    /**
+     * 获取路径中的文件名，含后缀
+     */
+    public static String getFileFromPath(String str){
+        int index = str.lastIndexOf('/');
+        if(index < 0){
+            return str;
+        }else{
+            return str.substring(index+1);
+        }
+    }
+
+    /**
+     * 获取路径中的文件名，不含后缀
+     */
+    public static String getFileName(String str) {
+        int index = str.lastIndexOf('.');
+        if(index < 0){
+            return str;
+        }else{
+            return str.substring(0,index);
+        }
+    }
+
 }
