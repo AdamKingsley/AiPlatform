@@ -72,6 +72,9 @@
         $("#script_submit").on("click", function() {
             $("#script_form").ajaxSubmit(option);
         });
+        $("#standard_model_submit").on("click", function() {
+            $("#standard_model_form").ajaxSubmit(option);
+        });
         $("#models_submit").on("click", function() {
             $("#models_form").ajaxSubmit(option);
         });

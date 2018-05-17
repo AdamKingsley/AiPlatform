@@ -52,6 +52,7 @@
                     return JSON.stringify(data);
                 },
                 dataSrc: function(json) {
+                    // console.log(json);
                     var data = json.data;
                     //给新数据添加操作
 
@@ -62,7 +63,7 @@
                         data[i]["opt"] = "";
 
                         if (start > now) {
-                            data[i]["state"] = "<span class='label label-info'>未开始</span>"
+                            data[i]["state"] = "<span class='label label-info'>未开始</span>";
                             data[i]["opt"] += "<a href='/mutation/exam/edit/" + data[i]["id"] + "'>" +
                                 "   <i class='fa fa-edit'></i>" +
                                 "</a>";

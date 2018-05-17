@@ -46,4 +46,16 @@ public class BankPageController {
         model.addAttribute("bank", bankDto);
         return "mutation/teacher/bank-edit";
     }
+
+    @RequestMapping(value = "/info/{id}", method = RequestMethod.GET)
+    public String toBankInfo(@PathVariable("id") Long id,
+                             Model model) {
+        ShiroUser user = ShiroUtils.currentUser();
+
+        BankDto bankDto = bankService.getBankDetail(id);
+
+        model.addAttribute("user", user);
+        model.addAttribute("bank", bankDto);
+        return "mutation/student/bank-info";
+    }
 }

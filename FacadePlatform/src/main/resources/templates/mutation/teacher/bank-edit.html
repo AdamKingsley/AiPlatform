@@ -81,15 +81,26 @@
                                     <button id="script_submit" class="btn btn-info btn-sm" type="button">脚本重新上传</button>
                                 </div>
                             </form>
+                            <form class="form-group" id="standard_model_form" action="/bank/models">
+                                <input type="hidden" name="id" th:value="${bank == null ? '' : bank.id}"/>
+                                <label class="control-label col-sm-2">标准模型</label>
+                                <div class="col-sm-7">
+                                    <div id="standard_model_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
+                                    <input id="standard_model" name="standardModel" type="file" style="display: none" />
+                                </div>
+                                <div class="col-sm-1">
+                                    <button id="standard_model_submit" class="btn btn-info btn-sm" type="button">标准模型重新上传</button>
+                                </div>
+                            </form>
                             <form class="form-group" id="models_form" action="/bank/models">
                                 <input type="hidden" name="id" th:value="${bank == null ? '' : bank.id}"/>
-                                <label class="control-label col-sm-2">模型</label>
+                                <label class="control-label col-sm-2">变异模型</label>
                                 <div class="col-sm-7">
                                     <div id="models_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
                                     <input id="models" name="models" type="file" style="display: none" multiple="multiple"/>
                                 </div>
                                 <div class="col-sm-1">
-                                    <button id="models_submit" class="btn btn-info btn-sm" type="button">模型重新上传</button>
+                                    <button id="models_submit" class="btn btn-info btn-sm" type="button">变异模型重新上传</button>
                                 </div>
                             </form>
                             <form class="form-group" id="samples_form" action="/bank/samples">
