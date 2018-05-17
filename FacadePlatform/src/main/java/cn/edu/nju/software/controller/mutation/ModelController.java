@@ -24,12 +24,13 @@ public class ModelController {
     private ModelService modelService;
 
     @PostMapping("list/{bankId}")
-    public PageResult list(@PathVariable Long bankId,@RequestBody ModelPaginationCommand command) {
+    public PageResult list(@PathVariable Long bankId, @RequestBody ModelPaginationCommand command) {
         //ModelPaginationCommand command = new ModelPaginationCommand(pageNum,pageSize,draw);
         //command.setType(type);
         //command.setStartTime(startTime);
         //command.setEndTime(endTime);
         //command.setBankId(bankId);
+        command.setPageNum(command.getStart() / command.getPageSize() + 1);
         return modelService.list(command);
     }
 
@@ -58,8 +59,8 @@ public class ModelController {
     }
 
     @GetMapping("download/{id}")
-    public void download(@PathVariable("id")Long id, HttpServletRequest request, HttpServletResponse response){
-        modelService.download(id,response);
+    public void download(@PathVariable("id") Long id, HttpServletRequest request, HttpServletResponse response) {
+        modelService.download(id, response);
     }
 
 }

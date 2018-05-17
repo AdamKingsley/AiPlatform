@@ -78,6 +78,7 @@ public class ExamController {
      */
     @PostMapping("list")
     public PageResult list(@RequestBody ExamPaginationCommand command) {
+        command.setPageNum(command.getStart()/command.getPageSize()+1);
         command.setCurrentTime(new Date());
         return examService.list(command);
     }

@@ -76,6 +76,7 @@ public class BankController {
      */
     @PostMapping("list")
     public PageResult getBankList(@RequestBody BankPaginationCommand command) {
+        command.setPageNum(command.getStart()/command.getPageSize() + 1);
         //BankPaginationCommand command = new BankPaginationCommand(pageNum, pageSize, draw);
         return bankService.list(command);
     }
