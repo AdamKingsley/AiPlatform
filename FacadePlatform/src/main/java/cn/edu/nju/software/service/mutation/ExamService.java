@@ -12,25 +12,22 @@ import cn.edu.nju.software.common.shiro.RoleEnum;
 import cn.edu.nju.software.common.shiro.ShiroUser;
 import cn.edu.nju.software.common.shiro.ShiroUtils;
 import cn.edu.nju.software.common.shiro.StateEnum;
-import cn.edu.nju.software.dto.BankDto;
-import cn.edu.nju.software.dto.ExamDto;
-import cn.edu.nju.software.dto.ExamResultDto;
+import cn.edu.nju.software.dto.*;
 import cn.edu.nju.software.entity.Bank;
 import cn.edu.nju.software.entity.Exam;
-import cn.edu.nju.software.mapper.BankMapper;
-import cn.edu.nju.software.mapper.ExamMapper;
-import cn.edu.nju.software.mapper.ExerciseMapper;
-import cn.edu.nju.software.mapper.SampleMapper;
+import cn.edu.nju.software.entity.Exercise;
+import cn.edu.nju.software.mapper.*;
 import cn.edu.nju.software.util.StringUtil;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.common.ExampleMapper;
 
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by mengf on 2018/4/20 0020.
@@ -43,6 +40,9 @@ public class ExamService {
 
     @Autowired
     private BankMapper bankMapper;
+
+    @Autowired
+    private ModelMapper modelMapper;
 
     @Autowired
     private ExerciseMapper exerciseMapper;
@@ -127,15 +127,15 @@ public class ExamService {
         return dto;
     }
 
-    //TODO
     public ExamResultDto getExamResult(Long id) {
         ShiroUser user = ShiroUtils.currentUser();
         //如果没登陆
-        if (user == null) {
-            throw new ServiceException(ExceptionEnum.LOGIN_INVALID);
-        }
+        //TODO 先把验证去掉可以直接进行测试
+        //if (user == null) {
+        //    throw new ServiceException(ExceptionEnum.LOGIN_INVALID);
+        //}
         //如果是老师
-        if (user.getRoleId().longValue() == RoleEnum.TEACHER.getRoleId()) {
+        //if (user.getRoleId().longValue() == RoleEnum.TEACHER.getRoleId()) {
             Exam exam = examMapper.selectByPrimaryKey(id);
             if (new Date().getTime() <= exam.getStartTime().getTime()) {
                 throw new ServiceException("考试尚未开始没有相关统计信息！");
@@ -143,14 +143,88 @@ public class ExamService {
             ExamResultDto dto = new ExamResultDto();
             //获取参与考试的人员数
             dto.setCounts(examMapper.countStudents(id));
-//            //获取模型通过率列表
-//            dto.setModelList(getModelRateList(id));
-//            //获取学生排名分页列表
-//            List<UserScore> scoreList = getRankList(command.getStart(),command.getPageSize());
+            List<ExerciseDto> exercises = exerciseMapper.selectExerciseByExam(exam.getId());
+            //获取模型通过率列表
+            List<ModelKillRateDto> modelList = getModelRateList(exercises);
+            dto.setKillRates(modelList);
+            //获取学生排名分页列表
+            List<RankDto> rankList = getRankList(exercises);
+            dto.setRanks(rankList);
             return dto;
-        } else {
-            throw new ServiceException(ExceptionEnum.PERMISSION_DENIED);
-        }
+        //} else {
+        //    throw new ServiceException(ExceptionEnum.PERMISSION_DENIED);
+        //}
     }
 
+
+    private List<ModelKillRateDto> getModelRateList(List<ExerciseDto> exercises) {
+        //统计每个模型数量的map
+        Map<Long, Integer> modelNums = Maps.newHashMap();
+        //统计杀死模型数量的map
+        Map<Long, Integer> killModelNums = Maps.newHashMap();
+        List<ModelKillRateDto> dtos = Lists.newArrayList();
+        List<Long> ids = Lists.newArrayList();
+        for (ExerciseDto dto : exercises) {
+            List<Long> modelIds = StringUtil.getIds(dto.getModelIds());
+            List<Long> killModelIds = StringUtil.getIds(dto.getKillModelIds());
+            //统计考生所有的model
+            for (Long id : modelIds) {
+                Integer num = modelNums.get(id) == null || modelNums.get(id) == 0 ? 0 : modelNums.get(id);
+                modelNums.put(id, num + 1);
+            }
+            //统计考生所有kill的model
+            for (Long id : killModelIds) {
+                Integer num = killModelNums.get(id) == null || killModelNums.get(id) == 0 ? 0 : killModelNums.get(id);
+                killModelNums.put(id, num + 1);
+            }
+        }
+        for (Long key : modelNums.keySet()) {
+            ids.add(key);
+            ModelKillRateDto rateDto = new ModelKillRateDto();
+            int modelNum = modelNums.get(key);
+            int killModelNum = killModelNums.get(key) == null ? 0 : killModelNums.get(key);
+            double rate = killModelNum * 1.0 / modelNum;
+            rateDto.setId(key);
+            rateDto.setNums(modelNum);
+            rateDto.setKilledNums(killModelNum);
+            rateDto.setKillRate(rate);
+            dtos.add(rateDto);
+        }
+        List<ModelDto> modelDtos = modelMapper.selectByModelIds(ids);
+        for (int i = 0; i < modelDtos.size(); i++) {
+            dtos.get(i).setModel(modelDtos.get(i));
+        }
+        Collections.sort(dtos, (rate1, rate2) -> compareRate(rate1.getKillRate(), rate2.getKillRate()));
+        return dtos;
+    }
+
+    private List<RankDto> getRankList(List<ExerciseDto> exerciseDtos) {
+        List<RankDto> dtos = Lists.newArrayList();
+        //获取每个人的通过率并排序
+        for (ExerciseDto dto : exerciseDtos) {
+            RankDto rankDto = new RankDto();
+            //rankDto.setUserId(dto.getUserId());
+            //rankDto.setUsername(dto.getUsername());
+            //rankDto.setModelIds(dto.getModelIds());
+            //rankDto.setKillModelIds(dto.getKillModelIds());
+            BeanUtils.copyProperties(dto, rankDto);
+            List<Long> models = StringUtil.getIds(dto.getModelIds());
+            List<Long> killModels = StringUtil.getIds(dto.getKillModelIds());
+            rankDto.setModelNums(models.size());
+            rankDto.setKillModelNums(killModels.size());
+            rankDto.setKillRate(rankDto.getKillModelNums() * 1.0 / rankDto.getModelNums());
+            dtos.add(rankDto);
+        }
+        Collections.sort(dtos, (rank1, rank2) -> compareRate(rank1.getKillRate(), rank2.getKillRate()));
+        return dtos;
+    }
+
+    private int compareRate(double rate1, double rate2) {
+        if (rate1 > rate2) {
+            return -1;
+        } else if (rate1 < rate2) {
+            return 1;
+        }
+        return 0;
+    }
 }

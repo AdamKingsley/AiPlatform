@@ -26,6 +26,7 @@ public class ExerciseDto extends IdDto {
     private Long examId;
     //用户ID
     private Long userId;
+    private String username;
     //用户杀死的模型的ID 总数量同killNums
     private String killModelIds;
     //考试状态 0还未开始 1正在进行 2已结束

@@ -12,11 +12,11 @@ public class ModelKillRateDto {
     //模型id
     private Long id;
     //模型名称
-    private String name;
+    private ModelDto model;
     //模型process的次数
-    private Long nums;
+    private Integer nums;
     //模型杀死的次数
-    private Long killedNums;
+    private Integer killedNums;
     //模型杀死率
     private Double killRate;
 }

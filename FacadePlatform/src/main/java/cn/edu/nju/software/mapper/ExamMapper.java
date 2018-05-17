@@ -24,7 +24,11 @@ public interface ExamMapper extends Mapper<Exam> {
 
 
     @Select({"<script>",
-            "select e.* from t_exam e where 1=1",
+            "<![CDATA[" +
+                    "select e.*,CASE WHEN " +
+                    "e.start_time< #{command.currentTime} and e.end_time> #{command.currentTime} " +
+                    "THEN 1 ELSE 0 END as state from t_exam e where 1=1 " +
+                    "]]>",
             "<choose>",
             "<when test='command.type==0 || command.type==null'>",
             "<![CDATA[ and e.start_time > #{command.currentTime} ]]>",
@@ -42,13 +46,18 @@ public interface ExamMapper extends Mapper<Exam> {
             "<if test='command.endTime!=null'>",
             "<![CDATA[ and e.start_time <= #{command.endTime}]]>",
             "</if>",
-            "order by e.start_time desc , e.create_time desc",
+            "order by state desc , e.end_time desc , e.start_time desc , e.create_time desc",
             "</script>"})
     Page<ExamDto> selectExamPage(@Param("command") ExamPaginationCommand command);
 
     @Select({
             "<script>",
-            "select e.* from t_exam e,t_exercise exer where e.id=exer.exam_id and exer.user_id=#{userId}",
+            "<![CDATA[" +
+                    "select e.*,CASE WHEN " +
+                    "e.start_time<#{command.currentTime} and e.end_time>#{command.currentTime} " +
+                    "THEN 1 ELSE 0 END as state " +
+                    "from t_exam e,t_exercise exer where e.id=exer.exam_id and exer.user_id=#{userId}" +
+                    "]]>",
             "<![CDATA[ and e.end_time < #{command.currentTime} ]]>",
             "<if test='command.startTime!=null'>",
             "<![CDATA[ and e.start_time >= #{command.startTime}]]>",
@@ -56,7 +65,7 @@ public interface ExamMapper extends Mapper<Exam> {
             "<if test='command.endTime!=null'>",
             "<![CDATA[ and e.start_time <= #{command.endTime}]]>",
             "</if>",
-            "order by e.start_time desc , e.create_time desc",
+            "order by state desc , e.end_time desc , e.start_time desc , e.create_time desc",
             "</script>"
     })
     Page<ExamDto> selectStudentFinishedExamPage(@Param("command") ExamPaginationCommand command, @Param("userId") Long userId);

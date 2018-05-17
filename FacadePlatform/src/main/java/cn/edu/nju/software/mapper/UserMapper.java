@@ -28,7 +28,7 @@ public interface UserMapper extends Mapper<User> {
     @Select("select * from t_user where mail=#{mail}")
     UserDto selectByMail(@Param("mail") String mail);
 
-    @Select("select * from t_user u,t_role r where username=#{username} where u.role_id=r.id")
+    @Select("select * from t_user u,t_role r where username=#{username} and u.role_id=r.id")
     UserDto selectByUsername(@Param("username") String username);
 
     @Select({"<script>",
