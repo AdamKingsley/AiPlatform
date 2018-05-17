@@ -1,15 +1,11 @@
+#!/usr/bin/env python
 from keras import Model
 from keras.models import load_model
 import numpy as np
 from keras import backend as K
 from PIL import Image
 import json
-
-# class NumpyEncoder(json.JSONEncoder):
-#     def default(self, obj):
-#         if isinstance(obj, np.ndarray):
-#             return obj.tolist()
-#         return json.JSONEncoder.default(self, obj)
+import pysql
 
 
 def getActivationLayers(model):
@@ -17,6 +13,7 @@ def getActivationLayers(model):
     intermediate_layer_model_2 = Model(inputs=model.input, outputs=model.get_layer("activation_2").output)
     intermediate_layer_model_3 = Model(inputs=model.input, outputs=model.get_layer("activation_3").output)
     return intermediate_layer_model_1, intermediate_layer_model_2, intermediate_layer_model_3
+
 
 def processDetailModel(model_path, images_data):
     # 加载模型
@@ -44,11 +41,13 @@ def processDetailModel(model_path, images_data):
     result = []
     for i in range(images_data.shape[0]):
         temp = []
-        temp.append(result_level_1[i].astype(np.int32).tolist())
-        temp.append(result_level_2[i].astype(np.int32).tolist())
-        temp.append(result_level_3[i].astype(np.int32).tolist())
+        # temp.append(result_level_1[i].astype(np.int32).tolist())
+        # temp.append(result_level_2[i].astype(np.int32).tolist())
+        # temp.append(result_level_3[i].astype(np.int32).tolist())
+        temp.append(result_level_1[i].tolist())
+        temp.append(result_level_2[i].tolist())
+        temp.append(result_level_3[i].tolist())
         result.append(temp)
-
     K.clear_session()
 
     return predict, result
@@ -58,7 +57,7 @@ class ModelClass:
     # 模型描述，可选
     description = "class introduction"
 
-    #初始化类
+    # 初始化类
     def __init__(self):
         self.description = "MNIST 手写数字模型"
 
@@ -106,7 +105,10 @@ class ModelClass:
             activation.append(temp)
         result = {"architecture": architecture, "activation": activation}
         result = json.dumps(result)
-        print(result)
+
+        # 存储数据库
+        pysql.save_result(args, is_kill, imagePathList, result)
+
 
 
 
