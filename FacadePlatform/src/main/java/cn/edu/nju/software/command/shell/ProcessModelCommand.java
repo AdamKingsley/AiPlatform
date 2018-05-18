@@ -15,9 +15,9 @@ import java.util.List;
 public class ProcessModelCommand {
 
     //用户ID
-    private String userId;
+    private Long userId;
     //考试ID
-    private String examId;
+    private Long examId;
 
     //样本文件夹路径
     private String path;

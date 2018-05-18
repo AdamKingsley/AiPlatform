@@ -1,5 +1,6 @@
 package cn.edu.nju.software.service.mutation;
 
+import cn.edu.nju.software.command.shell.ProcessModelCommand;
 import cn.edu.nju.software.common.exception.ExceptionEnum;
 import cn.edu.nju.software.common.exception.ServiceException;
 import cn.edu.nju.software.common.result.Result;
@@ -13,6 +14,7 @@ import cn.edu.nju.software.mapper.ExamMapper;
 import cn.edu.nju.software.mapper.ExerciseMapper;
 import cn.edu.nju.software.mapper.ModelMapper;
 import cn.edu.nju.software.mapper.SampleMapper;
+import cn.edu.nju.software.service.shell.ProcessModelService;
 import cn.edu.nju.software.util.FileUtil;
 import cn.edu.nju.software.util.RandomUtil;
 import cn.edu.nju.software.util.StringUtil;
@@ -55,6 +57,8 @@ public class ExerciseService {
     private UploadConfig uploadConfig;
     @Autowired
     private SampleMapper sampleMapper;
+    @Autowired
+    private ProcessModelService processService;
 
     //学生参加过的考试
     //未参加的考试
@@ -163,16 +167,24 @@ public class ExerciseService {
         exercise.setTotalIters(exercise.getTotalIters() + 1);
         exerciseMapper.updateByPrimaryKey(exercise);
 
-        // 万一一场考试选择多个题库的数据呢？
+        List<Long> modelIds = StringUtil.getIds(exercise.getModelIds());
+        //是否删除被kill掉的models
+        //List<Long> killModelIds = StringUtil.getIds(exercise.getKillModelIds());
+        List<ModelDto> modelDtos = modelMapper.selectByModelIds(modelIds);
+
+
         // TODO 然后异步调用执行脚本接口
         // TODO 参数->
         // TODO userId✔，examId✔，path(存储本次在线运行样本的所有文件的文件夹目录)✔，
-
         // TODO 所有modelId以及对应的模型的位置 需要到数据库查询 ！！！！
-        List<Long> modelIds = StringUtil.getIds(exercise.getModelIds());
-        List<ModelDto> modelDtos = modelMapper.selectByModelIds(modelIds);
         //modelDtos
-
+        ProcessModelCommand command = new ProcessModelCommand();
+        command.setExamId(examId);
+        command.setUserId(userId);
+        command.setModels(modelDtos);
+        log.info("the upload samples folder is {}",dir.getPath());
+        command.setPath(dir.getPath());
+        processService.processModel(command);
         return Result.success().message("上传测试样本成功，正在执行测试脚本！");
     }
 
@@ -256,7 +268,6 @@ public class ExerciseService {
         String result = StringUtil.getIdsStr(list);
         return result;
     }
-
 
 
     public void downloadReferenceSamples(Long examId, HttpServletResponse response) {
