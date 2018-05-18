@@ -71,21 +71,19 @@ public class ProcessModelService {
                     "--user_id=" + command.getUserId(),
                     "--exam_id=" + command.getExamId(),
                     "--model_id=" + model.getId(),
+                    "--result_location=" + projectPath+"/home/result/"+command.getUserId()+"/"+command.getExamId(),
                     "--module_location=" + projectPath + model.getLocation(),
                     "--standard_module_location=" + projectPath + model.getStandardModelLocation(),
                     "--script_file=" + scriptName,
                     "--sample_list=" + JSONUtils.toJSONString(sampleList)
             };
-            for(String str : args){
-                System.out.print(str+" ");
-            }
             Result result = ShellUtil.exec(args);
             if(result.isSuccess()){
-                System.out.println(result.getData());
+//                System.out.println(result.getData());
                 count++;
             }
             //删除复制的文件
-//            FileUtil.delete(newFile);
+            FileUtil.delete(newFile);
         }
         return Result.success().withData(count);
     }
