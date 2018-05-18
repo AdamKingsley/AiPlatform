@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import os
 from keras import Model
 from keras.models import load_model
 import numpy as np
@@ -6,6 +7,7 @@ from keras import backend as K
 from PIL import Image
 import json
 import pysql
+import datetime
 
 
 def getActivationLayers(model):
@@ -71,7 +73,7 @@ class ModelClass:
         images_data = []
         number = len(imageArray)
         for i in range(number):
-            im = Image.open(imageArray[0])
+            im = Image.open(imageArray[i].strip('"'))
             out = im.resize((28, 28), Image.ANTIALIAS)
             im_arr = np.array(out.convert('L'))
             data = im_arr.flatten()
@@ -106,8 +108,16 @@ class ModelClass:
         result = {"architecture": architecture, "activation": activation}
         result = json.dumps(result)
 
+        # 存储执行结果
+        now_time = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
+        result_dir = args.result_location
+        if not os.path.exists(result_dir):
+            os.makedirs(result_dir)
+        location = str(result_dir+"/"+args.model_id+"_"+now_time+".txt")
+        with open(location, "w+") as file:
+            file.write(result)
         # 存储数据库
-        pysql.save_result(args, is_kill, imagePathList, result)
+        pysql.save_result(args, is_kill, imagePathList, location)
 
 
 

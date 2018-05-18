@@ -3,6 +3,7 @@ package cn.edu.nju.software.util;
 import cn.edu.nju.software.common.result.Result;
 
 import java.io.BufferedReader;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 
 /**
@@ -24,18 +25,33 @@ public class ShellUtil {
             Process ps = Runtime.getRuntime().exec(args);
             ps.waitFor();
 
-            BufferedReader br = new BufferedReader(new InputStreamReader(ps.getInputStream()));
+            String normal = getString(ps.getInputStream());
+            String error = getString(ps.getErrorStream());
+            if((normal == null || normal.equals("")) && error != null ){
+                System.out.println("error input for script: \n"+error);
+                return Result.error().message("脚本执行失败");
+            }
+            System.out.println("normal input for script: \n"+normal);
+            return Result.success().withData(normal);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Result.error().message("脚本执行失败");
+        }
+    }
+
+    private static String getString(InputStream inputStream){
+        try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
             StringBuffer sb = new StringBuffer();
             String line;
             while ((line = br.readLine()) != null) {
                 sb.append(line).append("\n");
             }
-            String result = sb.toString();
-            System.out.println(result);
-            return Result.success().withData(result);
-        } catch (Exception e) {
+            return sb.toString();
+        }
+        catch (Exception e) {
             e.printStackTrace();
-            return Result.error().message("脚本执行失败");
+            return null;
         }
     }
 }
