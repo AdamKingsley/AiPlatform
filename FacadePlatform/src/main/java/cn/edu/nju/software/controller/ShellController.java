@@ -29,8 +29,8 @@ public class ShellController {
     @GetMapping("/process")
     public Result get() {
         ProcessModelCommand command = new ProcessModelCommand();
-        command.setExamId(1+"");
-        command.setUserId(1+"");
+        command.setExamId(1L);
+        command.setUserId(1L);
         command.setPath("/home/upload/exercise/11/5/1");
         List<ModelDto> modelDtos = new ArrayList<>();
         ModelDto modelDto = new ModelDto();
