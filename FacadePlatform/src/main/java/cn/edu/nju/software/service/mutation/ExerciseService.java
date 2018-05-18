@@ -182,7 +182,8 @@ public class ExerciseService {
         command.setExamId(examId);
         command.setUserId(userId);
         command.setModels(modelDtos);
-        log.info("the upload samples folder is {}",dir.getPath());
+        command.setIter(exercise.getTotalIters());
+        log.info("the upload samples folder is {}", dir.getPath());
         command.setPath(dir.getPath());
         processService.processModel(command);
         return Result.success().message("上传测试样本成功，正在执行测试脚本！");
