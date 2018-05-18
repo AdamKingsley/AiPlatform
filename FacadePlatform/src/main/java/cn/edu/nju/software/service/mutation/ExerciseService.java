@@ -10,10 +10,7 @@ import cn.edu.nju.software.dto.ModelDto;
 import cn.edu.nju.software.dto.SampleDto;
 import cn.edu.nju.software.entity.Exam;
 import cn.edu.nju.software.entity.Exercise;
-import cn.edu.nju.software.mapper.ExamMapper;
-import cn.edu.nju.software.mapper.ExerciseMapper;
-import cn.edu.nju.software.mapper.ModelMapper;
-import cn.edu.nju.software.mapper.SampleMapper;
+import cn.edu.nju.software.mapper.*;
 import cn.edu.nju.software.service.shell.ProcessModelService;
 import cn.edu.nju.software.util.FileUtil;
 import cn.edu.nju.software.util.RandomUtil;
@@ -57,6 +54,8 @@ public class ExerciseService {
     private UploadConfig uploadConfig;
     @Autowired
     private SampleMapper sampleMapper;
+    @Autowired
+    private ModelProcessMapper modelProcessMapper;
     @Autowired
     private ProcessModelService processService;
 
@@ -117,7 +116,7 @@ public class ExerciseService {
         return dto;
     }
 
-    public Result uploadSample(Long userId, Long examId, List<MultipartFile> files) {
+    public ExerciseDto uploadSample(Long userId, Long examId, List<MultipartFile> files) {
         if (files.size() == 0) {
             throw new ServiceException("上传的样本为空！");
         }
@@ -125,7 +124,7 @@ public class ExerciseService {
         Exercise exercise = exerciseMapper.selectByUserAndExam(userId, examId);
         //超过了最大允许上传的次数
         if (exercise.getTotalIters() >= exam.getMaxIters()) {
-            return Result.error().exception(ExceptionEnum.ITERS_OUT_LIMIT);
+            throw new ServiceException(ExceptionEnum.ITERS_OUT_LIMIT);
         }
 
         /*----------创建本次在线运行该用户在该考试下对应的目录，用来存储上传的筛选后的样本--------------*/
@@ -151,7 +150,7 @@ public class ExerciseService {
         } else {
             //上传多个文件的测试集
             if (files.size() > exam.getMaxItems()) {
-                return Result.error().exception(ExceptionEnum.ITEMS_OUT_LIMIT);
+                throw new ServiceException(ExceptionEnum.ITEMS_OUT_LIMIT);
             } else {
                 try {
                     for (MultipartFile multipartFile : files) {
@@ -172,11 +171,7 @@ public class ExerciseService {
         //List<Long> killModelIds = StringUtil.getIds(exercise.getKillModelIds());
         List<ModelDto> modelDtos = modelMapper.selectByModelIds(modelIds);
 
-
-        // TODO 然后异步调用执行脚本接口
-        // TODO 参数->
-        // TODO userId✔，examId✔，path(存储本次在线运行样本的所有文件的文件夹目录)✔，
-        // TODO 所有modelId以及对应的模型的位置 需要到数据库查询 ！！！！
+        // 所有modelId以及对应的模型的位置 需要到数据库查询 ！！！！
         //modelDtos
         ProcessModelCommand command = new ProcessModelCommand();
         command.setExamId(examId);
@@ -185,8 +180,18 @@ public class ExerciseService {
         command.setIter(exercise.getTotalIters());
         log.info("the upload samples folder is {}", dir.getPath());
         command.setPath(dir.getPath());
+        //上传样本运行模型执行情况
+        //TODO 异步 需要改进
         processService.processModel(command);
-        return Result.success().message("上传测试样本成功，正在执行测试脚本！");
+        //执行完 查询通过的model 修改exercise表
+        List<Long> killedModelIds = modelProcessMapper.selectKilledModelIds(userId, examId);
+        String killedIdStr = StringUtil.getIdsStr(killedModelIds);
+        exercise.setKillModelIds(killedIdStr);
+        exerciseMapper.updateByPrimaryKey(exercise);
+        ExerciseDto dto = new ExerciseDto();
+        BeanUtils.copyProperties(exercise, dto);
+        //返回dto对象 主要信息在于kill的id
+        return dto;
     }
 
 
