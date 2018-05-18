@@ -116,7 +116,7 @@ public class ExerciseService {
         return dto;
     }
 
-    public Result uploadSample(Long userId, Long examId, List<MultipartFile> files) {
+    public ExerciseDto uploadSample(Long userId, Long examId, List<MultipartFile> files) {
         if (files.size() == 0) {
             throw new ServiceException("上传的样本为空！");
         }
@@ -124,7 +124,7 @@ public class ExerciseService {
         Exercise exercise = exerciseMapper.selectByUserAndExam(userId, examId);
         //超过了最大允许上传的次数
         if (exercise.getTotalIters() >= exam.getMaxIters()) {
-            return Result.error().exception(ExceptionEnum.ITERS_OUT_LIMIT);
+            throw new ServiceException(ExceptionEnum.ITERS_OUT_LIMIT);
         }
 
         /*----------创建本次在线运行该用户在该考试下对应的目录，用来存储上传的筛选后的样本--------------*/
@@ -150,7 +150,7 @@ public class ExerciseService {
         } else {
             //上传多个文件的测试集
             if (files.size() > exam.getMaxItems()) {
-                return Result.error().exception(ExceptionEnum.ITEMS_OUT_LIMIT);
+                throw new ServiceException(ExceptionEnum.ITEMS_OUT_LIMIT);
             } else {
                 try {
                     for (MultipartFile multipartFile : files) {
@@ -188,8 +188,10 @@ public class ExerciseService {
         String killedIdStr = StringUtil.getIdsStr(killedModelIds);
         exercise.setKillModelIds(killedIdStr);
         exerciseMapper.updateByPrimaryKey(exercise);
-        
-        return Result.success().message("上传测试样本成功，正在执行测试脚本！");
+        ExerciseDto dto = new ExerciseDto();
+        BeanUtils.copyProperties(exercise, dto);
+        //返回dto对象 主要信息在于kill的id
+        return dto;
     }
 
 

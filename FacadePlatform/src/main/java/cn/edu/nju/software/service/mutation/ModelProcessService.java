@@ -40,14 +40,4 @@ public class ModelProcessService {
         return dto;
     }
 
-//    //TODO
-//    public List<ModelProcessDto> getAll(Long userId, Long examId, Long modelId) {
-//        return Lists.newArrayList();
-//    }
-//
-//    //TODO
-//    public PageResult list(Long userId, Long examId, Long modelId, ProcessPaginationCommand command) {
-//        return null;
-//    }
-
 }

@@ -41,7 +41,8 @@ public class ExerciseController {
     @PostMapping("upload/sample")
     public Result uploadSample(@RequestParam("userId") Long userId, @RequestParam("examId") Long examId, HttpServletRequest request) {
         List<MultipartFile> files = ((MultipartHttpServletRequest) request).getFiles("sample");
-        return exerciseService.uploadSample(userId, examId, files);
+        ExerciseDto dto = exerciseService.uploadSample(userId, examId, files);
+        return Result.success().message("上传样本测试成功").withData(dto);
     }
 
 
