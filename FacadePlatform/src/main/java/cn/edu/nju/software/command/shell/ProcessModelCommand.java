@@ -2,6 +2,7 @@ package cn.edu.nju.software.command.shell;
 
 import cn.edu.nju.software.dto.ModelDto;
 import lombok.Data;
+
 import java.util.List;
 
 /**
@@ -15,10 +16,11 @@ import java.util.List;
 public class ProcessModelCommand {
 
     //用户ID
-    private String userId;
+    private Long userId;
     //考试ID
-    private String examId;
-
+    private Long examId;
+    //第几次上传
+    private Integer iter;
     //样本文件夹路径
     private String path;
     //模型列表(含模型执行脚本)

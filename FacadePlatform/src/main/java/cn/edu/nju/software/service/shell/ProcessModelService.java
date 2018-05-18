@@ -70,14 +70,21 @@ public class ProcessModelService {
                     path + "python/argsparse.py",
                     "--user_id=" + command.getUserId(),
                     "--exam_id=" + command.getExamId(),
+                    "--model_id=" + model.getId(),
+                    "--iter=" + command.getIter(),
+                    "--project_location=" + projectPath,
                     "--module_location=" + projectPath + model.getLocation(),
                     "--standard_module_location=" + projectPath + model.getStandardModelLocation(),
                     "--script_file=" + scriptName,
                     "--sample_list=" + JSONUtils.toJSONString(sampleList)
             };
-
             Result result = ShellUtil.exec(args);
+
+//            for(String str : args){
+//                System.out.print(str+" ");
+//            }
             if(result.isSuccess()){
+//                System.out.println(result.getData());
                 count++;
             }
             //删除复制的文件
