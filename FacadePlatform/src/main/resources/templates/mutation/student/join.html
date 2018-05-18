@@ -38,7 +38,6 @@
                         <div class="box-body">
                             <h4>基本信息</h4>
                             <div class="form-horizontal">
-                                <input type="hidden" id="id" name="id" th:value="${exam == null ? '' : exam.id}"/>
                                 <div class="form-group">
                                     <label for="name" class="control-label col-sm-2">名称</label>
                                     <div class="col-sm-9">
@@ -125,21 +124,29 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="box-body">
-                            <h4 class="box-title">上传测试样本</h4>
-                            <form id="samples_form" class="form" role="form" action="">
-                                <input type="hidden" name="userId" value=""/>
-                                <input type="hidden" name="examId" th:value="${exam == null ? '' : exam.id}"/>
-                                <div class="form-group">
-                                    <div class="col-sm-5">
-                                        <input id="samples_upload" name="sample" type="file" style="display: none"/>
-                                        <div id="samples_upload_facade" class="form-control" style="cursor: pointer"></div>
-                                    </div>
-                                    <div class="col-sm-2">
-                                        <button id="samples_submit" type="button" class="btn btn-info">上传样本</button>
-                                    </div>
+                        <!--<div class="box-body">-->
+                            <!--<h4 class="box-title">上传测试样本</h4>-->
+                            <!--<form id="samples_form" class="form" role="form" action="">-->
+                                <!--<input type="hidden" name="userId" value=""/>-->
+                                <!--<input type="hidden" name="examId" th:value="${exam == null ? '' : exam.id}"/>-->
+                                <!--<div class="form-group">-->
+                                    <!--<div class="col-sm-5">-->
+                                        <!--<input id="samples_upload" name="sample" type="file" style="display: none"/>-->
+                                        <!--<div id="samples_upload_facade" class="form-control" style="cursor: pointer"></div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-sm-2">-->
+                                        <!--<button id="samples_submit" type="button" class="btn btn-info">上传样本</button>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</form>-->
+                        <!--</div>-->
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"></label>
+                                <div class="col-sm-9">
+                                    <button class="btn btn-info btn-sm">参加考试</button>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>

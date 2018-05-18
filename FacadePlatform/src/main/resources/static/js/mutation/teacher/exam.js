@@ -61,7 +61,7 @@
                         var start = new Date(data[i]["startTime"]).getTime();
                         var end = new Date(data[i]["endTime"]).getTime();
 
-                        data[i]["name"] = "<a style='cursor: pointer'>" + data[i]["name"] + "</a>";
+                        data[i]["name"] = "<a href='/mutation/exam/info/" + data[i]["id"] + "' style='cursor: pointer'>" + data[i]["name"] + "</a>";
 
                         data[i]["opt"] = "";
 

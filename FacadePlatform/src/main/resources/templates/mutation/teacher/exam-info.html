@@ -16,7 +16,7 @@
     <div class="content-wrapper" style="min-height: 916px">
         <section class="content-header">
             <h1>
-                题库信息
+                考试情况
             </h1>
         </section>
         <section class="content">
@@ -27,7 +27,56 @@
                             <h3 class="box-title">信息</h3>
                         </div>
                         <div class="box-body">
-
+                            <div class="form-group">
+                                <label for="name" class="control-label col-sm-2">名称</label>
+                                <div class="col-sm-9">
+                                    <input id="name" name="name" type="text" class="form-control"
+                                           placeholder="名称" th:value="${exam == null ? '' : exam.name}"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">开始时间</label>
+                                <div class="col-sm-9">
+                                    <label id="startTime" class="form-control" th:text="${exam == null ? '' : exam.startTime}"></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">结束时间</label>
+                                <div class="col-sm-9">
+                                    <label id="endTime" class="form-control" th:text="${exam == null ? '' : exam.endTime}"></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">迭代次数</label>
+                                <div class="col-sm-9">
+                                    <label id="maxIters" class="form-control"
+                                           th:text="${exam == null ? '' : exam.maxIters}"></label>
+                                    <span class="help-block">
+                                        <i class="fa fa-info-circle">
+                                             0表示不限制。
+                                        </i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">样本的数量限制</label>
+                                <div class="col-sm-9">
+                                    <label id="maxItems" class="form-control"
+                                           th:text="${exam == null ? '' : exam.maxItems}"></label>
+                                    <span class="help-block">
+                                        <i class="fa fa-info-circle">
+                                             0表示不限制。
+                                        </i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">变异体数量</label>
+                                <div class="col-sm-9">
+                                    <label id="modelNums" class="form-control"
+                                           th:text="${exam == null ? '' : exam.modelNums}"></label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

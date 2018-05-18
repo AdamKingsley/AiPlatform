@@ -63,6 +63,17 @@ public class ExamPageController {
         return "mutation/teacher/exam-edit";
     }
 
+    @RequestMapping(value = "/exam/info/{id}", method = RequestMethod.GET)
+    public String toExamInfo(@PathVariable("id") Long id,
+                             Model model) {
+        ShiroUser user = ShiroUtils.currentUser();
+
+        ExamDto exam = examService.getExam(id);
+        model.addAttribute("user", user);
+        model.addAttribute("exam", exam);
+        return "mutation/teacher/exam-info";
+    }
+
     @RequestMapping(value = "/exam/join/{id}", method = RequestMethod.GET)
     public String toExamJoin(@PathVariable("id") Long id,
                              Model model) {
