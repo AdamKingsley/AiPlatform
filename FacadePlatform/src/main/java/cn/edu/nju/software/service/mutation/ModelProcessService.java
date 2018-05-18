@@ -25,6 +25,10 @@ public class ModelProcessService {
     @Autowired
     private ModelProcessMapper mapper;
 
+    //TODO
+    public int getIters(Long examId, Long modelId) {
+        return 0;
+    }
 
     //TODO
     public List<ModelProcessDto> getAll(Long userId, Long examId, Long modelId) {
