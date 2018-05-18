@@ -1,6 +1,7 @@
 package cn.edu.nju.software.controller.mutation;
 
 import cn.edu.nju.software.command.mutation.ProcessPaginationCommand;
+import cn.edu.nju.software.command.shell.ProcessModelCommand;
 import cn.edu.nju.software.common.result.PageResult;
 import cn.edu.nju.software.common.result.Result;
 import cn.edu.nju.software.dto.ModelProcessDto;
@@ -22,23 +23,31 @@ public class ModelProcessController {
     @Autowired
     private ModelProcessService service;
 
-
-    @GetMapping("/list/all")
-    public Result getModelProcessList(@RequestParam Long userId, @RequestParam Long examId, @RequestParam Long modelId) {
-        List<ModelProcessDto> processDtos = service.getAll(userId, examId, modelId);
-        return Result.success().withData(processDtos).message("获取该模型的所有测试结果成功！");
+    @GetMapping("/iter")
+    public Result getProcessIters(@RequestParam Long userId, @RequestParam Long examId, @RequestParam Long modelId) {
+        Integer iters = service.getIters(userId, examId, modelId);
+        return Result.success().message("获取该模型运行的次数成功！").withData(iters);
     }
 
-    @PostMapping("/list")
-    public PageResult getModelProcessList(@RequestParam Long userId, @RequestParam Long examId,
-                                          @RequestParam Long modelId, @RequestBody ProcessPaginationCommand command) {
-        return service.list(userId, examId, modelId, command);
+    @GetMapping("/detail")
+    public Result getProcessDetail(@RequestParam Long userId, @RequestParam Long examId, @RequestParam Long modelId, @RequestParam Integer iter) {
+        ModelProcessDto dto  = service.getProcessDetail(userId,examId,modelId,iter);
+        return Result.success().message("获取当前测试模型的详细测试信息成功！").withData(dto);
     }
 
-    @GetMapping("detail/{id}")
-    public Result getProcessDetail(@PathVariable("id") Long id) {
-        Object result = service.getProcessDetail(id);
-        return Result.success().message("获取当前测试模型的详细测试信息成功！").withData(result);
-    }
+
+
+//    @GetMapping("/list/all")
+//    public Result getModelProcessList(@RequestParam Long userId, @RequestParam Long examId, @RequestParam Long modelId) {
+//        List<ModelProcessDto> processDtos = service.getAll(userId, examId, modelId);
+//        return Result.success().withData(processDtos).message("获取该模型的所有测试结果成功！");
+//    }
+//
+//    @PostMapping("/list")
+//    public PageResult getModelProcessList(@RequestParam Long userId, @RequestParam Long examId,
+//                                          @RequestParam Long modelId, @RequestBody ProcessPaginationCommand command) {
+//        return service.list(userId, examId, modelId, command);
+//    }
+
 
 }

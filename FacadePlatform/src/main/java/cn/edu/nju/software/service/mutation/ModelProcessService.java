@@ -4,6 +4,7 @@ import cn.edu.nju.software.command.mutation.ProcessPaginationCommand;
 import cn.edu.nju.software.common.exception.ServiceException;
 import cn.edu.nju.software.common.result.PageResult;
 import cn.edu.nju.software.dto.ModelProcessDto;
+import cn.edu.nju.software.entity.ModelProcess;
 import cn.edu.nju.software.mapper.ModelProcessMapper;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -25,30 +26,28 @@ public class ModelProcessService {
     @Autowired
     private ModelProcessMapper mapper;
 
-    //TODO
-    public int getIters(Long examId, Long modelId) {
-        return 0;
+
+    public int getIters(Long userId, Long examId, Long modelId) {
+        Integer iters = mapper.selectMaxIter(userId, examId, modelId);
+        return iters == null ? 0 : iters;
     }
 
-    //TODO
-    public List<ModelProcessDto> getAll(Long userId, Long examId, Long modelId) {
-        return Lists.newArrayList();
-    }
-
-    //TODO
-    public PageResult list(Long userId, Long examId, Long modelId, ProcessPaginationCommand command) {
-        return null;
-    }
-
-    //TODO
-    public Object getProcessDetail(Long id) {
-        try {
-            JsonNode node = new ObjectMapper().readTree(new File(".."));
-
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new ServiceException("读取模型在线测试文件出错！");
+    public ModelProcessDto getProcessDetail(Long userId, Long examId, Long modelId, Integer iter) {
+        ModelProcessDto dto = mapper.selectByIter(userId,examId,modelId,iter);
+        if (dto==null){
+            throw new ServiceException("未获取到该模型在该次提交运行的信息，或尚未运行结束！");
         }
-        return null;
+        return dto;
     }
+
+//    //TODO
+//    public List<ModelProcessDto> getAll(Long userId, Long examId, Long modelId) {
+//        return Lists.newArrayList();
+//    }
+//
+//    //TODO
+//    public PageResult list(Long userId, Long examId, Long modelId, ProcessPaginationCommand command) {
+//        return null;
+//    }
+
 }
