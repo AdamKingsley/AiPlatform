@@ -31,6 +31,7 @@ public class ShellController {
         ProcessModelCommand command = new ProcessModelCommand();
         command.setExamId(1L);
         command.setUserId(1L);
+        command.setIter(2);
         command.setPath("/home/upload/exercise/11/5/1");
         List<ModelDto> modelDtos = new ArrayList<>();
         ModelDto modelDto = new ModelDto();

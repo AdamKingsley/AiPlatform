@@ -21,6 +21,7 @@ def save_result(args, is_killed, sample, result):
         "exam_id": args.exam_id,
         "samples": sample,
         "is_killed": is_killed,
+        "iter": args.iter,
         "result_location": result
     }
     insert_statement = parse_insert_statement(dictionary, "t_model_process")

@@ -69,6 +69,9 @@ class ModelClass:
         imagePathList = args.sample_list
         imagePathList = imagePathList[1:-1]
         imageArray = imagePathList.split(",")
+        # 图片路径处理
+        imagePathList = imagePathList.strip('"').replace(args.project_location, "")
+        print(imagePathList)
 
         images_data = []
         number = len(imageArray)
@@ -102,7 +105,7 @@ class ModelClass:
         activation = []
         for j in range(number):
             temp = {"result": int(result_standard_values[j]), "predict_result": int(result_variation_values[j]),
-                    "path": imageArray[j], "standard_list": active_data_standard[j],
+                    "path": imageArray[j].replace(args.project_location, ""), "standard_list": active_data_standard[j],
                     "activation_list": active_data_variation[j]}
             activation.append(temp)
         result = {"architecture": architecture, "activation": activation}
@@ -110,14 +113,14 @@ class ModelClass:
 
         # 存储执行结果
         now_time = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
-        result_dir = args.result_location
+        result_dir = args.project_location+"/home/result/"+args.user_id+"/"+args.exam_id+"/"+args.iter
         if not os.path.exists(result_dir):
             os.makedirs(result_dir)
         location = str(result_dir+"/"+args.model_id+"_"+now_time+".txt")
         with open(location, "w+") as file:
             file.write(result)
         # 存储数据库
-        pysql.save_result(args, is_kill, imagePathList, location)
+        pysql.save_result(args, is_kill, imagePathList, location.replace(args.project_location, ""))
 
 
 
