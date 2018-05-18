@@ -8,79 +8,82 @@
 <header class="main-header" th:include="header::main-header (${user})">
 
 </header>
-<div class="content-wrapper" style="min-height: 976px">
+<div class="wrapper">
     <aside class="main-sidebar"
            th:include="aside::aside ('mutation', 'bank', ${user})">
 
     </aside>
-    <section class="content-header">
-        <h1>
-            题库信息
-        </h1>
-    </section>
-    <section class="content">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="box">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">信息</h3>
-                    </div>
-                    <div class="box-body">
-                        <form id="bank_form" class="form-horizontal">
-                            <div class="form-group">
-                                <label class="control-label col-sm-2">名称</label>
-                                <div class="col-sm-9">
-                                    <div class="form-control" th:text="${bank == null ? '' : bank.name}">
+    <div class="content-wrapper" style="min-height: 916px">
+        <section class="content-header">
+            <h1>
+                题库信息
+            </h1>
+        </section>
+        <section class="content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">信息</h3>
+                        </div>
+                        <div class="box-body">
+                            <form id="bank_form" class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">名称</label>
+                                    <div class="col-sm-9">
+                                        <div class="form-control" th:text="${bank == null ? '' : bank.name}">
 
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2">描述</label>
-                                <div class="col-sm-9">
-                                    <div class="form-control" th:text="${bank == null ? '' : bank.description}">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">描述</label>
+                                    <div class="col-sm-9">
+                                        <div class="form-control" th:text="${bank == null ? '' : bank.description}">
 
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2">运行脚本</label>
-                                <div class="col-sm-9">
-                                    <div class="form-control">
-                                        <a th:href="${'/bank/script/' + bank.id}" >下载脚本</a>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">运行脚本</label>
+                                    <div class="col-sm-9">
+                                        <div class="form-control">
+                                            <a th:href="${'/bank/script/' + bank.id}" >下载脚本</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2">标准模型</label>
-                                <div class="col-sm-9">
-                                    <div class="form-control">
-                                        <a th:href="${'/bank/standard/model/' + bank.id}" >下载标准模型</a>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">标准模型</label>
+                                    <div class="col-sm-9">
+                                        <div class="form-control">
+                                            <a th:href="${'/bank/standard/model/' + bank.id}" >下载标准模型</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2">变异模型</label>
-                                <div class="col-sm-9">
-                                    <div class="form-control">
-                                        <a th:href="${'/bank/models/' + bank.id}" >下载变异模型</a>
+                                <!--<div class="form-group">-->
+                                    <!--<label class="control-label col-sm-2">变异模型</label>-->
+                                    <!--<div class="col-sm-9">-->
+                                        <!--<div class="form-control">-->
+                                            <!--<a th:href="${'/bank/models/' + bank.id}" >下载变异模型</a>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">参考样本</label>
+                                    <div class="col-sm-9">
+                                        <div class="form-control">
+                                            <a th:href="${'/bank/samples/' + bank.id}" >下载参考样本</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2">样本</label>
-                                <div class="col-sm-9">
-                                    <div class="form-control">
-                                        <a th:href="${'/bank/samples/' + bank.id}" >下载样本</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
+    <footer th:include="footer::footer" class="main-footer"></footer>
 </div>
 <div th:include="footer::script">
 

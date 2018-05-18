@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" href="/static/plugins/daterangepicker/daterangepicker.css"/>
+    <meta th:include="header::header"/>
+    <title>深度学习测试平台</title>
+</head>
+<body class="hold-transition skin-black sidebar-mini">
+<header class="main-header" th:include="header::main-header (${user})">
+
+</header>
+<div class="content-wrapper" style="min-height: 976px">
+    <aside class="main-sidebar"
+           th:include="aside::aside ('mutation', '', ${user})">
+
+    </aside>
+    <section class="content-header">
+        <h1>
+            参加考试
+        </h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">考试信息</h3>
+                        <div class="box-tools">
+                            <div class="btn-group pull-right">
+                                <a th:href="${'/mutation/exam/join'}" class="btn btn-sm btn-default">
+                                    <i class="fa fa-arrow-left"></i>
+                                    &nbsp;返回
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-body">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div th:include="footer::script">
+
+</div>
+<!--<script src="/static/plugins/daterangepicker/moment.min.js"></script>-->
+<!--<script src="/static/plugins/daterangepicker/daterangepicker.js"></script>-->
+<!--<script src="/static/js/mutation/teacher/exam-edit.js"></script>-->
+</body>
+</html>

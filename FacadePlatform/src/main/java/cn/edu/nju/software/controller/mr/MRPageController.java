@@ -29,4 +29,12 @@ public class MRPageController {
         model.addAttribute("id", id);
         return "mr/video";
     }
+
+    @RequestMapping(value = "/scene", method = RequestMethod.GET)
+    public String toScene(Model model) {
+        ShiroUser user = ShiroUtils.currentUser();
+
+        model.addAttribute("user", user);
+        return "mr/scene";
+    }
 }

@@ -8,72 +8,75 @@
 <header class="main-header" th:include="header::main-header (${user})">
 
 </header>
-<div class="content-wrapper" style="min-height: 976px">
+<div class="wrapper">
     <aside class="main-sidebar"
            th:include="aside::aside ('mutation', 'exam', ${user})">
 
     </aside>
-    <section class="content-header">
-        <h1>
-            变异测试
-        </h1>
-    </section>
-    <section class="content">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="box">
-                    <div class="box-header">
-                        <form class="row">
-                            <div class="col-sm-8">
-                                <div class="form-horizontal">
-                                    <div class="form-group">
-                                        <label for="exam_status" class="control-label col-sm-2">考试状态</label>
-                                        <div class="col-sm-6">
-                                            <select id="exam_status" class="form-control select2-basic">
-                                                <option value="3">全部</option>
-                                                <option value="0">未开始</option>
-                                                <option value="1">进行中</option>
-                                                <!--<option value="3">阅卷中</option>-->
-                                                <option value="2">已结束</option>
-                                            </select>
+    <div class="content-wrapper" style="min-height: 916px">
+        <section class="content-header">
+            <h1>
+                变异测试
+            </h1>
+        </section>
+        <section class="content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="box">
+                        <div class="box-header">
+                            <form class="row">
+                                <div class="col-sm-8">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <label for="exam_status" class="control-label col-sm-2">考试状态</label>
+                                            <div class="col-sm-6">
+                                                <select id="exam_status" class="form-control select2-basic">
+                                                    <option value="3">全部</option>
+                                                    <option value="0">未开始</option>
+                                                    <option value="1">进行中</option>
+                                                    <!--<option value="3">阅卷中</option>-->
+                                                    <option value="2">已结束</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="search_input" class="control-label col-sm-2">搜索</label>
-                                        <div class="col-sm-6">
-                                            <input id="search_input" type="text" class="form-control" placeholder="搜索名称"/>
+                                        <div class="form-group">
+                                            <label for="search_input" class="control-label col-sm-2">搜索</label>
+                                            <div class="col-sm-6">
+                                                <input id="search_input" type="text" class="form-control" placeholder="搜索名称"/>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="contol-label col-sm-2"></label>
-                                        <div class="col-sm-6">
-                                            <button id="search_button" class="btn btn-info btn-sm" type="button">搜索</button>
-                                            <button class="btn btn-default btn-sm" type="reset" style="margin-left: 5px">重置</button>
-                                            <a id="create_button" href="/mutation/exam/new" class="btn btn-success btn-sm" style="margin-left: 5px">新增题库</a>
+                                        <div class="form-group">
+                                            <label class="contol-label col-sm-2"></label>
+                                            <div class="col-sm-6">
+                                                <button id="search_button" class="btn btn-info btn-sm" type="button">搜索</button>
+                                                <button class="btn btn-default btn-sm" type="reset" style="margin-left: 5px">重置</button>
+                                                <a id="create_button" href="/mutation/exam/new" class="btn btn-success btn-sm" style="margin-left: 5px">新增题库</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="box-body">
-                        <table id="exam_table" class="table table-bordered table-hover dataTable"
-                               cellspacing="0" width="100%">
-                            <thead>
-                            <tr>
-                                <td>名称</td>
-                                <td>开始时间</td>
-                                <td>结束时间</td>
-                                <td>状态</td>
-                                <td>操作</td>
-                            </tr>
-                            </thead>
-                        </table>
+                            </form>
+                        </div>
+                        <div class="box-body">
+                            <table id="exam_table" class="table table-bordered table-hover dataTable"
+                                   cellspacing="0" width="100%">
+                                <thead>
+                                <tr>
+                                    <td>名称</td>
+                                    <td>开始时间</td>
+                                    <td>结束时间</td>
+                                    <td>状态</td>
+                                    <td>操作</td>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
+    <footer th:include="footer::footer" class="main-footer"></footer>
 </div>
 <div th:include="footer::script">
 

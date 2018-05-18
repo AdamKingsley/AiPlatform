@@ -4,6 +4,8 @@
     init();
 
     function init() {
+        $(".select2-basic").select2();
+
         $("#video_path").on("click", function() {
             $("#video_file").click();
         });

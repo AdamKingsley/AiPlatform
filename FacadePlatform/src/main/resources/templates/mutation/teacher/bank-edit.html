@@ -8,124 +8,127 @@
 <header class="main-header" th:include="header::main-header (${user})">
 
 </header>
-<div class="content-wrapper" style="min-height: 976px">
+<div class="wrapper">
     <aside class="main-sidebar"
            th:include="aside::aside ('mutation', 'bank', ${user})">
 
     </aside>
-    <section class="content-header">
-        <h1>
-            修改题库
-        </h1>
-    </section>
-    <section class="content">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="box">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">修改</h3>
-                        <div class="box-tools">
-                            <div class="btn-group pull-right">
-                                <a href="/mutation/bank" class="btn btn-sm btn-default">
-                                    <i class="fa fa-arrow-left"></i>
-                                    &nbsp;返回
-                                </a>
+    <div class="content-wrapper" style="min-height: 976px">
+        <section class="content-header">
+            <h1>
+                修改题库
+            </h1>
+        </section>
+        <section class="content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">修改</h3>
+                            <div class="box-tools">
+                                <div class="btn-group pull-right">
+                                    <a href="/mutation/bank" class="btn btn-sm btn-default">
+                                        <i class="fa fa-arrow-left"></i>
+                                        &nbsp;返回
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="box-body">
-                        <form id="bank_form" class="form-horizontal">
-                            <input type="hidden" name="id" th:value="${bank == null ? '' : bank.id}"/>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2">名称</label>
-                                <div class="col-sm-9">
-                                    <label class="form-control" th:text="${bank == null ? '' : bank.name}"></label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2">变异体数量</label>
-                                <div class="col-sm-9">
-                                    <label class="form-control" th:text="${bank == null ? '' : bank.nums}"></label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2">修改时间</label>
-                                <div class="col-sm-9">
-                                    <label class="form-control" th:text="${bank == null ? '' : bank.modifyTime}"></label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="description" class="control-label col-sm-2">备注</label>
-                                <div class="col-sm-9">
-                                    <input id="description" name="description" type="text" class="form-control" th:value="${bank == null ? '' : bank.description}"/>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2"></label>
-                                <div class="col-sm-9">
-                                    <button id="bank_submit" class="btn btn-info btn-sm" type="button">提交</button>
-                                    <button class="btn btn-default btn-sm" type="reset" style="margin-left: 5px">重置</button>
-                                </div>
-                            </div>
-                        </form>
-                        <hr/>
-                        <div class="form-horizontal">
-                            <form class="form-group" id="script_form" action="/bank/script">
+                        <div class="box-body">
+                            <form id="bank_form" class="form-horizontal">
                                 <input type="hidden" name="id" th:value="${bank == null ? '' : bank.id}"/>
-                                <label class="control-label col-sm-2">运行脚本</label>
-                                <div class="col-sm-7">
-                                    <div id="script_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
-                                    <input id="script" name="script" type="file" style="display: none"/>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">名称</label>
+                                    <div class="col-sm-9">
+                                        <label class="form-control" th:text="${bank == null ? '' : bank.name}"></label>
+                                    </div>
                                 </div>
-                                <div class="col-sm-1">
-                                    <button id="script_submit" class="btn btn-info btn-sm" type="button">脚本重新上传</button>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">变异体数量</label>
+                                    <div class="col-sm-9">
+                                        <label class="form-control" th:text="${bank == null ? '' : bank.nums}"></label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">修改时间</label>
+                                    <div class="col-sm-9">
+                                        <label class="form-control" th:text="${bank == null ? '' : bank.modifyTime}"></label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="description" class="control-label col-sm-2">备注</label>
+                                    <div class="col-sm-9">
+                                        <input id="description" name="description" type="text" class="form-control" th:value="${bank == null ? '' : bank.description}"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2"></label>
+                                    <div class="col-sm-9">
+                                        <button id="bank_submit" class="btn btn-info btn-sm" type="button">提交</button>
+                                        <button class="btn btn-default btn-sm" type="reset" style="margin-left: 5px">重置</button>
+                                    </div>
                                 </div>
                             </form>
-                            <form class="form-group" id="standard_model_form" action="/bank/models">
-                                <input type="hidden" name="id" th:value="${bank == null ? '' : bank.id}"/>
-                                <label class="control-label col-sm-2">标准模型</label>
-                                <div class="col-sm-7">
-                                    <div id="standard_model_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
-                                    <input id="standard_model" name="standardModel" type="file" style="display: none" />
-                                </div>
-                                <div class="col-sm-1">
-                                    <button id="standard_model_submit" class="btn btn-info btn-sm" type="button">标准模型重新上传</button>
-                                </div>
-                            </form>
-                            <form class="form-group" id="models_form" action="/bank/models">
-                                <input type="hidden" name="id" th:value="${bank == null ? '' : bank.id}"/>
-                                <label class="control-label col-sm-2">变异模型</label>
-                                <div class="col-sm-7">
-                                    <div id="models_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
-                                    <input id="models" name="models" type="file" style="display: none" multiple="multiple"/>
-                                </div>
-                                <div class="col-sm-1">
-                                    <button id="models_submit" class="btn btn-info btn-sm" type="button">变异模型重新上传</button>
-                                </div>
-                            </form>
-                            <form class="form-group" id="samples_form" action="/bank/samples">
-                                <input type="hidden" name="id" th:value="${bank == null ? '' : bank.id}"/>
-                                <label class="control-label col-sm-2">样本</label>
-                                <div class="col-sm-7">
-                                    <div id="samples_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
-                                    <input id="samples" name="samples" type="file" style="display: none" multiple="multiple"/>
-                                </div>
-                                <div class="col-sm-1">
-                                    <button id="samples_submit" class="btn btn-info btn-sm" type="button">样本重新上传</button>
-                                </div>
-                            </form>
-                            <!--<div class="form-group">-->
+                            <hr/>
+                            <div class="form-horizontal">
+                                <form class="form-group" id="script_form" action="/bank/script">
+                                    <input type="hidden" name="id" th:value="${bank == null ? '' : bank.id}"/>
+                                    <label class="control-label col-sm-2">运行脚本</label>
+                                    <div class="col-sm-7">
+                                        <div id="script_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
+                                        <input id="script" name="script" type="file" style="display: none"/>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <button id="script_submit" class="btn btn-info btn-sm" type="button">脚本重新上传</button>
+                                    </div>
+                                </form>
+                                <form class="form-group" id="standard_model_form" action="/bank/models">
+                                    <input type="hidden" name="id" th:value="${bank == null ? '' : bank.id}"/>
+                                    <label class="control-label col-sm-2">标准模型</label>
+                                    <div class="col-sm-7">
+                                        <div id="standard_model_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
+                                        <input id="standard_model" name="standardModel" type="file" style="display: none" />
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <button id="standard_model_submit" class="btn btn-info btn-sm" type="button">标准模型重新上传</button>
+                                    </div>
+                                </form>
+                                <form class="form-group" id="models_form" action="/bank/models">
+                                    <input type="hidden" name="id" th:value="${bank == null ? '' : bank.id}"/>
+                                    <label class="control-label col-sm-2">变异模型</label>
+                                    <div class="col-sm-7">
+                                        <div id="models_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
+                                        <input id="models" name="models" type="file" style="display: none" multiple="multiple"/>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <button id="models_submit" class="btn btn-info btn-sm" type="button">变异模型重新上传</button>
+                                    </div>
+                                </form>
+                                <form class="form-group" id="samples_form" action="/bank/samples">
+                                    <input type="hidden" name="id" th:value="${bank == null ? '' : bank.id}"/>
+                                    <label class="control-label col-sm-2">样本</label>
+                                    <div class="col-sm-7">
+                                        <div id="samples_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
+                                        <input id="samples" name="samples" type="file" style="display: none" multiple="multiple"/>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <button id="samples_submit" class="btn btn-info btn-sm" type="button">样本重新上传</button>
+                                    </div>
+                                </form>
+                                <!--<div class="form-group">-->
                                 <!--<label class="control-label col-sm-2"></label>-->
                                 <!--<div class="col-sm-9">-->
-                                    <!--<button id="file_submit" class="btn btn-info btn-sm" type="button">题库文件重新上传</button>-->
+                                <!--<button id="file_submit" class="btn btn-info btn-sm" type="button">题库文件重新上传</button>-->
                                 <!--</div>-->
-                            <!--</div>-->
+                                <!--</div>-->
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
+    <footer th:include="footer::footer" class="main-footer"></footer>
 </div>
 <div th:include="footer::script">
 

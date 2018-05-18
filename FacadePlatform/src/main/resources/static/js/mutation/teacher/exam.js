@@ -60,6 +60,9 @@
                     for (var i = 0; i < data.length; i++) {
                         var start = new Date(data[i]["startTime"]).getTime();
                         var end = new Date(data[i]["endTime"]).getTime();
+
+                        data[i]["name"] = "<a style='cursor: pointer'>" + data[i]["name"] + "</a>";
+
                         data[i]["opt"] = "";
 
                         if (start > now) {

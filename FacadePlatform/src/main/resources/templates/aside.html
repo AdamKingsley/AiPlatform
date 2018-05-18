@@ -33,15 +33,22 @@
             </ul>
         </li>
         <li th:classappend="${level1 == 'mr'? 'active' : ''}">
-            <a href="/mr">
-                <i class="fa fa-bullseye"></i><span>蜕变测试</span>
+            <a href="#">
+                <i class="fa fa-bug"></i> <span>蜕变测试</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <!--<a href="/mr">-->
+                <!--<i class="fa fa-bullseye"></i><span>蜕变测试</span>-->
                 <!--<span class="pull-right-container">-->
                     <!--<i class="fa fa-angle-left pull-right"></i>-->
                 <!--</span>-->
-            </a>
-            <!--<ul class="treeview-menu">-->
-                <!--<li th:classappend="${level2 == 'autodrive' ? 'active' : ''}"><a href="/autodrive"><i class="fa fa-circle-o"></i> 自动驾驶测试</a></li>-->
-            <!--</ul>-->
+            <!--</a>-->
+            <ul class="treeview-menu">
+                <li th:classappend="${level2 == 'autodrive' ? 'active' : ''}"><a href="/mr"><i class="fa fa-circle-o"></i> 主页</a></li>
+                <li th:classappend="${level2 == 'scene' ? 'active' : ''}"><a href="/mr/scene"><i class="fa fa-circle-o"></i> 场景</a></li>
+            </ul>
         </li>
     </ul>
 
