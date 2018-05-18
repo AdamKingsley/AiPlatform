@@ -123,7 +123,7 @@ class ModelClass:
             file.write(result)
         # 存储数据库
         row = pysql.save_result(args, is_kill, imagePathList, location.replace(args.project_location, ""))
-        print("数据库新增"+str(row)+"条数据")
+        print("数据库新增1条数据")
 
 
 
