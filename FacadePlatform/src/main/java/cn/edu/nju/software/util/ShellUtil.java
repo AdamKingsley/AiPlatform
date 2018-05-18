@@ -27,11 +27,11 @@ public class ShellUtil {
 
             String normal = getString(ps.getInputStream());
             String error = getString(ps.getErrorStream());
+            System.out.println("normal input for script: \n"+normal);
+            System.out.println("error input for script: \n"+error);
             if((normal == null || normal.equals("")) && error != null ){
-                System.out.println("error input for script: \n"+error);
                 return Result.error().message("脚本执行失败");
             }
-            System.out.println("normal input for script: \n"+normal);
             return Result.success().withData(normal);
         } catch (Exception e) {
             e.printStackTrace();

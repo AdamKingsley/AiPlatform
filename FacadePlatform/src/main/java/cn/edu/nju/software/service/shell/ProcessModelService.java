@@ -79,6 +79,10 @@ public class ProcessModelService {
                     "--sample_list=" + JSONUtils.toJSONString(sampleList)
             };
             Result result = ShellUtil.exec(args);
+
+//            for(String str : args){
+//                System.out.print(str+" ");
+//            }
             if(result.isSuccess()){
 //                System.out.println(result.getData());
                 count++;

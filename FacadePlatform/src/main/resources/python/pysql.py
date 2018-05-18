@@ -25,8 +25,8 @@ def save_result(args, is_killed, sample, result):
         "result_location": result
     }
     insert_statement = parse_insert_statement(dictionary, "t_model_process")
-    print(insert_statement)
-    execute_sql(insert_statement)
+    # print(insert_statement)
+    return execute_sql(insert_statement)
 
 
 def parse_insert_statement(dictionary, table_name):

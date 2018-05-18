@@ -8,6 +8,7 @@ from PIL import Image
 import json
 import pysql
 import datetime
+import matplotlib.image as mpimg
 
 
 def getActivationLayers(model):
@@ -30,6 +31,7 @@ def processDetailModel(model_path, images_data):
     # 根据relu特性 非零的地方的神经元是激活的 所以将隐藏层1输出的神经元结果非零的位置置为1
     # hidden_activation_1_output[hidden_activation_1_output != 0] = 1
     result_level_1 = hidden_activation_1_output
+    # print(result_level_1)
 
     hidden_activation_2_output = activation2.predict(images)
     result_level_2 = hidden_activation_2_output
@@ -71,15 +73,15 @@ class ModelClass:
         imageArray = imagePathList.split(",")
         # 图片路径处理
         imagePathList = imagePathList.strip('"').replace(args.project_location, "")
-        print(imagePathList)
+        # print(imagePathList)
 
         images_data = []
         number = len(imageArray)
         for i in range(number):
-            im = Image.open(imageArray[i].strip('"'))
-            out = im.resize((28, 28), Image.ANTIALIAS)
-            im_arr = np.array(out.convert('L'))
-            data = im_arr.flatten()
+            im = mpimg.imread(imageArray[i].strip('"'))
+            # out = im.resize((28, 28), Image.ANTIALIAS)
+            # im_arr = np.array(out.convert('L'))
+            data = im.flatten()
             images_data.append(data)
         images_data = np.array(images_data)
 
@@ -120,7 +122,8 @@ class ModelClass:
         with open(location, "w+") as file:
             file.write(result)
         # 存储数据库
-        pysql.save_result(args, is_kill, imagePathList, location.replace(args.project_location, ""))
+        row = pysql.save_result(args, is_kill, imagePathList, location.replace(args.project_location, ""))
+        print("数据库新增"+str(row)+"条数据")
 
 
 
