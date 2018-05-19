@@ -186,4 +186,8 @@ public class FileUtil {
     public static String getPath(File dir) {
         return dir.getPath().replace(File.separator,"/");
     }
+
+    public static String getPath(String path) {
+        return path.replace(File.separator,"/");
+    }
 }
