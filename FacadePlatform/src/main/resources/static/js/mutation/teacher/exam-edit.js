@@ -36,6 +36,8 @@
             data["startTime"] = timeRange.substr(0, 19);
             data["endTime"] = timeRange.substr(22, 19);
 
+            data["bankIds"] = $("#bankIds").val().toString();
+
             $.ajax({
                 type: "POST",
                 url: url,
@@ -45,9 +47,15 @@
                 success: function(res) {
                     if (res.success === true) {
                         if (isCreate) {
-                            window.location.href = baseurl + "/mutation/exam";
+                            toastr.options.onHidden = function() {
+                                window.location.href = baseurl + "/mutation/t/exam";
+                            };
+                            toastr.success(res.message);
                         } else {
-                            window.location.reload();
+                            toastr.options.onHidden = function() {
+                                window.location.reload();
+                            };
+                            toastr.success(res.message);
                         }
                     }
                 },

@@ -51,6 +51,15 @@
                                     <input type="hidden" name="userId" th:value="${userId}"/>
                                     <input type="hidden" name="examId" th:value="${examId}"/>
                                     <input type="hidden" name="modelId" th:value="${modelId}"/>
+                                    <input type="hidden" name="iters" th:value="${iters}"/>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2">选择第几次迭代</label>
+                                        <div class="col-sm-7">
+                                            <select id="iter_select" class="form-control select2-basic">
+
+                                            </select>
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <label class="control-label col-sm-2">选择图片</label>
                                         <div class="col-sm-7">
@@ -84,6 +93,13 @@
                             <!--<div id="chart" class="col-sm-12" style="height: 500px">-->
                             <!--</div>-->
                             <h4>神经元激活</h4>
+                            <div class="col-sm-12">
+                                <div class="col-sm-2">
+                                    神经网络层数
+                                </div>
+                                <div class="col-sm-4">变异模型</div>
+                                <div class="col-sm-4">标准模型</div>
+                            </div>
                             <div id="nerual_graph">
                                 <!--<div class="col-sm-12">-->
                                     <!--<div class="col-sm-2">-->

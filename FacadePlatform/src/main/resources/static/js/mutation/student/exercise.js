@@ -8,7 +8,12 @@
             $("#samples_upload").click();
         });
         $("#samples_upload").on("change", function() {
-            $("#samples_upload_facade").html($(this).val());
+            $("#samples_upload_facade").html("");
+            var obj = document.getElementById("samples_upload");
+            var length = obj.files.length;
+            for (var i = 0; i < length; i++) {
+                $("#samples_upload_facade").append(obj.files[i].name + ";");
+            }
         });
 
         $("#samples_submit").on("click", function() {
