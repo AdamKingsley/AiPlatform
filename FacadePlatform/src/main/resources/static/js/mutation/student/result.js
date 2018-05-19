@@ -14,15 +14,16 @@
         // console.log(modelId);
 
         $.ajax({
-            url: baseurl + "/static/resource/net.json",
+            // url: baseurl + "/static/resource/net.json",
+            url: baseurl + "/model-process/detail?userId=" + userId + "&examId=" + examId + "&modelId=" + modelId + "&iter=0",
             type: "GET",
             dataType: "json",
             success: function(res) {
                 data = res;
-                // console.log(data);
-                initImage();
+                console.log(data);
+                // initImage();
 
-                asyncData(0);
+                // asyncData(0);
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                 var json = JSON.parse(XMLHttpRequest.responseText);
