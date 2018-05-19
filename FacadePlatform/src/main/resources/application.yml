@@ -114,10 +114,10 @@ pagehelper:
 logging:
   config: classpath:logback.xml
 
-# session默认30min 设置为60min
+# session默认30min 设置为600s
 server:
   session:
-    timeout: 60
+    timeout: 600
 #  redis:
 #    database: 6
 #    host: 192.168.103.202
