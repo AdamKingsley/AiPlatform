@@ -15,6 +15,12 @@
                 $("#script_facade").append(obj.files[i].name + ";");
             }
         });
+        $("#standard_model_facade").on("click", function() {
+            $("#standard_model").click();
+        });
+        $("#standard_model").on("change", function() {
+            $("#standard_model_facade").html($(this).val());
+        });
         $("#models_facade").on("click", function() {
             $("#models").click();
         });
@@ -27,7 +33,7 @@
             }
         });
         $("#samples_facade").on("click", function() {
-            $("#script").click();
+            $("#samples").click();
         });
         $("#samples").on("change", function() {
             $("#samples_facade").html("");

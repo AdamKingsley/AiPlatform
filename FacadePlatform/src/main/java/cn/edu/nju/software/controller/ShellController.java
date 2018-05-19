@@ -32,12 +32,12 @@ public class ShellController {
         command.setExamId(1L);
         command.setUserId(1L);
         command.setIter(2);
-        command.setPath("/home/upload/exercise/11/5/1");
+        command.setPath("home/upload/exercise/11/5/1");
         List<ModelDto> modelDtos = new ArrayList<>();
         ModelDto modelDto = new ModelDto();
-        modelDto.setLocation("/home/upload/bank_4/models/model_1.hdf5");
-        modelDto.setStandardModelLocation("/home/upload/bank_4/standard_model/model.hdf5");
-        modelDto.setScriptLocation("/home/upload/bank_4/script.py");
+        modelDto.setLocation("home/upload/bank_4/models/model_1.hdf5");
+        modelDto.setStandardModelLocation("home/upload/bank_4/standard_model/model.hdf5");
+        modelDto.setScriptLocation("home/upload/bank_4/script.py");
         modelDto.setId(Long.parseLong("1"));
         modelDtos.add(modelDto);
         command.setModels(modelDtos);
