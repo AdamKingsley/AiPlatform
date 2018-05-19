@@ -8,17 +8,23 @@
         var userId = $("input[name='userId']").val();
         var examId = $("input[name='examId']").val();
         var modelId = $("input[name='modelId']").val();
+        var iters = $("input[name='iters']").val();
 
-        // console.log(userId);
-        // console.log(examId);
-        // console.log(modelId);
+        console.log(userId);
+        console.log(examId);
+        console.log(modelId);
+        console.log(iters);
 
         $.ajax({
             // url: baseurl + "/static/resource/net.json",
-            url: baseurl + "/model-process/detail?userId=" + userId + "&examId=" + examId + "&modelId=" + modelId + "&iter=0",
+            url: baseurl + "/model-process/detail?userId=" + userId + "&examId=" + examId + "&modelId=" + modelId + "&iter=1",
             type: "GET",
             dataType: "json",
             success: function(res) {
+                if (res.success == false) {
+
+                }
+
                 data = res;
                 console.log(data);
                 // initImage();
