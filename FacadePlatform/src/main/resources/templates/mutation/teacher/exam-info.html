@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta th:include="header::header"/>
+    <title>深度学习测试平台</title>
+</head>
+<body class="hold-transition skin-black sidebar-mini">
+<header class="main-header" th:include="header::main-header (${user})">
+
+</header>
+<div class="wrapper">
+    <aside class="main-sidebar"
+           th:include="aside::aside ('mutation', 'bank', ${user})">
+
+    </aside>
+    <div class="content-wrapper" style="min-height: 916px">
+        <section class="content-header">
+            <h1>
+                题库信息
+            </h1>
+        </section>
+        <section class="content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">信息</h3>
+                        </div>
+                        <div class="box-body">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer th:include="footer::footer" class="main-footer"></footer>
+</div>
+<div th:include="footer::script">
+
+</div>
+<script src="/static/js/mutation/teacher/exam-info.js"></script>
+</body>
+</html>

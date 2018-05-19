@@ -8,86 +8,89 @@
 <header class="main-header" th:include="header::main-header (${user})">
 
 </header>
-<div class="content-wrapper" style="min-height: 976px">
+<div class="wrapper">
     <aside class="main-sidebar"
            th:include="aside::aside ('mutation', 'bank', ${user})">
 
     </aside>
-    <section class="content-header">
-        <h1>
-            新增题库
-        </h1>
-    </section>
-    <section class="content">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="box">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">创建</h3>
-                        <div class="box-tools">
-                            <div class="btn-group pull-right">
-                                <a href="/mutation/bank" class="btn btn-sm btn-default">
-                                    <i class="fa fa-arrow-left"></i>
-                                    &nbsp;返回
-                                </a>
+    <div class="content-wrapper" style="min-height: 976px">
+        <section class="content-header">
+            <h1>
+                新增题库
+            </h1>
+        </section>
+        <section class="content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">创建</h3>
+                            <div class="box-tools">
+                                <div class="btn-group pull-right">
+                                    <a href="/mutation/bank" class="btn btn-sm btn-default">
+                                        <i class="fa fa-arrow-left"></i>
+                                        &nbsp;返回
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="box-body">
-                        <form id="bank_form" class="form-horizontal">
-                            <div class="form-group">
-                                <label class="control-label col-sm-2">名称</label>
-                                <div class="col-sm-9">
-                                    <input name="name" type="text" class="form-control"/>
+                        <div class="box-body">
+                            <form id="bank_form" class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">名称</label>
+                                    <div class="col-sm-9">
+                                        <input name="name" type="text" class="form-control"/>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2">描述</label>
-                                <div class="col-sm-9">
-                                    <input name="description" type="text" class="form-control"/>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">描述</label>
+                                    <div class="col-sm-9">
+                                        <input name="description" type="text" class="form-control"/>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2">运行脚本</label>
-                                <div class="col-sm-9">
-                                    <div id="script_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
-                                    <input id="script" name="script" type="file" style="display: none"/>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">运行脚本</label>
+                                    <div class="col-sm-9">
+                                        <div id="script_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
+                                        <input id="script" name="script" type="file" style="display: none"/>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2">标准模型</label>
-                                <div class="col-sm-9">
-                                    <div id="standard_model_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
-                                    <input id="standard_model" name="standard_model" type="file" style="display: none"/>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">标准模型</label>
+                                    <div class="col-sm-9">
+                                        <div id="standard_model_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
+                                        <input id="standard_model" name="standard_model" type="file" style="display: none"/>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2">变异模型</label>
-                                <div class="col-sm-9">
-                                    <div id="models_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
-                                    <input id="models" name="models" type="file" style="display: none" multiple="multiple"/>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">变异模型</label>
+                                    <div class="col-sm-9">
+                                        <div id="models_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
+                                        <input id="models" name="models" type="file" style="display: none" multiple="multiple"/>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2">样本</label>
-                                <div class="col-sm-9">
-                                    <div id="samples_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
-                                    <input id="samples" name="samples" type="file" style="display: none" multiple="multiple"/>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">样本</label>
+                                    <div class="col-sm-9">
+                                        <div id="samples_facade" class="form-control" style="overflow: hidden; cursor: pointer"></div>
+                                        <input id="samples" name="samples" type="file" style="display: none" multiple="multiple"/>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2"></label>
-                                <div class="col-sm-9">
-                                    <button id="bank_submit" class="btn btn-info btn-sm" type="button">提交</button>
-                                    <button class="btn btn-default btn-sm" type="reset" style="margin-left: 5px">重置</button>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2"></label>
+                                    <div class="col-sm-9">
+                                        <button id="bank_submit" class="btn btn-info btn-sm" type="button">提交</button>
+                                        <button class="btn btn-default btn-sm" type="reset" style="margin-left: 5px">重置</button>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
+    <footer th:include="footer::footer" class="main-footer"></footer>
 </div>
 <div th:include="footer::script">
 

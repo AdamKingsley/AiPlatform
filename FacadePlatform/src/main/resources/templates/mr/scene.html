@@ -10,12 +10,12 @@
 </header>
 <div class="content-wrapper" style="min-height: 976px">
     <aside class="main-sidebar"
-           th:include="aside::aside ('mr', 'autodrive', ${user})">
+           th:include="aside::aside ('mr', 'scene', ${user})">
 
     </aside>
     <section class="content-header">
         <h1>
-            自动驾驶蜕变测试
+            自动驾驶蜕变场景
         </h1>
     </section>
     <section class="content">
@@ -27,20 +27,12 @@
                             <div class="col-sm-12">
                                 <form id="video_form" class="form-horizontal">
                                     <div class="form-group">
-                                        <label class="control-label col-sm-2">选择文件</label>
+                                        <label class="control-label col-sm-2">选择风格文件</label>
                                         <div class="col-sm-6">
-                                            <input id="video_file" type="file" style="display: none"/>
-                                            <div id="video_path" class="form-control">
+                                            <input id="style_file" type="file" style="display: none"/>
+                                            <div id="style_path" class="form-control">
 
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-sm-2">选择场景</label>
-                                        <div class="col-sm-6">
-                                            <select class="select2-basic form-control">
-                                                <option>雨天1</option>
-                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -54,24 +46,21 @@
                         </div>
                     </div>
                     <div class="box-body">
-                        <table id="mr_table" class="table table-bordered table-hover dataTable">
+                        <table id="scene_table" class="table table-bordered table-hover dataTable">
                             <thead>
                             <tr>
-                                <td>蜕变ID</td>
-                                <td>上传时间</td>
-                                <td>状态</td>
+                                <td>场景ID</td>
+                                <td>名称</td>
                                 <td>操作</td>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
                                 <td>DI329I30J3DKSLJF3232</td>
-                                <td>2018-05-10 00:00:00</td>
+                                <td>雨天1</td>
                                 <td>
-                                    <span class='label label-success'>已完成</span>
-                                </td>
-                                <td>
-                                    <a href="/mr/video/1">查看</a>
+                                    <!--<a href="#"></a>-->
+                                    <a href="#"><i class='fa fa-trash'></i></a>
                                 </td>
                             </tr>
                             </tbody>
@@ -85,6 +74,6 @@
 <div th:include="footer::script">
 
 </div>
-<script src="/static/js/mr/home.js"></script>
+<script src="/static/js/mr/scene.js"></script>
 </body>
 </html>

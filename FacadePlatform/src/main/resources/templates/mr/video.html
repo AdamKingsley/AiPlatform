@@ -12,7 +12,7 @@
 </header>
 <div class="content-wrapper" style="min-height: 976px">
     <aside class="main-sidebar"
-           th:include="aside::aside ('mr', '', ${user})">
+           th:include="aside::aside ('mr', 'autodrive', ${user})">
 
     </aside>
     <section class="content-header">
@@ -26,6 +26,7 @@
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">蜕变视频</h3>
+                        <button id="play" class="btn btn-info">开始</button>
                     </div>
                     <div class="box-body">
                         <!--<video id="example_video_1" class="video-js vjs-default-skin col-sm-12" controls="controls" preload="none" data-setup="{}">-->

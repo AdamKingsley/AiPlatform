@@ -9,111 +9,150 @@
 <header class="main-header" th:include="header::main-header (${user})">
 
 </header>
-<div class="content-wrapper" style="min-height: 976px">
+<div class="wrapper">
     <aside class="main-sidebar"
            th:include="aside::aside ('mutation', '', ${user})">
 
     </aside>
-    <section class="content-header">
-        <h1>
-            参加考试
-        </h1>
-    </section>
-    <section class="content">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="box">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">考试信息</h3>
-                        <div class="box-tools">
-                            <div class="btn-group pull-right">
-                                <a href="/mutation/s/exam" class="btn btn-sm btn-default">
-                                    <i class="fa fa-arrow-left"></i>
-                                    &nbsp;返回
-                                </a>
+    <div class="content-wrapper" style="min-height: 916px">
+        <section class="content-header">
+            <h1>
+                参加考试
+            </h1>
+        </section>
+        <section class="content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">考试信息</h3>
+                            <div class="box-tools">
+                                <div class="btn-group pull-right">
+                                    <a href="/mutation/s/exam" class="btn btn-sm btn-default">
+                                        <i class="fa fa-arrow-left"></i>
+                                        &nbsp;返回
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="box-body">
-                        <div class="form-horizontal">
-                            <input type="hidden" id="id" name="id" th:value="${exam == null ? '' : exam.id}"/>
-                            <div class="form-group">
-                                <label for="name" class="control-label col-sm-2">名称</label>
-                                <div class="col-sm-9">
-                                    <input id="name" name="name" type="text" class="form-control"
-                                           placeholder="名称" th:value="${exam == null ? '' : exam.name}"/>
+                        <div class="box-body">
+                            <h4>基本信息</h4>
+                            <div class="form-horizontal">
+                                <input type="hidden" id="id" name="id" th:value="${exam == null ? '' : exam.id}"/>
+                                <div class="form-group">
+                                    <label for="name" class="control-label col-sm-2">名称</label>
+                                    <div class="col-sm-9">
+                                        <input id="name" name="name" type="text" class="form-control"
+                                               placeholder="名称" th:value="${exam == null ? '' : exam.name}"/>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2">开始时间</label>
-                                <div class="col-sm-9">
-                                    <label id="startTime" class="form-control" th:text="${exam == null ? '' : exam.startTime}"></label>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">开始时间</label>
+                                    <div class="col-sm-9">
+                                        <label id="startTime" class="form-control" th:text="${exam == null ? '' : exam.startTime}"></label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2">结束时间</label>
-                                <div class="col-sm-9">
-                                    <label id="endTime" class="form-control" th:text="${exam == null ? '' : exam.endTime}"></label>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">结束时间</label>
+                                    <div class="col-sm-9">
+                                        <label id="endTime" class="form-control" th:text="${exam == null ? '' : exam.endTime}"></label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2">迭代次数</label>
-                                <div class="col-sm-9">
-                                    <label id="maxIters" class="form-control"
-                                           th:text="${exam == null ? '' : exam.maxIters}"></label>
-                                    <span class="help-block">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">迭代次数</label>
+                                    <div class="col-sm-9">
+                                        <label id="maxIters" class="form-control"
+                                               th:text="${exam == null ? '' : exam.maxIters}"></label>
+                                        <span class="help-block">
                                         <i class="fa fa-info-circle">
                                              0表示不限制。
                                         </i>
                                     </span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2">样本的数量限制</label>
-                                <div class="col-sm-9">
-                                    <label id="maxItems" class="form-control"
-                                           th:text="${exam == null ? '' : exam.maxItems}"></label>
-                                    <span class="help-block">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">样本的数量限制</label>
+                                    <div class="col-sm-9">
+                                        <label id="maxItems" class="form-control"
+                                               th:text="${exam == null ? '' : exam.maxItems}"></label>
+                                        <span class="help-block">
                                         <i class="fa fa-info-circle">
                                              0表示不限制。
                                         </i>
                                     </span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2">变异体数量</label>
-                                <div class="col-sm-9">
-                                    <label id="modelNums" class="form-control"
-                                           th:text="${exam == null ? '' : exam.modelNums}"></label>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">变异体数量</label>
+                                    <div class="col-sm-9">
+                                        <label id="modelNums" class="form-control"
+                                               th:text="${exam == null ? '' : exam.modelNums}"></label>
+                                    </div>
                                 </div>
+                                <!--<div class="form-group">-->
+                                <!--<label class="control-label col-sm-2">题库集合</label>-->
+                                <!--<div class="col-sm-9">-->
+                                <!--<div class="form-control">-->
+                                <!--<a th:each="bank: ${exam == null ? null : exam.selectBankDto}"-->
+                                <!--th:text="${bank.name + ';'}" th:href="${'/mutation/bank/info/' + bank.id}"></a>-->
+                                <!--</div>-->
+                                <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="form-group">-->
+                                <!--<label class="control-label col-sm-2"></label>-->
+                                <!--<div class="col-sm-9">-->
+                                <!--<a th:href="${'/mutation/exam/opt/' + exam.id}" id="join_exam" class="btn btn-info btn-sm" type="button">开始答题</a>-->
+                                <!--</div>-->
+                                <!--</div>-->
                             </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2">题库集合</label>
-                                <div class="col-sm-9">
-                                    <div class="form-control">
-                                        <a th:each="bank: ${exam == null ? null : exam.selectBankDto}"
-                                                th:text="${bank.name + ';'}" th:href="${'/mutation/bank/info/' + bank.id}"></a>
+                        </div>
+                        <div class="box-body">
+                            <h4 class="box-title">考试题库信息</h4>
+                            <div class="row">
+                                <div class="col-md-4 col-xs-12">
+                                    <div class="info-box" th:each="bank: ${exam == null ? null : exam.selectBankDto}">
+                                        <div class="info-box-icon">
+                                            <span class="info-box-text bg-aqua" th:text="${bank.name}"></span>
+                                        </div>
+                                        <div class="info-box-content">
+                                            <p th:text="${bank.description}"></p>
+                                            <!--<span class="info-box-text" th:text="${bank.name}"></span>-->
+                                            <div class="info-box-text">
+                                                <a th:href="${'/mutation/bank/info/' + bank.id}">查看详情</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2"></label>
-                                <div class="col-sm-9">
-                                    <button id="join_exam" class="btn btn-info btn-sm" type="button">开始答题</button>
+                        </div>
+                        <div class="box-body">
+                            <h4 class="box-title">上传测试样本</h4>
+                            <form id="samples_form" class="form" role="form" action="">
+                                <input type="hidden" name="userId" value=""/>
+                                <input type="hidden" name="examId" th:value="${exam == null ? '' : exam.id}"/>
+                                <div class="form-group">
+                                    <div class="col-sm-5">
+                                        <input id="samples_upload" name="sample" type="file" style="display: none"/>
+                                        <div id="samples_upload_facade" class="form-control" style="cursor: pointer"></div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <button id="samples_submit" type="button" class="btn btn-info">上传样本</button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
+    <footer th:include="footer::footer" class="main-footer"></footer>
 </div>
 <div th:include="footer::script">
 
 </div>
 <!--<script src="/static/plugins/daterangepicker/moment.min.js"></script>-->
 <!--<script src="/static/plugins/daterangepicker/daterangepicker.js"></script>-->
-<!--<script src="/static/js/mutation/teacher/exam-edit.js"></script>-->
+<script src="/static/js/mutation/student/join.js"></script>
 </body>
 </html>

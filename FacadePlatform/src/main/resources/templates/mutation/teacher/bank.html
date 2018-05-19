@@ -8,45 +8,48 @@
 <header class="main-header" th:include="header::main-header (${user})">
 
 </header>
-<div class="content-wrapper" style="min-height: 976px">
+<div class="wrapper">
     <aside class="main-sidebar"
            th:include="aside::aside ('mutation', 'bank', ${user})">
 
     </aside>
-    <section class="content-header">
-        <h1>
-            题库
-        </h1>
-    </section>
-    <section class="content">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="box">
-                    <div class="box-header">
-                        <div class="col-sm-8">
-                            <div class="form-horizontal">
-                                <a id="create_button" href="/mutation/bank/new" class="btn btn-success btn-sm" style="margin-left: 5px">新增题库</a>
+    <div class="content-wrapper" style="min-height: 976px">
+        <section class="content-header">
+            <h1>
+                题库
+            </h1>
+        </section>
+        <section class="content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="box">
+                        <div class="box-header">
+                            <div class="col-sm-8">
+                                <div class="form-horizontal">
+                                    <a id="create_button" href="/mutation/bank/new" class="btn btn-success btn-sm" style="margin-left: 5px">新增题库</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="box-body">
-                        <table id="bank_table" class="table table-bordered table-hover dataTable"
-                               cellspacing="0" width="100%">
-                            <thead>
-                            <tr>
-                                <td>ID</td>
-                                <td>名称</td>
-                                <td>变异体数量</td>
-                                <td>创建时间</td>
-                                <td>操作</td>
-                            </tr>
-                            </thead>
-                        </table>
+                        <div class="box-body">
+                            <table id="bank_table" class="table table-bordered table-hover dataTable"
+                                   cellspacing="0" width="100%">
+                                <thead>
+                                <tr>
+                                    <td>ID</td>
+                                    <td>名称</td>
+                                    <td>变异体数量</td>
+                                    <td>创建时间</td>
+                                    <td>操作</td>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
+    <footer th:include="footer::footer" class="main-footer"></footer>
 </div>
 <div th:include="footer::script">
 
