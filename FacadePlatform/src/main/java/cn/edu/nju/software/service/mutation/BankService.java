@@ -15,6 +15,7 @@ import cn.edu.nju.software.mapper.BankMapper;
 import cn.edu.nju.software.mapper.ModelMapper;
 import cn.edu.nju.software.mapper.SampleMapper;
 import cn.edu.nju.software.util.FileUtil;
+import cn.edu.nju.software.util.StringUtil;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.google.common.collect.Lists;
@@ -97,6 +98,7 @@ public class BankService {
         bank.setCreateTime(new Date());
         bank.setModifyTime(bank.getCreateTime());
         bank.setNums(0);
+        bank.setDeleted(false);
         bankMapper.insert(bank);
         uploadFiles(bank.getId(), request);
     }
@@ -192,7 +194,7 @@ public class BankService {
             return Result.error().message("脚本上传发生异常！");
         }
         Bank bank = bankMapper.selectByPrimaryKey(id);
-        bank.setScriptLocation(path);
+        bank.setScriptLocation(FileUtil.getPath(path));
         bankMapper.updateByPrimaryKey(bank);
         return Result.success().message("上传脚本成功！");
     }
@@ -218,7 +220,7 @@ public class BankService {
                 model.setCreateTime(new Date());
                 model.setModifyTime(model.getCreateTime());
                 model.setBankId(id);
-                model.setLocation(path);
+                model.setLocation(FileUtil.getPath(path));
                 //model.setType(1);
                 modelMapper.insert(model);
             } catch (IOException e) {
@@ -267,7 +269,7 @@ public class BankService {
                 Sample sample = new Sample();
                 sample.setName("sample_" + num);
                 sample.setBankId(id);
-                sample.setLocation(path);
+                sample.setLocation(FileUtil.getPath(path));
                 sampleMapper.insert(sample);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -309,7 +311,7 @@ public class BankService {
             return Result.error().message("标准模型上传发生异常！");
         }
         Bank bank = bankMapper.selectByPrimaryKey(id);
-        bank.setStandardModelLocation(path);
+        bank.setStandardModelLocation(FileUtil.getPath(path));
         bankMapper.updateByPrimaryKey(bank);
         return Result.success().message("上传成标准模型功！");
     }
