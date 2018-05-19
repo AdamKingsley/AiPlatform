@@ -15,4 +15,5 @@ import org.springframework.context.annotation.Configuration;
 public class UploadConfig {
     //上传存到的目录
     private String folder;
+    private String root;
 }

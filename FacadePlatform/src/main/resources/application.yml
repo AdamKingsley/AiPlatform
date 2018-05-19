@@ -132,6 +132,7 @@ server:
 
 # 根据部署的系统选择所要上传的目录在哪
 upload:
+  root : home/
   folder: home/upload/
 
 python:
