@@ -24,5 +24,5 @@ public interface ModelProcessMapper extends Mapper<ModelProcess> {
     Integer selectMaxIter(@Param("userId") Long userId, @Param("examId") Long examId, @Param("modelId") Long modelId);
 
     @Select("select * from t_model_process where model_id = #{modelId} and exam_id = #{examId} and user_id = #{userId} and iter=#{iter}")
-    ModelProcessDto selectByIter(Long userId, Long examId, Long modelId, Integer iter);
+    ModelProcessDto selectByIter(@Param("userId") Long userId, @Param("examId") Long examId, @Param("modelId") Long modelId, @Param("iter") Integer iter);
 }

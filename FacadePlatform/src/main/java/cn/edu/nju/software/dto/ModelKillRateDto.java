@@ -12,6 +12,7 @@ public class ModelKillRateDto {
     //模型id
     private Long id;
     //模型名称
+    private String name;
     private ModelDto model;
     //模型process的次数
     private Integer nums;
