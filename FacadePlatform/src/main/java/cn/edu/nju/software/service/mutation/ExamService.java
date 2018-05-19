@@ -190,6 +190,9 @@ public class ExamService {
             rateDto.setKillRate(rate);
             dtos.add(rateDto);
         }
+        if (ids == null || ids.size() == 0) {
+            return dtos;
+        }
         List<ModelDto> modelDtos = modelMapper.selectByModelIds(ids);
         for (int i = 0; i < modelDtos.size(); i++) {
             dtos.get(i).setModel(modelDtos.get(i));
