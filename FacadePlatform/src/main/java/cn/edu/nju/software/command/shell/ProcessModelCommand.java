@@ -14,7 +14,6 @@ import java.util.List;
 
 @Data
 public class ProcessModelCommand {
-
     //用户ID
     private Long userId;
     //考试ID

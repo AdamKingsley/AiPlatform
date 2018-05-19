@@ -136,21 +136,21 @@ public class ExamService {
         //}
         //如果是老师
         //if (user.getRoleId().longValue() == RoleEnum.TEACHER.getRoleId()) {
-            Exam exam = examMapper.selectByPrimaryKey(id);
-            if (new Date().getTime() <= exam.getStartTime().getTime()) {
-                throw new ServiceException("考试尚未开始没有相关统计信息！");
-            }
-            ExamResultDto dto = new ExamResultDto();
-            //获取参与考试的人员数
-            dto.setCounts(examMapper.countStudents(id));
-            List<ExerciseDto> exercises = exerciseMapper.selectExerciseByExam(exam.getId());
-            //获取模型通过率列表
-            List<ModelKillRateDto> modelList = getModelRateList(exercises);
-            dto.setKillRates(modelList);
-            //获取学生排名分页列表
-            List<RankDto> rankList = getRankList(exercises);
-            dto.setRanks(rankList);
-            return dto;
+        Exam exam = examMapper.selectByPrimaryKey(id);
+        if (new Date().getTime() <= exam.getStartTime().getTime()) {
+            throw new ServiceException("考试尚未开始没有相关统计信息！");
+        }
+        ExamResultDto dto = new ExamResultDto();
+        //获取参与考试的人员数
+        dto.setCounts(examMapper.countStudents(id));
+        List<ExerciseDto> exercises = exerciseMapper.selectExerciseByExam(exam.getId());
+        //获取模型通过率列表
+        List<ModelKillRateDto> modelList = getModelRateList(exercises);
+        dto.setKillRates(modelList);
+        //获取学生排名分页列表
+        List<RankDto> rankList = getRankList(exercises);
+        dto.setRanks(rankList);
+        return dto;
         //} else {
         //    throw new ServiceException(ExceptionEnum.PERMISSION_DENIED);
         //}
@@ -193,6 +193,7 @@ public class ExamService {
         List<ModelDto> modelDtos = modelMapper.selectByModelIds(ids);
         for (int i = 0; i < modelDtos.size(); i++) {
             dtos.get(i).setModel(modelDtos.get(i));
+            dtos.get(i).setName(modelDtos.get(i).getName());
         }
         Collections.sort(dtos, (rate1, rate2) -> compareRate(rate1.getKillRate(), rate2.getKillRate()));
         return dtos;

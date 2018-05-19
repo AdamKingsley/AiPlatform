@@ -139,6 +139,7 @@ public class FileUtil {
 
     /**
      * 复制文件
+     *
      * @param oldPath
      * @param newPath
      */
@@ -152,7 +153,7 @@ public class FileUtil {
                 FileOutputStream fs = new FileOutputStream(newPath);
                 byte[] buffer = new byte[1444];
                 int length;
-                while ( (byteread = inStream.read(buffer)) != -1) {
+                while ((byteread = inStream.read(buffer)) != -1) {
                     bytesum += byteread; //字节数 文件大小
 //                    System.out.println(bytesum);
                     fs.write(buffer, 0, byteread);
@@ -168,6 +169,7 @@ public class FileUtil {
 
     /**
      * 删除文件
+     *
      * @param fileName
      * @return
      */
@@ -181,4 +183,7 @@ public class FileUtil {
         }
     }
 
+    public static String getPath(File dir) {
+        return dir.getPath().replace(File.separator,"/");
+    }
 }

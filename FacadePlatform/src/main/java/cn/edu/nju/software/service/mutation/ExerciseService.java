@@ -179,7 +179,7 @@ public class ExerciseService {
         command.setModels(modelDtos);
         command.setIter(exercise.getTotalIters());
         log.info("the upload samples folder is {}", dir.getPath());
-        command.setPath(dir.getPath());
+        command.setPath(FileUtil.getPath(dir));
         //上传样本运行模型执行情况
         //TODO 异步 需要改进
         processService.processModel(command);
