@@ -12,8 +12,11 @@ public class StringUtil {
     private static final String SEPERATOR = ",";
 
     public static List<Long> getIds(String ids) {
-        String[] idArray = ids.split(SEPERATOR);
         List<Long> idList = Lists.newArrayList();
+        if (ids == null || ids.equals("")) {
+            return idList;
+        }
+        String[] idArray = ids.split(SEPERATOR);
         for (String id : idArray) {
             idList.add(Long.parseLong(id));
         }
@@ -32,30 +35,31 @@ public class StringUtil {
         return result;
     }
 
-    public static Long getLongValue(String str){
+    public static Long getLongValue(String str) {
         return Long.parseLong(str);
     }
 
     /**
      * 获取父文件夹路径
-     * @param str 路径
+     *
+     * @param str   路径
      * @param times 次数
      * @return
      */
-    public static String getParentPath(String str, int times){
-        if(times < 1){
+    public static String getParentPath(String str, int times) {
+        if (times < 1) {
             return str;
         }
         String result = str;
 
-        for(int i=0;i<times;i++){
+        for (int i = 0; i < times; i++) {
             int index = result.lastIndexOf('/');
-            if(index < 0){
+            if (index < 0) {
                 result = "";
-            }else if(index == 0){
+            } else if (index == 0) {
                 result = "/";
-            }else{
-                result = result.substring(0,index);
+            } else {
+                result = result.substring(0, index);
             }
         }
         return result;
@@ -64,12 +68,12 @@ public class StringUtil {
     /**
      * 获取路径中的文件名，含后缀
      */
-    public static String getFileFromPath(String str){
+    public static String getFileFromPath(String str) {
         int index = str.lastIndexOf('/');
-        if(index < 0){
+        if (index < 0) {
             return str;
-        }else{
-            return str.substring(index+1);
+        } else {
+            return str.substring(index + 1);
         }
     }
 
@@ -78,10 +82,10 @@ public class StringUtil {
      */
     public static String getFileName(String str) {
         int index = str.lastIndexOf('.');
-        if(index < 0){
+        if (index < 0) {
             return str;
-        }else{
-            return str.substring(0,index);
+        } else {
+            return str.substring(0, index);
         }
     }
 

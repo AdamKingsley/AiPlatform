@@ -63,12 +63,12 @@ public class ExercisePageController {
                                    Model model) {
         ShiroUser user = ShiroUtils.currentUser();
 
-//        Integer iters = modelProcessService.getIters(userId, examId, modelId);
+        Integer iters = modelProcessService.getIters(userId, examId, modelId);
 
         model.addAttribute("userId", userId);
         model.addAttribute("examId", examId);
         model.addAttribute("modelId", modelId);
-//        model.addAttribute("iters", iters);
+        model.addAttribute("iters", iters);
         model.addAttribute("user", user);
         return "mutation/student/result";
     }
