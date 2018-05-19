@@ -202,12 +202,22 @@ public class ExerciseService {
         file.transferTo(tempFile);
         //存到temp位置后开始解压
         ZipFile zipFile = new ZipFile(tempFile, Charset.forName("utf-8"));
-        if (zipFile.size() > maxItems) {
+        int size = zipFile.size();
+        for (Enumeration<? extends ZipEntry> entries = zipFile.entries(); entries.hasMoreElements(); ) {
+            ZipEntry entry = (ZipEntry) entries.nextElement();
+            if (entry.isDirectory() && entry.getName().equals("__MACOSX")) {
+                size--;
+            }
+        }
+        if (size > maxItems) {
             log.debug("zip 文件中文件数量超过考试需求");
             throw new ServiceException(ExceptionEnum.ITEMS_OUT_LIMIT);
         }
         for (Enumeration<? extends ZipEntry> entries = zipFile.entries(); entries.hasMoreElements(); ) {
             ZipEntry entry = (ZipEntry) entries.nextElement();
+            if (entry.isDirectory() && entry.getName().equals("__MACOSX")) {
+                continue;
+            }
             String zipEntryName = entry.getName();
             InputStream in = zipFile.getInputStream(entry);
             String ab_path = storeDir.getAbsolutePath() + File.separator + zipEntryName;

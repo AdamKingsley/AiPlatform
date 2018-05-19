@@ -23,7 +23,7 @@ public class UploadResourceConfig extends WebMvcConfigurerAdapter {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         //log.info("the addResourceHandler is {}", uploadConfig.getFolder() + "**");
         //log.info("the addResourceLocation is {}", new File(uploadConfig.getFolder()).getAbsolutePath());
-        registry.addResourceHandler(uploadConfig.getFolder() + "**").addResourceLocations("file:" + new File(uploadConfig.getFolder()).getAbsolutePath() + File.separator);
+        registry.addResourceHandler(uploadConfig.getRoot() + "**").addResourceLocations("file:" + new File(uploadConfig.getRoot()).getAbsolutePath() + File.separator);
         super.addResourceHandlers(registry);
     }
 }

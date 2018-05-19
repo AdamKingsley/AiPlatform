@@ -302,6 +302,7 @@ public class BankService {
         //String originalFilename = file.getOriginalFilename();
         String extension = FileUtil.getExtension(file.getOriginalFilename(), file.getContentType());
         String ab_path = dir.getAbsolutePath() + File.separator + "model" + extension;
+
         String path = dir.getPath() + File.separator + "model" + extension;
         try {
             file.transferTo(new File(ab_path));
