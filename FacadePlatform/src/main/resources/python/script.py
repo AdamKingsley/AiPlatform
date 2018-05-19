@@ -118,7 +118,7 @@ class ModelClass:
         result_dir = args.project_location+"/home/result/"+args.user_id+"/"+args.exam_id+"/"+args.iter
         if not os.path.exists(result_dir):
             os.makedirs(result_dir)
-        location = str(result_dir+"/"+args.model_id+"_"+now_time+".txt")
+        location = str(result_dir+"/"+args.model_id+"_"+now_time+".json")
         with open(location, "w+") as file:
             file.write(result)
         # 存储数据库

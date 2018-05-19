@@ -74,11 +74,11 @@
                                 <input type="hidden" name="examId" th:value="${exam == null ? '' : exam.id}"/>
                                 <div class="form-group">
                                     <div class="col-sm-5">
-                                        <input id="samples_upload" name="sample" type="file" style="display: none"/>
-                                        <div id="samples_upload_facade" class="form-control" style="cursor: pointer"></div>
+                                        <input id="samples_upload" name="sample" type="file" style="display: none" multiple="multiple"/>
+                                        <div id="samples_upload_facade" class="form-control" style="cursor: pointer;overflow: hidden"></div>
                                     </div>
                                     <div class="col-sm-7">
-                                        <button id="samples_submit" type="button" class="btn btn-info">上传样本</button>
+                                        <button id="samples_submit" type="button" class="btn btn-info" >上传样本</button>
                                     </div>
                                 </div>
                             </form>

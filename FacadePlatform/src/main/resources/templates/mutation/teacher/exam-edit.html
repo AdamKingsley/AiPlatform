@@ -57,33 +57,33 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-2">迭代次数</label>
                                     <div class="col-sm-9">
-                                        <input id="maxIters" class="form-control"
+                                        <input id="maxIters" name="maxIters" class="form-control"
                                                placeholder="迭代次数"
                                                th:value="${exam == null ? '' : exam.maxIters}"/>
-                                        <span class="help-block">
-                                        <i class="fa fa-info-circle">
-                                             0表示不限制。
-                                        </i>
-                                    </span>
+                                        <!--<span class="help-block">-->
+                                        <!--<i class="fa fa-info-circle">-->
+                                             <!--0表示不限制。-->
+                                        <!--</i>-->
+                                    <!--</span>-->
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-sm-2">样本的数量限制</label>
                                     <div class="col-sm-9">
-                                        <input id="maxItems" class="form-control"
+                                        <input id="maxItems" name="maxItems" class="form-control"
                                                placeholder="样本的数量限制"
                                                th:value="${exam == null ? '' : exam.maxItems}"/>
-                                        <span class="help-block">
-                                        <i class="fa fa-info-circle">
-                                             0表示不限制。
-                                        </i>
-                                    </span>
+                                        <!--<span class="help-block">-->
+                                        <!--<i class="fa fa-info-circle">-->
+                                             <!--0表示不限制。-->
+                                        <!--</i>-->
+                                    <!--</span>-->
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-sm-2">变异体数量</label>
                                     <div class="col-sm-9">
-                                        <input id="modelNums" class="form-control"
+                                        <input id="modelNums" name="modelNums" class="form-control"
                                                placeholder="变异体数量"
                                                th:value="${exam == null ? '' : exam.modelNums}"/>
                                     </div>
@@ -91,7 +91,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-2">题库集合</label>
                                     <div class="col-sm-9">
-                                        <select id="bankIds" class="form-control select2-basic" multiple="multiple">
+                                        <select id="bankIds" name="bankIds" class="form-control select2-basic" multiple="multiple">
                                             <option th:each="bank: ${exam == null ? banks : exam.notSelectBankDto}"
                                                     th:value="${bank.id}"
                                                     th:text="${bank.name}"></option>
