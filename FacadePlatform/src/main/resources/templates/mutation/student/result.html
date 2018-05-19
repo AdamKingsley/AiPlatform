@@ -46,12 +46,19 @@
                                     <!--</a>-->
                                 <!--</div>-->
                             <!--</div>-->
+                            <!--<div id="no_result_error" class="alert alert-danger alert-dismissible">-->
+                                <!--<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>-->
+                                <!--<h4><i class="icon fa fa-ban"></i> Alert!</h4>-->
+                                <!--<p>未获取到该模型在该次提交运行的信息，或尚未运行结束！</p>-->
+                            <!--</div>-->
+
                             <div class="row" style="padding-top: 30px">
                                 <div class="col-sm-12 form-horizontal">
                                     <input type="hidden" name="userId" th:value="${userId}"/>
                                     <input type="hidden" name="examId" th:value="${examId}"/>
                                     <input type="hidden" name="modelId" th:value="${modelId}"/>
                                     <input type="hidden" name="iters" th:value="${iters}"/>
+
                                     <div class="form-group">
                                         <label class="control-label col-sm-2">选择第几次迭代</label>
                                         <div class="col-sm-7">
@@ -60,6 +67,7 @@
                                             </select>
                                         </div>
                                     </div>
+
                                     <div class="form-group">
                                         <label class="control-label col-sm-2">选择图片</label>
                                         <div class="col-sm-7">

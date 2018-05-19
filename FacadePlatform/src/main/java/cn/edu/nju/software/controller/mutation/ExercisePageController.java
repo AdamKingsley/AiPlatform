@@ -38,7 +38,7 @@ public class ExercisePageController {
         ShiroUser user = ShiroUtils.currentUser();
         ExerciseDto dto = exerciseService.takeExam(userId, examId);
         ExamDto exam = examService.getExam(dto.getExamId());
-        
+
         if (dto.getKillModelIds() != null) {
             List<String> killedM = Arrays.asList(dto.getKillModelIds().split(","));
             for (ModelDto m: dto.getModelDtos()) {
