@@ -77,6 +77,65 @@
                                            th:text="${exam == null ? '' : exam.modelNums}"></label>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">参加考试人数</label>
+                                <div class="col-sm-9">
+                                    <label class="form-control" th:text="${result == null ? '' : result.counts}"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <ul class="nav nav-tabs">
+                                <li class="presentation active" role="presentation"><a href="#">模型杀死率</a></li>
+                                <li class="presentation" role="presentation"><a href="#">用户排名</a></li>
+                            </ul>
+                            <div class="presentation-content">
+                                <table class="table table-bordered table-hover dataTable"
+                                       cellspacing="0" width="100%">
+                                    <thead>
+                                    <tr>
+                                        <td>模型名称</td>
+                                        <td>模型迭代次数</td>
+                                        <td>变异杀死次数</td>
+                                        <td>模型杀死率</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="modelKill: ${result == null ? null : result.killRates}">
+                                        <td th:text="${modelKill.id}"></td>
+                                        <td th:text="${modelKill.nums}"></td>
+                                        <td th:text="${modelKill.killedNums}"></td>
+                                        <td th:text="${modelKill.killRate}"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="presentation-content" style="display: none">
+                                <table class="table table-bordered table-hover dataTable"
+                                       cellspacing="0" width="100%">
+                                    <thead>
+                                    <tr>
+                                        <td>用户名</td>
+                                        <td>变异模型数量</td>
+                                        <!--<td>变异模型ID</td>-->
+                                        <!--<td>杀死的模型ID</td>-->
+                                        <!--<td>杀死的变异数量</td>-->
+                                        <td>杀死的变异模型数量</td>
+                                        <td>模型杀死率</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="rank: ${result == null ? null : result.ranks}">
+                                        <td th:text="${rank.username}"></td>
+                                        <td th:text="${rank.modelNums}"></td>
+                                        <td th:text="${rank.killModelNums}"></td>
+                                        <!--<td th:text="${rank.modelIds}"></td>-->
+                                        <!--<td th:text="${rank.killModelIds}"></td>-->
+                                        <td th:text="${rank.killRate}"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

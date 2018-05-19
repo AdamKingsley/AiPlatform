@@ -39,13 +39,15 @@ public class ExercisePageController {
         ExerciseDto dto = exerciseService.takeExam(userId, examId);
         ExamDto exam = examService.getExam(dto.getExamId());
 
-        List<String> killedM = Arrays.asList(dto.getKillModelIds().split(","));
-        for (ModelDto m: dto.getModelDtos()) {
-            m.setIsKilled(false);
-            for (String s: killedM) {
-                if (!s.equals("") && m.getBankId() == Long.parseLong(s)) {
-                    m.setIsKilled(true);
-                    break;
+        if (dto.getKillModelIds() != null) {
+            List<String> killedM = Arrays.asList(dto.getKillModelIds().split(","));
+            for (ModelDto m: dto.getModelDtos()) {
+                m.setIsKilled(false);
+                for (String s: killedM) {
+                    if (!s.equals("") && m.getBankId() == Long.parseLong(s)) {
+                        m.setIsKilled(true);
+                        break;
+                    }
                 }
             }
         }

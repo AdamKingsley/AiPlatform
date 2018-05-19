@@ -8,21 +8,28 @@
         var userId = $("input[name='userId']").val();
         var examId = $("input[name='examId']").val();
         var modelId = $("input[name='modelId']").val();
+        var iters = $("input[name='iters']").val();
 
-        // console.log(userId);
-        // console.log(examId);
-        // console.log(modelId);
+        console.log(userId);
+        console.log(examId);
+        console.log(modelId);
+        console.log(iters);
 
         $.ajax({
-            url: baseurl + "/static/resource/net.json",
+            // url: baseurl + "/static/resource/net.json",
+            url: baseurl + "/model-process/detail?userId=" + userId + "&examId=" + examId + "&modelId=" + modelId + "&iter=1",
             type: "GET",
             dataType: "json",
             success: function(res) {
-                data = res;
-                // console.log(data);
-                initImage();
+                if (res.success == false) {
 
-                asyncData(0);
+                }
+
+                data = res;
+                console.log(data);
+                // initImage();
+
+                // asyncData(0);
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                 var json = JSON.parse(XMLHttpRequest.responseText);

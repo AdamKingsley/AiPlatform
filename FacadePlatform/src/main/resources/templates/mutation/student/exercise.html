@@ -69,16 +69,16 @@
                                 上传样本
                             </h4>
                             <form id="samples_form" class="form" role="form" method="post"
-                                  th:action="${'/exercise/upload/sample?userId=' + (user == null ? '5' : user.id) + '&amp;examId=' + exam.id}">
+                                  th:action="${'/exercise/upload/sample?userId=' + (user == null ? '12' : user.id) + '&amp;examId=' + exam.id}">
                                 <input type="hidden" name="userId" value=""/>
                                 <input type="hidden" name="examId" th:value="${exam == null ? '' : exam.id}"/>
                                 <div class="form-group">
                                     <div class="col-sm-5">
-                                        <input id="samples_upload" name="sample" type="file" style="display: none"/>
-                                        <div id="samples_upload_facade" class="form-control" style="cursor: pointer"></div>
+                                        <input id="samples_upload" name="sample" type="file" style="display: none" multiple="multiple"/>
+                                        <div id="samples_upload_facade" class="form-control" style="cursor: pointer;overflow: hidden"></div>
                                     </div>
                                     <div class="col-sm-7">
-                                        <button id="samples_submit" type="button" class="btn btn-info">上传样本</button>
+                                        <button id="samples_submit" type="button" class="btn btn-info" >上传样本</button>
                                     </div>
                                 </div>
                             </form>
@@ -102,7 +102,7 @@
                                         <td th:text="${model.isKilled ? '已被杀死' : '未被杀死'}"></td>
                                         <td th:text="${model.modifyTime}"></td>
                                         <td>
-                                            <a th:href="${'/mutation/exercise/result/' + (user == null ? '5' : user.id) + '/' + exam.id + '/' + model.id}">
+                                            <a th:href="${'/mutation/exercise/result/' + (user == null ? '12' : user.id) + '/' + exam.id + '/' + model.id}">
                                                 查看结果
                                             </a>
                                         </td>
