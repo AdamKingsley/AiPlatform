@@ -27,6 +27,7 @@ public class ExerciseController {
 
     @GetMapping("enter")
     public Result takeExam(@RequestParam(value = "userId", required = false) Long userId, @RequestParam("examId") Long examId) {
+//        userId = 5L;
         if (userId == null) {
             if (ShiroUtils.currentUser() == null) {
                 return Result.error().exception(ExceptionEnum.LOGIN_INVALID);
@@ -40,6 +41,7 @@ public class ExerciseController {
 
     @PostMapping("upload/sample")
     public Result uploadSample(@RequestParam("userId") Long userId, @RequestParam("examId") Long examId, HttpServletRequest request) {
+//        userId = 5L;
         List<MultipartFile> files = ((MultipartHttpServletRequest) request).getFiles("sample");
         ExerciseDto dto = exerciseService.uploadSample(userId, examId, files);
         return Result.success().message("上传样本测试成功").withData(dto);

@@ -4,7 +4,7 @@ import pymysql
 
 def execute_sql(statement):
     # 建立和mysql的连接
-    connection = pymysql.connect(host='107.170.204.204', port=3306, user='aiuser', passwd='aiuser', db='ai_platform', charset='utf8')
+    connection = pymysql.connect(host='120.79.89.98', port=3306, user='aiuser', passwd='aiuser', db='ai_platform', charset='utf8')
     current_cursor = connection.cursor()
     # 执行语句
     row = current_cursor.execute(statement)

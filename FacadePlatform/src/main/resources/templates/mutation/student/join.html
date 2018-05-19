@@ -88,42 +88,42 @@
                                                th:text="${exam == null ? '' : exam.modelNums}"></label>
                                     </div>
                                 </div>
-                                <!--<div class="form-group">-->
-                                <!--<label class="control-label col-sm-2">题库集合</label>-->
-                                <!--<div class="col-sm-9">-->
-                                <!--<div class="form-control">-->
-                                <!--<a th:each="bank: ${exam == null ? null : exam.selectBankDto}"-->
-                                <!--th:text="${bank.name + ';'}" th:href="${'/mutation/bank/info/' + bank.id}"></a>-->
-                                <!--</div>-->
-                                <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="form-group">-->
-                                <!--<label class="control-label col-sm-2"></label>-->
-                                <!--<div class="col-sm-9">-->
-                                <!--<a th:href="${'/mutation/exam/opt/' + exam.id}" id="join_exam" class="btn btn-info btn-sm" type="button">开始答题</a>-->
-                                <!--</div>-->
-                                <!--</div>-->
-                            </div>
-                        </div>
-                        <div class="box-body">
-                            <h4 class="box-title">考试题库信息</h4>
-                            <div class="row">
-                                <div class="col-md-4 col-xs-12">
-                                    <div class="info-box" th:each="bank: ${exam == null ? null : exam.selectBankDto}">
-                                        <div class="info-box-icon">
-                                            <span class="info-box-text bg-aqua" th:text="${bank.name}"></span>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">题库集合</label>
+                                    <div class="col-sm-9">
+                                        <div class="form-control">
+                                            <a th:each="bank: ${exam == null ? null : exam.selectBankDto}"
+                                                th:text="${bank.name + ';'}" th:href="${'/mutation/bank/info/' + bank.id}"></a>
                                         </div>
-                                        <div class="info-box-content">
-                                            <p th:text="${bank.description}"></p>
-                                            <!--<span class="info-box-text" th:text="${bank.name}"></span>-->
-                                            <div class="info-box-text">
-                                                <a th:href="${'/mutation/bank/info/' + bank.id}">查看详情</a>
-                                            </div>
-                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2"></label>
+                                    <div class="col-sm-9">
+                                        <a th:href="${'/mutation/exercise?userId=' + (user == null ? '5' : user.id) + '&amp;examId=' + exam.id}" id="join_exam" class="btn btn-info btn-sm" type="button">开始答题</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!--<div class="box-body">-->
+                            <!--<h4 class="box-title">考试题库信息</h4>-->
+                            <!--<div class="row">-->
+                                <!--<div class="col-md-4 col-xs-12">-->
+                                    <!--<div class="info-box" th:each="bank: ${exam == null ? null : exam.selectBankDto}">-->
+                                        <!--<div class="info-box-icon">-->
+                                            <!--<span class="info-box-text bg-aqua" th:text="${bank.name}"></span>-->
+                                        <!--</div>-->
+                                        <!--<div class="info-box-content">-->
+                                            <!--<p th:text="${bank.description}"></p>-->
+                                            <!--&lt;!&ndash;<span class="info-box-text" th:text="${bank.name}"></span>&ndash;&gt;-->
+                                            <!--<div class="info-box-text">-->
+                                                <!--<a th:href="${'/mutation/bank/info/' + bank.id}">查看详情</a>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
                         <!--<div class="box-body">-->
                             <!--<h4 class="box-title">上传测试样本</h4>-->
                             <!--<form id="samples_form" class="form" role="form" action="">-->
@@ -140,14 +140,14 @@
                                 <!--</div>-->
                             <!--</form>-->
                         <!--</div>-->
-                        <div class="form-horizontal">
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label"></label>
-                                <div class="col-sm-9">
-                                    <button class="btn btn-info btn-sm">参加考试</button>
-                                </div>
-                            </div>
-                        </div>
+                        <!--<div class="form-horizontal">-->
+                            <!--<div class="form-group">-->
+                                <!--<label class="col-sm-2 control-label"></label>-->
+                                <!--<div class="col-sm-9">-->
+                                    <!--<a href="/mutation/exercise" class="btn btn-info btn-sm">参加考试</a>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
                     </div>
                 </div>
             </div>

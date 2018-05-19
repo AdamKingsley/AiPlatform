@@ -28,8 +28,8 @@
                 </span>
             </a>
             <ul class="treeview-menu">
-                <li th:classappend="${level2 == 'exam' ? 'active' : ''}"><a href="/mutation/t/exam"><i class="fa fa-circle-o"></i> 考试</a></li>
-                <li th:classappend="${level2 == 'bank' ? 'active' : ''}"><a href="/mutation/bank"><i class="fa fa-circle-o"></i> 题库</a></li>
+                <li th:classappend="${level2 == 'exam' ? 'active' : ''}"><a href="/mutation/s/exam"><i class="fa fa-circle-o"></i> 考试</a></li>
+                <!--<li th:classappend="${level2 == 'bank' ? 'active' : ''}"><a href="/mutation/bank"><i class="fa fa-circle-o"></i> 题库</a></li>-->
             </ul>
         </li>
         <li th:classappend="${level1 == 'mr'? 'active' : ''}">
@@ -65,27 +65,35 @@
             <!--<li class="active"><a href="/"><i class="fa fa-circle-o"></i> 控制台</a></li>-->
             <!--</ul>-->
         </li>
-        <li th:classappend="${level1 == 'mutation' ? 'active' : ''}">
-            <a href="/mutation/s/exam">
+        <li class="treeview" th:classappend="${level1 == 'mutation' ? 'active' : ''}">
+            <a href="#">
                 <i class="fa fa-bug"></i> <span>变异测试</span>
-                <!--<span class="pull-right-container">-->
-                <!--<i class="fa fa-angle-left pull-right"></i>-->
-                <!--</span>-->
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
             </a>
-            <!--<ul class="treeview-menu" style="">-->
-            <!--<li th:classappend="${level2 == '' ? 'active' : ''}"><a href="/"><i class="fa fa-circle-o"></i> 变异测试</a></li>-->
-            <!--</ul>-->
+            <ul class="treeview-menu">
+                <li th:classappend="${level2 == 'exam' ? 'active' : ''}"><a href="/mutation/t/exam"><i class="fa fa-circle-o"></i> 考试</a></li>
+                <li th:classappend="${level2 == 'bank' ? 'active' : ''}"><a href="/mutation/bank"><i class="fa fa-circle-o"></i> 题库</a></li>
+            </ul>
         </li>
         <li th:classappend="${level1 == 'mr'? 'active' : ''}">
             <a href="#">
-                <i class="fa fa-bullseye"></i><span>蜕变测试</span>
-                <!--<span class="pull-right-container">-->
-                <!--<i class="fa fa-angle-left pull-right"></i>-->
-                <!--</span>-->
+                <i class="fa fa-bug"></i> <span>蜕变测试</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
             </a>
-            <!--<ul class="treeview-menu">-->
-            <!--<li th:classappend="${level2 == 'autodrive' ? 'active' : ''}"><a href="/autodrive"><i class="fa fa-circle-o"></i> 自动驾驶测试</a></li>-->
-            <!--</ul>-->
+            <!--<a href="/mr">-->
+            <!--<i class="fa fa-bullseye"></i><span>蜕变测试</span>-->
+            <!--<span class="pull-right-container">-->
+            <!--<i class="fa fa-angle-left pull-right"></i>-->
+            <!--</span>-->
+            <!--</a>-->
+            <ul class="treeview-menu">
+                <li th:classappend="${level2 == 'autodrive' ? 'active' : ''}"><a href="/mr"><i class="fa fa-circle-o"></i> 主页</a></li>
+                <li th:classappend="${level2 == 'scene' ? 'active' : ''}"><a href="/mr/scene"><i class="fa fa-circle-o"></i> 场景</a></li>
+            </ul>
         </li>
     </ul>
 </aside>

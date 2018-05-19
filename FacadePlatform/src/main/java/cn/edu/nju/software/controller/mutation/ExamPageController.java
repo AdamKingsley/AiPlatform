@@ -4,6 +4,7 @@ import cn.edu.nju.software.common.shiro.ShiroUser;
 import cn.edu.nju.software.common.shiro.ShiroUtils;
 import cn.edu.nju.software.dto.BankDto;
 import cn.edu.nju.software.dto.ExamDto;
+import cn.edu.nju.software.dto.ExamResultDto;
 import cn.edu.nju.software.service.mutation.BankService;
 import cn.edu.nju.software.service.mutation.ExamService;
 import org.springframework.stereotype.Controller;
@@ -69,8 +70,10 @@ public class ExamPageController {
         ShiroUser user = ShiroUtils.currentUser();
 
         ExamDto exam = examService.getExam(id);
+        ExamResultDto result = examService.getExamResult(id);
         model.addAttribute("user", user);
         model.addAttribute("exam", exam);
+        model.addAttribute("result", result);
         return "mutation/teacher/exam-info";
     }
 
@@ -98,11 +101,5 @@ public class ExamPageController {
 //        return "mutation/student/opt";
 //    }
 
-    @RequestMapping(value = "/exam/result", method = RequestMethod.GET)
-    public String toExamResult(Model model) {
-        ShiroUser user = ShiroUtils.currentUser();
 
-        model.addAttribute("user", user);
-        return "mutation/student/result";
-    }
 }

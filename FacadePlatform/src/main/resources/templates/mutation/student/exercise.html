@@ -1,10 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta th:include="header::header"/>
+    <title>深度学习测试平台</title>
 </head>
-<body>
+<body class="hold-transition skin-black sidebar-mini">
+<header class="main-header" th:include="header::main-header (${user})">
 
+</header>
+<div class="wrapper">
+    <aside class="main-sidebar"
+           th:include="aside::aside ('mutation', 'bank', ${user})">
+
+    </aside>
+    <div class="content-wrapper" style="min-height: 916px">
+        <section class="content-header">
+            <h1>
+                参加考试
+            </h1>
+        </section>
+        <section class="content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">模型信息</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">进入考试时间</label>
+                                    <div class="col-sm-9">
+                                        <label class="form-control" th:text="${exercise == null ? '' : exercise.startTime}"></label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">杀死变异体数量</label>
+                                    <div class="col-sm-9">
+                                        <label class="form-control" th:text="${exercise == null ? '' : exercise.killNums}"></label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">迭代次数</label>
+                                    <div class="col-sm-9">
+                                        <label class="form-control" th:text="${exercise == null ? '' : exercise.totalIters}"></label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">考试名称</label>
+                                    <div class="col-sm-9">
+                                        <label class="form-control" th:text="${exam == null ? '' : exam.name}"></label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">考试描述</label>
+                                    <div class="col-sm-9">
+                                        <label class="form-control" th:text="${exam == null ? '' : exam.description}"></label>
+                                    </div>
+                                </div>
+                                <!--<div class="form-group">-->
+                                    <!--<label class="col-sm-2 control-label">杀死模型ID</label>-->
+                                    <!--<div class="col-sm-9">-->
+                                        <!--<label class="form-control" th:text="${exercise == null ? '' : exercise.killModelIds}"></label>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            </div>
+                            <h4>
+                                上传样本
+                            </h4>
+                            <form id="samples_form" class="form" role="form" method="post"
+                                  th:action="${'/exercise/upload/sample?userId=' + (user == null ? '5' : user.id) + '&amp;examId=' + exam.id}">
+                                <input type="hidden" name="userId" value=""/>
+                                <input type="hidden" name="examId" th:value="${exam == null ? '' : exam.id}"/>
+                                <div class="form-group">
+                                    <div class="col-sm-5">
+                                        <input id="samples_upload" name="sample" type="file" style="display: none"/>
+                                        <div id="samples_upload_facade" class="form-control" style="cursor: pointer"></div>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <button id="samples_submit" type="button" class="btn btn-info">上传样本</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="box-body">
+                            <h4>模型列表</h4>
+                            <div>
+                                <table class="table table-bordered table-hover dataTable"
+                                       cellspacing="0" width="100%">
+                                    <thead>
+                                    <tr>
+                                        <td>模型名称</td>
+                                        <td>是否杀死</td>
+                                        <td>修改时间</td>
+                                        <td>操作</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="model: ${exercise == null ? null : exercise.modelDtos}">
+                                        <td th:text="${model.name}"></td>
+                                        <td th:text="${model.isKilled ? '已被杀死' : '未被杀死'}"></td>
+                                        <td th:text="${model.modifyTime}"></td>
+                                        <td>
+                                            <a th:href="${'/mutation/exercise/result/' + (user == null ? '5' : user.id) + '/' + exam.id + '/' + model.id}">
+                                                查看结果
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer th:include="footer::footer" class="main-footer"></footer>
+</div>
+<div th:include="footer::script">
+
+</div>
+<script src="/static/js/mutation/student/exercise.js"></script>
 </body>
 </html>
